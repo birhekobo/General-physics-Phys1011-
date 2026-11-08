@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Work and Energy</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 6: Work and Energy</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Work and Energy</div>
+        <div class="textbox-content">
+            <p>Work and energy are fundamental concepts in physics that provide powerful tools for analyzing mechanical systems. While forces describe interactions, work and energy describe the effects of these interactions over time and distance.</p>
+            <p>Work is the transfer of energy through a force acting through a displacement: \(W = \vec{F}\cdot\vec{d} = Fd\cos\theta\). The work done by a conservative force equals the negative change in potential energy, and the work-energy theorem links force to motion through the kinetic energy \(K = \tfrac{1}{2}mv^2\).</p>
+            <p>Because mechanical energy is conserved when only conservative forces act, energy analysis often replaces force-by-force analysis. This chapter unifies work, kinetic energy, potential energy, conservation, and power into a single energy perspective.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the concept of work and calculate work done by constant forces</li>
+                <li>Apply the work-energy theorem to solve problems</li>
+                <li>Calculate kinetic energy and potential energy (elastic and gravitational)</li>
+                <li>Understand and apply the principle of conservation of mechanical energy</li>
+                <li>Solve problems involving conservative and non-conservative forces</li>
+                <li>Calculate power and understand its relationship to work and energy</li>
+                <li>Apply energy concepts to solve complex physics problems</li>
+                <li>Analyze systems using energy conservation principles</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6.1 The Concept of Work</h2>
+    <p>Work and energy are fundamental concepts in physics that provide powerful tools for analyzing mechanical systems. While forces describe interactions, work and energy describe the effects of these interactions over time and distance.</p>
+
+    <h3>6.1.1 Work Done by a Constant Force</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Work</strong> is done when a force causes displacement. For a constant force \(\vec{F}\) acting on an object that undergoes a displacement \(\vec{d}\), the work done is:</p>
+            <div class="equation">
+                \(W = \vec{F} \cdot \vec{d} = Fd\cos\theta\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(W\) = work done (joules, J)</li>
+                <li>\(F\) = magnitude of the force (newtons, N)</li>
+                <li>\(d\) = magnitude of the displacement (meters, m)</li>
+                <li>\(\theta\) = angle between the force and displacement vectors</li>
+            </ul>
+            <p>1 joule = 1 newton·meter (1 J = 1 N·m)</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about work:</p>
+            <ul>
+                <li>Work is a scalar quantity (has magnitude but no direction)</li>
+                <li>Work can be positive, negative, or zero</li>
+                <li>Only the component of force parallel to the displacement does work</li>
+                <li>No work is done if there is no displacement</li>
+                <li>Work is energy transferred to or from an object</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">
+            <!-- Displacement vector -->
+            <line x1="60" y1="200" x2="440" y2="200" stroke="black" stroke-width="2.5" marker-end="url(#f61black)"/>
+            <text x="448" y="205" font-size="15">d⃗</text>
+            <!-- Force vector -->
+            <line x1="60" y1="200" x2="360" y2="50" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f61blue)"/>
+            <text x="160" y="112" font-size="15" fill="#0066cc">F⃗</text>
+            <!-- Angle arc -->
+            <path d="M 110 200 A 50 50 0 0 0 104.7 177.6" stroke="black" fill="none" stroke-width="1.5"/>
+            <text x="118" y="196" font-size="14">&#952;</text>
+            <!-- Force components -->
+            <line x1="360" y1="50" x2="360" y2="200" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <text x="366" y="130" font-size="13" fill="#0066cc">F sin&#952;</text>
+            <line x1="60" y1="200" x2="360" y2="200" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <text x="185" y="192" font-size="13" fill="#0066cc">F cos&#952;</text>
+            <!-- Title -->
+            <text x="250" y="30" font-size="15" text-anchor="middle">Work: W = F d cos&#952;</text>
+            <defs>
+                <marker id="f61black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f61blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 6.1: Work done by a constant force</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A person pulls a crate with a force of 50 N at an angle of 30° above the horizontal. If the crate moves 10 m horizontally, how much work is done?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(W = Fd\cos\theta = (50\,\text{N})(10\,\text{m})\cos 30^\circ = 500 \times 0.866 = 433\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A force of 20 N is applied to push a box across a floor. The force is directed 45° below the horizontal. If the box moves 5 m, how much work is done?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(W = Fd\cos\theta = (20\,\text{N})(5\,\text{m})\cos 45^\circ = 100 \times 0.707 \approx 71\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>6.1.2 Work Done by a Variable Force</h3>
+    <p>When the force is not constant, the work is found by dividing the motion into small displacements and adding the contributions. In the limit of infinitesimal steps,</p>
+    <div class="equation">
+        \(W = \int_{x_i}^{x_f} F_x\,dx\)
+    </div>
+    <p>Graphically, this is the area under the force-versus-position curve. A constant force gives a rectangle of area \(F\Delta x\); a force that grows linearly with displacement gives a triangle.</p>
+    <p>For an ideal spring, \(F_x = kx\), so the work done in stretching the spring from \(x_i\) to \(x_f\) is</p>
+    <div class="equation">
+        \(W = \int_{x_i}^{x_f} kx\,dx = \frac{1}{2}kx_f^2 - \frac{1}{2}kx_i^2\)
+    </div>
+    <p>This is precisely the change in elastic potential energy, which is why the spring force is conservative.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A force acting in the \(x\)-direction increases linearly from zero to \(50\,\text{N}\) as an object moves from \(x = 0\) to \(x = 4.0\,\text{m}\). Find the work done.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The force-displacement graph is a triangle with base \(4.0\,\text{m}\) and height \(50\,\text{N}\). Its area is</p>
+            <div class="equation">
+                \(W = \tfrac{1}{2}(\text{base})(\text{height}) = \tfrac{1}{2}(4.0)(50) = 100\,\text{J}\)
+            </div>
+            <p>Equivalently, if \(F = (12.5\,\text{N/m})x\), then \(W = \int_0^4 12.5x\,dx = 6.25x^2\big|_0^4 = 100\,\text{J}\).</p>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ramp -->
+                <polygon points="30,120 230,120 230,45" fill="#f9f9f9" stroke="black" stroke-width="2"/>
+                <!-- Skater -->
+                <circle cx="150" cy="73" r="12" fill="#0066cc"/>
+                <line x1="150" y1="85" x2="150" y2="105" stroke="#0066cc" stroke-width="3" marker-end="url(#f61vel)"/>
+                <!-- Energy bars -->
+                <rect x="240" y="40" width="14" height="80" fill="none" stroke="black"/>
+                <rect x="241" y="85" width="12" height="34" fill="#cc0000"/>
+                <rect x="258" y="40" width="14" height="80" fill="none" stroke="black"/>
+                <rect x="259" y="41" width="12" height="78" fill="#009966"/>
+                <text x="247" y="135" font-size="9" text-anchor="middle">PE</text>
+                <text x="265" y="135" font-size="9" text-anchor="middle">KE</text>
+                <text x="130" y="20" font-size="12" text-anchor="middle">Energy transformation on a track</text>
+            </svg>
+            <defs>
+                <marker id="f61vel" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/></marker>
+            </defs>
+        </div>
+        <p>Explore conservation of energy interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_en.html">https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h3>6.1.3 Kinetic Energy and Work-Energy Theorem</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kinetic energy</strong> is the energy of motion. For an object of mass \(m\) moving with speed \(v\):</p>
+            <div class="equation">
+                \(K = \frac{1}{2}mv^2\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(K\) = kinetic energy (joules, J)</li>
+                <li>\(m\) = mass (kilograms, kg)</li>
+                <li>\(v\) = speed (meters per second, m/s)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Work-Energy Theorem</div>
+        <div class="textbox-content">
+            <p><strong>Work-Energy Theorem:</strong> The net work done on an object equals its change in kinetic energy:</p>
+            <div class="equation">
+                \(W_{\text{net}} = \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\)
+            </div>
+            <p>This theorem provides a powerful connection between forces acting on an object and its resulting motion.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about kinetic energy and the work-energy theorem:</p>
+            <ul>
+                <li>Kinetic energy is always positive or zero</li>
+                <li>The work-energy theorem applies to both constant and variable forces</li>
+                <li>Only the net work (work done by all forces) affects the kinetic energy</li>
+                <li>The theorem is especially useful when acceleration is not constant</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 kg object initially at rest is acted upon by a net force of 10 N over a distance of 5 m. What is its final speed?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the work-energy theorem:</p>
+            <div class="equation">
+                \(W_{\text{net}} = \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\)
+            </div>
+            <div class="equation">
+                \(F_{\text{net}}d = \frac{1}{2}mv_f^2 - 0 \quad (\text{since } v_i = 0)\)
+            </div>
+            <div class="equation">
+                \((10\,\text{N})(5\,\text{m}) = \frac{1}{2}(2\,\text{kg})v_f^2\)
+            </div>
+            <div class="equation">
+                \(50 = v_f^2 \;\Rightarrow\; v_f = \sqrt{50} \approx 7.07\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 1000 kg car accelerates from 20 m/s to 30 m/s. How much net work is required?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(W_{\text{net}} = \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 = \frac{1}{2}(1000)(30^2 - 20^2) = 500(900 - 400) = 500 \times 500 = 250{,}000\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>6.1.4 Elastic Potential Energy</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Elastic potential energy</strong> is the energy stored in elastic materials when they are stretched or compressed. For an ideal spring that obeys Hooke's Law:</p>
+            <div class="equation">
+                \(U_s = \frac{1}{2}kx^2\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(U_s\) = elastic potential energy (joules, J)</li>
+                <li>\(k\) = spring constant (newtons per meter, N/m)</li>
+                <li>\(x\) = displacement from equilibrium position (meters, m)</li>
+            </ul>
+            <p>Hooke's Law: \(F = -kx\) (the restoring force is proportional to displacement)</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about elastic potential energy:</p>
+            <ul>
+                <li>Elastic potential energy is always positive or zero</li>
+                <li>The spring constant \(k\) measures the stiffness of the spring</li>
+                <li>The work done in stretching or compressing a spring equals the change in elastic potential energy</li>
+                <li>Elastic potential energy is a form of mechanical energy</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="210" xmlns="http://www.w3.org/2000/svg">
+            <!-- Wall -->
+            <line x1="60" y1="55" x2="60" y2="145" stroke="black" stroke-width="4"/>
+            <line x1="48" y1="70" x2="60" y2="58" stroke="black" stroke-width="1.5"/>
+            <line x1="48" y1="90" x2="60" y2="78" stroke="black" stroke-width="1.5"/>
+            <line x1="48" y1="110" x2="60" y2="98" stroke="black" stroke-width="1.5"/>
+            <line x1="48" y1="130" x2="60" y2="118" stroke="black" stroke-width="1.5"/>
+            <!-- Spring -->
+            <polyline fill="none" stroke="black" stroke-width="2.5" points="60,100 75,78 105,122 135,78 165,122 195,78 225,122 255,78 285,122 300,100"/>
+            <!-- Mass -->
+            <rect x="300" y="78" width="60" height="44" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="330" y="105" font-size="14" text-anchor="middle">m</text>
+            <!-- Equilibrium line -->
+            <line x1="230" y1="45" x2="230" y2="160" stroke="#999999" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="230" y="178" font-size="13" text-anchor="middle" fill="#666666">equilibrium</text>
+            <!-- Displacement -->
+            <line x1="230" y1="55" x2="300" y2="55" stroke="#cc0000" stroke-width="1.8" marker-start="url(#f62start)" marker-end="url(#f62end)"/>
+            <text x="265" y="46" font-size="14" text-anchor="middle" fill="#cc0000">x</text>
+            <!-- Label -->
+            <text x="250" y="200" font-size="14" text-anchor="middle">Elastic Potential Energy: U<tspan baseline-shift="sub" font-size="10">s</tspan> = &#189; k x&#178;</text>
+            <defs>
+                <marker id="f62end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f62start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 6.2: Elastic potential energy in a spring</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A spring with a spring constant of 200 N/m is compressed by 0.1 m. What is the elastic potential energy stored in the spring?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(U_s = \frac{1}{2}kx^2 = \frac{1}{2}(200\,\text{N/m})(0.1\,\text{m})^2 = 100 \times 0.01 = 1\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>6.1.5 Gravitational Potential Energy</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Gravitational potential energy</strong> is the energy stored in an object due to its position in a gravitational field. Near Earth's surface:</p>
+            <div class="equation">
+                \(U_g = mgh\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(U_g\) = gravitational potential energy (joules, J)</li>
+                <li>\(m\) = mass (kilograms, kg)</li>
+                <li>\(g\) = acceleration due to gravity (9.8 m/s²)</li>
+                <li>\(h\) = height above reference level (meters, m)</li>
+            </ul>
+            <p>The more general form for any two masses is:</p>
+            <div class="equation">
+                \(U_g = -G\frac{m_1m_2}{r}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about gravitational potential energy:</p>
+            <ul>
+                <li>Gravitational potential energy depends on the reference level (where \(h = 0\))</li>
+                <li>Only changes in potential energy are physically significant</li>
+                <li>The work done against gravity equals the change in gravitational potential energy</li>
+                <li>Gravitational potential energy is a form of mechanical energy</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="310" xmlns="http://www.w3.org/2000/svg">
+            <!-- Title -->
+            <text x="250" y="28" font-size="15" text-anchor="middle">Gravitational Potential Energy: U<tspan baseline-shift="sub" font-size="11">g</tspan> = mgh</text>
+            <!-- Ground -->
+            <line x1="40" y1="260" x2="470" y2="260" stroke="black" stroke-width="3"/>
+            <g stroke="black" stroke-width="1.2">
+                <line x1="55" y1="260" x2="43" y2="274"/>
+                <line x1="95" y1="260" x2="83" y2="274"/>
+                <line x1="135" y1="260" x2="123" y2="274"/>
+                <line x1="175" y1="260" x2="163" y2="274"/>
+                <line x1="215" y1="260" x2="203" y2="274"/>
+                <line x1="255" y1="260" x2="243" y2="274"/>
+                <line x1="295" y1="260" x2="283" y2="274"/>
+                <line x1="335" y1="260" x2="323" y2="274"/>
+                <line x1="375" y1="260" x2="363" y2="274"/>
+                <line x1="415" y1="260" x2="403" y2="274"/>
+                <line x1="455" y1="260" x2="443" y2="274"/>
+            </g>
+            <!-- Height lines -->
+            <line x1="120" y1="260" x2="120" y2="180" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="250" y1="260" x2="250" y2="110" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="380" y1="260" x2="380" y2="45" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <!-- Objects -->
+            <circle cx="120" cy="180" r="15" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="120" y="185" font-size="13" text-anchor="middle">m</text>
+            <circle cx="250" cy="110" r="15" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="250" y="115" font-size="13" text-anchor="middle">m</text>
+            <circle cx="380" cy="45" r="15" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="380" y="50" font-size="13" text-anchor="middle">m</text>
+            <!-- Height labels -->
+            <text x="132" y="225" font-size="14">h&#8321;</text>
+            <text x="262" y="190" font-size="14">h&#8322;</text>
+            <text x="392" y="155" font-size="14">h&#8323;</text>
+        </svg>
+        <div class="figure-caption">Figure 6.3: Gravitational potential energy at different heights</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 5 kg object is lifted from the ground to a height of 2 m. What is its gravitational potential energy relative to the ground?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(U_g = mgh = (5\,\text{kg})(9.8\,\text{m/s}^2)(2\,\text{m}) = 98\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 60 kg person climbs a flight of stairs, rising 3 m vertically. How much gravitational potential energy do they gain?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta U_g = mg\Delta h = (60\,\text{kg})(9.8\,\text{m/s}^2)(3\,\text{m}) = 1764\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>6.2 Conservation of Energy</h2>
+    <p>The principle of conservation of energy is one of the most fundamental and powerful concepts in physics.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Conservation of Mechanical Energy:</strong> When only conservative forces act on a system, the total mechanical energy remains constant:</p>
+            <div class="equation">
+                \(E_i = E_f \quad \text{or} \quad K_i + U_i = K_f + U_f\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(E\) = total mechanical energy</li>
+                <li>\(K\) = kinetic energy</li>
+                <li>\(U\) = potential energy (gravitational + elastic)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about energy conservation:</p>
+            <ul>
+                <li>Conservative forces (gravity, spring force) conserve mechanical energy</li>
+                <li>Non-conservative forces (friction, air resistance) convert mechanical energy to other forms</li>
+                <li>The total energy in an isolated system is always conserved</li>
+                <li>Energy can be transformed from one form to another but cannot be created or destroyed</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Types of Forces</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Conservative forces:</strong> Work done is path-independent; mechanical energy is conserved
+                    <ul>
+                        <li>Gravity</li>
+                        <li>Spring force</li>
+                        <li>Electric force</li>
+                    </ul>
+                </li>
+                <li><strong>Non-conservative forces:</strong> Work done depends on path; mechanical energy is not conserved
+                    <ul>
+                        <li>Friction</li>
+                        <li>Air resistance</li>
+                        <li>Tension (when it causes deformation)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="60" y1="20" x2="60" y2="170" stroke="black" stroke-width="2"/>
+            <line x1="60" y1="170" x2="440" y2="170" stroke="black" stroke-width="2"/>
+            <!-- Force vector -->
+            <line x1="60" y1="90" x2="380" y2="90" stroke="#0066cc" stroke-width="3" marker-end="url(#f63blue)"/>
+            <text x="200" y="78" font-size="15" fill="#0066cc">F = 50 N</text>
+            <!-- Displacement vector -->
+            <line x1="60" y1="150" x2="380" y2="150" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f63red)"/>
+            <text x="200" y="172" font-size="15" fill="#cc0000">d = 8 m</text>
+            <!-- Shaded work region -->
+            <rect x="60" y="90" width="320" height="40" fill="#cce5ff" stroke="#0066cc" stroke-width="1.5" opacity="0.65"/>
+            <text x="220" y="115" font-size="14" text-anchor="middle" fill="#003366">W = F d = (50)(8) = 400 J</text>
+            <defs>
+                <marker id="f63blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f63red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 6.4: Work as the area under the force-displacement curve</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 kg object is dropped from a height of 10 m. What is its speed just before it hits the ground? (Ignore air resistance)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using conservation of energy:</p>
+            <div class="equation">
+                \(K_i + U_i = K_f + U_f\)
+            </div>
+            <div class="equation">
+                \(0 + mgh = \frac{1}{2}mv_f^2 + 0\)
+            </div>
+            <div class="equation">
+                \((2)(9.8)(10) = \frac{1}{2}(2)v_f^2\)
+            </div>
+            <div class="equation">
+                \(196 = v_f^2 \;\Rightarrow\; v_f = \sqrt{196} = 14\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 10 kg object slides from rest down a frictionless incline that is 5 m above the ground. What is its speed at the bottom of the incline? (Ignore friction and air resistance.)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Because the incline is frictionless, mechanical energy is conserved. The initial kinetic energy is zero and the initial potential energy is \(mgh\), while at the bottom all of it is kinetic:</p>
+            <div class="equation">
+                \(mgh = \frac{1}{2}mv_f^2\)
+            </div>
+            <p>The mass cancels, giving</p>
+            <div class="equation">
+                \(v_f = \sqrt{2gh} = \sqrt{2(9.8)(5)} = \sqrt{98} \approx 9.9\,\text{m/s}\)
+            </div>
+            <p>The final speed is about \(9.9\,\text{m/s}\), independent of the mass of the object. This is the same result one would get from the constant-acceleration kinematic equation \(v^2 = 2gh\).</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 0.5 kg ball is thrown vertically upward with an initial speed of 20 m/s. What maximum height does it reach?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using conservation of energy:</p>
+            <div class="equation">
+                \(K_i + U_i = K_f + U_f\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{2}mv_i^2 + 0 = 0 + mgh_{\text{max}}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{2}(0.5)(20)^2 = (0.5)(9.8)h_{\text{max}}\)
+            </div>
+            <div class="equation">
+                \(100 = 4.9h_{\text{max}} \;\Rightarrow\; h_{\text{max}} = \frac{100}{4.9} \approx 20.41\,\text{m}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Problem-Solving Strategy for Energy Conservation</div>
+        <div class="textbox-content">
+            <ol>
+                <li>Identify the system and all forces acting on it</li>
+                <li>Determine if mechanical energy is conserved (only conservative forces)</li>
+                <li>Choose reference points for potential energy</li>
+                <li>Write the energy conservation equation: \(K_i + U_i = K_f + U_f\)</li>
+                <li>Solve for the unknown quantity</li>
+                <li>Check if your answer makes physical sense</li>
+            </ol>
+        </div>
+    </div>
+
+    <p>When non-conservative forces act, the energy statement becomes</p>
+    <div class="equation">
+        \(K_i + U_i + W_{\text{nc}} = K_f + U_f\)
+    </div>
+    <p>where \(W_{\text{nc}}\) is the work done by non-conservative forces such as friction. Because kinetic friction opposes the motion, \(W_{\text{nc}}\) is usually negative and the final mechanical energy is less than the initial mechanical energy. The missing energy appears as thermal energy in the surfaces.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(5.0\,\text{kg}\) block slides from rest down a rough ramp. Its starting height is \(4.0\,\text{m}\) above the bottom, and friction does \(-60\,\text{J}\) of work during the slide. Find the block's speed at the bottom.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take the bottom of the ramp as \(h = 0\). Initially \(K_i = 0\) and \(U_i = mgh\). At the bottom \(U_f = 0\), so</p>
+            <div class="equation">
+                \(mgh + W_{\text{nc}} = \tfrac{1}{2}mv_f^2\)
+            </div>
+            <div class="equation">
+                \((5.0)(9.8)(4.0) - 60 = \tfrac{1}{2}(5.0)v_f^2\)
+            </div>
+            <div class="equation">
+                \(196 - 60 = 136 = 2.5v_f^2 \quad \Rightarrow \quad v_f = \sqrt{54.4} \approx 7.4\,\text{m/s}\)
+            </div>
+            <p>Without friction the speed would have been \(\sqrt{2gh} = 8.9\,\text{m/s}\), so friction removed a significant fraction of the mechanical energy.</p>
+        </div>
+    </div>
+
+    <h2>6.3 Power</h2>
+    <p>Power is the rate at which work is done or energy is transferred.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Average power</strong> is the work done divided by the time interval:</p>
+            <div class="equation">
+                \(P_{\text{avg}} = \frac{W}{\Delta t}\)
+            </div>
+            <p><strong>Instantaneous power</strong> is the derivative of work with respect to time:</p>
+            <div class="equation">
+                \(P = \frac{dW}{dt}\)
+            </div>
+            <p>For a constant force, power can also be expressed as:</p>
+            <div class="equation">
+                \(P = \vec{F} \cdot \vec{v} = Fv\cos\theta\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(P\) = power (watts, W)</li>
+                <li>\(W\) = work (joules, J)</li>
+                <li>\(t\) = time (seconds, s)</li>
+                <li>\(F\) = force (newtons, N)</li>
+                <li>\(v\) = velocity (meters per second, m/s)</li>
+            </ul>
+            <p>1 watt = 1 joule/second (1 W = 1 J/s)</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about power:</p>
+            <ul>
+                <li>Power is a scalar quantity</li>
+                <li>Power describes how quickly work is done or energy is transferred</li>
+                <li>Mechanical power can be calculated as force times velocity</li>
+                <li>Efficiency relates useful power output to total power input</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A motor lifts a 100 kg crate vertically at a constant speed of 2 m/s. What power does the motor deliver?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The force needed equals the weight of the crate:</p>
+            <div class="equation">
+                \(F = mg = (100\,\text{kg})(9.8\,\text{m/s}^2) = 980\,\text{N}\)
+            </div>
+            <div class="equation">
+                \(P = Fv = (980\,\text{N})(2\,\text{m/s}) = 1960\,\text{W}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A person does 5000 J of work in 10 seconds. What is their average power output?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(P_{\text{avg}} = \frac{W}{\Delta t} = \frac{5000\,\text{J}}{10\,\text{s}} = 500\,\text{W}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A motor with an electrical power input of \(2.5\,\text{kW}\) lifts a \(200\,\text{kg}\) load at a constant speed of \(1.0\,\text{m/s}\). Find the useful mechanical power and the efficiency of the motor.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The useful power is the rate at which the motor does work against gravity:</p>
+            <div class="equation">
+                \(P_{\text{useful}} = Fv = (mg)v = (200)(9.8)(1.0) = 1960\,\text{W}\)
+            </div>
+            <p>The efficiency is the ratio of useful output to total input:</p>
+            <div class="equation">
+                \(\eta = \frac{P_{\text{useful}}}{P_{\text{input}}} = \frac{1960}{2500} = 0.784 \approx 78\%\)
+            </div>
+            <p>The remaining \(22\%\) is lost mainly as heat in the motor and gearbox.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Energy methods turn a complicated force problem into a bookkeeping exercise. Begin by defining the system and the two states you will compare: the block at the top of the incline and the block at the instant the spring reaches maximum compression. Then account for every energy transfer across the system boundary.</p>
+    <p>Friction is the key complication here. Gravity and the spring force are conservative and can be represented by potential energy, but kinetic friction removes mechanical energy. Compute the friction force from the normal force on the incline, find the (negative) work it does over the slide, and include that term explicitly rather than assuming mechanical energy is conserved.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Define the system and identify the initial and final states.</li>
+                <li>Sketch the incline and spring, and choose a reference height where \(h = 0\).</li>
+                <li>List every force that does work; classify gravity and spring forces as conservative and friction as non-conservative.</li>
+                <li>On the incline, use \(N = mg\cos\theta\) and \(f_k = \mu_k N\) to find the friction force.</li>
+                <li>Write \(K_i + U_i + W_{\text{nc}} = K_f + U_f\), with \(W_{\text{nc}} = -f_k L\) and \(K_f = 0\) at maximum compression.</li>
+                <li>Solve for the unknown and check its sign, units, and physical size.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A 2.0 kg block starts from rest at the top of a rough incline that is 6.0 m long and makes an angle of \(30^\circ\) with the horizontal. The coefficient of kinetic friction between the block and the incline is 0.25. At the bottom, the block compresses a spring with \(k = 800\,\text{N/m}\). The short horizontal section leading to the spring is frictionless. Find the maximum compression of the spring.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take the bottom of the incline as the reference level \(h = 0\). The initial height is:</p>
+            <div class="equation">
+                \(h = L\sin 30^\circ = (6.0\,\text{m})(0.500) = 3.0\,\text{m}\)
+            </div>
+            <p>The normal force on the incline is \(N = mg\cos 30^\circ\), so the kinetic friction force is:</p>
+            <div class="equation">
+                \(f_k = \mu_k mg\cos 30^\circ = (0.25)(2.0)(9.8)(0.866) = 4.24\,\text{N}\)
+            </div>
+            <p>Friction acts opposite to the motion along the 6.0 m incline, so its work is:</p>
+            <div class="equation">
+                \(W_{\text{nc}} = -f_k L = -(4.24\,\text{N})(6.0\,\text{m}) = -25.5\,\text{J}\)
+            </div>
+            <p>At the top, \(K_i = 0\) and \(U_i = mgh\). At maximum compression, the block is momentarily at rest, so \(K_f = 0\), and all remaining energy is stored in the spring. Thus:</p>
+            <div class="equation">
+                \(mgh + W_{\text{nc}} = \frac{1}{2}kx^2\)
+            </div>
+            <div class="equation">
+                \((2.0)(9.8)(3.0) - 25.5 = \frac{1}{2}(800)x^2\)
+            </div>
+            <div class="equation">
+                \(58.8 - 25.5 = 33.3 = 400x^2\)
+            </div>
+            <div class="equation">
+                \(x = \sqrt{\frac{33.3}{400}} = \sqrt{0.0833} \approx 0.29\,\text{m}\)
+            </div>
+            <p>The maximum compression is therefore about \(0.29\,\text{m}\), or \(29\,\text{cm}\). This is less than the 6.0 m incline length, so the assumed geometry is consistent.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Crash attenuators, railway buffers, and roller-coaster brakes all use springs or crushable materials to absorb energy over a controlled distance. Engineers combine the work done by friction with stored spring energy to predict stopping distances and to ensure that a vehicle or rider comes to rest safely rather than abruptly.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Work is energy transferred by a force, and for a constant force \(W = Fd\cos\theta\).</li>
+        <li>The net work on an object equals its change in kinetic energy, \(W_{\text{net}} = \Delta K\).</li>
+        <li>Gravity and ideal springs are conservative and can be described by potential energy.</li>
+        <li>Kinetic friction is non-conservative; it removes mechanical energy and usually does negative work.</li>
+        <li>Mechanical energy is conserved only when the work done by non-conservative forces is zero.</li>
+        <li>Gravitational and elastic potential energies are \(U_g = mgh\) and \(U_s = \frac{1}{2}kx^2\).</li>
+        <li>Power measures the rate of energy transfer, \(P = W/\Delta t = Fv\cos\theta\).</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 6</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Work:</strong> \(W = \vec{F} \cdot \vec{d} = Fd\cos\theta\)</li>
+                <li><strong>Kinetic energy:</strong> \(K = \frac{1}{2}mv^2\)</li>
+                <li><strong>Work-energy theorem:</strong> \(W_{\text{net}} = \Delta K = K_f - K_i\)</li>
+                <li><strong>Elastic potential energy:</strong> \(U_s = \frac{1}{2}kx^2\)</li>
+                <li><strong>Gravitational potential energy:</strong> \(U_g = mgh\) (near Earth's surface)</li>
+                <li><strong>Conservation of mechanical energy:</strong> \(K_i + U_i = K_f + U_f\) (conservative forces only)</li>
+                <li><strong>Power:</strong> \(P = \frac{W}{\Delta t} = \vec{F} \cdot \vec{v}\)</li>
+                <li><strong>Conservative forces:</strong> Work is path-independent; conserve mechanical energy</li>
+                <li><strong>Non-conservative forces:</strong> Work depends on path; don't conserve mechanical energy</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Explain why the work done by friction is always negative.</li>
+        <li>Can the kinetic energy of an object be negative? Explain.</li>
+        <li>Why is gravitational potential energy defined as \(mgh\) rather than just \(mg\)?</li>
+        <li>Explain why the work done by conservative forces is path-independent.</li>
+        <li>How does the work-energy theorem relate to Newton's second law?</li>
+        <li>Why is power an important concept in addition to work and energy?</li>
+        <li>Explain why a spring's potential energy is always positive, regardless of whether it's compressed or stretched.</li>
+        <li>How does the conservation of energy principle apply to systems with non-conservative forces?</li>
+        <li>Why is the concept of mechanical energy conservation so powerful in solving physics problems?</li>
+        <li>Explain the difference between average power and instantaneous power.</li>
+        <li>A force is applied perpendicular to an object's displacement. How much work does it do, and how can it still change the object's direction of motion?</li>
+        <li>Explain why the work done by a spring depends only on the initial and final extensions, not on how the spring got there.</li>
+        <li>A block slides down a rough incline at constant speed. What can you say about the work done by gravity, friction, and the normal force?</li>
+        <li>Why is mechanical energy not conserved when friction acts, even though total energy is always conserved?</li>
+        <li>Two motors lift identical loads to the same height, but one takes twice as long. Compare the work done and the power delivered by the two motors.</li>
+        <li>A car's engine is rated in kilowatts. Explain why the maximum speed of the car is not determined by engine power alone.</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A force of 30 N is applied to push a box 5 m across a floor. The force is directed horizontally.
+            <ol type="a">
+                <li>How much work is done?</li>
+                <li>If the box has a mass of 10 kg and started from rest, what is its final speed?</li>
+            </ol>
+        </li>
+        <li>A spring with a spring constant of 400 N/m is compressed by 0.2 m.
+            <ol type="a">
+                <li>What is the elastic potential energy stored in the spring?</li>
+                <li>If the spring is released and pushes a 0.5 kg object, what is the object's maximum speed?</li>
+            </ol>
+        </li>
+        <li>A 2 kg object is dropped from a height of 15 m.
+            <ol type="a">
+                <li>What is its speed just before it hits the ground?</li>
+                <li>What is its kinetic energy at this point?</li>
+            </ol>
+        </li>
+        <li>A person lifts a 20 kg box from the floor to a shelf 1.5 m high.
+            <ol type="a">
+                <li>How much work do they do against gravity?</li>
+                <li>If it takes them 3 seconds to lift the box, what power do they deliver?</li>
+            </ol>
+        </li>
+        <li>A 1000 kg car accelerates from 10 m/s to 25 m/s.
+            <ol type="a">
+                <li>How much work is required?</li>
+                <li>If this acceleration takes 8 seconds, what power is delivered?</li>
+            </ol>
+        </li>
+        <li>A 0.2 kg ball is attached to a vertical spring with \(k = 100\) N/m. The spring is compressed by 0.1 m and released.
+            <ol type="a">
+                <li>What is the maximum height the ball reaches above its release point?</li>
+                <li>What is its speed when it passes through the equilibrium position?</li>
+            </ol>
+        </li>
+        <li>A 60 kg person runs up a flight of stairs, rising 4 m vertically in 5 seconds.
+            <ol type="a">
+                <li>How much work do they do against gravity?</li>
+                <li>What power do they deliver?</li>
+            </ol>
+        </li>
+        <li>A 5 kg object slides down a frictionless ramp from a height of 3 m.
+            <ol type="a">
+                <li>What is its speed at the bottom?</li>
+                <li>If the ramp has a length of 6 m, what is the component of gravity parallel to the ramp?</li>
+            </ol>
+        </li>
+        <li>A motor lifts a 500 kg elevator at a constant speed of 3 m/s.
+            <ol type="a">
+                <li>What power must the motor deliver?</li>
+                <li>How much work is done in 10 seconds?</li>
+            </ol>
+        </li>
+        <li>A 0.1 kg object is attached to a horizontal spring with \(k = 50\) N/m. The spring is stretched by 0.2 m and released.
+            <ol type="a">
+                <li>What is the maximum speed of the object?</li>
+                <li>What is its speed when the spring is compressed by 0.1 m?</li>
+            </ol>
+        </li>
+        <li>A variable force \(F_x = (4.0 + 2.0x)\,\text{N}\) acts on an object as it moves from \(x = 0\) to \(x = 3.0\,\text{m}\). Find the work done by integrating the force.</li>
+        <li>A \(3.0\,\text{kg}\) block is pushed \(2.0\,\text{m}\) up a \(25^\circ\) incline by a force of \(40\,\text{N}\) parallel to the incline. The coefficient of kinetic friction is \(0.20\). Find the work done by each force and the change in kinetic energy.</li>
+        <li>A roller coaster car of mass \(400\,\text{kg}\) starts from rest at a height of \(25\,\text{m}\) and descends to a height of \(5.0\,\text{m}\). If friction and air resistance do \(-12{,}000\,\text{J}\) of work, find the car's speed at the lower height.</li>
+        <li>A \(0.50\,\text{kg}\) ball is thrown downward from a height of \(10\,\text{m}\) with an initial speed of \(5.0\,\text{m/s}\). Find its speed just before impact using energy methods.</li>
+        <li>A pump lifts \(200\,\text{kg}\) of water per minute through a height of \(15\,\text{m}\). Find the minimum power required.</li>
+        <li>A spring with \(k = 500\,\text{N/m}\) is compressed by \(0.20\,\text{m}\) and launches a \(0.10\,\text{kg}\) ball vertically. Find the maximum height reached by the ball above the launch point.</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Preliminaries - Introduction to Physics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 1: Preliminaries</h1>
+    <h2>Introduction to Physics</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Physics!</div>
+        <div class="textbox-content">
+            <p>Physics is the fundamental science that seeks to understand the behavior of the universe at all scales, from the smallest subatomic particles to the largest galaxies. Through observation, experimentation, and mathematical modeling, physics provides us with the principles to explain natural phenomena and develop technologies that shape our modern world.</p>
+            <p>Physics is also an <em>experimental</em> science. A claim becomes physics only when it can be tested against measurement. The cycle is familiar: observe a phenomenon, propose a model, predict a measurable consequence, perform the experiment, and revise the model when the data disagree. Mathematics is the language in which those predictions are written, which is why this chapter begins with measurement and vectors rather than with motion.</p>
+            <p>This chapter lays the groundwork for your study of physics by introducing the essential tools and concepts you'll need: measurement systems, uncertainty analysis, and vector mathematics. These fundamentals will provide the foundation for all subsequent topics in this course.</p>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="220" height="170" viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two vectors A and B added head to tail to give the resultant vector R">
+                <rect width="220" height="170" fill="#f7fbff"/>
+                <defs>
+                    <marker id="arr1-simb" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+                    </marker>
+                    <marker id="arr1-simr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                    </marker>
+                    <marker id="arr1-simg" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#009966"/>
+                    </marker>
+                </defs>
+                <!-- axes -->
+                <line x1="20" y1="140" x2="200" y2="140" stroke="#9ca3af" stroke-width="1"/>
+                <line x1="20" y1="140" x2="20" y2="20" stroke="#9ca3af" stroke-width="1"/>
+                <!-- A, B, and R -->
+                <line x1="20" y1="140" x2="105" y2="95" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-simb)"/>
+                <line x1="105" y1="95" x2="165" y2="35" stroke="#cc0000" stroke-width="3" marker-end="url(#arr1-simr)"/>
+                <line x1="20" y1="140" x2="165" y2="35" stroke="#009966" stroke-width="3" marker-end="url(#arr1-simg)"/>
+                <text x="48" y="110" font-size="15" fill="#0066cc">A&#8407;</text>
+                <text x="128" y="58" font-size="15" fill="#cc0000">B&#8407;</text>
+                <text x="82" y="78" font-size="15" fill="#009966">R&#8407;</text>
+                <text x="110" y="162" font-size="12" text-anchor="middle" fill="#1f2937">Vector addition simulation</text>
+            </svg>
+        </div>
+        <p>Explore vector addition interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/vector-addition/latest/vector-addition_en.html">https://phet.colorado.edu/sims/html/vector-addition/latest/vector-addition_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Why Study Physics?</div>
+        <div class="textbox-content">
+            <p>Physics is more than just a subject—it's a way of thinking about and understanding the world around us. By studying physics, you will:</p>
+            <ul>
+                <li>Develop critical thinking and problem-solving skills</li>
+                <li>Learn to analyze complex systems and break them down into manageable parts</li>
+                <li>Understand the fundamental principles that govern our universe</li>
+                <li>Gain appreciation for the scientific method and evidence-based reasoning</li>
+                <li>Prepare for careers in engineering, technology, medicine, research, and many other fields</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Identify physical quantities and express them in SI units.</li>
+                <li>Convert between units and check equations using dimensional analysis.</li>
+                <li>Report measurements with appropriate uncertainty and significant figures.</li>
+                <li>Estimate orders of magnitude and judge whether an answer is reasonable.</li>
+                <li>Add, subtract, and resolve vectors using components and unit vectors.</li>
+                <li>Compute dot and cross products and interpret them geometrically.</li>
+                <li>Apply vector methods to work, torque, and static-equilibrium problems.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>1.1 Physical Quantities and Units of Measurement</h2>
+    <p>The foundation of physics and engineering is the measurement of physical quantities. To communicate these measurements effectively and unambiguously, a standardized system of units is essential. A number without a unit is incomplete: saying that a table is "2 long" says nothing until you add metres, feet, or cubits.</p>
+
+    <h3>1.1.1 Quantities and Units</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Physical Quantity and Unit</div>
+        <div class="definition-content">
+            <p>A <strong>physical quantity</strong> is a property of a phenomenon, body, or substance that can be quantified by measurement. Examples include length, mass, time, electric current, and force.</p>
+            <p>A <strong>unit</strong> is a particular physical quantity, defined and adopted by convention, with which other quantities of the same kind are compared to express their value.</p>
+            <p><strong>Measurement</strong> is the process of assigning a number to a physical quantity by comparing it with a unit. Every measurement therefore has two parts: a numerical value and a unit.</p>
+        </div>
+    </div>
+
+    <p>For example:</p>
+    <ul>
+        <li><strong>Physical quantity:</strong> length</li>
+        <li><strong>Numerical value:</strong> 5.2</li>
+        <li><strong>Unit:</strong> metre (m)</li>
+        <li><strong>Expression:</strong> \(5.2\,\text{m}\)</li>
+    </ul>
+
+    <p>The same length can be written as \(5.2\,\text{m}\), \(520\,\text{cm}\), or \(0.0052\,\text{km}\). The physical quantity is unchanged; only the unit and the numerical value change together. This is the practical meaning of a conversion factor: it is a ratio equal to one, so multiplying by it rescales the number without changing the quantity.</p>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Units Behave Like Algebraic Symbols</div>
+        <div class="concept-content">
+            <p>Units can be multiplied, divided, and cancelled exactly as algebraic symbols are. In the expression \(60\,\text{km/h}\), the slash means "per", so the unit is \(\text{km}\cdot\text{h}^{-1}\). Treating units this way makes unit conversion and dimensional checking almost automatic.</p>
+        </div>
+    </div>
+
+    <p>The International System of Units (SI, from the French <em>Système International d'Unités</em>) is built on seven <strong>base quantities</strong>. Every other unit is derived from these seven.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Base quantity</th>
+                <th>SI unit</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Length</td><td>metre</td><td>m</td></tr>
+            <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+            <tr><td>Time</td><td>second</td><td>s</td></tr>
+            <tr><td>Electric current</td><td>ampere</td><td>A</td></tr>
+            <tr><td>Thermodynamic temperature</td><td>kelvin</td><td>K</td></tr>
+            <tr><td>Amount of substance</td><td>mole</td><td>mol</td></tr>
+            <tr><td>Luminous intensity</td><td>candela</td><td>cd</td></tr>
+        </tbody>
+    </table>
+
+    <div class="figure">
+        <svg width="640" height="210" viewBox="0 0 640 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A pencil aligned with a centimetre ruler, reading five point two centimetres">
+            <rect width="640" height="210" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-1l" markerWidth="9" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="9 0, 0 3.5, 9 7" fill="#1f2937"/>
+                </marker>
+                <marker id="arr1-1r" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polygon points="0 0, 9 3.5, 0 7" fill="#1f2937"/>
+                </marker>
+            </defs>
+
+            <!-- pencil -->
+            <rect x="70" y="70" width="258" height="18" rx="3" fill="#f4b400" stroke="#b8860b" stroke-width="1"/>
+            <polygon points="328,70 348,79 328,88" fill="#f5deb3" stroke="#b8860b" stroke-width="1"/>
+            <polygon points="341,76.5 348,79 341,81.5" fill="#333333"/>
+            <text x="150" y="62" font-size="13" fill="#8b6914">pencil</text>
+
+            <!-- dimension line -->
+            <line x1="70" y1="42" x2="328" y2="42" stroke="#1f2937" stroke-width="1.5" marker-start="url(#arr1-1l)" marker-end="url(#arr1-1r)"/>
+            <text x="199" y="32" font-size="14" text-anchor="middle" fill="#1f2937">5.2 cm</text>
+
+            <!-- ruler body -->
+            <rect x="60" y="120" width="520" height="52" fill="#fff8dc" stroke="#8b7355" stroke-width="2"/>
+            <line x1="70" y1="120" x2="70" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="120" y1="120" x2="120" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="170" y1="120" x2="170" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="220" y1="120" x2="220" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="270" y1="120" x2="270" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="320" y1="120" x2="320" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="370" y1="120" x2="370" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="420" y1="120" x2="420" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="470" y1="120" x2="470" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="520" y1="120" x2="520" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <line x1="570" y1="120" x2="570" y2="138" stroke="#8b7355" stroke-width="2"/>
+            <!-- half-centimetre ticks -->
+            <line x1="95" y1="120" x2="95" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="145" y1="120" x2="145" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="195" y1="120" x2="195" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="245" y1="120" x2="245" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="295" y1="120" x2="295" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="345" y1="120" x2="345" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="395" y1="120" x2="395" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="445" y1="120" x2="445" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="495" y1="120" x2="495" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <line x1="545" y1="120" x2="545" y2="130" stroke="#8b7355" stroke-width="1"/>
+            <!-- labels -->
+            <text x="70" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">0</text>
+            <text x="120" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">1</text>
+            <text x="170" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">2</text>
+            <text x="220" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">3</text>
+            <text x="270" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">4</text>
+            <text x="320" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">5</text>
+            <text x="370" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">6</text>
+            <text x="420" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">7</text>
+            <text x="470" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">8</text>
+            <text x="520" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">9</text>
+            <text x="570" y="163" font-size="12" text-anchor="middle" fill="#5b4a2f">10</text>
+            <text x="585" y="163" font-size="12" fill="#5b4a2f">cm</text>
+
+            <text x="320" y="196" font-size="13" text-anchor="middle" fill="#1f2937">The end of the pencil lies between 5 cm and 6 cm; the smallest division is 1 cm,</text>
+            <text x="320" y="208" font-size="13" text-anchor="middle" fill="#1f2937">so the reading is estimated to one-tenth of a division: 5.2 cm.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.1: Reading a length from a ruler. The last digit of a measurement is an estimate between the smallest marked divisions, so it carries uncertainty.</div>
+    </div>
+
+    <h3>1.1.2 SI Units: Basic and Derived Units</h3>
+    <p>The International System of Units (SI) provides a standardized framework for measurements worldwide. Units formed by multiplying or dividing base units are called <strong>derived units</strong>. Some receive special names for convenience.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Derived quantity</th>
+                <th>Relationship to base units</th>
+                <th>Special name</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Area</td><td>\(\text{m}^2\)</td><td>—</td><td>\(\text{m}^2\)</td></tr>
+            <tr><td>Volume</td><td>\(\text{m}^3\)</td><td>—</td><td>\(\text{m}^3\)</td></tr>
+            <tr><td>Speed</td><td>\(\text{m/s}\)</td><td>—</td><td>\(\text{m}\cdot\text{s}^{-1}\)</td></tr>
+            <tr><td>Acceleration</td><td>\(\text{m/s}^2\)</td><td>—</td><td>\(\text{m}\cdot\text{s}^{-2}\)</td></tr>
+            <tr><td>Force</td><td>\(\text{kg}\cdot\text{m/s}^2\)</td><td>newton</td><td>N</td></tr>
+            <tr><td>Energy</td><td>\(\text{kg}\cdot\text{m}^2/\text{s}^2\)</td><td>joule</td><td>J</td></tr>
+            <tr><td>Power</td><td>\(\text{kg}\cdot\text{m}^2/\text{s}^3\)</td><td>watt</td><td>W</td></tr>
+            <tr><td>Pressure</td><td>\(\text{kg}/(\text{m}\cdot\text{s}^2)\)</td><td>pascal</td><td>Pa</td></tr>
+            <tr><td>Frequency</td><td>\(\text{s}^{-1}\)</td><td>hertz</td><td>Hz</td></tr>
+            <tr><td>Electric charge</td><td>\(\text{A}\cdot\text{s}\)</td><td>coulomb</td><td>C</td></tr>
+        </tbody>
+    </table>
+
+    <div class="example">
+        <div class="example-header">Example: Expressing Derived Units</div>
+        <div class="example-content">
+            <p>The unit of force is the newton (N). Show how it is built from base units, and do the same for the joule (J).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>From Newton's second law, \(F = ma\). The unit of mass is the kilogram and the unit of acceleration is metres per second squared, so:</p>
+            <div class="equation">
+                \(1\,\text{N} = 1\,\text{kg}\cdot\text{m/s}^2 = 1\,\text{kg}\cdot\text{m}\cdot\text{s}^{-2}\)
+            </div>
+            <p>Work is force times distance, so the joule is a newton-metre:</p>
+            <div class="equation">
+                \(1\,\text{J} = 1\,\text{N}\cdot\text{m} = 1\,\text{kg}\cdot\text{m}^2\cdot\text{s}^{-2}\)
+            </div>
+            <p>These expansions are useful when checking whether an equation is dimensionally consistent.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Coherent SI Units</div>
+        <div class="concept-content">
+            <p>In SI, derived units are <em>coherent</em>: no numerical factor appears when they are combined. One newton is exactly one kilogram-metre per second squared, with no conversion constant. This is why SI calculations can be done directly, provided every input is first converted to base units.</p>
+        </div>
+    </div>
+
+    <h3>1.1.3 Conversion of Units</h3>
+    <p>Converting between units is an essential skill in physics. The key is to multiply by <strong>conversion factors</strong> that equal 1. Because multiplying by 1 does not change a quantity, the method is safe as long as each factor is written with the unwanted unit in the denominator so that it cancels.</p>
+
+    <div class="example">
+        <div class="example-header">Example: Converting a Speed</div>
+        <div class="example-content">
+            <p>Convert a speed of \(60\,\text{miles per hour}\) to metres per second.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>We know that:</p>
+            <div class="equation">
+                \(1\,\text{mile} = 1609\,\text{m}, \qquad 1\,\text{hour} = 3600\,\text{s}\)
+            </div>
+            <p>Write each relation as a fraction equal to one and arrange the units to cancel:</p>
+            <div class="equation">
+                \(60\,\frac{\text{mi}}{\text{h}} = 60\,\frac{\text{mi}}{\text{h}} \times \frac{1609\,\text{m}}{1\,\text{mi}} \times \frac{1\,\text{h}}{3600\,\text{s}}\)
+            </div>
+            <div class="equation">
+                \(= 60 \times \frac{1609}{3600}\,\frac{\text{m}}{\text{s}} \approx 26.8\,\text{m/s}\)
+            </div>
+            <p>The mile and hour units cancel, leaving metres per second. A useful check is that \(60\,\text{mph}\) is roughly \(27\,\text{m/s}\), close to the familiar value of \(100\,\text{km/h} \approx 28\,\text{m/s}\).</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Conversion Chain</div>
+        <div class="practice-content">
+            <p>Convert \(90\,\text{km/h}\) to metres per second, and convert a density of \(2.70\,\text{g/cm}^3\) to \(\text{kg/m}^3\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For the speed:</p>
+            <div class="equation">
+                \(90\,\frac{\text{km}}{\text{h}} \times \frac{1000\,\text{m}}{1\,\text{km}} \times \frac{1\,\text{h}}{3600\,\text{s}} = \frac{90\,000}{3600}\,\text{m/s} = 25\,\text{m/s}\)
+            </div>
+            <p>For the density, both the mass unit and the length unit must be converted, and the length appears cubed:</p>
+            <div class="equation">
+                \(2.70\,\frac{\text{g}}{\text{cm}^3} \times \frac{1\,\text{kg}}{1000\,\text{g}} \times \left(\frac{100\,\text{cm}}{1\,\text{m}}\right)^3 = 2.70 \times \frac{10^6}{10^3}\,\text{kg/m}^3 = 2.70 \times 10^3\,\text{kg/m}^3\)
+            </div>
+            <p>The factor is \(10^3\), not \(10^2\), because the centimetre-to-metre conversion is cubed.</p>
+        </div>
+    </div>
+
+    <h3>1.1.4 Dimensional Analysis</h3>
+    <p>Every physical quantity carries a <strong>dimension</strong>, which describes the kind of quantity it is independently of the units used. Length has dimension \([L]\), mass has dimension \([M]\), and time has dimension \([T]\). Derived quantities have dimensions built from these base dimensions. For example, speed has dimensions:</p>
+    <div class="equation">
+        \([v] = \frac{[L]}{[T]} = LT^{-1}\)
+    </div>
+    <p>while force has dimensions:</p>
+    <div class="equation">
+        \([F] = [M][L][T]^{-2} = MLT^{-2}\)
+    </div>
+    <p>Dimensional analysis cannot supply numerical factors, but it can test whether an equation is plausible, convert units, and predict how a quantity scales when the inputs change. The rule is simple: <strong>every term added or equated must have the same dimensions</strong>.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Dimensions</th>
+                <th>SI unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Length</td><td>\(L\)</td><td>m</td></tr>
+            <tr><td>Mass</td><td>\(M\)</td><td>kg</td></tr>
+            <tr><td>Time</td><td>\(T\)</td><td>s</td></tr>
+            <tr><td>Speed, velocity</td><td>\(LT^{-1}\)</td><td>m/s</td></tr>
+            <tr><td>Acceleration</td><td>\(LT^{-2}\)</td><td>m/s\(^2\)</td></tr>
+            <tr><td>Force</td><td>\(MLT^{-2}\)</td><td>N</td></tr>
+            <tr><td>Energy, work</td><td>\(ML^2T^{-2}\)</td><td>J</td></tr>
+            <tr><td>Power</td><td>\(ML^2T^{-3}\)</td><td>W</td></tr>
+            <tr><td>Pressure</td><td>\(ML^{-1}T^{-2}\)</td><td>Pa</td></tr>
+            <tr><td>Momentum</td><td>\(MLT^{-1}\)</td><td>kg·m/s</td></tr>
+        </tbody>
+    </table>
+
+    <div class="example">
+        <div class="example-header">Example: Checking an Equation</div>
+        <div class="example-content">
+            <p>Show that the kinematic equation \(v^2 = v_0^2 + 2ax\) is dimensionally consistent.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The left side has dimensions \((LT^{-1})^2 = L^2T^{-2}\). The first term on the right, \(v_0^2\), has the same dimensions. The second term is:</p>
+            <div class="equation">
+                \([a][x] = (LT^{-2})(L) = L^2T^{-2}\)
+            </div>
+            <p>All three terms share the dimensions \(L^2T^{-2}\), so the equation is dimensionally consistent. This check would immediately reveal an incorrect expression such as \(v^2 = v_0^2 + 2a/x\), whose second term has dimensions \(LT^{-3}\).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: What Dimensional Analysis Cannot Do</div>
+        <div class="concept-content">
+            <p>A dimensionally correct equation may still be wrong by a dimensionless factor, such as \(\tfrac{1}{2}\) or \(2\pi\). Dimensional analysis is a consistency check, not a proof. It also cannot distinguish between quantities with the same dimensions: torque and energy both have dimensions \(ML^2T^{-2}\), yet they mean different things.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Testing a Pendulum Formula</div>
+        <div class="example-content">
+            <p>The period of a simple pendulum is suspected to be \(T = 2\pi\sqrt{l/g}\), where \(l\) is the length and \(g\) is the acceleration due to gravity. Check the dimensions.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The quantity inside the square root has dimensions:</p>
+            <div class="equation">
+                \(\left[\frac{l}{g}\right] = \frac{L}{LT^{-2}} = T^2\)
+            </div>
+            <p>Taking the square root gives \(T\), which matches the dimension of a period. The factor \(2\pi\) is dimensionless and cannot be found by dimensional analysis, but the structure of the formula is at least plausible.</p>
+        </div>
+    </div>
+
+    <h3>1.1.5 Order-of-Magnitude Estimates</h3>
+    <p>Physicists often need a quick answer before doing a precise calculation. An <strong>order-of-magnitude estimate</strong> (sometimes called a Fermi estimate) rounds every input to one significant figure and aims only for the nearest power of ten. The purpose is to decide whether a detailed calculation is worth doing and whether its result is reasonable.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Order of Magnitude</div>
+        <div class="definition-content">
+            <p>The <strong>order of magnitude</strong> of a quantity is the nearest power of ten to its value. Two quantities differ by one order of magnitude when one is about ten times larger than the other. A result quoted as "about \(10^3\)" is an order-of-magnitude estimate.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Mass of Air in a Room</div>
+        <div class="example-content">
+            <p>Estimate the mass of air in a room measuring \(5\,\text{m} \times 4\,\text{m} \times 3\,\text{m}\). The density of air is about \(1.2\,\text{kg/m}^3\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The volume is:</p>
+            <div class="equation">
+                \(V = (5)(4)(3) = 60\,\text{m}^3\)
+            </div>
+            <p>The mass is density times volume:</p>
+            <div class="equation">
+                \(m = \rho V \approx (1.2)(60) \approx 72\,\text{kg}\)
+            </div>
+            <p>So the air in a small room has a mass of roughly \(70\,\text{kg}\), comparable to the mass of an adult. The estimate is surprising to many people precisely because air is invisible, which is why such calculations are valuable.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: A Fermi Estimate</div>
+        <div class="practice-content">
+            <p>Estimate the number of times a person breathes in one day. State each assumption you make.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Assume a resting breathing rate of about 15 breaths per minute. Then:</p>
+            <div class="equation">
+                \(15\,\frac{\text{breaths}}{\text{min}} \times 60\,\frac{\text{min}}{\text{h}} \times 24\,\frac{\text{h}}{\text{day}} \approx 2.2 \times 10^4\,\text{breaths/day}\)
+            </div>
+            <p>The answer is about \(2 \times 10^4\), or twenty thousand breaths per day. Different assumptions about activity level change the prefactor but not the order of magnitude.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Estimation Is a Skill</div>
+        <div class="concept-content">
+            <p>Good estimates are built from quantities you already know: your height, the speed of a car, the population of a city, the density of water. Breaking an unfamiliar quantity into familiar factors is more reliable than guessing a single number, and it makes the assumptions visible so that they can be checked.</p>
+        </div>
+    </div>
+
+    <h2>1.2 Uncertainty in Measurement and Significant Figures</h2>
+    <p>All measurements are approximations. No instrument is perfect, no observer is perfectly consistent, and every physical quantity has some spread in its value. A useful measurement therefore reports not only the best estimate but also how much that estimate might be off. This section explains how uncertainty is expressed, how it propagates through calculations, and how significant figures communicate precision without overstating it.</p>
+
+    <h3>1.2.1 Uncertainty, Accuracy, and Precision</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Uncertainty and Error</div>
+        <div class="definition-content">
+            <p>The <strong>uncertainty</strong> of a measurement is a quantitative estimate of the range within which the true value is likely to lie. It is often denoted by \(\delta\) (delta) and has the same unit as the quantity being measured.</p>
+            <p>The <strong>absolute uncertainty</strong> is stated in the units of the measurement, as in \(5.2 \pm 0.1\,\text{cm}\). The <strong>relative uncertainty</strong> is the ratio \(\delta x / x\), and the <strong>percentage uncertainty</strong> is that ratio multiplied by \(100\%\).</p>
+            <p><strong>Error</strong> is the difference between a measured value and the true value. Unlike uncertainty, the true error is usually unknown; uncertainty is our honest estimate of its possible size.</p>
+        </div>
+    </div>
+
+    <p>A measurement is often written as:</p>
+    <div class="equation">
+        \(\text{measured value} = \text{best estimate} \pm \text{uncertainty}\)
+    </div>
+    <p>For example, a length might be reported as \(l = 5.2\,\text{cm} \pm 0.1\,\text{cm}\). The relative uncertainty is:</p>
+    <div class="equation">
+        \(\frac{\delta l}{l} = \frac{0.1}{5.2} \approx 0.019 = 1.9\%\)
+    </div>
+    <p>The same absolute uncertainty of \(0.1\,\text{cm}\) would represent a much larger relative uncertainty for a length of \(0.5\,\text{cm}\). This is why relative uncertainty is the better measure of measurement quality.</p>
+
+    <p>Two words are often confused when describing measurements. <strong>Accuracy</strong> describes how close a measured value is to the true value, while <strong>precision</strong> describes how closely repeated measurements agree with one another. A digital balance that always reads \(0.50\,\text{g}\) too high is precise but inaccurate; a ruler read carelessly may be accurate on average but imprecise. Good experimental design aims for both.</p>
+
+    <div class="figure">
+        <svg width="660" height="230" viewBox="0 0 660 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four targets comparing high and low accuracy with high and low precision">
+            <rect width="660" height="230" fill="#f7fbff"/>
+
+            <!-- Panel A: high accuracy, high precision -->
+            <circle cx="95" cy="95" r="55" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+            <circle cx="95" cy="95" r="30" fill="none" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="95" y1="35" x2="95" y2="155" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="35" y1="95" x2="155" y2="95" stroke="#9ca3af" stroke-width="1"/>
+            <circle cx="95" cy="95" r="3" fill="#cc0000"/>
+            <circle cx="91" cy="91" r="3.5" fill="#0066cc"/>
+            <circle cx="99" cy="97" r="3.5" fill="#0066cc"/>
+            <circle cx="94" cy="100" r="3.5" fill="#0066cc"/>
+            <circle cx="98" cy="90" r="3.5" fill="#0066cc"/>
+            <circle cx="89" cy="97" r="3.5" fill="#0066cc"/>
+            <text x="95" y="195" font-size="12" text-anchor="middle" fill="#1f2937">High accuracy</text>
+            <text x="95" y="210" font-size="12" text-anchor="middle" fill="#1f2937">High precision</text>
+
+            <!-- Panel B: high accuracy, low precision -->
+            <circle cx="250" cy="95" r="55" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+            <circle cx="250" cy="95" r="30" fill="none" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="250" y1="35" x2="250" y2="155" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="190" y1="95" x2="310" y2="95" stroke="#9ca3af" stroke-width="1"/>
+            <circle cx="250" cy="95" r="3" fill="#cc0000"/>
+            <circle cx="220" cy="60" r="3.5" fill="#0066cc"/>
+            <circle cx="285" cy="115" r="3.5" fill="#0066cc"/>
+            <circle cx="232" cy="128" r="3.5" fill="#0066cc"/>
+            <circle cx="272" cy="62" r="3.5" fill="#0066cc"/>
+            <circle cx="258" cy="100" r="3.5" fill="#0066cc"/>
+            <text x="250" y="195" font-size="12" text-anchor="middle" fill="#1f2937">High accuracy</text>
+            <text x="250" y="210" font-size="12" text-anchor="middle" fill="#1f2937">Low precision</text>
+
+            <!-- Panel C: low accuracy, high precision -->
+            <circle cx="405" cy="95" r="55" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+            <circle cx="405" cy="95" r="30" fill="none" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="405" y1="35" x2="405" y2="155" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="345" y1="95" x2="465" y2="95" stroke="#9ca3af" stroke-width="1"/>
+            <circle cx="405" cy="95" r="3" fill="#cc0000"/>
+            <circle cx="432" cy="72" r="3.5" fill="#0066cc"/>
+            <circle cx="438" cy="80" r="3.5" fill="#0066cc"/>
+            <circle cx="428" cy="82" r="3.5" fill="#0066cc"/>
+            <circle cx="436" cy="68" r="3.5" fill="#0066cc"/>
+            <circle cx="430" cy="76" r="3.5" fill="#0066cc"/>
+            <text x="405" y="195" font-size="12" text-anchor="middle" fill="#1f2937">Low accuracy</text>
+            <text x="405" y="210" font-size="12" text-anchor="middle" fill="#1f2937">High precision</text>
+
+            <!-- Panel D: low accuracy, low precision -->
+            <circle cx="560" cy="95" r="55" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+            <circle cx="560" cy="95" r="30" fill="none" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="560" y1="35" x2="560" y2="155" stroke="#9ca3af" stroke-width="1"/>
+            <line x1="500" y1="95" x2="620" y2="95" stroke="#9ca3af" stroke-width="1"/>
+            <circle cx="560" cy="95" r="3" fill="#cc0000"/>
+            <circle cx="530" cy="55" r="3.5" fill="#0066cc"/>
+            <circle cx="600" cy="120" r="3.5" fill="#0066cc"/>
+            <circle cx="545" cy="132" r="3.5" fill="#0066cc"/>
+            <circle cx="592" cy="60" r="3.5" fill="#0066cc"/>
+            <circle cx="575" cy="105" r="3.5" fill="#0066cc"/>
+            <text x="560" y="195" font-size="12" text-anchor="middle" fill="#1f2937">Low accuracy</text>
+            <text x="560" y="210" font-size="12" text-anchor="middle" fill="#1f2937">Low precision</text>
+
+            <text x="330" y="20" font-size="13" text-anchor="middle" fill="#1f2937">The red cross marks the true value; the blue dots are repeated measurements.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.2: Accuracy is about the centre of the pattern; precision is about the tightness of the pattern. A measurement system can fail in either respect independently.</div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Random and Systematic Error</div>
+        <div class="definition-content">
+            <p><strong>Random error</strong> varies unpredictably from one measurement to the next. It tends to average out when many readings are combined, and it limits precision.</p>
+            <p><strong>Systematic error</strong> shifts every measurement in the same direction, for example because an instrument is zeroed incorrectly or a ruler has been stretched. Repeating the measurement does not remove it, and it limits accuracy.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Uncertainty Is Not a Mistake</div>
+        <div class="concept-content">
+            <p>Reporting an uncertainty does not mean the experiment failed. It means the experimenter understands the limits of the apparatus and the procedure. A result of \(9.81 \pm 0.02\,\text{m/s}^2\) is more informative than a bare \(9.81\,\text{m/s}^2\), because it tells the reader how seriously to take the last digits.</p>
+        </div>
+    </div>
+
+    <h3>1.2.2 Propagating Uncertainty</h3>
+    <p>Uncertainty also propagates through calculations. The rules below give a conservative estimate of the final uncertainty, suitable for introductory laboratory work.</p>
+
+    <p><strong>Sums and differences.</strong> Absolute uncertainties add:</p>
+    <div class="equation">
+        \(\delta(A \pm B) \approx \delta A + \delta B\)
+    </div>
+
+    <p><strong>Products and quotients.</strong> Fractional uncertainties add:</p>
+    <div class="equation">
+        \(\frac{\delta(AB)}{AB} \approx \frac{\delta A}{A} + \frac{\delta B}{B}, \qquad
+        \frac{\delta(A/B)}{A/B} \approx \frac{\delta A}{A} + \frac{\delta B}{B}\)
+    </div>
+
+    <p><strong>Powers.</strong> A power multiplies the fractional uncertainty by the exponent:</p>
+    <div class="equation">
+        \(\frac{\delta(A^n)}{A^n} \approx |n|\frac{\delta A}{A}\)
+    </div>
+
+    <p>These rules explain why a chain of measurements rarely becomes more precise than its least precise link. They also show why squaring a quantity doubles its fractional uncertainty.</p>
+
+    <div class="example">
+        <div class="example-header">Example: Area of a Rectangle</div>
+        <div class="example-content">
+            <p>The sides of a rectangle are measured as \(a = (8.0 \pm 0.1)\,\text{cm}\) and \(b = (5.0 \pm 0.1)\,\text{cm}\). Estimate the area and its uncertainty.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The area is \(A = ab = (8.0)(5.0) = 40.0\,\text{cm}^2\). The fractional uncertainties are \(0.1/8.0 = 0.0125\) and \(0.1/5.0 = 0.020\). Adding them gives a fractional uncertainty of about \(0.0325\), so:</p>
+            <div class="equation">
+                \(\delta A \approx 0.0325 \times 40.0 \approx 1.3\,\text{cm}^2\)
+            </div>
+            <p>Thus \(A = (40.0 \pm 1.3)\,\text{cm}^2\), which should be reported as \((40 \pm 1)\,\text{cm}^2\) to match the precision of the data. Quoting \(40.0 \pm 1.3\) would overstate what the measurements can support.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Uncertainty in a Speed</div>
+        <div class="practice-content">
+            <p>A car travels \(d = (120 \pm 2)\,\text{m}\) in a time \(t = (6.0 \pm 0.1)\,\text{s}\). Estimate the speed and its absolute uncertainty.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The speed is:</p>
+            <div class="equation">
+                \(v = \frac{d}{t} = \frac{120}{6.0} = 20\,\text{m/s}\)
+            </div>
+            <p>The fractional uncertainties are \(2/120 = 0.0167\) and \(0.1/6.0 = 0.0167\). Their sum is about \(0.033\), so:</p>
+            <div class="equation">
+                \(\delta v \approx 0.033 \times 20 \approx 0.7\,\text{m/s}\)
+            </div>
+            <p>The result is \(v = (20 \pm 0.7)\,\text{m/s}\), or about \((20 \pm 1)\,\text{m/s}\).</p>
+        </div>
+    </div>
+
+    <h3>1.2.3 Significant Figures</h3>
+    <p>Significant figures indicate the precision of a measurement. They are the digits that carry real information about the quantity, including the last digit, which is estimated. Writing too many digits suggests a precision that the instrument does not have; writing too few throws away information.</p>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Rules for Significant Figures</div>
+        <div class="concept-content">
+            <ol>
+                <li>Non-zero digits are always significant.</li>
+                <li>Zeros between non-zero digits are significant.</li>
+                <li>Leading zeros are not significant; they only locate the decimal point.</li>
+                <li>Trailing zeros are significant if there is a decimal point.</li>
+                <li>In scientific notation, all digits before the power of ten are significant.</li>
+            </ol>
+        </div>
+    </div>
+
+    <p>For example, \(0.00450\,\text{m}\) has three significant figures: the leading zeros merely place the decimal point, while the trailing zero after the 5 is significant because it follows a decimal point. The number \(1200\,\text{kg}\) is ambiguous: it may have two, three, or four significant figures. Writing \(1.2 \times 10^3\,\text{kg}\) removes the ambiguity and states that there are two significant figures.</p>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Counting Significant Figures</div>
+        <div class="practice-content">
+            <p>How many significant digits are in the following measurements?</p>
+            <ol type="a">
+                <li>\(0.00340\,\text{m}\)</li>
+                <li>\(1200\,\text{kg}\)</li>
+                <li>\(1.20 \times 10^3\,\text{kg}\)</li>
+                <li>\(450.00\,\text{s}\)</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>\(0.00340\,\text{m}\) has 3 significant digits (3, 4, 0).</li>
+                <li>\(1200\,\text{kg}\) has 2 significant digits (1, 2) under the usual convention, but the notation is ambiguous.</li>
+                <li>\(1.20 \times 10^3\,\text{kg}\) has 3 significant digits (1, 2, 0).</li>
+                <li>\(450.00\,\text{s}\) has 5 significant digits (4, 5, 0, 0, 0).</li>
+            </ol>
+        </div>
+    </div>
+
+    <h3>1.2.4 Significant Figures in Calculations</h3>
+    <p>Two different rules apply, depending on the operation.</p>
+    <ul>
+        <li><strong>Multiplication and division:</strong> the result carries the same number of significant figures as the input with the fewest significant figures.</li>
+        <li><strong>Addition and subtraction:</strong> the result carries the same number of decimal places as the input with the fewest decimal places.</li>
+    </ul>
+
+    <div class="example">
+        <div class="example-header">Example: Rounding a Calculation</div>
+        <div class="example-content">
+            <p>Evaluate \(2.5 \times 3.42\) and \(12.11 + 18.0 + 1.013\), rounding each result correctly.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For the product, \(2.5 \times 3.42 = 8.55\). The factor \(2.5\) has two significant figures, so the result must have two:</p>
+            <div class="equation">
+                \(2.5 \times 3.42 \approx 8.6\)
+            </div>
+            <p>For the sum, the unrounded result is \(31.123\). The term \(18.0\) has one decimal place, so the answer must have one decimal place:</p>
+            <div class="equation">
+                \(12.11 + 18.0 + 1.013 \approx 31.1\)
+            </div>
+            <p>Notice that the addition rule is about decimal places, not significant figures: \(18.0\) has three significant figures but only one decimal place.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Keep Guard Digits</div>
+        <div class="concept-content">
+            <p>Do not round at every intermediate step. Carry one or two extra digits through the calculation, then round only the final answer. Rounding early can change the last digit of the result, especially in multi-step problems.</p>
+        </div>
+    </div>
+
+    <h3>1.2.5 Scientific Notation and Unit Prefixes</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Scientific Notation</div>
+        <div class="definition-content">
+            <p>A quantity is in <strong>scientific notation</strong> when it is written as \(a \times 10^n\), where \(1 \le |a| &lt; 10\) and \(n\) is an integer. The exponent records the order of magnitude, and the digits of \(a\) record the significant figures.</p>
+        </div>
+    </div>
+
+    <p>Scientific notation is convenient for very large and very small quantities. For example:</p>
+    <div class="equation">
+        \(0.00042 = 4.2 \times 10^{-4}, \qquad 6\,300\,000 = 6.3 \times 10^{6}\)
+    </div>
+    <p>It also removes the ambiguity of trailing zeros, because every digit written in the coefficient is significant.</p>
+
+    <p>SI prefixes are shorthand for powers of ten and are used with base units:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Prefix</th>
+                <th>Symbol</th>
+                <th>Factor</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>tera</td><td>T</td><td>\(10^{12}\)</td><td>\(1\,\text{THz} = 10^{12}\,\text{Hz}\)</td></tr>
+            <tr><td>giga</td><td>G</td><td>\(10^{9}\)</td><td>\(1\,\text{GW} = 10^{9}\,\text{W}\)</td></tr>
+            <tr><td>mega</td><td>M</td><td>\(10^{6}\)</td><td>\(1\,\text{MPa} = 10^{6}\,\text{Pa}\)</td></tr>
+            <tr><td>kilo</td><td>k</td><td>\(10^{3}\)</td><td>\(1\,\text{km} = 10^{3}\,\text{m}\)</td></tr>
+            <tr><td>centi</td><td>c</td><td>\(10^{-2}\)</td><td>\(1\,\text{cm} = 10^{-2}\,\text{m}\)</td></tr>
+            <tr><td>milli</td><td>m</td><td>\(10^{-3}\)</td><td>\(1\,\text{mm} = 10^{-3}\,\text{m}\)</td></tr>
+            <tr><td>micro</td><td>µ</td><td>\(10^{-6}\)</td><td>\(1\,\text{µm} = 10^{-6}\,\text{m}\)</td></tr>
+            <tr><td>nano</td><td>n</td><td>\(10^{-9}\)</td><td>\(1\,\text{ns} = 10^{-9}\,\text{s}\)</td></tr>
+            <tr><td>pico</td><td>p</td><td>\(10^{-12}\)</td><td>\(1\,\text{pF} = 10^{-12}\,\text{F}\)</td></tr>
+        </tbody>
+    </table>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Scientific Notation</div>
+        <div class="practice-content">
+            <p>Write each quantity in scientific notation and state the number of significant figures: (a) \(0.000305\,\text{m}\), (b) \(84\,200\,\text{kg}\) (assume three significant figures), (c) \(0.0000000060\,\text{s}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>\(0.000305\,\text{m} = 3.05 \times 10^{-4}\,\text{m}\), with 3 significant figures.</li>
+                <li>\(84\,200\,\text{kg} = 8.42 \times 10^{4}\,\text{kg}\), with 3 significant figures.</li>
+                <li>\(0.0000000060\,\text{s} = 6.0 \times 10^{-9}\,\text{s}\), with 2 significant figures.</li>
+            </ol>
+            <p>In each case the exponent changes the scale, while the coefficient carries the precision.</p>
+        </div>
+    </div>
+
+    <h2>1.3 Vectors: Composition and Resolution</h2>
+    <p>Many physical quantities are not fully described by a number and a unit. A displacement of \(5\,\text{km}\) is incomplete until we know in which direction; a force of \(20\,\text{N}\) is incomplete until we know along which line it acts. Such quantities are vectors, and the mathematics of vectors is the language of mechanics, electromagnetism, and geometry.</p>
+
+    <h3>1.3.1 Scalars and Vectors</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Scalar and Vector</div>
+        <div class="definition-content">
+            <p>A <strong>scalar</strong> is a physical quantity specified completely by a magnitude and a unit. Mass, time, temperature, speed, and energy are scalars.</p>
+            <p>A <strong>vector</strong> is a physical quantity specified by both a magnitude and a direction. Displacement, velocity, acceleration, force, and electric field are vectors.</p>
+            <p>The <strong>magnitude</strong> of a vector is its length, a non-negative scalar written \(|\vec{A}|\) or simply \(A\). The <strong>direction</strong> may be given by an angle, by a unit vector, or by components.</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Scalars</th>
+                <th>Vectors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Distance</td><td>Displacement</td></tr>
+            <tr><td>Speed</td><td>Velocity</td></tr>
+            <tr><td>Mass</td><td>Force</td></tr>
+            <tr><td>Time</td><td>Acceleration</td></tr>
+            <tr><td>Energy, work</td><td>Torque</td></tr>
+            <tr><td>Temperature</td><td>Electric field</td></tr>
+        </tbody>
+    </table>
+
+    <p>Vectors are written with an arrow, as in \(\vec{A}\), or in bold type, as in **A**. Two vectors are <strong>equal</strong> only if they have the same magnitude and the same direction; their starting points do not matter. This freedom to translate a vector is what makes the head-to-tail construction of vector addition possible.</p>
+
+    <div class="figure">
+        <svg width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A vector A with its magnitude and direction labelled, and an equal translated copy of the same vector">
+            <rect width="500" height="260" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-3a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-3k" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+            </defs>
+
+            <!-- reference line and angle -->
+            <line x1="80" y1="190" x2="285" y2="190" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="80" y1="190" x2="250" y2="100" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-3a)"/>
+            <path d="M 130 190 A 50 50 0 0 0 124 166" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+            <text x="138" y="181" font-size="14" fill="#1f2937">θ</text>
+            <text x="145" y="132" font-size="15" fill="#0066cc">|A|</text>
+            <text x="255" y="95" font-size="16" fill="#0066cc">A</text>
+            <text x="80" y="207" font-size="12" text-anchor="middle" fill="#6b7280">tail</text>
+            <text x="250" y="120" font-size="12" text-anchor="middle" fill="#6b7280">head</text>
+
+            <!-- translated copy -->
+            <line x1="320" y1="220" x2="490" y2="130" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-3a)"/>
+            <text x="390" y="160" font-size="14" fill="#0066cc">same vector A</text>
+            <text x="250" y="248" font-size="12" text-anchor="middle" fill="#1f2937">Translating a vector without rotating it does not change the vector.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.3: A vector is fixed by its magnitude and direction, not by its location. The two blue arrows represent the same vector.</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Notation and Magnitude</div>
+        <div class="concept-content">
+            <p>The magnitude \(A = |\vec{A}|\) is always non-negative. The negative of a vector, \(-\vec{A}\), has the same magnitude but the opposite direction. Do not confuse the scalar \(-2\) with a vector: \(-\vec{A}\) is a reversal in space, not a negative length.</p>
+        </div>
+    </div>
+
+    <h3>1.3.2 Vector Addition</h3>
+    <p>Vectors are added by placing them head to tail. If \(\vec{A}\) is drawn first and \(\vec{B}\) is drawn starting from the head of \(\vec{A}\), then the <strong>resultant</strong> \(\vec{R} = \vec{A} + \vec{B}\) is the arrow from the tail of \(\vec{A}\) to the head of \(\vec{B}\). This is the <strong>triangle law</strong> of vector addition.</p>
+    <p>Drawing \(\vec{A}\) and \(\vec{B}\) from a common origin and completing the parallelogram gives the same resultant along the diagonal. This is the <strong>parallelogram law</strong>. Because the order of the two vectors does not matter, vector addition is commutative:</p>
+    <div class="equation">
+        \(\vec{A} + \vec{B} = \vec{B} + \vec{A}\)
+    </div>
+    <p>It is also associative: \((\vec{A} + \vec{B}) + \vec{C} = \vec{A} + (\vec{B} + \vec{C})\).</p>
+
+    <div class="figure">
+        <svg width="640" height="240" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vector addition by the triangle method and by the parallelogram method">
+            <rect width="640" height="240" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-4k" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+                <marker id="arr1-4r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- triangle method -->
+            <line x1="40" y1="180" x2="140" y2="130" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr1-4k)"/>
+            <line x1="140" y1="130" x2="200" y2="50" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr1-4k)"/>
+            <line x1="40" y1="180" x2="200" y2="50" stroke="#cc0000" stroke-width="2.5" marker-end="url(#arr1-4r)"/>
+            <text x="80" y="145" font-size="14" fill="#1f2937">A</text>
+            <text x="180" y="95" font-size="14" fill="#1f2937">B</text>
+            <text x="100" y="105" font-size="14" fill="#cc0000">R</text>
+            <path d="M 70 180 A 30 30 0 0 0 67 165" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="78" y="174" font-size="12" fill="#6b7280">θ</text>
+            <text x="120" y="222" font-size="13" text-anchor="middle" fill="#1f2937">Triangle method</text>
+
+            <!-- parallelogram method -->
+            <line x1="360" y1="180" x2="460" y2="130" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr1-4k)"/>
+            <line x1="360" y1="180" x2="410" y2="100" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr1-4k)"/>
+            <line x1="460" y1="130" x2="510" y2="50" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="410" y1="100" x2="510" y2="50" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="360" y1="180" x2="510" y2="50" stroke="#cc0000" stroke-width="2.5" marker-end="url(#arr1-4r)"/>
+            <text x="400" y="145" font-size="14" fill="#1f2937">A</text>
+            <text x="370" y="130" font-size="14" fill="#1f2937">B</text>
+            <text x="420" y="100" font-size="14" fill="#cc0000">R</text>
+            <text x="435" y="222" font-size="13" text-anchor="middle" fill="#1f2937">Parallelogram method</text>
+        </svg>
+        <div class="figure-caption">Figure 1.4: Two equivalent constructions for \(\vec{R} = \vec{A} + \vec{B}\). The dashed sides of the parallelogram are parallel to the original vectors.</div>
+    </div>
+
+    <p>The geometric construction is excellent for intuition, but calculations are usually easier in components. Since perpendicular components are independent, addition is performed term by term:</p>
+    <div class="equation">
+        \(\vec{R} = \vec{A} + \vec{B} = (A_x + B_x)\hat{i} + (A_y + B_y)\hat{j} + (A_z + B_z)\hat{k}\)
+    </div>
+    <p>The magnitude of the resultant then follows from the Pythagorean relation, and its direction from an inverse tangent.</p>
+
+    <div class="figure">
+        <svg width="500" height="320" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hiker walks three kilometres east and four kilometres north, giving a resultant displacement of five kilometres at fifty-three degrees north of east">
+            <rect width="500" height="320" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-5e" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr1-5n" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-5d" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- compass -->
+            <line x1="430" y1="65" x2="430" y2="25" stroke="#1f2937" stroke-width="2" marker-end="url(#arr1-5n)"/>
+            <text x="430" y="80" font-size="12" text-anchor="middle" fill="#1f2937">N</text>
+
+            <!-- path -->
+            <line x1="90" y1="250" x2="210" y2="250" stroke="#009966" stroke-width="3" marker-end="url(#arr1-5e)"/>
+            <line x1="210" y1="250" x2="210" y2="90" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-5n)"/>
+            <line x1="90" y1="250" x2="210" y2="90" stroke="#cc0000" stroke-width="3" marker-end="url(#arr1-5d)"/>
+
+            <!-- right angle marker -->
+            <path d="M 195 250 L 195 235 L 210 235" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+
+            <!-- angle arc -->
+            <path d="M 135 250 A 45 45 0 0 0 117 214" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="126" y="238" font-size="13" fill="#6b7280">53°</text>
+
+            <!-- labels -->
+            <circle cx="90" cy="250" r="4" fill="#1f2937"/>
+            <text x="78" y="268" font-size="12" fill="#1f2937">start</text>
+            <text x="150" y="270" font-size="13" text-anchor="middle" fill="#009966">3.0 km east</text>
+            <text x="222" y="175" font-size="13" fill="#0066cc">4.0 km north</text>
+            <text x="112" y="160" font-size="13" fill="#cc0000">5.0 km</text>
+            <text x="250" y="300" font-size="13" text-anchor="middle" fill="#1f2937">The displacement is the straight arrow from start to finish.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.5: A hiker walks \(3.0\,\text{km}\) east and then \(4.0\,\text{km}\) north. The resultant displacement has magnitude \(5.0\,\text{km}\) and points \(53^\circ\) north of east.</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Resultant Displacement</div>
+        <div class="example-content">
+            <p>A hiker walks \(3.0\,\text{km}\) due east, then \(4.0\,\text{km}\) due north. Find the magnitude and direction of the total displacement.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take east as \(+x\) and north as \(+y\). The two displacements are:</p>
+            <div class="equation">
+                \(\vec{d}_1 = 3.0\hat{i}\,\text{km}, \qquad \vec{d}_2 = 4.0\hat{j}\,\text{km}\)
+            </div>
+            <p>The resultant is \(\vec{R} = 3.0\hat{i} + 4.0\hat{j}\,\text{km}\). Its magnitude is:</p>
+            <div class="equation">
+                \(R = \sqrt{3.0^2 + 4.0^2} = \sqrt{25} = 5.0\,\text{km}\)
+            </div>
+            <p>The angle measured from east toward north is:</p>
+            <div class="equation">
+                \(\theta = \tan^{-1}\!\left(\frac{4.0}{3.0}\right) \approx 53^\circ\)
+            </div>
+            <p>The displacement is \(5.0\,\text{km}\) at \(53^\circ\) north of east. Notice that the distance travelled is \(7.0\,\text{km}\), which is larger than the magnitude of the displacement; distance and displacement are different quantities.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: When Does \(|\vec{A} + \vec{B}| = A + B\)?</div>
+        <div class="concept-content">
+            <p>The magnitude of a vector sum equals the sum of the magnitudes only when the vectors point in the same direction. If they are perpendicular, \(|\vec{A} + \vec{B}| = \sqrt{A^2 + B^2}\). If they point in opposite directions, the magnitude is \(|A - B|\). In general, the triangle inequality gives \(\big||\vec{A}| - |\vec{B}|\big| \le |\vec{A} + \vec{B}| \le |\vec{A}| + |\vec{B}|\).</p>
+        </div>
+    </div>
+
+    <h3>1.3.3 Vector Subtraction and Scalar Multiplication</h3>
+    <p>Subtraction is addition of the opposite vector:</p>
+    <div class="equation">
+        \(\vec{A} - \vec{B} = \vec{A} + (-\vec{B})\)
+    </div>
+    <p>Geometrically, \(-\vec{B}\) has the same length as \(\vec{B}\) but points in the opposite direction. Equivalently, \(\vec{A} - \vec{B}\) is the vector drawn from the head of \(\vec{B}\) to the head of \(\vec{A}\) when both start from the same point. In components, subtraction is performed term by term:</p>
+    <div class="equation">
+        \(\vec{A} - \vec{B} = (A_x - B_x)\hat{i} + (A_y - B_y)\hat{j} + (A_z - B_z)\hat{k}\)
+    </div>
+    <p>Multiplying a vector by a scalar \(k\) changes its length by the factor \(|k|\); if \(k &lt; 0\), the direction reverses:</p>
+    <div class="equation">
+        \(k\vec{A} = (kA_x)\hat{i} + (kA_y)\hat{j} + (kA_z)\hat{k}\)
+    </div>
+    <p>Scalar multiplication obeys the usual distributive laws, \(k(\vec{A} + \vec{B}) = k\vec{A} + k\vec{B}\) and \((k + m)\vec{A} = k\vec{A} + m\vec{A}\).</p>
+
+    <div class="figure">
+        <svg width="560" height="250" viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vector subtraction shown as the arrow from the head of B to the head of A, and scalar multiples two A and minus A">
+            <rect width="560" height="250" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-6b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-6g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr1-6d" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- subtraction -->
+            <line x1="70" y1="180" x2="230" y2="120" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arr1-6b)"/>
+            <line x1="70" y1="180" x2="160" y2="70" stroke="#009966" stroke-width="2.5" marker-end="url(#arr1-6g)"/>
+            <line x1="160" y1="70" x2="230" y2="120" stroke="#cc0000" stroke-width="2.5" marker-end="url(#arr1-6d)"/>
+            <text x="145" y="140" font-size="14" fill="#0066cc">A</text>
+            <text x="98" y="118" font-size="14" fill="#009966">B</text>
+            <text x="200" y="85" font-size="14" fill="#cc0000">A − B</text>
+            <text x="120" y="225" font-size="13" text-anchor="middle" fill="#1f2937">Subtraction: from the head of B to the head of A</text>
+
+            <!-- scalar multiples -->
+            <line x1="370" y1="180" x2="450" y2="150" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arr1-6b)"/>
+            <line x1="370" y1="180" x2="530" y2="120" stroke="#0066cc" stroke-width="4" marker-end="url(#arr1-6b)"/>
+            <line x1="370" y1="180" x2="290" y2="210" stroke="#cc0000" stroke-width="2.5" marker-end="url(#arr1-6d)"/>
+            <text x="420" y="158" font-size="14" fill="#0066cc">A</text>
+            <text x="470" y="138" font-size="14" fill="#0066cc">2A</text>
+            <text x="310" y="200" font-size="14" fill="#cc0000">−A</text>
+            <text x="410" y="225" font-size="13" text-anchor="middle" fill="#1f2937">Scalar multiples of A</text>
+        </svg>
+        <div class="figure-caption">Figure 1.6: Left: \(\vec{A} - \vec{B}\) joins the head of \(\vec{B}\) to the head of \(\vec{A}\). Right: multiplying by a scalar stretches a vector; a negative scalar also reverses it.</div>
+    </div>
+
+    <p>The <strong>relative vector</strong> from an object at position \(\vec{r}_1\) to an object at \(\vec{r}_2\) is \(\vec{r}_{12} = \vec{r}_2 - \vec{r}_1\). This construction is used throughout kinematics to describe displacements and relative motion. If the two objects move with velocities \(\vec{v}_1\) and \(\vec{v}_2\), the velocity of the second relative to the first is \(\vec{v}_{21} = \vec{v}_2 - \vec{v}_1\).</p>
+
+    <div class="example">
+        <div class="example-header">Example: Vector Subtraction</div>
+        <div class="example-content">
+            <p>Given \(\vec{A} = 5\hat{i} + 2\hat{j}\) and \(\vec{B} = 2\hat{i} + 6\hat{j}\), find \(\vec{A} - \vec{B}\) and its magnitude.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\vec{A} - \vec{B} = (5 - 2)\hat{i} + (2 - 6)\hat{j} = 3\hat{i} - 4\hat{j}\)
+            </div>
+            <p>The magnitude is:</p>
+            <div class="equation">
+                \(|\vec{A} - \vec{B}| = \sqrt{3^2 + (-4)^2} = 5\)
+            </div>
+            <p>The result points into the fourth quadrant, \(4\) units down for every \(3\) units right.</p>
+        </div>
+    </div>
+
+    <h3>1.3.4 Components of a Vector</h3>
+    <p>Any vector can be resolved into components along coordinate axes. In two dimensions, with \(\theta\) measured counterclockwise from the positive \(x\)-axis:</p>
+    <div class="equation">
+        \(A_x = A\cos\theta, \qquad A_y = A\sin\theta\)
+    </div>
+    <p>In three dimensions the vector is written:</p>
+    <div class="equation">
+        \(\vec{A} = A_x\hat{i} + A_y\hat{j} + A_z\hat{k}\)
+    </div>
+    <p>Given the components, the magnitude and direction follow from:</p>
+    <div class="equation">
+        \(A = \sqrt{A_x^2 + A_y^2 + A_z^2}, \qquad \theta = \tan^{-1}\!\left(\frac{A_y}{A_x}\right)\)
+    </div>
+    <p>where \(\theta\) is measured from the positive \(x\)-axis. The inverse tangent must be placed in the correct quadrant: for example, a vector with \(A_x &lt; 0\) and \(A_y &gt; 0\) lies in the second quadrant, so \(180^\circ\) must be added to the calculator result. In three dimensions the direction is specified by the direction cosines:</p>
+    <div class="equation">
+        \(\cos\alpha = \frac{A_x}{A}, \qquad \cos\beta = \frac{A_y}{A}, \qquad \cos\gamma = \frac{A_z}{A}\)
+    </div>
+    <p>which satisfy \(\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1\).</p>
+
+    <div class="figure">
+        <svg width="620" height="260" viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Components of a vector in the first quadrant and in the second quadrant, showing negative x component">
+            <rect width="620" height="260" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-7b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-7k" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polygon points="0 0, 9 3.5, 0 7" fill="#1f2937"/>
+                </marker>
+            </defs>
+
+            <!-- first quadrant -->
+            <line x1="70" y1="190" x2="250" y2="190" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="250" y1="190" x2="250" y2="90" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="70" y1="190" x2="250" y2="90" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-7b)"/>
+            <line x1="70" y1="190" x2="250" y2="190" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arr1-7k)"/>
+            <line x1="250" y1="190" x2="250" y2="90" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arr1-7k)"/>
+            <path d="M 120 190 A 50 50 0 0 0 113 165" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="128" y="181" font-size="13" fill="#6b7280">θ</text>
+            <text x="155" y="205" font-size="13" text-anchor="middle" fill="#1f2937">A<tspan font-size="10" dy="3">x</tspan></text>
+            <text x="262" y="145" font-size="13" fill="#1f2937">A<tspan font-size="10" dy="3">y</tspan></text>
+            <text x="160" y="120" font-size="14" fill="#0066cc">A</text>
+            <text x="160" y="240" font-size="13" text-anchor="middle" fill="#1f2937">(a) First quadrant: both components positive</text>
+
+            <!-- second quadrant -->
+            <line x1="380" y1="190" x2="300" y2="190" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="300" y1="190" x2="300" y2="80" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="380" y1="190" x2="300" y2="80" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-7b)"/>
+            <line x1="380" y1="190" x2="300" y2="190" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arr1-7k)"/>
+            <line x1="300" y1="190" x2="300" y2="80" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arr1-7k)"/>
+            <path d="M 430 190 A 50 50 0 0 0 351 150" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="415" y="172" font-size="13" fill="#6b7280">θ</text>
+            <text x="340" y="205" font-size="13" text-anchor="middle" fill="#1f2937">A<tspan font-size="10" dy="3">x</tspan> &lt; 0</text>
+            <text x="282" y="140" font-size="13" text-anchor="end" fill="#1f2937">A<tspan font-size="10" dy="3">y</tspan></text>
+            <text x="330" y="120" font-size="14" fill="#0066cc">A</text>
+            <text x="430" y="240" font-size="13" text-anchor="middle" fill="#1f2937">(b) Second quadrant: A<tspan font-size="10" dy="3">x</tspan> negative, A<tspan font-size="10" dy="3">y</tspan> positive</text>
+        </svg>
+        <div class="figure-caption">Figure 1.7: Components are signed. The angle \(\theta\) is always measured counterclockwise from the positive \(x\)-axis, so in the second quadrant \(\theta\) is between \(90^\circ\) and \(180^\circ\).</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Components from Magnitude and Angle</div>
+        <div class="practice-content">
+            <p>A vector \(\vec{A}\) has a magnitude of \(10\) units and makes an angle of \(30^\circ\) with the positive \(x\)-axis. Find its \(x\) and \(y\) components.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(A_x = A \cos\theta = 10 \cos 30^\circ = 10 \times \frac{\sqrt{3}}{2} = 5\sqrt{3} \approx 8.66\ \text{units}\)
+            </div>
+            <div class="equation">
+                \(A_y = A \sin\theta = 10 \sin 30^\circ = 10 \times \frac{1}{2} = 5\ \text{units}\)
+            </div>
+            <p>Check: \(\sqrt{8.66^2 + 5^2} = \sqrt{75 + 25} = 10\), as required.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Choosing Axes</div>
+        <div class="concept-content">
+            <p>Coordinate axes are a convenience, not part of the physics. Choose them so that as many vectors as possible lie along an axis; this reduces the number of components you must resolve. The magnitude and direction of the resultant do not depend on the choice of axes.</p>
+        </div>
+    </div>
+
+    <h2>1.4 Unit Vectors</h2>
+    <p>Unit vectors have a magnitude of 1 and are used to specify direction without carrying any scale information. The standard basis vectors \(\hat{i}\), \(\hat{j}\), and \(\hat{k}\) point along the positive \(x\), \(y\), and \(z\) axes respectively, and they are mutually perpendicular.</p>
+
+    <h3>1.4.1 Finding a Unit Vector</h3>
+    <p>The unit vector in the direction of vector \(\vec{A}\) is given by:</p>
+    <div class="equation">
+        \(\hat{A} = \frac{\vec{A}}{|\vec{A}|}\)
+    </div>
+    <p>Dividing by the magnitude preserves the direction and rescales the length to 1. Conversely, any vector can be reconstructed from its magnitude and direction: \(\vec{A} = A\hat{A}\).</p>
+
+    <div class="figure">
+        <svg width="500" height="240" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A vector A and its unit vector in the same direction, which has length one">
+            <rect width="500" height="240" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-8a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-8u" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <line x1="80" y1="190" x2="360" y2="90" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-8a)"/>
+            <line x1="80" y1="190" x2="164" y2="160" stroke="#cc0000" stroke-width="4" marker-end="url(#arr1-8u)"/>
+            <text x="220" y="130" font-size="15" fill="#0066cc">A</text>
+            <text x="150" y="150" font-size="15" fill="#cc0000">Â</text>
+            <text x="90" y="215" font-size="12" fill="#6b7280">tail</text>
+            <text x="250" y="225" font-size="13" text-anchor="middle" fill="#1f2937">Â points in the same direction as A, but its length is exactly 1.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.8: The unit vector \(\hat{A} = \vec{A}/|\vec{A}|\) retains the direction of \(\vec{A}\) and has magnitude 1.</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Unit Vector in Three Dimensions</div>
+        <div class="example-content">
+            <p>Find the unit vector in the direction of \(\vec{A} = 3\hat{i} + 4\hat{j} - 5\hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First, find the magnitude of \(\vec{A}\):</p>
+            <div class="equation">
+                \(|\vec{A}| = \sqrt{3^2 + 4^2 + (-5)^2} = \sqrt{9 + 16 + 25} = \sqrt{50} = 5\sqrt{2}\)
+            </div>
+            <p>The unit vector is:</p>
+            <div class="equation">
+                \(\hat{A} = \frac{3}{5\sqrt{2}}\hat{i} + \frac{4}{5\sqrt{2}}\hat{j} - \frac{5}{5\sqrt{2}}\hat{k} \approx 0.424\hat{i} + 0.566\hat{j} - 0.707\hat{k}\)
+            </div>
+            <p>As a check, the squares of the coefficients sum to \(0.424^2 + 0.566^2 + 0.707^2 \approx 1\).</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: A Unit Vector</div>
+        <div class="practice-content">
+            <p>Find the unit vector in the direction of \(\vec{B} = -2\hat{i} + \hat{j} + 2\hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The magnitude is:</p>
+            <div class="equation">
+                \(|\vec{B}| = \sqrt{(-2)^2 + 1^2 + 2^2} = \sqrt{4 + 1 + 4} = 3\)
+            </div>
+            <p>Therefore:</p>
+            <div class="equation">
+                \(\hat{B} = -\frac{2}{3}\hat{i} + \frac{1}{3}\hat{j} + \frac{2}{3}\hat{k}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Unit Vectors Carry Direction Only</div>
+        <div class="concept-content">
+            <p>A unit vector has no units and no physical size; it is a pure direction. The notation \(\hat{A}\) therefore says "the direction of \(\vec{A}\)", while \(A\hat{A}\) says "magnitude \(A\) in that direction". This separation is used constantly in physics, from the definition of the electric field to the unit tangent vector of a curve.</p>
+        </div>
+    </div>
+
+    <h2>1.5 Dot Product (Scalar Product)</h2>
+    <p>The dot product of two vectors is a scalar quantity that results from multiplying the magnitudes of the vectors and the cosine of the angle between them. Geometrically, it measures how much one vector points along another; physically, it is the operation behind work, power, and flux.</p>
+
+    <h3>1.5.1 Definition and Formula</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Dot Product</div>
+        <div class="definition-content">
+            <p>The <strong>dot product</strong> (or scalar product) of two vectors \(\vec{A}\) and \(\vec{B}\) is the scalar</p>
+            <p>\(\vec{A} \cdot \vec{B} = |\vec{A}||\vec{B}|\cos\theta\)</p>
+            <p>where \(\theta\) is the angle between the vectors, taken in the range \(0^\circ \le \theta \le 180^\circ\).</p>
+        </div>
+    </div>
+
+    <p>In component form, if \(\vec{A} = A_x\hat{i} + A_y\hat{j} + A_z\hat{k}\) and \(\vec{B} = B_x\hat{i} + B_y\hat{j} + B_z\hat{k}\), then:</p>
+    <div class="equation">
+        \(\vec{A} \cdot \vec{B} = A_xB_x + A_yB_y + A_zB_z\)
+    </div>
+    <p>The two forms are equivalent. The component form is usually faster for calculation; the geometric form reveals meaning.</p>
+
+    <div class="figure">
+        <svg width="540" height="300" viewBox="0 0 540 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The projection of vector A onto vector B, with the scalar projection equal to A cosine theta">
+            <rect width="540" height="300" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-9a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr1-9b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-9p" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- B along x -->
+            <line x1="80" y1="220" x2="400" y2="220" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-9b)"/>
+            <!-- A -->
+            <line x1="80" y1="220" x2="260" y2="100" stroke="#009966" stroke-width="3" marker-end="url(#arr1-9a)"/>
+            <!-- perpendicular -->
+            <line x1="260" y1="100" x2="260" y2="220" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <path d="M 245 220 L 245 205 L 260 205" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <!-- projection -->
+            <line x1="80" y1="220" x2="260" y2="220" stroke="#cc0000" stroke-width="6" opacity="0.55" marker-end="url(#arr1-9p)"/>
+            <!-- angle -->
+            <path d="M 130 220 A 50 50 0 0 0 122 196" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="138" y="212" font-size="13" fill="#6b7280">θ</text>
+
+            <text x="160" y="145" font-size="15" fill="#009966">A</text>
+            <text x="345" y="240" font-size="15" fill="#0066cc">B</text>
+            <text x="170" y="243" font-size="13" text-anchor="middle" fill="#cc0000">A cos θ</text>
+            <text x="270" y="165" font-size="12" fill="#6b7280">perpendicular</text>
+            <text x="270" y="285" font-size="13" text-anchor="middle" fill="#1f2937">The red segment is the scalar projection of A onto B.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.9: The dot product is the projection of one vector onto the other, multiplied by the length of the second: \(\vec{A}\cdot\vec{B} = (A\cos\theta)B\).</div>
+    </div>
+
+    <p>The sign of the dot product tells you the angle:</p>
+    <ul>
+        <li>If \(\theta &lt; 90^\circ\), then \(\cos\theta &gt; 0\) and the dot product is positive; the vectors point generally in the same direction.</li>
+        <li>If \(\theta = 90^\circ\), then \(\cos\theta = 0\) and the dot product is zero; the vectors are perpendicular.</li>
+        <li>If \(\theta &gt; 90^\circ\), then \(\cos\theta &lt; 0\) and the dot product is negative; the vectors point generally in opposite directions.</li>
+    </ul>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: A Dot Product of Zero</div>
+        <div class="concept-content">
+            <p>If \(\vec{A}\cdot\vec{B} = 0\) and neither vector is the zero vector, then the vectors must be perpendicular. This is one of the fastest tests for orthogonality in physics and engineering. It does <em>not</em> imply that either vector is zero.</p>
+        </div>
+    </div>
+
+    <h3>1.5.2 Properties of the Dot Product</h3>
+    <ol>
+        <li>Commutative: \(\vec{A} \cdot \vec{B} = \vec{B} \cdot \vec{A}\)</li>
+        <li>Distributive: \(\vec{A} \cdot (\vec{B} + \vec{C}) = \vec{A} \cdot \vec{B} + \vec{A} \cdot \vec{C}\)</li>
+        <li>Scalar multiplication: \((k\vec{A}) \cdot \vec{B} = k(\vec{A} \cdot \vec{B})\)</li>
+        <li>Self-product: \(\vec{A} \cdot \vec{A} = |\vec{A}|^2 = A^2\)</li>
+        <li>Orthogonality: if \(\vec{A} \cdot \vec{B} = 0\) and neither vector is zero, the vectors are perpendicular</li>
+    </ol>
+    <p>For the basis vectors, \(\hat{i}\cdot\hat{i} = \hat{j}\cdot\hat{j} = \hat{k}\cdot\hat{k} = 1\), while \(\hat{i}\cdot\hat{j} = \hat{j}\cdot\hat{k} = \hat{k}\cdot\hat{i} = 0\). These relations generate the component formula.</p>
+
+    <div class="example">
+        <div class="example-header">Example: Computing a Dot Product</div>
+        <div class="example-content">
+            <p>Find the dot product of vectors \(\vec{A} = 2\hat{i} + 3\hat{j} - \hat{k}\) and \(\vec{B} = -\hat{i} + 4\hat{j} + 2\hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the component formula:</p>
+            <div class="equation">
+                \(\vec{A} \cdot \vec{B} = (2)(-1) + (3)(4) + (-1)(2) = -2 + 12 - 2 = 8\)
+            </div>
+            <p>The result is positive, so the angle between the vectors is acute. The dot product is a scalar: it has no direction, although its sign carries geometric information.</p>
+        </div>
+    </div>
+
+    <h3>1.5.3 The Angle Between Two Vectors</h3>
+    <p>Rearranging the geometric definition gives the angle between two vectors:</p>
+    <div class="equation">
+        \(\cos\theta = \frac{\vec{A} \cdot \vec{B}}{|\vec{A}||\vec{B}|}, \qquad
+        \theta = \arccos\!\left(\frac{\vec{A} \cdot \vec{B}}{|\vec{A}||\vec{B}|}\right)\)
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: Angle Between Vectors</div>
+        <div class="practice-content">
+            <p>Given vectors \(\vec{P} = 3\hat{i} - 2\hat{j} + 4\hat{k}\) and \(\vec{Q} = \hat{i} + 5\hat{j} - 2\hat{k}\), calculate:</p>
+            <ol type="a">
+                <li>\(\vec{P} \cdot \vec{Q}\)</li>
+                <li>The angle between \(\vec{P}\) and \(\vec{Q}\)</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>\(\vec{P} \cdot \vec{Q} = (3)(1) + (-2)(5) + (4)(-2) = 3 - 10 - 8 = -15\)</li>
+                <li>First find magnitudes:
+                    <div class="equation">
+                        \(|\vec{P}| = \sqrt{3^2 + (-2)^2 + 4^2} = \sqrt{9 + 4 + 16} = \sqrt{29}\)
+                    </div>
+                    <div class="equation">
+                        \(|\vec{Q}| = \sqrt{1^2 + 5^2 + (-2)^2} = \sqrt{1 + 25 + 4} = \sqrt{30}\)
+                    </div>
+                    <p>Then:</p>
+                    <div class="equation">
+                        \(\cos\theta = \frac{\vec{P} \cdot \vec{Q}}{|\vec{P}||\vec{Q}|} = \frac{-15}{\sqrt{29}\sqrt{30}} \approx \frac{-15}{29.5} \approx -0.508\)
+                    </div>
+                    <div class="equation">
+                        \(\theta = \arccos(-0.508) \approx 120.5^\circ\)
+                    </div>
+                    <p>The obtuse angle is consistent with the negative dot product.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <h3>1.5.4 Vector Projection</h3>
+    <p>The dot product measures how much one vector points along another. The scalar projection of \(\vec{A}\) onto \(\vec{B}\) is:</p>
+    <div class="equation">
+        \(A_{\parallel} = |\vec{A}|\cos\theta = \frac{\vec{A}\cdot\vec{B}}{|\vec{B}|}\)
+    </div>
+    <p>and the vector projection is:</p>
+    <div class="equation">
+        \(\vec{A}_{\parallel} = \left(\frac{\vec{A}\cdot\vec{B}}{|\vec{B}|^2}\right)\vec{B} = (A_{\parallel})\hat{B}\)
+    </div>
+    <p>The component of \(\vec{A}\) perpendicular to \(\vec{B}\) is then \(\vec{A}_{\perp} = \vec{A} - \vec{A}_{\parallel}\), and the two pieces satisfy \(\vec{A} = \vec{A}_{\parallel} + \vec{A}_{\perp}\).</p>
+
+    <div class="example">
+        <div class="example-header">Example: Force Along a Displacement</div>
+        <div class="example-content">
+            <p>Find the component of \(\vec{F} = 6\hat{i} + 8\hat{j}\,\text{N}\) along the direction of \(\vec{d} = 3\hat{i} + 4\hat{j}\,\text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The magnitude of \(\vec{d}\) is \(\sqrt{3^2 + 4^2} = 5\,\text{m}\), so the unit vector along \(\vec{d}\) is \(\hat{d} = (3\hat{i} + 4\hat{j})/5\). Therefore:</p>
+            <div class="equation">
+                \(F_{\parallel} = \vec{F}\cdot\hat{d} = \frac{(6)(3) + (8)(4)}{5} = \frac{50}{5} = 10\,\text{N}\)
+            </div>
+            <p>Only this component does work when the object moves along \(\vec{d}\). The work is \(W = \vec{F}\cdot\vec{d} = 50\,\text{J}\), the same as \(F_{\parallel}|\vec{d}| = (10)(5)\).</p>
+        </div>
+    </div>
+
+    <h3>1.5.5 Applications of the Dot Product</h3>
+    <ol>
+        <li>Finding the angle between two vectors.</li>
+        <li>Projecting one vector onto another.</li>
+        <li>Computing work done by a force: \(W = \vec{F} \cdot \vec{d}\).</li>
+        <li>Testing whether two vectors are perpendicular.</li>
+        <li>Computing power: \(P = \vec{F} \cdot \vec{v}\).</li>
+    </ol>
+    <p>In physics, the work done by a constant force \(\vec{F}\) acting on an object that undergoes a displacement \(\vec{d}\) is given by the dot product \(W = \vec{F} \cdot \vec{d}\). This means only the component of force in the direction of displacement contributes to the work. A force perpendicular to the motion does no work at all, which is why the magnetic force on a moving charge changes its direction but not its speed.</p>
+
+    <div class="example">
+        <div class="example-header">Example: Work at an Angle</div>
+        <div class="example-content">
+            <p>A force of \(50\,\text{N}\) pulls a crate at \(30^\circ\) above the horizontal through a displacement of \(10\,\text{m}\) along the floor. How much work does the force do?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(W = Fd\cos\theta = (50)(10)\cos 30^\circ = 500 \times 0.866 \approx 433\,\text{J}\)
+            </div>
+            <p>The vertical component of the force does no work because it is perpendicular to the displacement. Only the horizontal component, \(F\cos\theta = 43.3\,\text{N}\), contributes.</p>
+        </div>
+    </div>
+
+    <h2>1.6 Cross Product (Vector Product)</h2>
+    <p>The cross product of two vectors is a vector that is perpendicular to both original vectors, with a magnitude equal to the area of the parallelogram formed by the two vectors. It is the operation behind torque, angular momentum, magnetic force, and the geometry of surfaces.</p>
+
+    <h3>1.6.1 Definition and the Right-Hand Rule</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Cross Product</div>
+        <div class="definition-content">
+            <p>The <strong>cross product</strong> (or vector product) of two vectors \(\vec{A}\) and \(\vec{B}\) is the vector</p>
+            <p>\(\vec{A} \times \vec{B} = |\vec{A}||\vec{B}|\sin\theta\,\hat{n}\)</p>
+            <p>where \(\theta\) is the angle between the vectors and \(\hat{n}\) is a unit vector perpendicular to both \(\vec{A}\) and \(\vec{B}\), with its sense fixed by the right-hand rule.</p>
+        </div>
+    </div>
+
+    <p>The <strong>right-hand rule</strong> fixes the direction of \(\hat{n}\): point the fingers of your right hand along \(\vec{A}\) and curl them toward \(\vec{B}\) through the smaller angle; your extended thumb points along \(\vec{A}\times\vec{B}\). Reversing the order of the vectors reverses the thumb, which is why the cross product is anticommutative. The magnitude \(|\vec{A}||\vec{B}|\sin\theta\) is largest when the vectors are perpendicular and zero when they are parallel.</p>
+
+    <div class="figure">
+        <svg width="720" height="300" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The cross product of A along x and B along y points along z, and the magnitude equals the area of the parallelogram">
+            <rect width="720" height="300" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-10a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-10b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr1-10n" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- left: right-handed triad -->
+            <line x1="120" y1="250" x2="340" y2="250" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-10a)"/>
+            <line x1="120" y1="250" x2="250" y2="150" stroke="#009966" stroke-width="3" marker-end="url(#arr1-10b)"/>
+            <line x1="120" y1="250" x2="120" y2="70" stroke="#cc0000" stroke-width="3" marker-end="url(#arr1-10n)"/>
+            <line x1="340" y1="250" x2="470" y2="150" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="250" y1="150" x2="470" y2="150" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <path d="M 220 250 A 100 100 0 0 0 191 179" fill="none" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arr1-10a)"/>
+            <text x="330" y="270" font-size="14" fill="#0066cc">x, A</text>
+            <text x="255" y="145" font-size="14" fill="#009966">y, B</text>
+            <text x="132" y="65" font-size="14" fill="#cc0000">z, A × B</text>
+            <text x="300" y="35" font-size="13" text-anchor="middle" fill="#1f2937">Right-handed triad: rotate A into B, thumb points along A × B.</text>
+
+            <!-- right: parallelogram area -->
+            <line x1="420" y1="250" x2="600" y2="250" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-10a)"/>
+            <line x1="420" y1="250" x2="520" y2="150" stroke="#009966" stroke-width="3" marker-end="url(#arr1-10b)"/>
+            <line x1="600" y1="250" x2="700" y2="150" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="520" y1="150" x2="700" y2="150" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="520" y1="150" x2="520" y2="250" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M 505 250 L 505 235 L 520 235" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+            <text x="500" y="270" font-size="14" fill="#0066cc">A</text>
+            <text x="470" y="190" font-size="14" fill="#009966">B</text>
+            <text x="530" y="205" font-size="12" fill="#6b7280">h = B sin θ</text>
+            <text x="610" y="205" font-size="13" text-anchor="middle" fill="#1f2937">area = |A × B|</text>
+            <text x="560" y="285" font-size="13" text-anchor="middle" fill="#1f2937">The magnitude of A × B equals the parallelogram area.</text>
+        </svg>
+        <div class="figure-caption">Figure 1.10: Left: the right-hand rule gives the direction of \(\vec{A}\times\vec{B}\). Right: the magnitude \(AB\sin\theta\) is the area of the parallelogram spanned by the vectors.</div>
+    </div>
+
+    <h3>1.6.2 Component Form and the Determinant</h3>
+    <p>In component form:</p>
+    <div class="equation">
+        \(\vec{A} \times \vec{B} = (A_yB_z - A_zB_y)\hat{i} + (A_zB_x - A_xB_z)\hat{j} + (A_xB_y - A_yB_x)\hat{k}\)
+    </div>
+    <p>This is often remembered using the determinant formula:</p>
+    <div class="equation">
+        \(\vec{A} \times \vec{B} = \begin{vmatrix}
+            \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+            A_x &amp; A_y &amp; A_z \\
+            B_x &amp; B_y &amp; B_z
+        \end{vmatrix}\)
+    </div>
+    <p>Expanding along the first row gives the component expression above. The determinant is only a memory aid: the entries include vectors, so it is evaluated by the usual cofactor rule with the basis vectors carried along.</p>
+
+    <div class="example">
+        <div class="example-header">Example: Computing a Cross Product</div>
+        <div class="example-content">
+            <p>Find the cross product of vectors \(\vec{A} = 2\hat{i} + 3\hat{j} - \hat{k}\) and \(\vec{B} = -\hat{i} + 4\hat{j} + 2\hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the determinant formula:</p>
+            <div class="equation">
+                \(\vec{A} \times \vec{B} = \begin{vmatrix}
+                    \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+                    2 &amp; 3 &amp; -1 \\
+                    -1 &amp; 4 &amp; 2
+                \end{vmatrix}
+                = \hat{i}(3 \cdot 2 - (-1) \cdot 4) - \hat{j}(2 \cdot 2 - (-1) \cdot (-1)) + \hat{k}(2 \cdot 4 - 3 \cdot (-1))\)
+            </div>
+            <div class="equation">
+                \(= \hat{i}(6 + 4) - \hat{j}(4 - 1) + \hat{k}(8 + 3) = 10\hat{i} - 3\hat{j} + 11\hat{k}\)
+            </div>
+            <p>Check that the result is perpendicular to both inputs by taking dot products:</p>
+            <div class="equation">
+                \((10\hat{i} - 3\hat{j} + 11\hat{k})\cdot(2\hat{i} + 3\hat{j} - \hat{k}) = 20 - 9 - 11 = 0\)
+            </div>
+            <p>The dot product with \(\vec{A}\) is zero, and a similar check with \(\vec{B}\) also gives zero, as it must.</p>
+        </div>
+    </div>
+
+    <h3>1.6.3 Properties of the Cross Product</h3>
+    <ol>
+        <li>Anti-commutative: \(\vec{A} \times \vec{B} = -(\vec{B} \times \vec{A})\)</li>
+        <li>Distributive: \(\vec{A} \times (\vec{B} + \vec{C}) = \vec{A} \times \vec{B} + \vec{A} \times \vec{C}\)</li>
+        <li>Scalar multiplication: \((k\vec{A}) \times \vec{B} = k(\vec{A} \times \vec{B})\)</li>
+        <li>Parallel vectors: if \(\vec{A} \times \vec{B} = \vec{0}\) and neither vector is zero, the vectors are parallel</li>
+        <li>Magnitude equals the area of the parallelogram formed by the vectors</li>
+        <li>Not associative in general: \((\vec{A} \times \vec{B}) \times \vec{C} \neq \vec{A} \times (\vec{B} \times \vec{C})\)</li>
+    </ol>
+    <p>For the basis vectors, the cyclic relations are \(\hat{i}\times\hat{j} = \hat{k}\), \(\hat{j}\times\hat{k} = \hat{i}\), and \(\hat{k}\times\hat{i} = \hat{j}\). Reversing any pair changes the sign, for example \(\hat{j}\times\hat{i} = -\hat{k}\).</p>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem: A Perpendicular Unit Vector</div>
+        <div class="practice-content">
+            <p>Find a unit vector perpendicular to both \(\vec{A} = \hat{i} + \hat{j}\) and \(\vec{B} = \hat{j} + \hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Compute the cross product:</p>
+            <div class="equation">
+                \(\vec{A} \times \vec{B} = \begin{vmatrix}
+                    \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+                    1 &amp; 1 &amp; 0 \\
+                    0 &amp; 1 &amp; 1
+                \end{vmatrix}
+                = \hat{i}(1 - 0) - \hat{j}(1 - 0) + \hat{k}(1 - 0) = \hat{i} - \hat{j} + \hat{k}\)
+            </div>
+            <p>The magnitude is \(\sqrt{1^2 + (-1)^2 + 1^2} = \sqrt{3}\), so the unit vector is:</p>
+            <div class="equation">
+                \(\hat{n} = \frac{1}{\sqrt{3}}\hat{i} - \frac{1}{\sqrt{3}}\hat{j} + \frac{1}{\sqrt{3}}\hat{k}\)
+            </div>
+            <p>The opposite vector \(-\hat{n}\) is also a valid answer; both directions are perpendicular to the plane containing \(\vec{A}\) and \(\vec{B}\).</p>
+        </div>
+    </div>
+
+    <h3>1.6.4 Torque: A Cross Product in Action</h3>
+    <p>The torque produced by a force \(\vec{F}\) applied at position \(\vec{r}\) relative to a pivot is:</p>
+    <div class="equation">
+        \(\vec{\tau} = \vec{r} \times \vec{F}\)
+    </div>
+    <p>Its magnitude is \(\tau = rF\sin\theta\), where \(\theta\) is the angle between the position vector and the force. The direction of the torque is perpendicular to the plane of \(\vec{r}\) and \(\vec{F}\), given by the right-hand rule. A force applied directly toward or away from the pivot produces no torque, because \(\sin\theta = 0\).</p>
+
+    <div class="example">
+        <div class="example-header">Example: Torque About the Origin</div>
+        <div class="example-content">
+            <p>A force \(\vec{F} = -3\hat{j} + 4\hat{k}\,\text{N}\) is applied at position \(\vec{r} = 0.5\hat{i} + 0.2\hat{j}\,\text{m}\). Calculate the torque about the origin.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\vec{\tau} = \vec{r} \times \vec{F} = \begin{vmatrix}
+                    \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+                    0.5 &amp; 0.2 &amp; 0 \\
+                    0 &amp; -3 &amp; 4
+                \end{vmatrix}\)
+            </div>
+            <div class="equation">
+                \(= \hat{i}\big[(0.2)(4) - (0)(-3)\big] - \hat{j}\big[(0.5)(4) - (0)(0)\big] + \hat{k}\big[(0.5)(-3) - (0.2)(0)\big]\)
+            </div>
+            <div class="equation">
+                \(= 0.8\hat{i} - 2.0\hat{j} - 1.5\hat{k}\ \text{N}\cdot\text{m}\)
+            </div>
+            <p>The magnitude is \(\sqrt{0.8^2 + 2.0^2 + 1.5^2} \approx 2.6\,\text{N}\cdot\text{m}\). The negative \(z\)-component means the torque tends to rotate the system clockwise when viewed from above.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Dot Versus Cross Product</div>
+        <div class="concept-content">
+            <p>The dot product answers "how much do these vectors point along each other?" and returns a scalar. The cross product answers "how perpendicular are these vectors, and in what sense?" and returns a vector. Work uses the dot product because only the component of force along the displacement matters; torque uses the cross product because only the perpendicular component of force produces rotation.</p>
+        </div>
+    </div>
+
+    <h2>1.7 Scalar Triple Product</h2>
+    <p>Three vectors can be combined into a single scalar by taking a dot product with a cross product. The result, \(\vec{A}\cdot(\vec{B}\times\vec{C})\), is called the <strong>scalar triple product</strong>. Its absolute value is the volume of the parallelepiped whose edges are the three vectors.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Scalar Triple Product</div>
+        <div class="definition-content">
+            <p>For vectors \(\vec{A}\), \(\vec{B}\), and \(\vec{C}\), the scalar triple product is</p>
+            <p>\(\vec{A}\cdot(\vec{B}\times\vec{C})\)</p>
+            <p>It may be written as \([\vec{A},\vec{B},\vec{C}]\). Its magnitude equals the volume of the parallelepiped spanned by the three vectors, and its sign records the orientation (handedness) of the triple.</p>
+        </div>
+    </div>
+
+    <p>Because the dot and cross products can be evaluated in either order, the scalar triple product is conveniently written as a determinant:</p>
+    <div class="equation">
+        \(\vec{A}\cdot(\vec{B}\times\vec{C}) = \begin{vmatrix}
+            A_x &amp; A_y &amp; A_z \\
+            B_x &amp; B_y &amp; B_z \\
+            C_x &amp; C_y &amp; C_z
+        \end{vmatrix}\)
+    </div>
+    <p>If the three vectors lie in the same plane (they are <strong>coplanar</strong>), the parallelepiped is flattened and the volume is zero. Thus a zero scalar triple product is a test for coplanarity.</p>
+
+    <div class="figure">
+        <svg width="560" height="350" viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A parallelepiped spanned by three vectors A, B, and C, whose volume is the scalar triple product">
+            <rect width="560" height="350" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr1-11a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr1-11b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr1-11c" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+            </defs>
+
+            <!-- hidden edges -->
+            <line x1="220" y1="200" x2="420" y2="200" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+            <line x1="220" y1="200" x2="220" y2="70" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+
+            <!-- visible box edges -->
+            <line x1="110" y1="270" x2="310" y2="270" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-11a)"/>
+            <line x1="110" y1="270" x2="220" y2="200" stroke="#009966" stroke-width="3" marker-end="url(#arr1-11b)"/>
+            <line x1="110" y1="270" x2="110" y2="140" stroke="#cc0000" stroke-width="3" marker-end="url(#arr1-11c)"/>
+            <line x1="310" y1="270" x2="420" y2="200" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="310" y1="270" x2="310" y2="140" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="110" y1="140" x2="310" y2="140" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="110" y1="140" x2="220" y2="70" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="420" y1="200" x2="420" y2="70" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="310" y1="140" x2="420" y2="70" stroke="#1f2937" stroke-width="1.4"/>
+            <line x1="220" y1="70" x2="420" y2="70" stroke="#1f2937" stroke-width="1.4"/>
+
+            <!-- labels -->
+            <text x="205" y="290" font-size="15" fill="#0066cc">A</text>
+            <text x="150" y="238" font-size="15" fill="#009966">B</text>
+            <text x="82" y="205" font-size="15" fill="#cc0000">C</text>
+            <text x="300" y="335" font-size="14" text-anchor="middle" fill="#1f2937">Volume = |A · (B × C)|</text>
+        </svg>
+        <div class="figure-caption">Figure 1.11: The parallelepiped spanned by \(\vec{A}\), \(\vec{B}\), and \(\vec{C}\). Its volume is the absolute value of the scalar triple product.</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Volume of a Parallelepiped</div>
+        <div class="example-content">
+            <p>Find the volume of the parallelepiped defined by \(\vec{A} = \hat{i} + 2\hat{j}\), \(\vec{B} = 3\hat{i} - \hat{k}\), and \(\vec{C} = \hat{j} + 2\hat{k}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First compute the cross product:</p>
+            <div class="equation">
+                \(\vec{B} \times \vec{C} = \begin{vmatrix}
+                    \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+                    3 &amp; 0 &amp; -1 \\
+                    0 &amp; 1 &amp; 2
+                \end{vmatrix}
+                = \hat{i}(0 + 1) - \hat{j}(6 - 0) + \hat{k}(3 - 0) = \hat{i} - 6\hat{j} + 3\hat{k}\)
+            </div>
+            <p>Now take the dot product with \(\vec{A}\):</p>
+            <div class="equation">
+                \(\vec{A}\cdot(\vec{B}\times\vec{C}) = (1)(1) + (2)(-6) + (0)(3) = 1 - 12 = -11\)
+            </div>
+            <p>The negative sign indicates that the triple is left-handed in the order given. The volume is the absolute value:</p>
+            <div class="equation">
+                \(V = |\vec{A}\cdot(\vec{B}\times\vec{C})| = 11\ \text{cubic units}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Cyclic Invariance</div>
+        <div class="concept-content">
+            <p>The scalar triple product is unchanged by a cyclic permutation of the three vectors: \(\vec{A}\cdot(\vec{B}\times\vec{C}) = \vec{B}\cdot(\vec{C}\times\vec{A}) = \vec{C}\cdot(\vec{A}\times\vec{B})\). Swapping any two vectors reverses the sign. This is exactly the behaviour of the determinant when two rows are exchanged.</p>
+        </div>
+    </div>
+
+    <h2>1.8 Vector Identities and Useful Relations</h2>
+    <p>Several identities recur often enough to be worth memorizing. They follow from the definitions of the dot and cross products and can save a great deal of algebra.</p>
+
+    <h3>1.8.1 Products of Three Vectors</h3>
+    <p>The <strong>vector triple product</strong> expands as:</p>
+    <div class="equation">
+        \(\vec{A} \times (\vec{B} \times \vec{C}) = \vec{B}(\vec{A}\cdot\vec{C}) - \vec{C}(\vec{A}\cdot\vec{B})\)
+    </div>
+    <p>The mnemonic is "BAC minus CAB": the middle vector multiplies the dot product of the other two, minus the third vector times the dot product of the first two. Note that the parentheses matter: \(\vec{A}\times(\vec{B}\times\vec{C})\) generally points in the plane of \(\vec{B}\) and \(\vec{C}\), while \((\vec{A}\times\vec{B})\times\vec{C}\) generally points in a different direction.</p>
+
+    <p>The <strong>Lagrange identity</strong> relates the cross product to dot products:</p>
+    <div class="equation">
+        \(|\vec{A}\times\vec{B}|^2 = |\vec{A}|^2|\vec{B}|^2 - (\vec{A}\cdot\vec{B})^2\)
+    </div>
+    <p>It is the vector form of the trigonometric identity \(\sin^2\theta = 1 - \cos^2\theta\), obtained by dividing by \(A^2B^2\).</p>
+
+    <p>Two cross products can be combined using:</p>
+    <div class="equation">
+        \((\vec{A}\times\vec{B})\cdot(\vec{C}\times\vec{D}) = (\vec{A}\cdot\vec{C})(\vec{B}\cdot\vec{D}) - (\vec{A}\cdot\vec{D})(\vec{B}\cdot\vec{C})\)
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Checking the Lagrange Identity</div>
+        <div class="example-content">
+            <p>Verify the Lagrange identity for \(\vec{A} = 3\hat{i} + 4\hat{j}\) and \(\vec{B} = 4\hat{i} - 3\hat{j}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The two vectors are perpendicular, since \(\vec{A}\cdot\vec{B} = 12 - 12 = 0\). Their cross product is:</p>
+            <div class="equation">
+                \(\vec{A}\times\vec{B} = (3)(-3) - (4)(4) = -25\hat{k}\)
+            </div>
+            <p>so \(|\vec{A}\times\vec{B}|^2 = 625\). On the other side:</p>
+            <div class="equation">
+                \(|\vec{A}|^2|\vec{B}|^2 - (\vec{A}\cdot\vec{B})^2 = (25)(25) - 0 = 625\)
+            </div>
+            <p>Both sides agree. For perpendicular vectors the identity reduces to \(|\vec{A}\times\vec{B}| = AB\), which is why the magnitude of the cross product equals the product of the magnitudes in this case.</p>
+        </div>
+    </div>
+
+    <h3>1.8.2 Derivatives of Vector Functions</h3>
+    <p>In later chapters, vectors change with time. The derivative of a vector is taken component by component. The usual product rules carry over, but the order of factors must be preserved for the cross product:</p>
+    <div class="equation">
+        \(\frac{d}{dt}(\vec{A}\cdot\vec{B}) = \frac{d\vec{A}}{dt}\cdot\vec{B} + \vec{A}\cdot\frac{d\vec{B}}{dt}\)
+    </div>
+    <div class="equation">
+        \(\frac{d}{dt}(\vec{A}\times\vec{B}) = \frac{d\vec{A}}{dt}\times\vec{B} + \vec{A}\times\frac{d\vec{B}}{dt}\)
+    </div>
+    <p>A particularly useful result follows from \(\vec{A}\cdot\vec{A} = A^2\): differentiating both sides gives \(2\vec{A}\cdot d\vec{A}/dt = 2A\,dA/dt\), or:</p>
+    <div class="equation">
+        \(\vec{A}\cdot\frac{d\vec{A}}{dt} = A\frac{dA}{dt}\)
+    </div>
+    <p>If the magnitude of a vector is constant, then \(\vec{A}\cdot d\vec{A}/dt = 0\), so the derivative is perpendicular to the vector. This is why the acceleration of an object in uniform circular motion points toward the centre rather than along the velocity: the speed is constant, so the acceleration has no component along the velocity.</p>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Identities Are Shortcuts, Not Magic</div>
+        <div class="concept-content">
+            <p>Every vector identity can be proved by writing both sides in components. When in doubt, expand in \(\hat{i}\), \(\hat{j}\), \(\hat{k}\) and compare coefficients. The identities are worth learning because they turn long component calculations into a few lines, but they are not additional assumptions about nature.</p>
+        </div>
+    </div>
+
+    <h2>1.9 Applications of Vectors in Physics</h2>
+    <p>Vector operations are not an abstract preliminary; they are the working tools of physics. The table below summarizes where each operation appears.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Physical quantity</th>
+                <th>Vector expression</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Work done by a force</td><td>\(W = \vec{F}\cdot\vec{d}\)</td><td>Dot product</td></tr>
+            <tr><td>Power delivered by a force</td><td>\(P = \vec{F}\cdot\vec{v}\)</td><td>Dot product</td></tr>
+            <tr><td>Torque about a point</td><td>\(\vec{\tau} = \vec{r}\times\vec{F}\)</td><td>Cross product</td></tr>
+            <tr><td>Angular momentum</td><td>\(\vec{L} = \vec{r}\times\vec{p}\)</td><td>Cross product</td></tr>
+            <tr><td>Magnetic force on a charge</td><td>\(\vec{F} = q\vec{v}\times\vec{B}\)</td><td>Cross product</td></tr>
+            <tr><td>Area vector of a parallelogram</td><td>\(\vec{A} = \vec{a}\times\vec{b}\)</td><td>Cross product</td></tr>
+            <tr><td>Volume of a parallelepiped</td><td>\(V = |\vec{a}\cdot(\vec{b}\times\vec{c})|\)</td><td>Scalar triple product</td></tr>
+        </tbody>
+    </table>
+
+    <div class="application">
+        <div class="application-header">Real-World Application</div>
+        <div class="application-content">
+            <p><strong>Work and energy.</strong> The work done by a force is calculated using the dot product: \(W = \vec{F} \cdot \vec{d}\). Only the component of force along the displacement transfers energy.</p>
+            <p><strong>Torque and rotation.</strong> The torque produced by a force is calculated using the cross product: \(\vec{\tau} = \vec{r} \times \vec{F}\). The direction of the torque gives the axis of rotation through the right-hand rule.</p>
+            <p><strong>Electromagnetism.</strong> The Lorentz force on a charged particle is given by \(\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})\), which involves both dot and cross products. The magnetic part is always perpendicular to the velocity, so it changes the direction of motion without changing the speed.</p>
+            <p><strong>Fluid dynamics.</strong> The vorticity of a fluid is defined as the curl of the velocity field: \(\vec{\omega} = \nabla \times \vec{v}\). It measures the local rotation of the fluid and is used to model turbulence and weather.</p>
+            <p><strong>Computer graphics and robotics.</strong> Surface normals are found with cross products, and orientations are described with rotation matrices and quaternions. The same vector algebra that describes a force also describes the lighting of a rendered surface.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example: Magnetic Force Does No Work</div>
+        <div class="example-content">
+            <p>A particle with charge \(q\) moves with velocity \(\vec{v}\) in a uniform magnetic field \(\vec{B}\). Show that the magnetic force \(\vec{F} = q\vec{v}\times\vec{B}\) does no work on the particle.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The power delivered by a force is \(P = \vec{F}\cdot\vec{v}\). Substituting the magnetic force:</p>
+            <div class="equation">
+                \(P = (q\vec{v}\times\vec{B})\cdot\vec{v}\)
+            </div>
+            <p>The vector \(\vec{v}\times\vec{B}\) is perpendicular to \(\vec{v}\), so its dot product with \(\vec{v}\) is zero:</p>
+            <div class="equation">
+                \((\vec{v}\times\vec{B})\cdot\vec{v} = 0 \quad\Longrightarrow\quad P = 0\)
+            </div>
+            <p>The magnetic force can change the direction of the velocity but not its magnitude. The kinetic energy of the particle remains constant.</p>
+        </div>
+    </div>
+
+    <h2>Vector Application in Static Equilibrium</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Equilibrium Analysis Example</div>
+        <div class="textbox-content">
+            <p>A common application of vectors in physics is analyzing forces in static equilibrium. An object is in static equilibrium when it is at rest and the net force acting on it is zero. This means the vector sum of all forces is the zero vector.</p>
+            <p>For a particle, equilibrium requires \(\sum\vec{F} = \vec{0}\), which is equivalent to three scalar equations, one for each component. For an extended body, the net torque must also vanish: \(\sum\vec{\tau} = \vec{0}\).</p>
+
+            <div class="figure">
+                <svg width="560" height="380" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A traffic light suspended by two cables at forty-five degrees and thirty degrees above the horizontal, with tension and weight vectors">
+                    <rect width="560" height="380" fill="#f7fbff"/>
+                    <defs>
+                        <marker id="arr1-12t1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                            <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                        </marker>
+                        <marker id="arr1-12t2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                            <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                        </marker>
+                        <marker id="arr1-12w" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                            <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                        </marker>
+                    </defs>
+
+                    <!-- ceiling -->
+                    <rect x="60" y="60" width="440" height="12" fill="#9ca3af"/>
+                    <line x1="60" y1="72" x2="500" y2="72" stroke="#4b5563" stroke-width="2"/>
+
+                    <!-- cables -->
+                    <line x1="250" y1="180" x2="140" y2="72" stroke="#0066cc" stroke-width="3" marker-end="url(#arr1-12t1)"/>
+                    <line x1="250" y1="180" x2="440" y2="72" stroke="#cc0000" stroke-width="3" marker-end="url(#arr1-12t2)"/>
+
+                    <!-- horizontal reference and angles -->
+                    <line x1="110" y1="180" x2="470" y2="180" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,4"/>
+                    <path d="M 200 180 A 50 50 0 0 0 215 145" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+                    <text x="188" y="168" font-size="13" fill="#6b7280">45°</text>
+                    <path d="M 300 180 A 50 50 0 0 0 293 155" fill="none" stroke="#6b7280" stroke-width="1.2"/>
+                    <text x="306" y="170" font-size="13" fill="#6b7280">30°</text>
+
+                    <!-- support and light -->
+                    <line x1="250" y1="180" x2="250" y2="240" stroke="#4b5563" stroke-width="3"/>
+                    <rect x="225" y="240" width="50" height="80" rx="6" fill="#ffd700" stroke="#b8860b" stroke-width="2"/>
+                    <circle cx="250" cy="260" r="6" fill="#cc0000"/>
+                    <circle cx="250" cy="282" r="6" fill="#ff9900"/>
+                    <circle cx="250" cy="304" r="6" fill="#009966"/>
+
+                    <!-- weight -->
+                    <line x1="250" y1="320" x2="250" y2="355" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr1-12w)"/>
+
+                    <!-- labels -->
+                    <text x="160" y="120" font-size="15" fill="#0066cc">T₁</text>
+                    <text x="350" y="120" font-size="15" fill="#cc0000">T₂</text>
+                    <text x="262" y="345" font-size="14" fill="#1f2937">W = mg</text>
+                    <text x="280" y="365" font-size="12" fill="#6b7280">traffic light</text>
+                    <text x="280" y="200" font-size="12" fill="#6b7280">knot</text>
+                </svg>
+                <div class="figure-caption">Figure 1.12: A traffic light suspended by two cables at \(45^\circ\) and \(30^\circ\) above the horizontal. The three forces on the knot must sum to zero.</div>
+            </div>
+            <p><strong>Problem:</strong> A traffic light with a mass of \(15\,\text{kg}\) is suspended by two cables as shown in the diagram. Find the tension in each cable.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>1. Identify the forces and the condition for equilibrium.</strong></p>
+            <p>There are three forces acting on the point where the cables meet: the tension from the left cable (\(\vec{T}_1\)), the tension from the right cable (\(\vec{T}_2\)), and the downward force of gravity on the traffic light (\(\vec{W}\)).</p>
+            <p>The weight of the traffic light is \(W = mg = (15\,\text{kg})(9.8\,\text{m/s}^2) = 147\,\text{N}\). So the weight vector is \(\vec{W} = -147\hat{j}\,\text{N}\).</p>
+            <p>For the system to be in equilibrium, the vector sum of the forces must be zero:</p>
+            <div class="equation">
+                \(\sum \vec{F} = \vec{T}_1 + \vec{T}_2 + \vec{W} = \vec{0}\)
+            </div>
+            <p>This vector equation can be broken down into two scalar equations for the \(x\) and \(y\) components:</p>
+            <div class="equation">
+                \(\sum F_x = T_{1x} + T_{2x} + W_x = 0\)
+            </div>
+            <div class="equation">
+                \(\sum F_y = T_{1y} + T_{2y} + W_y = 0\)
+            </div>
+
+            <p><strong>2. Resolve each force vector into its components.</strong></p>
+            <p>Let \(T_1\) and \(T_2\) be the magnitudes of the tension vectors. The cables pull away from the knot, so \(\vec{T}_1\) points up and to the left while \(\vec{T}_2\) points up and to the right.</p>
+            <p>For \(\vec{T}_1\):</p>
+            <div class="equation">
+                \(T_{1x} = -T_1 \cos 45^\circ, \qquad T_{1y} = T_1 \sin 45^\circ\)
+            </div>
+            <p>For \(\vec{T}_2\):</p>
+            <div class="equation">
+                \(T_{2x} = T_2 \cos 30^\circ, \qquad T_{2y} = T_2 \sin 30^\circ\)
+            </div>
+            <p>For \(\vec{W}\):</p>
+            <div class="equation">
+                \(W_x = 0, \qquad W_y = -147\,\text{N}\)
+            </div>
+
+            <p><strong>3. Set up and solve the system of equations.</strong></p>
+            <p>Substitute the components into the equilibrium equations:</p>
+            <div class="equation">
+                \(-T_1 \cos 45^\circ + T_2 \cos 30^\circ = 0\)
+            </div>
+            <div class="equation">
+                \(T_1 \sin 45^\circ + T_2 \sin 30^\circ - 147 = 0\)
+            </div>
+            <p>From the first equation, express \(T_2\) in terms of \(T_1\):</p>
+            <div class="equation">
+                \(T_2 = T_1 \frac{\cos 45^\circ}{\cos 30^\circ} = T_1 \frac{\sqrt{2}/2}{\sqrt{3}/2} = T_1\frac{\sqrt{2}}{\sqrt{3}}\)
+            </div>
+            <p>Substituting into the second equation:</p>
+            <div class="equation">
+                \(T_1 \left(\frac{\sqrt{2}}{2}\right) + T_1 \left(\frac{\sqrt{2}}{\sqrt{3}}\right)\left(\frac{1}{2}\right) = 147\)
+            </div>
+            <div class="equation">
+                \(T_1 \left(\frac{\sqrt{6} + \sqrt{2}}{2\sqrt{3}}\right) = 147 \quad\Longrightarrow\quad T_1 \approx 131.8\,\text{N}\)
+            </div>
+            <p>Now find \(T_2\):</p>
+            <div class="equation">
+                \(T_2 = T_1 \frac{\sqrt{2}}{\sqrt{3}} \approx 107.6\,\text{N}\)
+            </div>
+            <p><strong>Check.</strong> The horizontal components are \(131.8\cos 45^\circ \approx 93.2\,\text{N}\) to the left and \(107.6\cos 30^\circ \approx 93.2\,\text{N}\) to the right, so they cancel. The vertical components are \(131.8\sin 45^\circ \approx 93.2\,\text{N}\) and \(107.6\sin 30^\circ \approx 53.8\,\text{N}\), which add to \(147\,\text{N}\) and balance the weight.</p>
+            <p><strong>Conclusion:</strong> The tension in the left cable is approximately \(131.8\,\text{N}\), and the tension in the right cable is approximately \(107.6\,\text{N}\). The left cable carries the larger tension because it is steeper: it supports a larger share of the vertical load for the same horizontal pull.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Three Forces in Equilibrium</div>
+        <div class="concept-content">
+            <p>When exactly three non-parallel forces act on an object in equilibrium, their lines of action must meet at a common point, and the vectors must form a closed triangle when placed head to tail. This geometric condition is often faster than solving components, and it provides an immediate check on the signs of the answers.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Physics problems rarely yield to formula hunting. A reliable approach is to translate the words into quantities with units, draw a diagram, choose coordinate axes, and only then select the relevant mathematical tool. For vector problems, this usually means resolving each vector into components before adding, subtracting, or multiplying.</p>
+    <p>Two checks catch many errors: dimensional consistency and limiting cases. If an equation gives metres per second squared for a speed, or predicts an unreasonable result when a mass becomes very small, stop and re-examine the setup. A third check is to estimate the answer before calculating it; an order-of-magnitude estimate tells you whether a factor-of-ten slip has occurred.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>List the known and unknown quantities, including their units.</li>
+                <li>Sketch the situation and choose a convenient coordinate system.</li>
+                <li>Convert all data to SI units and carry units through the calculation.</li>
+                <li>Resolve vectors into components before combining them.</li>
+                <li>Use the dot product for projections and work; use the cross product for torque, areas, and perpendicular directions.</li>
+                <li>Check dimensions, signs, significant figures, and limiting cases.</li>
+                <li>Ask whether the answer is physically reasonable and state any assumptions.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example: A Complete Vector Analysis</div>
+        <div class="example-content">
+            <p>Two vectors are given by \(\vec{A} = 3\hat{i} + 4\hat{j}\) and \(\vec{B} = 4\hat{i} - 3\hat{j}\). Find the dot product, the angle between the vectors, the cross product, the area of the parallelogram they span, and the unit vector in the direction of \(\vec{A}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>Dot product.</strong></p>
+            <div class="equation">
+                \(\vec{A} \cdot \vec{B} = (3)(4) + (4)(-3) = 12 - 12 = 0\)
+            </div>
+            <p>Because the dot product is zero, the vectors are perpendicular and the angle between them is \(90^\circ\).</p>
+
+            <p><strong>Cross product.</strong> Both vectors lie in the \(xy\)-plane, so the result has only a \(z\)-component:</p>
+            <div class="equation">
+                \(\vec{A} \times \vec{B} = \big[(3)(-3) - (4)(4)\big]\hat{k} = (-9 - 16)\hat{k} = -25\hat{k}\)
+            </div>
+            <p>The magnitude is \(25\), which equals the area of the parallelogram formed by the vectors. The negative sign means the rotation from \(\vec{A}\) to \(\vec{B}\) is clockwise when viewed from above.</p>
+
+            <p><strong>Unit vector.</strong></p>
+            <div class="equation">
+                \(\hat{A} = \frac{3\hat{i} + 4\hat{j}}{\sqrt{3^2 + 4^2}} = \frac{3}{5}\hat{i} + \frac{4}{5}\hat{j} = 0.6\hat{i} + 0.8\hat{j}\)
+            </div>
+
+            <p><strong>Interpretation.</strong> If \(\vec{A}\) were a force in newtons and \(\vec{B}\) a displacement in metres, the work done would be zero because the force is perpendicular to the displacement. The cross product would give a torque or an area vector of magnitude \(25\) in the appropriate units. The same pair of vectors therefore illustrates all three products: dot, cross, and unit vector.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Navigation systems combine displacement vectors from GPS satellites; robotics uses rotation matrices and cross products to describe orientation; and structural engineers resolve forces into components to check whether a bridge or building will remain in equilibrium. The same vector tools recur throughout the course, from projectile motion to electric and magnetic fields.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>A physical quantity is meaningful only when its numerical value and unit are stated together.</li>
+        <li>SI units provide a common language for measurement, while derived units are combinations of base units.</li>
+        <li>Uncertainty and significant figures communicate how precisely a quantity is known; accuracy and precision are different properties.</li>
+        <li>Dimensional analysis and order-of-magnitude estimates are fast ways to catch algebra and unit errors.</li>
+        <li>Scalars have magnitude only; vectors have magnitude and direction, and they are unchanged by translation.</li>
+        <li>Components turn vector addition and multiplication into manageable scalar equations.</li>
+        <li>A unit vector carries direction only; any vector can be written as its magnitude times a unit vector.</li>
+        <li>The dot product is a scalar and vanishes for perpendicular vectors; the cross product is a vector and vanishes for parallel vectors.</li>
+        <li>The magnitude of the cross product is the area of the parallelogram spanned by the vectors.</li>
+        <li>The scalar triple product gives the volume of a parallelepiped and tests whether three vectors are coplanar.</li>
+        <li>Vector identities such as the vector triple product and the Lagrange identity shorten calculations and reveal geometric structure.</li>
+        <li>Equilibrium requires both zero net force and zero net torque; vector components make the conditions solvable.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+    <p>This chapter covered the fundamental concepts required for quantitative physical science: the nature of measurement, units, uncertainty, and the mathematics of vectors. A measurement pairs a number with a unit, and its precision is limited by the instrument and the procedure. Significant figures and uncertainty statements communicate that precision honestly, while dimensional analysis and estimation provide quick checks on any result.</p>
+    <p>Vectors extend ordinary algebra to quantities with direction. Addition and subtraction are performed geometrically head to tail or algebraically component by component. The dot product produces a scalar that measures projection and underlies work and power; the cross product produces a vector perpendicular to both inputs and underlies torque, angular momentum, and magnetic force. The scalar triple product adds volume and coplanarity, and the standard vector identities organize these operations into a compact toolkit.</p>
+    <p>Mastery of dimensional analysis, significant figures, and vector operations is essential for success in subsequent topics. In the next chapter, these tools are applied immediately to describe motion along a straight line, where position, velocity, and acceleration are the central quantities.</p>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why is it important to use standard units for measurement?</li>
+        <li>Explain the difference between fundamental and derived units, giving an example of each.</li>
+        <li>What is the purpose of dimensional analysis?</li>
+        <li>Distinguish between accuracy and precision.</li>
+        <li>Can a set of measurements be precise but not accurate? Explain.</li>
+        <li>Why can the number of significant figures in a measurement imply its uncertainty?</li>
+        <li>What is the difference between a scalar and a vector?</li>
+        <li>Under what conditions is the magnitude of the sum of two vectors equal to the sum of their magnitudes?</li>
+        <li>Is it possible to add a vector quantity to a scalar quantity? Explain.</li>
+        <li>Can a vector have a component greater than its own magnitude? Explain.</li>
+        <li>Explain why the dot product of two vectors is a scalar while the cross product is a vector. What geometric information does each product encode?</li>
+        <li>A student finds that \(\vec{A}\cdot\vec{B}=0\) and concludes that at least one of the vectors must be zero. Is the student correct? Explain.</li>
+        <li>Why is the right-hand rule needed to define the direction of a cross product, and where does it appear in the definition of torque?</li>
+        <li>Two vectors have equal magnitudes. Under what condition is the magnitude of their sum equal to the magnitude of their difference?</li>
+        <li>Dimensional analysis correctly predicts that kinetic energy has dimensions \(ML^2T^{-2}\), yet it cannot determine the factor \(\tfrac{1}{2}\). Why not?</li>
+        <li>Why does a zero scalar triple product imply that the three vectors are coplanar?</li>
+        <li>A vector has constant magnitude. What can you say about the direction of its time derivative?</li>
+        <li>Can the dot product of two vectors be negative? Can the magnitude of a vector be negative? Explain the difference.</li>
+        <li>Why is an order-of-magnitude estimate useful even when a precise calculation is possible?</li>
+        <li>Two forces of equal magnitude act at an angle of \(120^\circ\). What is the magnitude of their vector sum? Justify your answer geometrically.</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>Perform the following unit conversions using dimensional analysis:
+            <ol type="a">
+                <li>\(65\,\text{miles per hour}\) to metres per second.</li>
+                <li>The density of aluminum is \(2.70\,\text{g/cm}^3\). Convert this to \(\text{kg/m}^3\).</li>
+            </ol>
+        </li>
+        <li>The length and width of a rectangular plate are measured to be \(15.3\,\text{cm}\) and \(12.80\,\text{cm}\), respectively. Find the area of the plate with the correct number of significant figures.</li>
+        <li>The radius of a circle is measured to be \(10.5 \pm 0.2\,\text{m}\). Calculate the area of the circle and its uncertainty.</li>
+        <li>A vector \(\vec{A}\) has a magnitude of \(8.0\) units and makes a \(30^\circ\) angle with the positive \(x\)-axis. Find its \(x\) and \(y\) components.</li>
+        <li>Given two vectors \(\vec{A} = 4.0\hat{i} - 3.0\hat{j}\) and \(\vec{B} = -2.0\hat{i} + 6.0\hat{j}\), calculate:
+            <ol type="a">
+                <li>\(\vec{A} + \vec{B}\)</li>
+                <li>\(\vec{A} - \vec{B}\)</li>
+                <li>The magnitude and direction of \(\vec{A} + \vec{B}\)</li>
+            </ol>
+        </li>
+        <li>A hiker walks \(3.0\,\text{km}\) due east, then \(4.0\,\text{km}\) due north. What is the magnitude of their total displacement from the starting point? What is its direction?</li>
+        <li>Given \(\vec{A} = 2\hat{i} - 3\hat{j} + 4\hat{k}\) and \(\vec{B} = -\hat{i} + 5\hat{j} + 2\hat{k}\), calculate \(\vec{A}+\vec{B}\), \(\vec{A}-\vec{B}\), and \(2\vec{A}+3\vec{B}\).</li>
+        <li>Find the angle between \(\vec{A} = 3\hat{i} + 4\hat{j}\) and \(\vec{B} = -2\hat{i} + 3\hat{j}\).</li>
+        <li>A force \(\vec{F} = 10\hat{i} + 6\hat{j}\,\text{N}\) acts through a displacement \(\vec{d} = 4\hat{i} + 3\hat{j}\,\text{m}\). Find the component of the force along the displacement and the work done.</li>
+        <li>A force \(\vec{F} = -3\hat{j} + 4\hat{k}\,\text{N}\) is applied at position \(\vec{r} = 0.5\hat{i} + 0.2\hat{j}\,\text{m}\). Calculate the torque about the origin.</li>
+        <li>Find the volume of the parallelepiped defined by \(\vec{A} = \hat{i} + 2\hat{j}\), \(\vec{B} = 3\hat{i} - \hat{k}\), and \(\vec{C} = \hat{j} + 2\hat{k}\).</li>
+        <li>Find a unit vector perpendicular to both \(\vec{A} = \hat{i} + \hat{j}\) and \(\vec{B} = \hat{j} + \hat{k}\).</li>
+        <li>The position of a drone changes from \(\vec{r}_1 = 4\hat{i} - 2\hat{j}\,\text{m}\) to \(\vec{r}_2 = -2\hat{i} + 6\hat{j}\,\text{m}\). Find the displacement vector and its direction relative to the positive \(x\)-axis.</li>
+        <li>For \(\vec{A} = 2\hat{i} - \hat{j} + 3\hat{k}\) and \(\vec{B} = \hat{i} + 4\hat{j} - \hat{k}\), verify the Lagrange identity \(|\vec{A}\times\vec{B}|^2 = A^2B^2 - (\vec{A}\cdot\vec{B})^2\).</li>
+        <li>Use the scalar triple product to determine whether the vectors \(\vec{A} = \hat{i}\), \(\vec{B} = \hat{j}\), and \(\vec{C} = \hat{i} + \hat{j}\) are coplanar. Interpret your result geometrically.</li>
+        <li>A force of \(20\,\text{N}\) acts at \(40^\circ\) above the horizontal and drags a box \(15\,\text{m}\) along the floor. Find the work done and the component of the force along the displacement.</li>
+        <li>A wrench \(0.40\,\text{m}\) long is used to turn a bolt. A force of \(80\,\text{N}\) is applied at \(60^\circ\) to the wrench. Calculate the magnitude of the torque about the bolt.</li>
+        <li>A ream of 500 sheets of paper is \(5.0\,\text{cm}\) thick. Estimate the thickness of a single sheet in metres and in micrometres.</li>
+        <li>Convert \(1.0\,\text{g/cm}^3\) to \(\text{kg/m}^3\), and convert \(1.0\,\text{m/s}\) to \(\text{km/h}\).</li>
+        <li>Two vectors of equal magnitude \(10\) units act at an angle of \(120^\circ\) to each other. Find the magnitude of their sum and the magnitude of their difference.</li>
+    </ol>
+
+
+
+
+
+</body>
+</html>

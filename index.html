@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshman Physics - Interactive Course</title>
+    <meta name="description" content="A complete freshman physics course with clear explanations, worked examples, diagrams, and practice problems.">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body class="site-home">
+    <main class="home-shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="hero-eyebrow">Freshman Physics &middot; Interactive Course</p>
+                <h1>Physics, one clear chapter at a time.</h1>
+                <p class="hero-text">A complete first-year physics course built around clear explanations, worked examples, diagrams, and practice problems. Move through the chapters in order or jump straight to the topic you need.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" data-course-start href="Chapter1.html">Start Chapter 1</a>
+                    <a class="btn btn-ghost" href="#chapters">Browse chapters</a>
+                    <a class="btn btn-ghost" href="CourseOutline.html">Course outline</a>
+                </div>
+                <div class="hero-note">
+                    <span>13 chapters</span>
+                    <span>Guided examples</span>
+                    <span>Practice sets</span>
+                    <span>Interactive quizzes</span>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="nucleus" cx="35%" cy="35%" r="70%">
+                            <stop offset="0%" stop-color="#fff3b0"/>
+                            <stop offset="45%" stop-color="#ffcc00"/>
+                            <stop offset="100%" stop-color="#e09f00"/>
+                        </radialGradient>
+                        <linearGradient id="orbit-1" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#7fe0d0" stop-opacity="0.55"/>
+                        </linearGradient>
+                        <linearGradient id="orbit-2" x1="1" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ffcc00" stop-opacity="0.95"/>
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="180" cy="180" r="150" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                    <circle cx="180" cy="180" r="112" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                    <ellipse cx="180" cy="180" rx="146" ry="58" fill="none" stroke="url(#orbit-1)" stroke-width="2.5" transform="rotate(28 180 180)"/>
+                    <ellipse cx="180" cy="180" rx="146" ry="58" fill="none" stroke="url(#orbit-2)" stroke-width="2.5" transform="rotate(-28 180 180)"/>
+                    <ellipse cx="180" cy="180" rx="146" ry="58" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" transform="rotate(90 180 180)"/>
+                    <circle cx="66" cy="240" r="7" fill="#7fe0d0"/>
+                    <circle cx="294" cy="122" r="6" fill="#ffcc00"/>
+                    <circle cx="180" cy="64" r="5" fill="#ffffff"/>
+                    <circle cx="180" cy="180" r="23" fill="url(#nucleus)"/>
+                    <circle cx="171" cy="173" r="6" fill="#ffffff" fill-opacity="0.8"/>
+                    <circle cx="188" cy="187" r="6" fill="#ffffff" fill-opacity="0.65"/>
+                    <circle cx="186" cy="171" r="4" fill="#ffffff" fill-opacity="0.5"/>
+                    <text x="42" y="86" fill="#d6e8ff" font-size="13" font-family="Segoe UI, sans-serif">F = ma</text>
+                    <text x="272" y="292" fill="#d6e8ff" font-size="13" font-family="Segoe UI, sans-serif">E = hf</text>
+                    <text x="284" y="72" fill="#ffcc00" font-size="15" font-family="Segoe UI, sans-serif">&lambda;</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="chapter-section" id="chapters">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Course map</p>
+                    <h2>Explore the chapters</h2>
+                </div>
+                <p>Work through the full sequence, or open a chapter to review a specific topic.</p>
+            </div>
+
+            <div class="chapter-grid">
+                <a class="chapter-card" href="Chapter1.html">
+                    <span class="chapter-number">Chapter 01</span>
+                    <span class="chapter-chip">Foundations</span>
+                    <h3>Preliminaries</h3>
+                    <p>Measurement, units, vectors, and the mathematical language of physics.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter2.html">
+                    <span class="chapter-number">Chapter 02</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Kinematics in One Dimension</h3>
+                    <p>Displacement, velocity, acceleration, and the interpretation of motion graphs.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter3.html">
+                    <span class="chapter-number">Chapter 03</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Kinematics in Two Dimensions</h3>
+                    <p>Projectile motion, circular motion, and relative velocity.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter4.html">
+                    <span class="chapter-number">Chapter 04</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Dynamics</h3>
+                    <p>Newton's laws, forces, friction, and equilibrium.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter5.html">
+                    <span class="chapter-number">Chapter 05</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Gravitation and Kepler's Laws</h3>
+                    <p>Gravity, orbits, and the motion of planets and satellites.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter6.html">
+                    <span class="chapter-number">Chapter 06</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Work and Energy</h3>
+                    <p>Work, kinetic and potential energy, power, and conservation laws.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter7.html">
+                    <span class="chapter-number">Chapter 07</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Linear Momentum</h3>
+                    <p>Impulse, momentum, collisions, and the center of mass.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter8.html">
+                    <span class="chapter-number">Chapter 08</span>
+                    <span class="chapter-chip">Mechanics</span>
+                    <h3>Fluid Mechanics</h3>
+                    <p>Pressure, buoyancy, fluid flow, and Bernoulli's equation.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter9.html">
+                    <span class="chapter-number">Chapter 09</span>
+                    <span class="chapter-chip">Thermal Physics</span>
+                    <h3>Heat and Thermodynamics</h3>
+                    <p>Temperature, heat transfer, thermal expansion, and the laws of thermodynamics.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter10.html">
+                    <span class="chapter-number">Chapter 10</span>
+                    <span class="chapter-chip">Waves</span>
+                    <h3>Oscillations and Waves</h3>
+                    <p>Simple harmonic motion, waves, sound, and resonance.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter11.html">
+                    <span class="chapter-number">Chapter 11</span>
+                    <span class="chapter-chip">Electromagnetism</span>
+                    <h3>Electromagnetism and Electronics</h3>
+                    <p>Electric fields, circuits, magnetism, induction, and electronics.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter12.html">
+                    <span class="chapter-number">Chapter 12</span>
+                    <span class="chapter-chip">Optics</span>
+                    <h3>Geometrical Optics</h3>
+                    <p>Reflection, refraction, lenses, mirrors, and optical instruments.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+
+                <a class="chapter-card" href="Chapter13.html">
+                    <span class="chapter-number">Chapter 13</span>
+                    <span class="chapter-chip">Applications</span>
+                    <h3>Cross-Cutting Application of Physics</h3>
+                    <p>Physics in agriculture, industry, medicine, archaeology, space, and energy.</p>
+                    <span class="chapter-open">Open chapter &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <span>Freshman Physics &middot; Interactive course</span>
+            <a href="CourseOutline.html">Course outline</a>
+            <a href="Chapter1.html">Start from the beginning &rarr;</a>
+        </footer>
+    </main>
+</body>
+</html>

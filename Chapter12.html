@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Geometrical Optics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>    <h1>Chapter 12: Geometrical Optics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Geometrical Optics</div>
+        <div class="textbox-content">
+            <p>Geometrical optics describes light propagation in terms of rays, reflecting and refracting at surfaces and interfaces. The ray model simplifies the wave nature of light while capturing the essential laws of reflection, refraction, and image formation.</p>
+            <p>Reflection and refraction are governed by simple laws, and the mathematics of mirrors and lenses then determines image location, size, and character. Applications range from mirrors and cameras to lenses, microscopes, and telescopes that extend the resolving power of the human eye.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the ray model of light and its applications</li>
+                <li>Apply the laws of reflection and refraction to solve problems</li>
+                <li>Use ray diagrams to locate images formed by lenses and mirrors</li>
+                <li>Apply the thin lens and mirror equations to calculate image properties</li>
+                <li>Differentiate between real and virtual images</li>
+                <li>Understand magnification and its relationship to image size</li>
+                <li>Analyze optical systems with multiple elements</li>
+                <li>Solve problems involving total internal reflection</li>
+                <li>Apply concepts of geometrical optics to practical devices</li>
+                <li>Understand optical aberrations and their corrections</li>
+                <li>Analyze complex optical systems including microscopes and telescopes</li>
+                <li>Apply the lensmaker's equation to determine focal lengths</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>12.1 The Ray Aspect of Light</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Geometrical optics</strong> is the study of light as rays that travel in straight lines in a homogeneous medium and change direction when they encounter surfaces or interfaces between different media.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The ray model of light is valid when:</p>
+            <ul>
+                <li>The objects and apertures are much larger than the wavelength of light</li>
+                <li>We are not concerned with wave phenomena like interference and diffraction</li>
+                <li>Light travels in straight lines in a uniform medium</li>
+                <li>The medium is isotropic (properties are the same in all directions)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Light rays:</p>
+            <ul>
+                <li>Represent the direction of propagation of light waves</li>
+                <li>Are perpendicular to wavefronts</li>
+                <li>Can be used to trace the path of light through optical systems</li>
+                <li>Follow the laws of reflection and refraction at interfaces</li>
+                <li>Obey Fermat's principle of least time</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>The ray model is used in:</p>
+            <ul>
+                <li>Designing lenses for cameras, microscopes, and telescopes</li>
+                <li>Creating optical instruments and systems</li>
+                <li>Analyzing image formation in mirrors and lenses</li>
+                <li>Understanding vision and vision correction</li>
+                <li>Designing illumination systems</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>12.2 Reflection and Refraction</h2>
+
+    <h3>12.2.1 Reflection</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Reflection</strong> is the change in direction of a light ray at an interface between two different media so that the ray returns into the medium from which it originated.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The <strong>Law of Reflection</strong>:</p>
+            <ul>
+                <li>The incident ray, the reflected ray, and the normal to the surface all lie in the same plane</li>
+                <li>The angle of incidence (\(\theta_i\)) equals the angle of reflection (\(\theta_r\)):</li>
+            </ul>
+            <div class="equation">
+                \(\theta_i = \theta_r\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mirror -->
+            <line x1="80" y1="220" x2="420" y2="220" stroke="black" stroke-width="4"/>
+            <line x1="95" y1="232" x2="85" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="135" y1="232" x2="125" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="175" y1="232" x2="165" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="215" y1="232" x2="205" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="255" y1="232" x2="245" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="295" y1="232" x2="285" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="335" y1="232" x2="325" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="375" y1="232" x2="365" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <line x1="415" y1="232" x2="405" y2="220" stroke="#666666" stroke-width="1.5"/>
+            <!-- Normal -->
+            <line x1="250" y1="60" x2="250" y2="270" stroke="#999999" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="258" y="75" font-size="13" fill="#666666">normal</text>
+            <!-- Incident ray -->
+            <line x1="110" y1="80" x2="247" y2="216" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f121red)"/>
+            <line x1="150" y1="123" x2="172" y2="147" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f121red)"/>
+            <text x="120" y="65" font-size="14" fill="#cc0000">incident ray</text>
+            <!-- Reflected ray -->
+            <line x1="253" y1="216" x2="390" y2="80" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f121blue)"/>
+            <line x1="330" y1="145" x2="352" y2="122" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f121blue)"/>
+            <text x="395" y="65" font-size="14" fill="#0066cc">reflected ray</text>
+            <!-- Angle arcs -->
+            <path d="M 250,140 A 80,80 0 0 0 190,163" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="200" y="150" font-size="15" fill="#ff9900">&#952;&#7522;</text>
+            <path d="M 250,140 A 80,80 0 0 1 310,163" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="298" y="150" font-size="15" fill="#ff9900">&#952;&#7523;</text>
+            <text x="250" y="260" font-size="15" text-anchor="middle">&#952;&#7522; = &#952;&#7523;</text>
+            <text x="250" y="285" font-size="13" text-anchor="middle" fill="#666666">mirror surface</text>
+            <defs>
+                <marker id="f121red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f121blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.1: Law of reflection at a plane mirror</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A light ray strikes a mirror at an angle of 30&#176; to the normal. What is the angle of reflection?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>According to the law of reflection:</p>
+            <div class="equation">
+                \(\theta_r = \theta_i = 30^\circ\)
+            </div>
+            <p>The reflected ray makes a 30&#176; angle with the normal.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Specular reflection</strong> occurs from smooth surfaces where parallel incident rays produce parallel reflected rays.</p>
+            <p><strong>Diffuse reflection</strong> occurs from rough surfaces where parallel incident rays are reflected in many different directions.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>For plane mirrors:</p>
+            <ul>
+                <li>The image is virtual, upright, and the same size as the object</li>
+                <li>The image distance equals the object distance (\(d_i = d_o\))</li>
+                <li>The image is laterally inverted (left-right reversal)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A person 1.8 m tall stands 2 m in front of a plane mirror. What is the minimum height of mirror needed for the person to see their full reflection?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using similar triangles, the minimum mirror height is half the person's height:</p>
+            <div class="equation">
+                \(h_{\text{mirror}} = \frac{1.8}{2} = 0.9\,\text{m}\)
+            </div>
+            <p>The mirror must be positioned such that its top is at eye level and its bottom is midway between the eyes and feet.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A small object is placed 25 cm in front of a plane mirror. Where is the image located, and what is its magnification?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For a plane mirror, the image is virtual, upright, and the same size as the object, located behind the mirror at the same distance as the object:</p>
+            <div class="equation">
+                \(d_i = d_o = 25\,\text{cm}\)
+            </div>
+            <div class="equation">
+                \(m = -1\)
+            </div>
+            <p>The image appears 25 cm behind the mirror and is laterally inverted relative to the object.</p>
+        </div>
+    </div>
+
+    <h3>12.2.2 Refraction</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Refraction</strong> is the change in direction of a light ray as it passes from one transparent medium to another.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The <strong>Law of Refraction</strong> (Snell's Law): The incident ray, the refracted ray, and the normal to the surface all lie in the same plane. The relationship between angles and indices of refraction is given by:</p>
+            <div class="equation">
+                \(n_1 \sin\theta_1 = n_2 \sin\theta_2\)
+            </div>
+            <p>where \(n_1\) and \(n_2\) are the indices of refraction of the two media.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Media -->
+            <rect x="40" y="180" width="440" height="160" fill="#cce5ff" fill-opacity="0.5"/>
+            <!-- Interface -->
+            <line x1="40" y1="180" x2="480" y2="180" stroke="black" stroke-width="3"/>
+            <!-- Normal -->
+            <line x1="250" y1="50" x2="250" y2="330" stroke="#999999" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <!-- Incident ray -->
+            <line x1="110" y1="70" x2="247" y2="177" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f122red)"/>
+            <line x1="155" y1="101" x2="178" y2="122" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f122red)"/>
+            <text x="95" y="55" font-size="14" fill="#cc0000">incident ray</text>
+            <!-- Refracted ray (bent toward normal) -->
+            <line x1="253" y1="183" x2="310" y2="320" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f122blue)"/>
+            <line x1="272" y1="229" x2="283" y2="256" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f122blue)"/>
+            <text x="318" y="310" font-size="14" fill="#0066cc">refracted ray</text>
+            <!-- Reflected ray (faint) -->
+            <line x1="253" y1="177" x2="385" y2="70" stroke="#999999" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#f122gray)"/>
+            <text x="390" y="60" font-size="13" fill="#999999">reflected</text>
+            <!-- Angles -->
+            <path d="M 250,110 A 70,70 0 0 0 205,128" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="212" y="118" font-size="15" fill="#ff9900">&#952;&#8321;</text>
+            <path d="M 250,245 A 65,65 0 0 0 275,245" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="258" y="262" font-size="15" fill="#ff9900">&#952;&#8322;</text>
+            <!-- Medium labels -->
+            <text x="100" y="160" font-size="14">medium 1: n&#8321;</text>
+            <text x="100" y="330" font-size="14">medium 2: n&#8322; (n&#8322; &gt; n&#8321;)</text>
+            <text x="400" y="345" font-size="14" fill="#0066cc">n&#8321; sin&#952;&#8321; = n&#8322; sin&#952;&#8322;</text>
+            <defs>
+                <marker id="f122red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f122blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f122gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#999999" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.2: Refraction at an interface between two media (Snell's law)</div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>index of refraction</strong> \(n\) of a medium is defined as:</p>
+            <div class="equation">
+                \(n = \frac{c}{v}\)
+            </div>
+            <p>where \(c\) is the speed of light in vacuum and \(v\) is the speed of light in the medium.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A light ray passes from air (\(n_1 = 1.00\)) into water (\(n_2 = 1.33\)) with an angle of incidence of 30&#176;. Calculate the angle of refraction.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(n_1 \sin\theta_1 = n_2 \sin\theta_2\)
+            </div>
+            <div class="equation">
+                \(1.00 \times \sin 30^\circ = 1.33 \times \sin\theta_2\)
+            </div>
+            <div class="equation">
+                \(0.500 = 1.33 \times \sin\theta_2\)
+            </div>
+            <div class="equation">
+                \(\sin\theta_2 = \frac{0.500}{1.33} = 0.3759\)
+            </div>
+            <div class="equation">
+                \(\theta_2 = \sin^{-1}(0.3759) = 22.1^\circ\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p><strong>Total Internal Reflection</strong> occurs when:</p>
+            <ul>
+                <li>Light travels from a medium with higher index of refraction to one with lower index of refraction</li>
+                <li>The angle of incidence is greater than the critical angle \(\theta_c\) given by:</li>
+            </ul>
+            <div class="equation">
+                \(\sin\theta_c = \frac{n_2}{n_1} \quad \text{for } n_1 > n_2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Media: glass below, air above -->
+            <rect x="40" y="180" width="440" height="160" fill="#d9e8ff" fill-opacity="0.6"/>
+            <line x1="40" y1="180" x2="480" y2="180" stroke="black" stroke-width="3"/>
+            <line x1="250" y1="60" x2="250" y2="330" stroke="#999999" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <!-- Incident ray at critical angle -->
+            <line x1="105" y1="310" x2="247" y2="183" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f123red)"/>
+            <line x1="140" y1="275" x2="165" y2="251" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f123red)"/>
+            <text x="90" y="330" font-size="14" fill="#cc0000">incident ray</text>
+            <!-- Refracted ray grazing the surface -->
+            <line x1="253" y1="180" x2="430" y2="180" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="7,4" marker-end="url(#f123blue)"/>
+            <text x="340" y="168" font-size="14" fill="#0066cc">refracted ray (grazes surface, &#952;&#8322; = 90&#176;)</text>
+            <!-- Second ray beyond critical (total internal reflection) -->
+            <line x1="175" y1="315" x2="247" y2="183" stroke="#ff9900" stroke-width="2" marker-end="url(#f123orange)" opacity="0.7"/>
+            <line x1="253" y1="177" x2="325" y2="55" stroke="#ff9900" stroke-width="2" marker-end="url(#f123orange)" opacity="0.9"/>
+            <text x="330" y="48" font-size="13" fill="#ff9900">totally reflected</text>
+            <!-- Angle -->
+            <path d="M 250,250 A 70,70 0 0 0 205,225" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="210" y="248" font-size="15" fill="#ff9900">&#952;&#8321; = &#952;&#8342;</text>
+            <text x="100" y="160" font-size="14">air: n&#8322; = 1.00</text>
+            <text x="100" y="330" font-size="14">glass: n&#8321; = 1.50</text>
+            <text x="330" y="330" font-size="15" fill="#cc0000">sin&#952;&#8342; = n&#8322;/n&#8321;</text>
+            <defs>
+                <marker id="f123red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f123blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f123orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.3: Total internal reflection at the critical angle</div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Total internal reflection is used in:</p>
+            <ul>
+                <li>Fiber optics communication</li>
+                <li>Prism binoculars</li>
+                <li>Diamond cutting (to enhance brilliance)</li>
+                <li>Medical endoscopes</li>
+                <li>Optical sensors</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the critical angle for light traveling from glass (\(n = 1.50\)) to air (\(n = 1.00\)).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\sin\theta_c = \frac{n_2}{n_1} = \frac{1.00}{1.50} = 0.6667\)
+            </div>
+            <div class="equation">
+                \(\theta_c = \sin^{-1}(0.6667) = 41.8^\circ\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A light ray passes from water (\(n = 1.33\)) into glass (\(n = 1.50\)). If the angle of incidence is 45&#176;, calculate:</p>
+            <p>a) The angle of refraction<br>
+            b) The critical angle for total internal reflection from glass to water</p>
+        </div>
+    </div>
+
+    <h3>12.2.3 Apparent Depth</h3>
+
+    <p>When you look straight down into a pool, the bottom appears shallower than it really is. Rays from the bottom refract away from the normal as they leave the water, and the eye traces them back to a virtual image. For near-normal viewing, the apparent depth is:</p>
+    <div class="equation">
+        \(d_{\text{app}} = \frac{d_{\text{real}}}{n}\)
+    </div>
+    <p>where \(n\) is the refractive index of the liquid. Because \(n>1\), the apparent depth is always less than the real depth.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A swimming pool is \(2.5\,\text{m}\) deep. How deep does it appear to someone looking straight down from above? Take \(n_{\text{water}} = 1.33\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(d_{\text{app}} = \frac{2.5}{1.33} \approx 1.9\,\text{m}\)
+            </div>
+            <p>The pool looks about \(0.6\,\text{m}\) shallower than it actually is. The effect is purely a consequence of refraction at a plane surface and does not depend on the pool's width.</p>
+        </div>
+    </div>
+
+    <h2>12.3 Image Formation by Thin Lenses and Mirrors</h2>
+
+    <h3>12.3.1 Image Formation by Lenses</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>lens</strong> is a transparent optical device with curved surfaces that refracts light to form images.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of lenses:</p>
+            <ul>
+                <li><strong>Converging lenses</strong> (convex lenses): Thicker at the center than at the edges</li>
+                <li><strong>Diverging lenses</strong> (concave lenses): Thinner at the center than at the edges</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points for ray tracing with lenses:</p>
+            <ul>
+                <li>A ray parallel to the principal axis refracts through the focal point</li>
+                <li>A ray through the focal point refracts parallel to the principal axis</li>
+                <li>A ray through the center of the lens continues undeviated</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="600" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Principal axis -->
+            <line x1="40" y1="160" x2="570" y2="160" stroke="black" stroke-width="1.5"/>
+            <!-- Converging lens -->
+            <path d="M 280,80 Q 300,160 280,240 Q 260,160 280,80" fill="#cce5ff" fill-opacity="0.6" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Focal points -->
+            <circle cx="220" cy="160" r="4" fill="black"/>
+            <circle cx="340" cy="160" r="4" fill="black"/>
+            <circle cx="160" cy="160" r="4" fill="#666666"/>
+            <circle cx="400" cy="160" r="4" fill="#666666"/>
+            <text x="220" y="180" font-size="13" text-anchor="middle">F</text>
+            <text x="340" y="180" font-size="13" text-anchor="middle">F&#8242;</text>
+            <text x="160" y="180" font-size="13" text-anchor="middle" fill="#666666">2F</text>
+            <text x="400" y="180" font-size="13" text-anchor="middle" fill="#666666">2F&#8242;</text>
+            <!-- Object -->
+            <line x1="100" y1="160" x2="100" y2="100" stroke="#009966" stroke-width="3" marker-end="url(#f124green)"/>
+            <text x="100" y="90" font-size="13" text-anchor="middle" fill="#009966">object</text>
+            <!-- Ray 1: parallel then through F' -->
+            <line x1="100" y1="100" x2="278" y2="100" stroke="#cc0000" stroke-width="2" marker-end="url(#f124red)"/>
+            <line x1="278" y1="100" x2="330" y2="176" stroke="#cc0000" stroke-width="2" marker-end="url(#f124red)"/>
+            <line x1="330" y1="176" x2="365" y2="226" stroke="#cc0000" stroke-width="2" marker-end="url(#f124red)"/>
+            <!-- Ray 2: through center -->
+            <line x1="100" y1="100" x2="280" y2="160" stroke="#0066cc" stroke-width="2" marker-end="url(#f124blue)"/>
+            <line x1="280" y1="160" x2="365" y2="226" stroke="#0066cc" stroke-width="2" marker-end="url(#f124blue)"/>
+            <!-- Ray 3: through F -->
+            <line x1="100" y1="100" x2="220" y2="160" stroke="#ff9900" stroke-width="2" marker-end="url(#f124orange)"/>
+            <line x1="220" y1="160" x2="278" y2="186" stroke="#ff9900" stroke-width="2" marker-end="url(#f124orange)"/>
+            <line x1="278" y1="186" x2="365" y2="186" stroke="#ff9900" stroke-width="2" marker-end="url(#f124orange)"/>
+            <line x1="365" y1="186" x2="365" y2="226" stroke="#ff9900" stroke-width="2" marker-end="url(#f124orange)"/>
+            <!-- Image -->
+            <line x1="347" y1="160" x2="347" y2="179" stroke="#cc0000" stroke-width="3.5" marker-end="url(#f124red)"/>
+            <text x="347" y="200" font-size="13" text-anchor="middle" fill="#cc0000">image</text>
+            <!-- f dimension -->
+            <line x1="280" y1="285" x2="340" y2="285" stroke="#666666" stroke-width="1.2" marker-start="url(#f124start)" marker-end="url(#f124end)"/>
+            <text x="310" y="302" font-size="13" text-anchor="middle" fill="#666666">f</text>
+            <line x1="220" y1="285" x2="100" y2="285" stroke="#666666" stroke-width="1.2" marker-start="url(#f124start)" marker-end="url(#f124end)"/>
+            <text x="160" y="302" font-size="13" text-anchor="middle" fill="#666666">d&#8338;</text>
+            <line x1="280" y1="45" x2="347" y2="45" stroke="#666666" stroke-width="1.2" marker-start="url(#f124start)" marker-end="url(#f124end)"/>
+            <text x="314" y="38" font-size="13" text-anchor="middle" fill="#666666">d&#8337;</text>
+            <text x="145" y="130" font-size="12" fill="#cc0000">1: parallel ray</text>
+            <text x="195" y="230" font-size="12" fill="#0066cc">2: center ray</text>
+            <text x="130" y="152" font-size="12" fill="#ff9900">3: focal ray</text>
+            <defs>
+                <marker id="f124green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f124red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f124blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f124orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                </marker>
+                <marker id="f124end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
+                </marker>
+                <marker id="f124start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#666666" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.4: Ray diagram for image formation by a converging lens</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The <strong>thin lens equation</strong>:</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)
+            </div>
+            <p>where \(f\) is the focal length, \(d_o\) is the object distance, and \(d_i\) is the image distance.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A converging lens has a focal length of \(12\,\text{cm}\). An object is placed \(24\,\text{cm}\) from the lens. Find the image distance, the magnification, and describe the image.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the thin lens equation, \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\):</p>
+            <div class="equation">
+                \(\frac{1}{0.12} = \frac{1}{0.24} + \frac{1}{d_i} \;\Rightarrow\; \frac{1}{d_i} = \frac{1}{0.12} - \frac{1}{0.24} = 8.33 - 4.17 = 4.17\,\text{m}^{-1} \;\Rightarrow\; d_i = 0.24\,\text{m} = 24\,\text{cm}\)
+            </div>
+            <div class="equation">
+                \(m = -\frac{d_i}{d_o} = -\frac{0.24}{0.24} = -1\)
+            </div>
+            <p>The image is real, inverted, and the same size as the object, located 24 cm behind the lens.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p><strong>Lensmaker's equation</strong> for a thin lens:</p>
+            <div class="equation">
+                \(\frac{1}{f} = (n - 1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right)\)
+            </div>
+            <p>where \(n\) is the refractive index of the lens material, \(R_1\) and \(R_2\) are the radii of curvature of the two surfaces. Sign convention: \(R\) is positive for convex surfaces and negative for concave surfaces.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The <strong>power</strong> of a lens is the reciprocal of its focal length in metres:</p>
+            <div class="equation">
+                \(P = \frac{1}{f}\)
+            </div>
+            <p>Power is measured in diopters (D), where \(1\,\text{D} = 1\,\text{m}^{-1}\). Converging lenses have positive power and diverging lenses have negative power. For thin lenses in contact, the powers add:</p>
+            <div class="equation">
+                \(P_{\text{total}} = P_1 + P_2 + \cdots\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(+5.0\,\text{D}\) lens is placed in contact with a \(-2.0\,\text{D}\) lens. Find the total power and focal length of the combination.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(P_{\text{total}} = 5.0 + (-2.0) = +3.0\,\text{D}, \qquad f = \frac{1}{P} = \frac{1}{3.0} \approx 0.33\,\text{m} = 33\,\text{cm}\)
+            </div>
+            <p>The combination behaves as a converging lens with focal length about \(33\,\text{cm}\).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p><strong>Magnification</strong>:</p>
+            <div class="equation">
+                \(m = \frac{h_i}{h_o} = -\frac{d_i}{d_o}\)
+            </div>
+            <p>where \(h_i\) is the image height, \(h_o\) is the object height. Negative magnification indicates an inverted image.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An object 2 cm tall is placed 30 cm from a converging lens with focal length 10 cm. Find:</p>
+            <p>a) The image distance<br>
+            b) The magnification<br>
+            c) The image height<br>
+            d) Describe the image</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) Using the thin lens equation:</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{10} = \frac{1}{30} + \frac{1}{d_i}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{d_i} = \frac{1}{10} - \frac{1}{30} = \frac{3 - 1}{30} = \frac{2}{30} = \frac{1}{15}\)
+            </div>
+            <div class="equation">
+                \(d_i = 15\,\text{cm}\)
+            </div>
+            <p>b) Magnification:</p>
+            <div class="equation">
+                \(m = -\frac{d_i}{d_o} = -\frac{15}{30} = -0.5\)
+            </div>
+            <p>c) Image height:</p>
+            <div class="equation">
+                \(m = \frac{h_i}{h_o} \Rightarrow h_i = m \times h_o = -0.5 \times 2 = -1\,\text{cm}\)
+            </div>
+            <p>d) The image is real (positive \(d_i\)), inverted (negative \(m\)), and reduced (|m| &lt; 1).</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A double convex lens is made of glass with \(n = 1.5\). The radii of curvature are \(R_1 = 20\) cm and \(R_2 = -30\) cm. Calculate the focal length of the lens.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\frac{1}{f} = (n - 1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) = (1.5 - 1) \left( \frac{1}{20} - \frac{1}{-30} \right)\)
+            </div>
+            <div class="equation">
+                \(= 0.5 \left( \frac{1}{20} + \frac{1}{30} \right) = 0.5 \left( \frac{3 + 2}{60} \right) = 0.5 \times \frac{5}{60} = 0.5 \times \frac{1}{12} = \frac{1}{24}\)
+            </div>
+            <div class="equation">
+                \(f = 24\,\text{cm}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="600" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Principal axis -->
+            <line x1="40" y1="160" x2="570" y2="160" stroke="black" stroke-width="1.5"/>
+            <!-- Diverging lens -->
+            <path d="M 280,80 Q 262,160 280,240 Q 298,160 280,80" fill="#ffe0e0" fill-opacity="0.6" stroke="#cc0000" stroke-width="2.5"/>
+            <!-- Focal points -->
+            <circle cx="220" cy="160" r="4" fill="black"/>
+            <circle cx="340" cy="160" r="4" fill="black"/>
+            <text x="220" y="180" font-size="13" text-anchor="middle">F</text>
+            <text x="340" y="180" font-size="13" text-anchor="middle">F&#8242;</text>
+            <!-- Object -->
+            <line x1="100" y1="160" x2="100" y2="100" stroke="#009966" stroke-width="3" marker-end="url(#f126green)"/>
+            <text x="100" y="90" font-size="13" text-anchor="middle" fill="#009966">object</text>
+            <!-- Ray 1: parallel then diverge from F -->
+            <line x1="100" y1="100" x2="278" y2="100" stroke="#cc0000" stroke-width="2" marker-end="url(#f126red)"/>
+            <line x1="278" y1="100" x2="238" y2="145" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="238" y1="145" x2="220" y2="160" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="220" y1="160" x2="170" y2="200" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="278" y1="100" x2="390" y2="52" stroke="#cc0000" stroke-width="2" marker-end="url(#f126orange)"/>
+            <!-- Ray 2: through center -->
+            <line x1="100" y1="100" x2="280" y2="160" stroke="#0066cc" stroke-width="2" marker-end="url(#f126blue)"/>
+            <line x1="280" y1="160" x2="420" y2="210" stroke="#0066cc" stroke-width="2" marker-end="url(#f126blue)"/>
+            <!-- Virtual image -->
+            <line x1="238" y1="160" x2="238" y2="145" stroke="#cc0000" stroke-width="3.5" stroke-dasharray="4,3" marker-end="url(#f126red)"/>
+            <text x="238" y="135" font-size="13" text-anchor="middle" fill="#cc0000">image (virtual)</text>
+            <text x="150" y="245" font-size="13" fill="#cc0000">dashed lines: backward extensions</text>
+            <text x="400" y="45" font-size="12" fill="#cc0000">refracted ray diverges</text>
+            <defs>
+                <marker id="f126green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f126red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f126blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f126orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.5: Ray diagram for a diverging lens (virtual, upright, reduced image)</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>An object is placed 20 cm from a diverging lens with focal length -15 cm. Calculate the image distance and magnification. Describe the image formed.</p>
+        </div>
+    </div>
+
+    <h3>12.3.2 Image Formation by Mirrors</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>mirror</strong> is a reflective surface that forms images by reflecting light.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of mirrors:</p>
+            <ul>
+                <li><strong>Concave mirrors</strong>: Curved inward, converging mirrors</li>
+                <li><strong>Convex mirrors</strong>: Curved outward, diverging mirrors</li>
+                <li><strong>Plane mirrors</strong>: Flat surfaces that produce virtual images of the same size</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points for ray tracing with mirrors:</p>
+            <ul>
+                <li>A ray parallel to the principal axis reflects through the focal point</li>
+                <li>A ray through the focal point reflects parallel to the principal axis</li>
+                <li>A ray through the center of curvature reflects back along itself</li>
+                <li>A ray striking the vertex reflects with equal angle of incidence and reflection</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="600" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Principal axis -->
+            <line x1="40" y1="160" x2="570" y2="160" stroke="black" stroke-width="1.5"/>
+            <!-- Concave mirror (bulges right, opens left) -->
+            <path d="M 415,60 A 160,160 0 0 1 415,260" fill="#cce5ff" fill-opacity="0.4" stroke="#0066cc" stroke-width="4"/>
+            <line x1="420" y1="70" x2="432" y2="58" stroke="#666666" stroke-width="1.5"/>
+            <line x1="428" y1="95" x2="442" y2="86" stroke="#666666" stroke-width="1.5"/>
+            <line x1="432" y1="120" x2="447" y2="114" stroke="#666666" stroke-width="1.5"/>
+            <!-- C and F -->
+            <circle cx="290" cy="160" r="4" fill="black"/>
+            <circle cx="370" cy="160" r="4" fill="black"/>
+            <text x="290" y="180" font-size="13" text-anchor="middle">C (2F)</text>
+            <text x="370" y="180" font-size="13" text-anchor="middle">F</text>
+            <!-- Object -->
+            <line x1="120" y1="160" x2="120" y2="110" stroke="#009966" stroke-width="3" marker-end="url(#f125green)"/>
+            <text x="120" y="100" font-size="13" text-anchor="middle" fill="#009966">object</text>
+            <!-- Ray 1: parallel then through F -->
+            <line x1="120" y1="110" x2="442" y2="110" stroke="#cc0000" stroke-width="2" marker-end="url(#f125red)"/>
+            <line x1="442" y1="110" x2="330" y2="190" stroke="#cc0000" stroke-width="2" marker-end="url(#f125red)"/>
+            <!-- Ray 2: through C, reflects back -->
+            <line x1="120" y1="110" x2="443" y2="205" stroke="#0066cc" stroke-width="2" marker-end="url(#f125blue)"/>
+            <line x1="443" y1="205" x2="320" y2="171" stroke="#0066cc" stroke-width="2" marker-end="url(#f125blue)"/>
+            <!-- Image (inverted, between C and F) -->
+            <line x1="344" y1="160" x2="344" y2="176" stroke="#cc0000" stroke-width="3.5" marker-end="url(#f125red)"/>
+            <text x="344" y="196" font-size="13" text-anchor="middle" fill="#cc0000">image</text>
+            <text x="260" y="250" font-size="12" fill="#cc0000">red: parallel ray &#8594; through F</text>
+            <text x="260" y="270" font-size="12" fill="#0066cc">blue: ray through C &#8594; reflects back</text>
+            <text x="490" y="165" font-size="13" fill="#666666">concave</text>
+            <text x="490" y="182" font-size="13" fill="#666666">mirror</text>
+            <defs>
+                <marker id="f125green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f125red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f125blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.6: Ray diagram for a concave mirror (object beyond C)</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The <strong>mirror equation</strong> is identical to the thin lens equation:</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>For mirrors:</p>
+            <ul>
+                <li>\(f\) is positive for concave mirrors</li>
+                <li>\(f\) is negative for convex mirrors</li>
+                <li>\(d_i\) is positive for real images (in front of mirror)</li>
+                <li>\(d_i\) is negative for virtual images (behind mirror)</li>
+                <li>\(R\) (radius of curvature) is related to focal length by \(f = R/2\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An object 3 cm tall is placed 20 cm from a concave mirror with focal length 15 cm. Find:</p>
+            <p>a) The image distance<br>
+            b) The magnification<br>
+            c) The image height<br>
+            d) Describe the image</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) Using the mirror equation:</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{15} = \frac{1}{20} + \frac{1}{d_i}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{d_i} = \frac{1}{15} - \frac{1}{20} = \frac{4 - 3}{60} = \frac{1}{60}\)
+            </div>
+            <div class="equation">
+                \(d_i = 60\,\text{cm}\)
+            </div>
+            <p>b) Magnification:</p>
+            <div class="equation">
+                \(m = -\frac{d_i}{d_o} = -\frac{60}{20} = -3\)
+            </div>
+            <p>c) Image height:</p>
+            <div class="equation">
+                \(h_i = m \times h_o = -3 \times 3 = -9\,\text{cm}\)
+            </div>
+            <p>d) The image is real (positive \(d_i\)), inverted (negative \(m\)), and enlarged (|m| &gt; 1).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Applications of mirrors:</p>
+            <ul>
+                <li>Concave mirrors: Shaving mirrors, astronomical telescopes, headlights, solar concentrators</li>
+                <li>Convex mirrors: Security mirrors, side-view mirrors in vehicles, wide-angle surveillance</li>
+                <li>Plane mirrors: Household mirrors, periscopes, kaleidoscopes</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>12.3.3 Optical Aberrations</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Optical aberrations</strong> are imperfections in image formation caused by limitations in the design or manufacture of optical systems.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of aberrations:</p>
+            <ul>
+                <li><strong>Spherical aberration</strong>: Rays parallel to the axis focus at different points</li>
+                <li><strong>Chromatic aberration</strong>: Different wavelengths focus at different points</li>
+                <li><strong>Coma</strong>: Off-axis point sources appear comet-shaped</li>
+                <li><strong>Astigmatism</strong>: Inability to focus horizontal and vertical lines simultaneously</li>
+                <li><strong>Distortion</strong>: Straight lines appear curved in the image</li>
+                <li><strong>Field curvature</strong>: The image forms on a curved surface rather than a plane</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Methods to reduce aberrations:</p>
+            <ul>
+                <li>Using aspheric surfaces instead of spherical ones</li>
+                <li>Using multiple lens elements with different dispersions</li>
+                <li>Using aperture stops to limit peripheral rays</li>
+                <li>Careful design and alignment of optical systems</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 100,35 Q 118,75 100,115 Q 82,75 100,35" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                <line x1="30" y1="75" x2="230" y2="75" stroke="black" stroke-width="1.2"/>
+                <line x1="40" y1="50" x2="97" y2="50" stroke="#cc0000" stroke-width="2" marker-end="url(#f12simred)"/>
+                <line x1="97" y1="50" x2="160" y2="105" stroke="#cc0000" stroke-width="2" marker-end="url(#f12simred)"/>
+                <circle cx="140" cy="75" r="3" fill="black"/>
+                <circle cx="180" cy="75" r="3" fill="black"/>
+                <text x="130" y="140" font-size="12" text-anchor="middle">Explore lenses and mirrors</text>
+                <defs>
+                    <marker id="f12simred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Explore geometrical optics interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/geometric-optics/latest/geometric-optics_en.html">https://phet.colorado.edu/sims/html/geometric-optics/latest/geometric-optics_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+    <h2>12.4 Optical Instruments</h2>
+
+    <h3>12.4.1 The Human Eye</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>human eye</strong> is a complex optical system that focuses light onto the retina to form images.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Common vision defects and their corrections:</p>
+            <ul>
+                <li><strong>Myopia (nearsightedness)</strong>: Eye too long or cornea too curved &mdash; corrected with diverging lenses</li>
+                <li><strong>Hyperopia (farsightedness)</strong>: Eye too short or cornea too flat &mdash; corrected with converging lenses</li>
+                <li><strong>Astigmatism</strong>: Irregular curvature of cornea or lens &mdash; corrected with cylindrical lenses</li>
+                <li><strong>Presbyopia</strong>: Loss of accommodation with age &mdash; corrected with bifocals or reading glasses</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Panel A: myopic eye -->
+            <circle cx="150" cy="150" r="70" fill="#fff8e0" stroke="black" stroke-width="2"/>
+            <path d="M 92,120 A 70,70 0 0 0 92,180" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+            <ellipse cx="100" cy="150" rx="8" ry="24" fill="#d9e8ff" stroke="#0066cc" stroke-width="2"/>
+            <path d="M 205,105 A 70,70 0 0 1 205,195" fill="none" stroke="#cc0000" stroke-width="4"/>
+            <!-- Rays converging in front of retina -->
+            <line x1="20" y1="125" x2="95" y2="125" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="95" y1="125" x2="188" y2="150" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="188" y1="150" x2="215" y2="178" stroke="#009966" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="20" y1="175" x2="95" y2="175" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="95" y1="175" x2="188" y2="150" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <circle cx="188" cy="150" r="5" fill="#cc0000"/>
+            <text x="145" y="45" font-size="14" text-anchor="middle" font-weight="bold">Myopia (nearsighted)</text>
+            <text x="150" y="245" font-size="13" text-anchor="middle" fill="#cc0000">image forms in front of retina</text>
+            <text x="150" y="265" font-size="13" text-anchor="middle" fill="#009966">&#8592; diverging lens needed</text>
+            <!-- Panel B: corrected eye -->
+            <path d="M 315,110 Q 300,150 315,190 Q 330,150 315,110" fill="#ffe0e0" fill-opacity="0.7" stroke="#cc0000" stroke-width="2.5"/>
+            <text x="315" y="100" font-size="12" text-anchor="middle" fill="#cc0000">diverging lens</text>
+            <circle cx="430" cy="150" r="70" fill="#fff8e0" stroke="black" stroke-width="2"/>
+            <path d="M 372,120 A 70,70 0 0 0 372,180" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+            <ellipse cx="380" cy="150" rx="8" ry="24" fill="#d9e8ff" stroke="#0066cc" stroke-width="2"/>
+            <path d="M 485,105 A 70,70 0 0 1 485,195" fill="none" stroke="#cc0000" stroke-width="4"/>
+            <!-- Rays through lens onto retina -->
+            <line x1="270" y1="125" x2="310" y2="137" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="310" y1="137" x2="375" y2="143" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="375" y1="143" x2="480" y2="150" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="270" y1="175" x2="310" y2="163" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="310" y1="163" x2="375" y2="157" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <line x1="375" y1="157" x2="480" y2="150" stroke="#009966" stroke-width="2" marker-end="url(#f12eyeGreen)"/>
+            <circle cx="481" cy="150" r="5" fill="#009966"/>
+            <text x="420" y="45" font-size="14" text-anchor="middle" font-weight="bold">Corrected vision</text>
+            <text x="430" y="245" font-size="13" text-anchor="middle" fill="#009966">image forms on the retina</text>
+            <text x="430" y="265" font-size="13" text-anchor="middle" fill="#cc0000">retina</text>
+            <text x="280" y="300" font-size="13" text-anchor="middle" fill="#666666">A diverging lens moves the focal point back onto the retina</text>
+            <defs>
+                <marker id="f12eyeGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.7: Correction of myopia with a diverging lens</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A nearsighted person has a far point of 2 m. What power lens is needed to correct this vision?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The lens should make objects at infinity appear at the far point, which is a virtual image \(2.0\,\text{m}\) in front of the lens. With \(d_o=\infty\) and \(d_i=-2.0\,\text{m}\):</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{\infty} + \frac{1}{-2.0} = -0.50\,\text{D}\)
+            </div>
+            <p>Thus \(f = -2.0\,\text{m}\), and a diverging lens of power \(-0.50\) diopters is needed.</p>
+        </div>
+    </div>
+
+    <h3>12.4.2 Magnifying Glass</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>magnifying glass</strong> is a single converging lens used to view small objects at an angular magnification greater than 1.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The angular magnification of a magnifying glass is:</p>
+            <div class="equation">
+                \(M = \frac{\theta}{\theta_0} = \frac{25}{f} \quad \text{(for image at infinity)}\)
+            </div>
+            <div class="equation">
+                \(M = 1 + \frac{25}{f} \quad \text{(for image at near point)}\)
+            </div>
+            <p>where \(f\) is in cm and 25 cm is the standard near point distance.</p>
+        </div>
+    </div>
+
+    <h3>12.4.3 Microscopes</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>microscope</strong> is an optical instrument used to view very small objects that are not visible to the naked eye.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="600" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Principal axis -->
+            <line x1="40" y1="160" x2="575" y2="160" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <!-- Objective lens -->
+            <path d="M 190,120 Q 204,160 190,200 Q 176,160 190,120" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Eyepiece -->
+            <path d="M 420,105 Q 438,160 420,215 Q 402,160 420,105" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Object -->
+            <line x1="140" y1="160" x2="140" y2="195" stroke="#009966" stroke-width="3" marker-end="url(#f128green)"/>
+            <text x="140" y="215" font-size="13" text-anchor="middle" fill="#009966">object</text>
+            <!-- Focal points -->
+            <circle cx="160" cy="160" r="3.5" fill="black"/>
+            <circle cx="235" cy="160" r="3.5" fill="black"/>
+            <circle cx="370" cy="160" r="3.5" fill="black"/>
+            <circle cx="470" cy="160" r="3.5" fill="black"/>
+            <text x="235" y="150" font-size="11" text-anchor="middle">F&#8338;</text>
+            <text x="370" y="150" font-size="11" text-anchor="middle">F&#8339;</text>
+            <!-- Rays: object to objective to intermediate image -->
+            <line x1="140" y1="195" x2="188" y2="160" stroke="#cc0000" stroke-width="1.8"/>
+            <line x1="192" y1="160" x2="370" y2="195" stroke="#cc0000" stroke-width="1.8"/>
+            <line x1="140" y1="195" x2="188" y2="148" stroke="#0066cc" stroke-width="1.8"/>
+            <line x1="192" y1="148" x2="370" y2="195" stroke="#0066cc" stroke-width="1.8"/>
+            <!-- Intermediate image (inverted) -->
+            <line x1="370" y1="160" x2="370" y2="195" stroke="#cc0000" stroke-width="3" marker-end="url(#f128red)"/>
+            <text x="370" y="215" font-size="12" text-anchor="middle" fill="#cc0000">intermediate image</text>
+            <!-- From intermediate image through eyepiece -->
+            <line x1="370" y1="195" x2="418" y2="170" stroke="#cc0000" stroke-width="1.8"/>
+            <line x1="422" y1="170" x2="545" y2="145" stroke="#cc0000" stroke-width="1.8"/>
+            <line x1="370" y1="195" x2="418" y2="205" stroke="#0066cc" stroke-width="1.8"/>
+            <line x1="422" y1="205" x2="545" y2="215" stroke="#0066cc" stroke-width="1.8"/>
+            <!-- Tube length bracket -->
+            <line x1="235" y1="70" x2="370" y2="70" stroke="#666666" stroke-width="1.3" marker-start="url(#f128start)" marker-end="url(#f128end)"/>
+            <text x="302" y="60" font-size="14" text-anchor="middle" fill="#666666">L (tube length)</text>
+            <!-- Labels -->
+            <text x="190" y="265" font-size="13" text-anchor="middle" fill="#0066cc">objective</text>
+            <text x="420" y="265" font-size="13" text-anchor="middle" fill="#0066cc">eyepiece</text>
+            <text x="130" y="105" font-size="12" text-anchor="middle" fill="#666666">f&#8338; (small)</text>
+            <text x="490" y="105" font-size="12" text-anchor="middle" fill="#666666">f&#8339; (small)</text>
+            <text x="555" y="180" font-size="13" fill="#009966">&#8594; eye</text>
+            <text x="300" y="305" font-size="14" text-anchor="middle">M&#8340;&#8338;&#8336;&#8337;&#8336;&#8342; = M&#8338;&#8337;&#8338;&#8337;&#8337; &#215; M&#8337;&#8342;&#8340;&#8336;&#8337;&#8336;&#8342;</text>
+            <defs>
+                <marker id="f128green" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#009966" />
+                </marker>
+                <marker id="f128red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f128end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
+                </marker>
+                <marker id="f128start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#666666" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.8: Optical layout of a compound microscope</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The total magnification of a compound microscope is:</p>
+            <div class="equation">
+                \(M_{\text{total}} = M_{\text{objective}} \times M_{\text{eyepiece}} = -\frac{L}{f_o} \times \frac{25}{f_e}\)
+            </div>
+            <p>where \(L\) is the tube length (distance between focal points), \(f_o\) is the focal length of the objective lens, and \(f_e\) is the focal length of the eyepiece.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A compound microscope has an objective with focal length 0.4 cm and an eyepiece with focal length 2.5 cm. The tube length is 16 cm. Calculate the total magnification.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(M_{\text{total}} = -\frac{L}{f_o} \times \frac{25}{f_e} = -\frac{16}{0.4} \times \frac{25}{2.5} = -40 \times 10 = -400\)
+            </div>
+            <p>The negative sign indicates an inverted image.</p>
+        </div>
+    </div>
+
+    <h3>12.4.4 Telescopes</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>telescope</strong> is an optical instrument designed to make distant objects appear nearer.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="600" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Principal axis -->
+            <line x1="40" y1="160" x2="575" y2="160" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <!-- Objective lens (large) -->
+            <path d="M 200,85 Q 222,160 200,235 Q 178,160 200,85" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="3"/>
+            <!-- Eyepiece (small) -->
+            <path d="M 440,125 Q 454,160 440,195 Q 426,160 440,125" fill="#cce5ff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Incoming parallel rays at angle theta -->
+            <line x1="40" y1="110" x2="197" y2="128" stroke="#cc0000" stroke-width="2" marker-end="url(#f129red)"/>
+            <line x1="40" y1="140" x2="197" y2="152" stroke="#cc0000" stroke-width="2" marker-end="url(#f129red)"/>
+            <!-- Converge at focal point of objective -->
+            <line x1="203" y1="130" x2="317" y2="160" stroke="#cc0000" stroke-width="2" marker-end="url(#f129red)"/>
+            <line x1="203" y1="153" x2="317" y2="160" stroke="#cc0000" stroke-width="2" marker-end="url(#f129red)"/>
+            <!-- From focal point to eyepiece -->
+            <line x1="317" y1="160" x2="437" y2="143" stroke="#0066cc" stroke-width="2" marker-end="url(#f129blue)"/>
+            <line x1="317" y1="160" x2="437" y2="177" stroke="#0066cc" stroke-width="2" marker-end="url(#f129blue)"/>
+            <!-- Exit parallel rays at steeper angle -->
+            <line x1="443" y1="142" x2="560" y2="113" stroke="#0066cc" stroke-width="2" marker-end="url(#f129blue)"/>
+            <line x1="443" y1="177" x2="560" y2="148" stroke="#0066cc" stroke-width="2" marker-end="url(#f129blue)"/>
+            <!-- Angle arcs -->
+            <text x="75" y="105" font-size="15" fill="#ff9900">&#952;</text>
+            <text x="530" y="105" font-size="15" fill="#ff9900">&#952;&#8242;</text>
+            <!-- Focal length brackets -->
+            <line x1="200" y1="270" x2="317" y2="270" stroke="#666666" stroke-width="1.3" marker-start="url(#f129start)" marker-end="url(#f129end)"/>
+            <text x="258" y="288" font-size="14" text-anchor="middle" fill="#666666">f&#8338;</text>
+            <line x1="317" y1="270" x2="440" y2="270" stroke="#666666" stroke-width="1.3" marker-start="url(#f129start)" marker-end="url(#f129end)"/>
+            <text x="378" y="288" font-size="14" text-anchor="middle" fill="#666666">f&#8339;</text>
+            <text x="200" y="315" font-size="13" text-anchor="middle" fill="#0066cc">objective (long f)</text>
+            <text x="440" y="315" font-size="13" text-anchor="middle" fill="#0066cc">eyepiece (short f)</text>
+            <circle cx="317" cy="160" r="4" fill="#cc0000"/>
+            <text x="317" y="145" font-size="12" text-anchor="middle" fill="#cc0000">common focal point</text>
+            <text x="575" y="175" font-size="13" fill="#009966">eye</text>
+            <defs>
+                <marker id="f129end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
+                </marker>
+                <marker id="f129start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#666666" />
+                </marker>
+                <marker id="f129red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f129blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 12.9: Optical layout of a refracting telescope</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The angular magnification of a refracting telescope is:</p>
+            <div class="equation">
+                \(M = -\frac{f_o}{f_e}\)
+            </div>
+            <p>where \(f_o\) is the focal length of the objective lens and \(f_e\) is the focal length of the eyepiece.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of telescopes:</p>
+            <ul>
+                <li><strong>Refracting telescopes</strong>: Use lenses to form images</li>
+                <li><strong>Reflecting telescopes</strong>: Use mirrors to form images</li>
+                <li><strong>Catadioptric telescopes</strong>: Use both lenses and mirrors</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Optics problems are decided by signs and diagrams, not by algebra alone. Start by drawing the principal axis, the lens or mirror, the object, and both focal points. Mark the direction from which light travels and choose a positive side for distances. A quick ray diagram tells you whether the image should be real or virtual before you calculate anything, and it also shows whether the image should be upright or inverted.</p>
+    <p>The thin-lens and mirror equations have the same form, but the sign rules differ. A converging lens has positive \(f\), a diverging lens has negative \(f\), a concave mirror has positive \(f\), and a convex mirror has negative \(f\). Object distance is normally positive. A positive image distance means a real image on the opposite side of a lens or in front of a mirror; a negative value means a virtual image. Magnification \(m=-d_i/d_o\) then fixes the image height and orientation.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Draw the principal axis, the optical element, the object, and the focal points.</li>
+                <li>Record \(d_o\), \(f\), and \(h_o\) with the correct signs for the lens or mirror.</li>
+                <li>Apply the thin-lens or mirror equation \(\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}\).</li>
+                <li>Calculate the magnification from \(m=-\frac{d_i}{d_o}\) and then \(h_i=mh_o\).</li>
+                <li>Interpret the signs: real or virtual, upright or inverted, enlarged or reduced.</li>
+                <li>Check the result against a ray diagram and against known limiting cases.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A \(5.0\,\text{cm}\) tall object is placed \(6.0\,\text{cm}\) from a converging lens of focal length \(10.0\,\text{cm}\). Find the image distance, magnification, and image height, and describe the image.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Use the thin-lens equation with \(f=+10.0\,\text{cm}\) and \(d_o=+6.0\,\text{cm}\):</p>
+            <div class="equation">
+                \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{d_i} = \frac{1}{10.0} - \frac{1}{6.0} = \frac{3-5}{30} = -\frac{2}{30} = -\frac{1}{15}\)
+            </div>
+            <div class="equation">
+                \(d_i = -15\,\text{cm}\)
+            </div>
+            <p>The negative image distance means the image is virtual and lies on the same side of the lens as the object, \(15\,\text{cm}\) from the lens. The magnification is:</p>
+            <div class="equation">
+                \(m = -\frac{d_i}{d_o} = -\frac{-15\,\text{cm}}{6.0\,\text{cm}} = +2.5\)
+            </div>
+            <p>A positive magnification means the image is upright. The image height is:</p>
+            <div class="equation">
+                \(h_i = mh_o = (2.5)(5.0\,\text{cm}) = 12.5\,\text{cm}\)
+            </div>
+            <p>The image is virtual, upright, and enlarged by a factor of \(2.5\), which is exactly what a magnifying glass produces when the object is inside the focal length.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A magnifying glass works by placing a specimen inside the focal length of a converging lens, creating an upright, enlarged virtual image that the eye can focus on comfortably. Opticians use the same sign conventions when designing loupes, camera viewfinders, and the eyepieces of microscopes and telescopes, where every lens must place its image at the right position for the next element.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>In a uniform medium light travels in straight lines, and reflection obeys \(\theta_i=\theta_r\).</li>
+        <li>Refraction follows Snell's law, \(n_1\sin\theta_1=n_2\sin\theta_2\), and total internal reflection occurs above the critical angle.</li>
+        <li>The thin-lens and mirror equations have the form \(\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}\), with sign conventions determined by the optical element.</li>
+        <li>Magnification is \(m=-\frac{d_i}{d_o}=\frac{h_i}{h_o}\); a negative magnification indicates an inverted image.</li>
+        <li>Converging lenses and concave mirrors can form real or virtual images depending on the object distance, while diverging lenses and convex mirrors always form virtual, upright, reduced images.</li>
+        <li>Real images can be projected onto a screen; virtual images cannot.</li>
+        <li>Corrective lenses use negative power for myopia and positive power for hyperopia, while microscopes and telescopes combine lenses to increase angular magnification.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 12</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Geometrical optics treats light as rays that travel in straight lines in uniform media</li>
+                <li>The law of reflection states that \(\theta_i = \theta_r\)</li>
+                <li>Snell's law describes refraction: \(n_1 \sin\theta_1 = n_2 \sin\theta_2\)</li>
+                <li>Total internal reflection occurs when light travels from higher to lower index of refraction at angles greater than the critical angle: \(\sin\theta_c = n_2/n_1\)</li>
+                <li>Lenses and mirrors form images according to: \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)</li>
+                <li>Magnification relates object and image sizes: \(m = -\frac{d_i}{d_o} = \frac{h_i}{h_o}\)</li>
+                <li>Real images can be projected on screens, while virtual images cannot</li>
+                <li>Concave mirrors and converging lenses can form real or virtual images depending on object position</li>
+                <li>Convex mirrors and diverging lenses always form virtual, upright, reduced images</li>
+                <li>Optical aberrations limit the performance of optical systems</li>
+                <li>The human eye can suffer from various vision defects correctable with lenses</li>
+                <li>The lensmaker's equation: \(\frac{1}{f} = (n-1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)\)</li>
+                <li>Microscopes and telescopes use combinations of lenses or mirrors to achieve high magnification</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why does a pencil appear bent when partially submerged in water?</li>
+        <li>Explain why diamonds sparkle more than glass cut to the same shape.</li>
+        <li>Why do convex mirrors always produce virtual images, regardless of the object position?</li>
+        <li>Explain how fiber optics work using the principle of total internal reflection.</li>
+        <li>Why is the magnification negative for real images and positive for virtual images?</li>
+        <li>How does the focal length of a lens change if it is submerged in water?</li>
+        <li>Explain why a concave mirror can form either real or virtual images, depending on object position.</li>
+        <li>Why do astronauts in space see a completely dark sky instead of a blue sky?</li>
+        <li>How does the human eye focus on objects at different distances?</li>
+        <li>Explain why objects appear closer than they actually are when viewed through water.</li>
+        <li>What is the difference between linear magnification and angular magnification?</li>
+        <li>Why do chromatic aberration and spherical aberration occur in simple lenses?</li>
+        <li>How does a reflecting telescope avoid chromatic aberration?</li>
+        <li>Why do side-view mirrors on cars warn that "objects are closer than they appear"?</li>
+        <li>Explain how a periscope works using the principles of reflection.</li>
+        <li>Why does a pool appear shallower than it really is? Does the effect depend on the viewing angle?</li>
+        <li>A converging lens can form a real image or a virtual image. What determines which one occurs?</li>
+        <li>Why does a camera lens need to move to focus on objects at different distances?</li>
+        <li>Explain why the power of a lens is measured in reciprocal metres and why the diopter is a convenient unit.</li>
+        <li>Why does a prism disperse white light into colors while a parallel-sided glass slab does not?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A light ray strikes a mirror at an angle of 45&#176; to the normal. What is the angle between the incident and reflected rays?</li>
+        <li>Calculate the angle of refraction when light passes from air (\(n = 1.00\)) to glass (\(n = 1.52\)) with an angle of incidence of 30&#176;.</li>
+        <li>Find the critical angle for light traveling from diamond (\(n = 2.42\)) to air (\(n = 1.00\)).</li>
+        <li>An object 4 cm tall is placed 30 cm from a converging lens with focal length 20 cm. Calculate:
+            <ol type="a">
+                <li>The image distance</li>
+                <li>The magnification</li>
+                <li>The image height</li>
+                <li>Describe the image (real/virtual, upright/inverted, enlarged/reduced)</li>
+            </ol>
+        </li>
+        <li>A diverging lens has a focal length of -25 cm. An object is placed 15 cm from the lens. Calculate:
+            <ol type="a">
+                <li>The image distance</li>
+                <li>The magnification</li>
+                <li>Describe the image formed</li>
+            </ol>
+        </li>
+        <li>A concave mirror has a focal length of 30 cm. An object 2 cm tall is placed 20 cm from the mirror. Calculate:
+            <ol type="a">
+                <li>The image distance</li>
+                <li>The magnification</li>
+                <li>The image height</li>
+                <li>Describe the image</li>
+            </ol>
+        </li>
+        <li>A convex mirror has a focal length of -20 cm. An object is placed 30 cm from the mirror. Calculate:
+            <ol type="a">
+                <li>The image distance</li>
+                <li>The magnification</li>
+                <li>Describe the image</li>
+            </ol>
+        </li>
+        <li>A compound microscope has an objective lens with focal length 0.5 cm and an eyepiece with focal length 2.5 cm. The lenses are separated by 15 cm. If an object is placed 0.6 cm from the objective lens, calculate:
+            <ol type="a">
+                <li>The image distance for the objective lens</li>
+                <li>The object distance for the eyepiece</li>
+                <li>The final image distance</li>
+                <li>The total magnification</li>
+            </ol>
+        </li>
+        <li>A telescope has an objective lens with focal length 100 cm and an eyepiece with focal length 5 cm. Calculate:
+            <ol type="a">
+                <li>The magnification of the telescope</li>
+                <li>The length of the telescope tube</li>
+            </ol>
+        </li>
+        <li>A glass prism with an apex angle of 60&#176; is made of material with refractive index 1.5. A light ray enters one face at an angle of incidence of 45&#176;. Calculate:
+            <ol type="a">
+                <li>The angle of refraction at the first surface</li>
+                <li>The angle of incidence at the second surface</li>
+                <li>The angle of emergence from the second surface</li>
+                <li>The total deviation of the ray</li>
+            </ol>
+        </li>
+        <li>Design a two-lens system that produces a real, inverted image that is twice the size of the object. The object is 10 cm from the first lens, and the lenses are separated by 30 cm. Specify the types and focal lengths of the lenses needed.</li>
+        <li>A fish is swimming 20 cm below the surface of water (\(n = 1.33\)). How deep does the fish appear to be to an observer directly above it in air?</li>
+        <li>A photographer uses a camera with a 50 mm focal length lens to photograph a building 50 m away. How far must the lens be from the film to produce a sharp image?</li>
+        <li>A person with hyperopia (farsightedness) has a near point of 75 cm. What power reading glasses (in diopters) are needed to bring the near point to 25 cm?</li>
+        <li>A myopic (nearsighted) person has a far point of 200 cm. What power corrective lenses (in diopters) are needed to see distant objects clearly?</li>
+        <li>A biconvex lens is made of glass with \(n = 1.6\). The radii of curvature are \(R_1 = 25\) cm and \(R_2 = -40\) cm. Calculate the focal length of the lens.</li>
+        <li>A person's eye has a refractive power of 60 diopters. If the distance from the cornea to the retina is 2.5 cm, is this person nearsighted or farsighted? What power corrective lens is needed?</li>
+        <li>A beam of light is incident on a glass plate (\(n = 1.5\)) at an angle of 45&#176;. Part of the beam is reflected and part is refracted. Calculate:
+            <ol type="a">
+                <li>The angle of reflection</li>
+                <li>The angle of refraction</li>
+                <li>The percentage of light reflected (using Fresnel equations approximation)</li>
+            </ol>
+        </li>
+        <li>Design a Keplerian telescope with a magnification of 20x using an objective lens with focal length 40 cm. Specify the required eyepiece focal length and the tube length.</li>
+        <li>A microscope has an objective with numerical aperture 0.65 and uses light with wavelength 550 nm. Calculate the resolving power of the microscope using Abbe's criterion.</li>
+        <li>A \(4.0\,\text{cm}\) tall object is placed \(15\,\text{cm}\) from a diverging lens of focal length \(-10\,\text{cm}\). Find the image distance, magnification, and image height.</li>
+        <li>Two thin lenses with powers \(+8.0\,\text{D}\) and \(-3.0\,\text{D}\) are placed in contact. Find the total power and the focal length of the combination.</li>
+        <li>A tank of water (\(n = 1.33\)) is \(1.8\,\text{m}\) deep. Find the apparent depth when viewed from directly above.</li>
+        <li>Light travels from glass (\(n = 1.52\)) into air. Find the critical angle and state what happens for an angle of incidence of \(50^\circ\).</li>
+        <li>A converging lens of focal length \(12\,\text{cm}\) forms an image that is three times the size of the object. Find the possible object and image distances.</li>
+    </ol>
+</body>
+</html>

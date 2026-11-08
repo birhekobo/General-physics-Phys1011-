@@ -1,0 +1,11 @@
+*.aux
+*.idx
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.tex
+style_apply.py

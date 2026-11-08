@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Fluid Mechanics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 8: Fluid Mechanics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Fluid Mechanics</div>
+        <div class="textbox-content">
+            <p>Fluids — liquids and gases — are the matter that makes up all of the world around us, from the blood in our veins to the air in our atmosphere and the fuel in our rockets. Fluid mechanics asks how forces are transmitted through these deformable, compressible materials.</p>
+            <p>Density and pressure lead to buoyant forces, which in turn connect to gravity and acceleration. The study of moving fluids then unifies macroscopic fluid behavior with conservation laws through the equation of continuity and Bernoulli's equation, giving a bridge from mechanics to energy conservation.</p>
+            <p>The final part of the chapter treats bulk matter through stress and strain, the language of elasticity used in engineering and materials science.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the concepts of density and pressure in fluids</li>
+                <li>Calculate pressure variations with depth in static fluids</li>
+                <li>Apply Archimedes' principle to solve buoyancy problems</li>
+                <li>Understand and apply the equation of continuity for fluid flow</li>
+                <li>Use Bernoulli's equation to analyze fluid dynamics problems</li>
+                <li>Differentiate between different types of elastic moduli</li>
+                <li>Calculate stress, strain, and elastic moduli for various materials</li>
+                <li>Apply fluid mechanics principles to real-world situations</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>8.1 Density and Pressure in Static Fluids</h2>
+
+    <h3>8.1.1 Density</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Density</strong> (\(\rho\)) is defined as mass per unit volume:</p>
+            <div class="equation">
+                \(\rho = \frac{m}{V}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\rho\) = density (kg/m³)</li>
+                <li>\(m\) = mass (kg)</li>
+                <li>\(V\) = volume (m³)</li>
+            </ul>
+            <p>The SI unit of density is kg/m³.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about density:</p>
+            <ul>
+                <li>Density is an intensive property (doesn't depend on amount)</li>
+                <li>Density decreases with temperature for most substances</li>
+                <li>Density of water at 4°C is 1000 kg/m³</li>
+                <li>Specific gravity = density relative to water (dimensionless)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the mass of 2 m³ of water (density = 1000 kg/m³).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(m = \rho V = (1000\,\text{kg/m}^3)(2\,\text{m}^3) = 2000\,\text{kg}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.1.2 Pressure</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Pressure</strong> (\(P\)) is defined as force per unit area:</p>
+            <div class="equation">
+                \(P = \frac{F}{A}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(P\) = pressure (Pa or N/m²)</li>
+                <li>\(F\) = force (N)</li>
+                <li>\(A\) = area (m²)</li>
+            </ul>
+            <p>1 pascal (Pa) = 1 N/m². Other common units: atm, mmHg, psi.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about pressure:</p>
+            <ul>
+                <li>Pressure is a scalar quantity (no direction)</li>
+                <li>Pressure acts equally in all directions in a fluid</li>
+                <li>Atmospheric pressure at sea level ≈ 101.3 kPa = 1 atm</li>
+                <li>Pressure is transmitted undiminished throughout a fluid (Pascal's principle)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A force of 500 N is applied to an area of 0.2 m². Calculate the pressure.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(P = \frac{F}{A} = \frac{500\,\text{N}}{0.2\,\text{m}^2} = 2500\,\text{Pa}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+                <rect x="45" y="40" width="170" height="95" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                <line x1="45" y1="40" x2="215" y2="40" stroke="#0066cc" stroke-width="3" marker-end="url(#f8simblue)"/>
+                <line x1="130" y1="55" x2="130" y2="75" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f8simred)"/>
+                <line x1="130" y1="120" x2="130" y2="100" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f8simred)"/>
+                <line x1="75" y1="70" x2="75" y2="90" stroke="#009966" stroke-width="2.5" marker-end="url(#f8simgreen)"/>
+                <line x1="75" y1="120" x2="75" y2="105" stroke="#009966" stroke-width="2.5" marker-end="url(#f8simgreen)"/>
+                <line x1="185" y1="62" x2="185" y2="80" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f8simblue)"/>
+                <line x1="185" y1="120" x2="185" y2="103" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f8simblue)"/>
+                <text x="130" y="25" font-size="12" text-anchor="middle">Pressure in a static fluid</text>
+                <defs>
+                    <marker id="f8simred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                    </marker>
+                    <marker id="f8simgreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                    </marker>
+                    <marker id="f8simblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Explore fluid pressure and flow interactively at:<br>
+        <a href="https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow">https://phet.colorado.edu/en/simulations/fluid-pressure-and-flow</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h3>8.1.3 Variation of Pressure with Depth</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The pressure at depth \(h\) in a fluid of density \(\rho\) is:</p>
+            <div class="equation">
+                \(P = P_0 + \rho gh\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(P\) = pressure at depth \(h\) (Pa)</li>
+                <li>\(P_0\) = pressure at surface (Pa)</li>
+                <li>\(\rho\) = fluid density (kg/m³)</li>
+                <li>\(g\) = acceleration due to gravity (9.8 m/s²)</li>
+                <li>\(h\) = depth below surface (m)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about pressure variation:</p>
+            <ul>
+                <li>Pressure increases linearly with depth</li>
+                <li>Pressure depends only on depth, not on container shape</li>
+                <li>Pressure is the same at all points at the same depth</li>
+                <li>The pressure difference between two points is \(\Delta P = \rho g \Delta h\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fluid -->
+            <rect x="60" y="60" width="300" height="240" fill="#cce5ff" fill-opacity="0.55"/>
+            <!-- Container -->
+            <polyline fill="none" stroke="black" stroke-width="3" points="60,60 60,300 360,300 360,60"/>
+            <line x1="60" y1="60" x2="360" y2="60" stroke="#0066cc" stroke-width="3" marker-end="url(#f81red)"/>
+            <!-- Depth lines -->
+            <line x1="60" y1="120" x2="360" y2="120" stroke="#666666" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <line x1="60" y1="190" x2="360" y2="190" stroke="#666666" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <line x1="60" y1="260" x2="360" y2="260" stroke="#666666" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <text x="372" y="125" font-size="14">h&#8321;</text>
+            <text x="372" y="195" font-size="14">h&#8322;</text>
+            <text x="372" y="265" font-size="14">h&#8323;</text>
+            <!-- Pressure arrows -->
+            <line x1="130" y1="120" x2="270" y2="120" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f81red)"/>
+            <text x="200" y="112" font-size="14" text-anchor="middle" fill="#cc0000">P&#8321;</text>
+            <line x1="130" y1="190" x2="300" y2="190" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f81red)"/>
+            <text x="215" y="182" font-size="14" text-anchor="middle" fill="#cc0000">P&#8322;</text>
+            <line x1="130" y1="260" x2="330" y2="260" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f81red)"/>
+            <text x="230" y="252" font-size="14" text-anchor="middle" fill="#cc0000">P&#8323;</text>
+            <!-- Surface label -->
+            <text x="210" y="48" font-size="14" text-anchor="middle">Surface: P&#8320;</text>
+            <!-- Formula -->
+            <text x="450" y="195" font-size="15" fill="#0066cc">P = P&#8320; + &#961;gh</text>
+            <defs>
+                <marker id="f81red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 8.1: Pressure variation with depth in a fluid</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the pressure at a depth of 10 m in water. (Atmospheric pressure = 101.3 kPa, \(\rho_{\text{water}}\) = 1000 kg/m³)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(P = P_0 + \rho gh = 101300 + (1000)(9.8)(10) = 101300 + 98000 = 199300\,\text{Pa}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.1.4 Pressure Measurements</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Manometers</strong> and <strong>barometers</strong> are devices used to measure pressure:</p>
+            <ul>
+                <li><strong>Open-tube manometer:</strong> Measures gauge pressure \(P - P_{\text{atm}}\)</li>
+                <li><strong>Barometer:</strong> Measures atmospheric pressure</li>
+                <li><strong>Bourdon gauge:</strong> Mechanical pressure gauge</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Common Pressure Units</div>
+        <div class="textbox-content">
+            <ul>
+                <li>1 atmosphere (atm) = 101.3 kPa = 760 mmHg</li>
+                <li>1 bar = 100 kPa</li>
+                <li>1 torr = 1 mmHg</li>
+                <li>1 psi = 6895 Pa</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A mercury barometer reads 760 mmHg. What is the atmospheric pressure in pascals? (\(\rho_{Hg}\) = 13600 kg/m³)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(P = \rho gh = (13600)(9.8)(0.760) = 101292.8\,\text{Pa} \approx 101.3\,\text{kPa}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.1.5 Pascal's Principle and Hydraulics</h3>
+
+    <p><strong>Pascal's principle</strong> states that a pressure change applied to an enclosed, incompressible fluid is transmitted undiminished to every part of the fluid. In a hydraulic system with two pistons:</p>
+    <div class="equation">
+        \(P_1 = P_2 \quad \Rightarrow \quad \frac{F_1}{A_1} = \frac{F_2}{A_2}\)
+    </div>
+    <p>Thus a small force on a small piston can produce a large force on a large piston. The trade-off is distance: the small piston must move farther than the large one because the volume of fluid displaced is the same:</p>
+    <div class="equation">
+        \(A_1d_1 = A_2d_2\)
+    </div>
+    <p>Hydraulic car lifts, excavators, and vehicle brakes exploit this principle.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A hydraulic lift has a small piston of area \(0.010\,\text{m}^2\) and a large piston of area \(0.50\,\text{m}^2\). A force of \(200\,\text{N}\) is applied to the small piston.</p>
+            <ol type="a">
+                <li>What force is exerted on the large piston?</li>
+                <li>How far must the small piston move to raise the large piston by \(0.10\,\text{m}\)?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>(a) Using Pascal's principle:</p>
+            <div class="equation">
+                \(F_2 = F_1\frac{A_2}{A_1} = 200\frac{0.50}{0.010} = 10{,}000\,\text{N}\)
+            </div>
+            <p>(b) The displaced volumes are equal, so:</p>
+            <div class="equation">
+                \(d_1 = d_2\frac{A_2}{A_1} = (0.10)\frac{0.50}{0.010} = 5.0\,\text{m}\)
+            </div>
+            <p>The force is multiplied by 50, but the small piston must move 50 times farther. Energy is conserved: \(F_1d_1 = F_2d_2\).</p>
+        </div>
+    </div>
+
+    <h2>8.2 Buoyant Forces and Archimedes' Principle</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Archimedes' Principle:</strong> The buoyant force on an object immersed in a fluid equals the weight of the fluid displaced by the object.</p>
+            <div class="equation">
+                \(F_b = \rho_{\text{fluid}} V_{\text{displaced}} g\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(F_b\) = buoyant force (N)</li>
+                <li>\(\rho_{\text{fluid}}\) = density of fluid (kg/m³)</li>
+                <li>\(V_{\text{displaced}}\) = volume of fluid displaced (m³)</li>
+                <li>\(g\) = acceleration due to gravity (9.8 m/s²)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about buoyancy:</p>
+            <ul>
+                <li>Buoyant force acts upward through the center of buoyancy</li>
+                <li>Objects float when \(F_b \geq mg\) (weight)</li>
+                <li>Objects sink when \(F_b &lt; mg\)</li>
+                <li>Apparent weight = actual weight − buoyant force</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="480" height="380" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fluid -->
+            <rect x="60" y="60" width="360" height="240" fill="#cce5ff" fill-opacity="0.55"/>
+            <!-- Container -->
+            <polyline fill="none" stroke="black" stroke-width="3" points="60,60 60,300 420,300 420,60"/>
+            <line x1="60" y1="60" x2="420" y2="60" stroke="#0066cc" stroke-width="3" marker-end="url(#f82blue)"/>
+            <!-- Object -->
+            <rect x="170" y="140" width="120" height="100" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <!-- Buoyant force -->
+            <line x1="230" y1="140" x2="230" y2="85" stroke="#0066cc" stroke-width="3" marker-end="url(#f82blue)"/>
+            <text x="240" y="112" font-size="15" fill="#0066cc">F<tspan baseline-shift="sub" font-size="10">b</tspan></text>
+            <text x="230" y="76" font-size="13" text-anchor="middle" fill="#0066cc">Buoyant Force</text>
+            <!-- Weight -->
+            <line x1="230" y1="240" x2="230" y2="296" stroke="#cc0000" stroke-width="3" marker-end="url(#f82red)"/>
+            <text x="240" y="285" font-size="15" fill="#cc0000">mg</text>
+            <text x="230" y="322" font-size="13" text-anchor="middle" fill="#cc0000">Weight</text>
+            <!-- Displaced fluid volume -->
+            <line x1="170" y1="240" x2="170" y2="345" stroke="#666666" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <line x1="290" y1="240" x2="290" y2="345" stroke="#666666" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <line x1="170" y1="345" x2="290" y2="345" stroke="black" stroke-width="1.5" marker-start="url(#f82start)" marker-end="url(#f82end)"/>
+            <text x="230" y="368" font-size="14" text-anchor="middle">V<tspan baseline-shift="sub" font-size="10">displaced</tspan></text>
+            <defs>
+                <marker id="f82blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f82red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f82end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f82start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 8.2: Buoyant force and Archimedes' principle</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 m³ object is completely submerged in water. Calculate the buoyant force. (\(\rho_{\text{water}}\) = 1000 kg/m³)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(F_b = \rho_{\text{fluid}} V g = (1000)(2)(9.8) = 19600\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 500 kg object has a volume of 0.8 m³. Will it float or sink in water?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Maximum buoyant force:</p>
+            <div class="equation">
+                \(F_b = \rho V g = (1000)(0.8)(9.8) = 7840\,\text{N}\)
+            </div>
+            <p>Weight:</p>
+            <div class="equation">
+                \(mg = (500)(9.8) = 4900\,\text{N}\)
+            </div>
+            <p>Since \(F_b &gt; mg\), the object will float.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A steel ball of mass \(5\,\text{kg}\) is lowered into a tank of water. Estimate its volume and determine whether it will float or sink. (Use \(\rho_{\text{water}} = 1000\,\text{kg/m}^3\) and \(g = 9.8\,\text{m/s}^2\).)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The ball's volume follows from its density. Steel has a density of about \(8000\,\text{kg/m}^3\), so</p>
+            <div class="equation">
+                \(V = \frac{m}{\rho_{\text{steel}}} = \frac{5}{8000} = 6.25 \times 10^{-4}\,\text{m}^3\)
+            </div>
+            <p>The buoyant force from the water is therefore</p>
+            <div class="equation">
+                \(F_b = \rho_{\text{fluid}} V g = (1000)(6.25 \times 10^{-4})(9.8) = 6.1\,\text{N}\)
+            </div>
+            <p>while the ball's weight is</p>
+            <div class="equation">
+                \(mg = (5)(9.8) = 49\,\text{N}\)
+            </div>
+            <p>Because the weight greatly exceeds the buoyant force (\(mg &gt; F_b\)), the ball will sink. A steel object must displace its own weight in water before it can float.</p>
+        </div>
+    </div>
+
+    <h2>8.3 Moving Fluids and Bernoulli's Equation</h2>
+
+    <h3>8.3.1 Equation of Continuity</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Equation of Continuity:</strong> For an incompressible fluid in steady flow, the mass flow rate is constant:</p>
+            <div class="equation">
+                \(A_1 v_1 = A_2 v_2\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(A\) = cross-sectional area (m²)</li>
+                <li>\(v\) = flow velocity (m/s)</li>
+            </ul>
+            <p>The product \(Av\) is the volume flow rate.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about continuity:</p>
+            <ul>
+                <li>Fluid speeds up when it enters a constriction</li>
+                <li>Flow rate is constant for incompressible fluids</li>
+                <li>Mass conservation leads to the continuity equation</li>
+                <li>The equation assumes steady, incompressible flow</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="270" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fluid inside pipe -->
+            <polygon fill="#cce5ff" fill-opacity="0.55" points="40,70 200,70 200,105 360,105 360,70 520,70 520,190 360,190 360,155 200,155 200,190 40,190"/>
+            <!-- Pipe walls -->
+            <polyline fill="none" stroke="black" stroke-width="3" points="40,70 200,70 200,105 360,105 360,70 520,70"/>
+            <polyline fill="none" stroke="black" stroke-width="3" points="40,190 200,190 200,155 360,155 360,190 520,190"/>
+            <!-- Flow arrows -->
+            <line x1="65" y1="130" x2="165" y2="130" stroke="#0066cc" stroke-width="3" marker-end="url(#f83blue)"/>
+            <line x1="225" y1="130" x2="345" y2="130" stroke="#0066cc" stroke-width="3" marker-end="url(#f83blue)"/>
+            <line x1="385" y1="130" x2="485" y2="130" stroke="#0066cc" stroke-width="3" marker-end="url(#f83blue)"/>
+            <!-- Labels -->
+            <text x="120" y="58" font-size="15" text-anchor="middle">A&#8321;</text>
+            <text x="280" y="96" font-size="15" text-anchor="middle">A&#8322;</text>
+            <text x="440" y="58" font-size="15" text-anchor="middle">A&#8323;</text>
+            <text x="115" y="163" font-size="14" text-anchor="middle" fill="#0066cc">v&#8321;</text>
+            <text x="285" y="148" font-size="14" text-anchor="middle" fill="#0066cc">v&#8322;</text>
+            <text x="445" y="163" font-size="14" text-anchor="middle" fill="#0066cc">v&#8323;</text>
+            <text x="280" y="235" font-size="16" text-anchor="middle">A&#8321;v&#8321; = A&#8322;v&#8322; = A&#8323;v&#8323;</text>
+            <text x="280" y="260" font-size="13" text-anchor="middle" fill="#666666">The fluid speeds up in the narrow section</text>
+            <defs>
+                <marker id="f83blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 8.3: Equation of continuity for fluid flow</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Water flows through a pipe with cross-sectional area 0.1 m² at 2 m/s. If the pipe narrows to 0.05 m², what is the flow velocity in the narrow section?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(A_1 v_1 = A_2 v_2\)
+            </div>
+            <div class="equation">
+                \((0.1)(2) = (0.05)v_2\)
+            </div>
+            <div class="equation">
+                \(0.2 = 0.05v_2 \;\Rightarrow\; v_2 = 4\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.3.2 Bernoulli's Equation</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Bernoulli's Equation:</strong> For an ideal fluid in steady flow:</p>
+            <div class="equation">
+                \(P_1 + \frac{1}{2}\rho v_1^2 + \rho g h_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g h_2\)
+            </div>
+            <p>or</p>
+            <div class="equation">
+                \(P + \frac{1}{2}\rho v^2 + \rho g h = \text{constant}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(P\) = pressure (Pa)</li>
+                <li>\(\rho\) = density (kg/m³)</li>
+                <li>\(v\) = velocity (m/s)</li>
+                <li>\(h\) = height (m)</li>
+                <li>\(g\) = acceleration due to gravity (9.8 m/s²)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about Bernoulli's equation:</p>
+            <ul>
+                <li>Pressure decreases where velocity increases</li>
+                <li>Represents conservation of energy for fluids</li>
+                <li>Applies to ideal fluids (incompressible, non-viscous, steady flow)</li>
+                <li>Used to explain lift, venturi effect, etc.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Water flows through a horizontal pipe. At point 1, the pressure is 200 kPa and velocity is 2 m/s. At point 2, the velocity is 4 m/s. Calculate the pressure at point 2. (\(\rho_{\text{water}}\) = 1000 kg/m³)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Since the pipe is horizontal, \(h_1 = h_2\):</p>
+            <div class="equation">
+                \(P_1 + \frac{1}{2}\rho v_1^2 = P_2 + \frac{1}{2}\rho v_2^2\)
+            </div>
+            <div class="equation">
+                \(200000 + \frac{1}{2}(1000)(2)^2 = P_2 + \frac{1}{2}(1000)(4)^2\)
+            </div>
+            <div class="equation">
+                \(200000 + 2000 = P_2 + 8000\)
+            </div>
+            <div class="equation">
+                \(202000 = P_2 + 8000 \;\Rightarrow\; P_2 = 194000\,\text{Pa} = 194\,\text{kPa}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.3.3 Applications of Bernoulli's Equation</h3>
+
+    <p>Bernoulli's equation explains several familiar effects. In a horizontal pipe, a constriction increases the speed and lowers the pressure, which is the basis of the Venturi meter. On an aircraft wing, the air moving over the curved upper surface travels faster than the air below, so the pressure above is lower and a net upward lift results. The same principle makes a shower curtain pull inward and allows a fast-moving train to draw nearby objects toward it.</p>
+    <p><strong>Torricelli's theorem</strong> describes efflux from a tank. If a small hole is a distance \(h\) below the free surface, the pressure at both the surface and the exit is atmospheric, and the surface speed is negligible. Bernoulli's equation then gives:</p>
+    <div class="equation">
+        \(v = \sqrt{2gh}\)
+    </div>
+    <p>The liquid leaves the hole with the same speed it would have after falling freely through the height \(h\).</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A water tank has a small hole \(5.0\,\text{m}\) below the water surface. Find the speed at which water exits the hole.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using Torricelli's theorem:</p>
+            <div class="equation">
+                \(v = \sqrt{2gh} = \sqrt{2(9.8)(5.0)} = \sqrt{98} \approx 9.9\,\text{m/s}\)
+            </div>
+            <p>The result is independent of the tank's shape and of the water density, just as free-fall speed is independent of mass.</p>
+        </div>
+    </div>
+
+    <h2>8.4 Properties of Bulk Matter: Stress and Strain</h2>
+
+    <h3>8.4.1 Young's Modulus: Elasticity in Length</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Young's Modulus</strong> (\(Y\)) measures a material's resistance to linear deformation:</p>
+            <div class="equation">
+                \(Y = \frac{\text{stress}}{\text{strain}} = \frac{F/A}{\Delta L/L_0}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(F\) = applied force (N)</li>
+                <li>\(A\) = cross-sectional area (m²)</li>
+                <li>\(\Delta L\) = change in length (m)</li>
+                <li>\(L_0\) = original length (m)</li>
+            </ul>
+            <p>Units: Pa or N/m²</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about Young's modulus:</p>
+            <ul>
+                <li>Measures stiffness of materials</li>
+                <li>Large \(Y\) = stiff material (hard to deform)</li>
+                <li>Small \(Y\) = flexible material (easy to deform)</li>
+                <li>Applies to tensile and compressive stresses</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A steel wire (\(Y = 2.0 \times 10^{11}\) Pa) of length 2 m and cross-sectional area 0.1 cm² stretches by 1 mm under a load. Calculate the force applied.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(Y = \frac{F/A}{\Delta L/L_0}\)
+            </div>
+            <div class="equation">
+                \(F = Y A \frac{\Delta L}{L_0} = (2.0 \times 10^{11})(1 \times 10^{-5})\left(\frac{0.001}{2}\right) = 1000\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>8.4.2 Shear Modulus: Elasticity of Shape</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Shear Modulus</strong> (\(G\)) measures a material's resistance to shearing deformation:</p>
+            <div class="equation">
+                \(G = \frac{\text{shear stress}}{\text{shear strain}} = \frac{F/A}{\Delta x/h}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(F\) = tangential force (N)</li>
+                <li>\(A\) = area (m²)</li>
+                <li>\(\Delta x\) = lateral displacement (m)</li>
+                <li>\(h\) = height (m)</li>
+            </ul>
+            <p>Units: Pa or N/m²</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about shear modulus:</p>
+            <ul>
+                <li>Measures resistance to shape change</li>
+                <li>Applies to forces parallel to surface</li>
+                <li>Related to material's rigidity</li>
+                <li>Zero for fluids (they flow under shear stress)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A tangential force of \(500\,\text{N}\) is applied to the top surface of a block of area \(2.0\times10^{-4}\,\text{m}^2\). The top surface is displaced \(0.50\,\text{cm}\) relative to the bottom, and the block is \(10\,\text{cm}\) tall. Find the shear modulus.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The shear stress is:</p>
+            <div class="equation">
+                \(\frac{F}{A} = \frac{500}{2.0\times10^{-4}} = 2.5\times10^6\,\text{Pa}\)
+            </div>
+            <p>The shear strain is:</p>
+            <div class="equation">
+                \(\frac{\Delta x}{h} = \frac{0.0050}{0.10} = 0.050\)
+            </div>
+            <p>Therefore:</p>
+            <div class="equation">
+                \(G = \frac{2.5\times10^6}{0.050} = 5.0\times10^7\,\text{Pa}\)
+            </div>
+            <p>This value is typical of a fairly rigid solid; fluids have no static shear modulus because they deform continuously under shear.</p>
+        </div>
+    </div>
+
+    <h3>8.4.3 Bulk Modulus: Volume Elasticity</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Bulk Modulus</strong> (\(B\)) measures a material's resistance to volume change:</p>
+            <div class="equation">
+                \(B = \frac{\text{volume stress}}{\text{volume strain}} = \frac{\Delta P}{-\Delta V/V_0}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\Delta P\) = pressure change (Pa)</li>
+                <li>\(\Delta V\) = volume change (m³)</li>
+                <li>\(V_0\) = original volume (m³)</li>
+            </ul>
+            <p>The negative sign indicates that pressure increase causes volume decrease.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about bulk modulus:</p>
+            <ul>
+                <li>Measures compressibility of materials</li>
+                <li>Large \(B\) = incompressible material</li>
+                <li>Small \(B\) = compressible material</li>
+                <li>Reciprocal of bulk modulus is compressibility</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A volume of water decreases by 0.01% when the pressure is increased by 2 atm. Calculate the bulk modulus of water.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(B = \frac{\Delta P}{-\Delta V/V_0} = \frac{2 \times 101325}{0.0001} = \frac{202650}{0.0001} = 2.0265 \times 10^9\,\text{Pa}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Fluid problems combine geometry, mass conservation, and energy conservation. Start with a sketch of the pipe or object, label cross-sectional areas, heights, pressures, and velocities, and convert every quantity to SI units before substituting.</p>
+    <p>For steady, incompressible flow, continuity fixes the relationship between speeds at two sections. Bernoulli's equation then connects pressure, speed, and elevation along a streamline. In a horizontal Venturi meter the height terms cancel, so a measured pressure drop directly determines the speed change.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Sketch the pipe or object and label two convenient sections with \(A\), \(v\), \(P\), and \(h\).</li>
+                <li>Convert areas to m², pressures to Pa, and densities to kg/m³ before calculating.</li>
+                <li>Use continuity \(A_1v_1 = A_2v_2\) to express one speed in terms of the other.</li>
+                <li>Apply Bernoulli's equation along a streamline; cancel height terms when the pipe is horizontal.</li>
+                <li>Solve for the unknown speed or pressure, then compute the volume flow rate \(Q = Av\).</li>
+                <li>Check that the fluid speeds up at the narrower section and that the final units are correct.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>Water flows through a horizontal Venturi tube. The wide section has cross-sectional area \(8.0 \times 10^{-3}\,\text{m}^2\), and the throat has area \(2.0 \times 10^{-3}\,\text{m}^2\). The pressure difference between the wide section and the throat is \(15\,\text{kPa}\). Taking \(\rho = 1000\,\text{kg/m}^3\), find the speed at the wide section, the speed at the throat, and the volume flow rate.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>From continuity, the speed at the throat is larger by the area ratio:</p>
+            <div class="equation">
+                \(v_2 = \frac{A_1}{A_2}v_1 = \frac{8.0 \times 10^{-3}}{2.0 \times 10^{-3}}v_1 = 4v_1\)
+            </div>
+            <p>For horizontal flow, the height terms in Bernoulli's equation cancel, leaving:</p>
+            <div class="equation">
+                \(P_1 - P_2 = \frac{1}{2}\rho(v_2^2 - v_1^2)\)
+            </div>
+            <p>Convert the pressure difference to pascals and substitute \(v_2 = 4v_1\):</p>
+            <div class="equation">
+                \(15{,}000 = \frac{1}{2}(1000)\left[(4v_1)^2 - v_1^2\right] = 500(15v_1^2) = 7500v_1^2\)
+            </div>
+            <div class="equation">
+                \(v_1^2 = \frac{15{,}000}{7500} = 2.00 \;\Rightarrow\; v_1 \approx 1.41\,\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(v_2 = 4(1.41) \approx 5.66\,\text{m/s}\)
+            </div>
+            <p>The volume flow rate is:</p>
+            <div class="equation">
+                \(Q = A_1v_1 = (8.0 \times 10^{-3}\,\text{m}^2)(1.41\,\text{m/s}) \approx 1.13 \times 10^{-2}\,\text{m}^3/\text{s}\)
+            </div>
+            <p>This is about \(11\,\text{L/s}\), and the corresponding mass flow rate is \(\rho Q \approx 11.3\,\text{kg/s}\). The throat speed is greater and the throat pressure is lower, as Bernoulli's equation predicts.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Venturi meters use exactly this pressure drop to measure the flow of water, fuel, or air in industrial piping and in carburetors. The same principle explains why an aspirator or perfume atomizer draws fluid into a fast-moving stream, and it guides the design of aircraft and HVAC ducts.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Density is mass per unit volume, \(\rho = m/V\), and is an intensive property.</li>
+        <li>Pressure is force per unit area, \(P = F/A\), and increases with depth as \(P = P_0 + \rho gh\).</li>
+        <li>Archimedes' principle gives the buoyant force as the weight of displaced fluid, \(F_b = \rho_{\text{fluid}}V_{\text{disp}}g\).</li>
+        <li>For steady, incompressible flow, continuity requires \(A_1v_1 = A_2v_2\).</li>
+        <li>Bernoulli's equation expresses energy conservation per unit volume for an ideal fluid.</li>
+        <li>Where a horizontal pipe narrows, the fluid speeds up and the pressure falls.</li>
+        <li>Stress, strain, and the elastic moduli describe how bulk materials deform under forces.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 8</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Density:</strong> \(\rho = m/V\) (kg/m³)</li>
+                <li><strong>Pressure:</strong> \(P = F/A\) (Pa = N/m²)</li>
+                <li><strong>Pressure with depth:</strong> \(P = P_0 + \rho gh\)</li>
+                <li><strong>Archimedes' principle:</strong> \(F_b = \rho_{\text{fluid}} V g\)</li>
+                <li><strong>Equation of continuity:</strong> \(A_1 v_1 = A_2 v_2\)</li>
+                <li><strong>Bernoulli's equation:</strong> \(P + \frac{1}{2}\rho v^2 + \rho g h = \text{constant}\)</li>
+                <li><strong>Young's modulus:</strong> \(Y = \frac{F/A}{\Delta L/L_0}\)</li>
+                <li><strong>Shear modulus:</strong> \(G = \frac{F/A}{\Delta x/h}\)</li>
+                <li><strong>Bulk modulus:</strong> \(B = \frac{\Delta P}{-\Delta V/V_0}\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Explain why pressure increases with depth in a fluid.</li>
+        <li>How does Archimedes' principle explain why objects float or sink?</li>
+        <li>Why does water flow faster through a narrow section of pipe?</li>
+        <li>Explain how Bernoulli's principle creates lift on an airplane wing.</li>
+        <li>What is the difference between stress and strain?</li>
+        <li>Why are some materials more elastic than others?</li>
+        <li>How does bulk modulus relate to compressibility?</li>
+        <li>Explain why hydraulic systems can multiply force.</li>
+        <li>What happens to pressure when fluid velocity increases?</li>
+        <li>Why do dams have thicker walls at the bottom?</li>
+        <li>A hydraulic lift multiplies force. Does it also multiply energy? Explain using work and displacement.</li>
+        <li>Why does the pressure in a horizontal pipe decrease where the fluid speed increases? Relate your answer to energy conservation.</li>
+        <li>An object floats in water with part of its volume above the surface. How does the fraction submerged depend on the object's density?</li>
+        <li>Explain why a ship made of steel can float even though steel is denser than water.</li>
+        <li>Why does a fluid exert pressure in all directions, even though pressure itself is a scalar?</li>
+        <li>A glass bottle filled completely with water and sealed breaks when frozen. Explain this using the bulk modulus and the expansion of water.</li>
+    </ol>
+
+    <h2>Exercises</h2>
+    <ol>
+        <li>Calculate the pressure at a depth of 15 m in seawater (density = 1025 kg/m³).</li>
+        <li>An object has a mass of 50 kg and volume of 0.06 m³. Will it float in water?</li>
+        <li>Water flows through a pipe of diameter 10 cm at 2 m/s. What is the flow rate?</li>
+        <li>A pipe narrows from 20 cm diameter to 10 cm diameter. If the flow velocity in the wide section is 1 m/s, what is it in the narrow section?</li>
+        <li>Calculate the buoyant force on a 3 m³ object completely submerged in oil (density = 800 kg/m³).</li>
+        <li>A steel rod (\(Y = 2.0 \times 10^{11}\) Pa) of length 3 m and cross-sectional area 2 cm² stretches by 1.5 mm under load. Calculate the force.</li>
+        <li>A volume of gas decreases by 0.5% under a pressure increase of 100 kPa. Calculate the bulk modulus.</li>
+        <li>Water flows through a horizontal pipe. At point A, pressure is 150 kPa and velocity is 3 m/s. At point B, velocity is 6 m/s. Calculate the pressure at point B.</li>
+        <li>Calculate the pressure difference between two points 5 m apart vertically in water.</li>
+        <li>A hydraulic lift has pistons of areas 0.1 m² and 1.0 m². What force on the small piston can lift 1000 kg on the large piston?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A submarine is at a depth of 200 m in seawater (density = 1025 kg/m³).
+            <ol type="a">
+                <li>Calculate the pressure on the submarine.</li>
+                <li>If the submarine has a window of area 0.5 m², what force acts on it?</li>
+            </ol>
+        </li>
+        <li>An object weighs 600 N in air and 400 N when submerged in water.
+            <ol type="a">
+                <li>What is the buoyant force?</li>
+                <li>What is the volume of the object?</li>
+                <li>What is the density of the object?</li>
+            </ol>
+        </li>
+        <li>Water flows through a pipe that narrows from 20 cm to 10 cm diameter.
+            <ol type="a">
+                <li>If the flow velocity in the wide section is 2 m/s, what is it in the narrow section?</li>
+                <li>If the pressure in the wide section is 200 kPa, what is it in the narrow section?</li>
+            </ol>
+        </li>
+        <li>A steel wire (\(Y = 2.0 \times 10^{11}\) Pa) of length 4 m and diameter 2 mm supports a 100 kg mass.
+            <ol type="a">
+                <li>Calculate the stress in the wire.</li>
+                <li>Calculate the strain.</li>
+                <li>Calculate the elongation.</li>
+            </ol>
+        </li>
+        <li>A hydraulic press has pistons of diameters 5 cm and 50 cm.
+            <ol type="a">
+                <li>What force on the small piston can lift 2000 kg on the large piston?</li>
+                <li>How far must the small piston move to lift the load 10 cm?</li>
+            </ol>
+        </li>
+        <li>A balloon has volume 5 m³ and contains helium (density = 0.18 kg/m³).
+            <ol type="a">
+                <li>What is the buoyant force on the balloon?</li>
+                <li>If the balloon structure has mass 2 kg, what is the net upward force?</li>
+            </ol>
+        </li>
+        <li>A material has bulk modulus \(1.0 \times 10^9\) Pa.
+            <ol type="a">
+                <li>What pressure increase is needed for 0.1% volume decrease?</li>
+                <li>What is the compressibility?</li>
+            </ol>
+        </li>
+        <li>A pipe carries water from a reservoir to a house 20 m below.
+            <ol type="a">
+                <li>If the water velocity is 4 m/s, what is the pressure at the house?</li>
+                <li>What would the pressure be if the water weren't moving?</li>
+            </ol>
+        </li>
+        <li>A concrete pillar (density = 2400 kg/m³) is 10 m tall with cross-sectional area 0.5 m².
+            <ol type="a">
+                <li>Calculate the pressure at the base due to the pillar's weight.</li>
+                <li>Calculate the total pressure at the base (including atmospheric pressure).</li>
+            </ol>
+        </li>
+        <li>An object floats with 2/3 of its volume submerged in water.
+            <ol type="a">
+                <li>What is the density of the object?</li>
+                <li>What fraction would be submerged in oil (density = 800 kg/m³)?</li>
+            </ol>
+        </li>
+        <li>A hydraulic press has a small piston of radius \(2.0\,\text{cm}\) and a large piston of radius \(20\,\text{cm}\). A force of \(150\,\text{N}\) is applied to the small piston. Find the force on the large piston and the distance the small piston must move to raise the large piston \(5.0\,\text{cm}\).</li>
+        <li>Water exits a hole \(2.5\,\text{m}\) below the surface of a large tank. Find the exit speed and the horizontal distance the water travels if the hole is \(1.5\,\text{m}\) above the ground.</li>
+        <li>A block of unknown material has a mass of \(2.4\,\text{kg}\) in air and an apparent mass of \(1.8\,\text{kg}\) when submerged in water. Find its volume and density.</li>
+        <li>A steel cable of length \(20\,\text{m}\) and cross-sectional area \(1.5\times10^{-4}\,\text{m}^2\) supports a load of \(8000\,\text{N}\). If \(Y = 2.0\times10^{11}\,\text{Pa}\), find the elongation.</li>
+        <li>Water flows through a horizontal pipe of diameter \(8.0\,\text{cm}\) at \(1.5\,\text{m/s}\) and then rises \(3.0\,\text{m}\) into a narrower section of diameter \(4.0\,\text{cm}\). Find the speed in the upper section and the pressure difference between the two sections.</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Kinematics in One Dimension</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 2: Kinematics in One Dimension</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Kinematics</div>
+        <div class="textbox-content">
+            <p><strong>Kinematics</strong> is the branch of physics that describes how objects move without asking why they move. In one-dimensional kinematics the object is constrained to a straight line, so a single coordinate \(x\) is enough to specify its position at every instant.</p>
+            <p>In this chapter you will build a precise language for motion: position, distance, displacement, speed, velocity, and acceleration. You will learn to read motion graphs, apply the kinematic equations for constant acceleration, analyse free fall, and compare measurements made in different frames of reference.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Distinguish between distance and displacement.</li>
+                <li>Differentiate between speed and velocity.</li>
+                <li>Calculate average and instantaneous velocity.</li>
+                <li>Explain acceleration and its relationship to velocity.</li>
+                <li>Solve problems involving motion with constant acceleration.</li>
+                <li>Analyse free-fall motion under gravity.</li>
+                <li>Interpret position-time, velocity-time, and acceleration-time graphs.</li>
+                <li>Apply kinematic equations and relative-velocity reasoning to real-world problems.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>2.1 Distance and Displacement</h2>
+    <p>Every measurement of motion begins with a choice of coordinate system. Once an origin and a positive direction are fixed, the position of an object is a single signed number. From position we build two closely related but distinct ideas: distance and displacement.</p>
+
+    <h3>Position and Reference Frame</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Position and Reference Frame</div>
+        <div class="definition-content">
+            <p><strong>Position</strong> is the location of an object relative to a chosen origin, together with its direction. In one dimension it is written as a signed coordinate \(x\).</p>
+            <p>A <strong>reference frame</strong> (or frame of reference) is the coordinate system, including its origin and positive direction, from which positions and velocities are measured. A measurement of position or velocity has meaning only after the reference frame has been stated.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="640" height="150" viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A one-dimensional position axis from zero to ten metres with a point P at six metres">
+            <rect width="640" height="150" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+            </defs>
+            <line x1="50" y1="95" x2="610" y2="95" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-1)"/>
+            <g stroke="#1f2937" stroke-width="2">
+                <line x1="50" y1="87" x2="50" y2="103"/>
+                <line x1="160" y1="87" x2="160" y2="103"/>
+                <line x1="270" y1="87" x2="270" y2="103"/>
+                <line x1="380" y1="87" x2="380" y2="103"/>
+                <line x1="490" y1="87" x2="490" y2="103"/>
+                <line x1="600" y1="87" x2="600" y2="103"/>
+            </g>
+            <g font-size="13" text-anchor="middle" fill="#1f2937">
+                <text x="50" y="124">0</text>
+                <text x="160" y="124">2</text>
+                <text x="270" y="124">4</text>
+                <text x="380" y="124">6</text>
+                <text x="490" y="124">8</text>
+                <text x="600" y="124">10</text>
+            </g>
+            <circle cx="380" cy="95" r="7" fill="#cc0000"/>
+            <text x="380" y="70" text-anchor="middle" font-size="15" font-weight="bold" fill="#cc0000">P</text>
+            <text x="600" y="60" font-size="13" fill="#1f2937">+x (m)</text>
+            <text x="50" y="55" font-size="12" fill="#4b5563">origin</text>
+        </svg>
+        <div class="figure-caption">Figure 2.1: A one-dimensional coordinate system. The origin is at \(x = 0\), the positive direction points to the right, and point \(P\) is at \(x = +6\ \text{m}\).</div>
+    </div>
+
+    <h3>Distance</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Distance</div>
+        <div class="definition-content">
+            <p><strong>Distance</strong> is a scalar quantity equal to the total length of the path travelled by an object, regardless of direction. It is always positive or zero and is measured in units of length, such as metres (\(\text{m}\)).</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.1: Total Distance Walked</div>
+        <div class="example-content">
+            <p>A person walks \(5\ \text{m}\) to the east, turns around, and walks \(3\ \text{m}\) to the west. The total distance travelled is the sum of the lengths of both parts of the path:</p>
+            <div class="equation">
+                \(\text{Distance} = 5\ \text{m} + 3\ \text{m} = 8\ \text{m}\)
+            </div>
+            <p>Distance records how much ground was covered, not where the person ended up.</p>
+        </div>
+    </div>
+
+    <h3>Displacement</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Displacement</div>
+        <div class="definition-content">
+            <p><strong>Displacement</strong> is a vector quantity equal to the change in position of an object. It is the straight-line distance and direction from the initial position to the final position:</p>
+            <div class="equation">
+                \(\Delta x = x_f - x_i\)
+            </div>
+            <p>The sign of \(\Delta x\) gives the direction of the displacement along the chosen axis.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.2: Displacement for the Same Trip</div>
+        <div class="example-content">
+            <p>Using the same walk, let the starting point be \(x_i = 0\). After walking \(5\ \text{m}\) east the person is at \(x = +5\ \text{m}\); after walking \(3\ \text{m}\) west the final position is \(x_f = +2\ \text{m}\). Therefore</p>
+            <div class="equation">
+                \(\Delta x = x_f - x_i = (+2\ \text{m}) - (0\ \text{m}) = +2\ \text{m}\)
+            </div>
+            <p>The positive sign means the net change in position is \(2\ \text{m}\) to the east. The person walked \(8\ \text{m}\) but is only \(2\ \text{m}\) from the starting point.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Distance versus Displacement</div>
+        <div class="concept-content">
+            <table>
+                <thead>
+                    <tr><th>Feature</th><th>Distance</th><th>Displacement</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Type</td><td>Scalar</td><td>Vector</td></tr>
+                    <tr><td>Depends on</td><td>The entire path taken</td><td>Only the initial and final positions</td></tr>
+                    <tr><td>Sign</td><td>Always positive or zero</td><td>Positive, negative, or zero</td></tr>
+                    <tr><td>Magnitude</td><td>Never less than \(|\Delta x|\)</td><td>Never greater than the distance</td></tr>
+                </tbody>
+            </table>
+            <p>The magnitude of the displacement equals the distance only when the motion is along a straight line without any reversal of direction.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="640" height="250" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A path that goes eight metres east and back to three metres east, compared with the straight displacement of three metres east">
+            <rect width="640" height="250" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-2g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+                <marker id="arr2-2b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+            </defs>
+            <line x1="60" y1="160" x2="600" y2="160" stroke="#1f2937" stroke-width="2"/>
+            <g stroke="#1f2937" stroke-width="2">
+                <line x1="60" y1="153" x2="60" y2="167"/>
+                <line x1="220" y1="153" x2="220" y2="167"/>
+                <line x1="380" y1="153" x2="380" y2="167"/>
+                <line x1="540" y1="153" x2="540" y2="167"/>
+            </g>
+            <g font-size="13" text-anchor="middle" fill="#1f2937">
+                <text x="60" y="187">0</text>
+                <text x="220" y="187">2</text>
+                <text x="380" y="187">4</text>
+                <text x="540" y="187">6</text>
+            </g>
+            <text x="605" y="165" font-size="13" fill="#1f2937">x (m)</text>
+            <line x1="60" y1="110" x2="460" y2="110" stroke="#009966" stroke-width="3" marker-end="url(#arr2-2g)"/>
+            <line x1="460" y1="110" x2="460" y2="95" stroke="#009966" stroke-width="3"/>
+            <line x1="460" y1="95" x2="220" y2="95" stroke="#009966" stroke-width="3" marker-end="url(#arr2-2g)"/>
+            <text x="300" y="80" font-size="13" fill="#009966">distance = 5 m + 3 m = 8 m</text>
+            <line x1="60" y1="215" x2="220" y2="215" stroke="#0066cc" stroke-width="3" marker-end="url(#arr2-2b)"/>
+            <text x="90" y="238" font-size="13" fill="#0066cc">displacement = +2 m</text>
+            <circle cx="60" cy="160" r="5" fill="#1f2937"/>
+            <circle cx="220" cy="160" r="5" fill="#0066cc"/>
+        </svg>
+        <div class="figure-caption">Figure 2.2: The green path shows the distance travelled (8 m). The blue arrow shows the net displacement (+2 m east) from the start to the final position.</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.1</div>
+        <div class="practice-content">
+            <p>A car travels \(8\ \text{km}\) north, then \(12\ \text{km}\) south, and finally \(5\ \text{km}\) north again.</p>
+            <ol type="a">
+                <li>What is the total distance travelled?</li>
+                <li>What is the final displacement from the starting point?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>Total distance \(= 8\ \text{km} + 12\ \text{km} + 5\ \text{km} = 25\ \text{km}\).</li>
+                <li>Take north as positive. Then
+                    <div class="equation">
+                        \(\begin{aligned}
+                \Delta x &= (+8\ \text{km}) + (-12\ \text{km}) + (+5\ \text{km})\\
+                &= +1\ \text{km}
+                \end{aligned}\)
+                    </div>
+                    The displacement is \(1\ \text{km}\) north.
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A car's odometer records distance, while a GPS receiver reports displacement between two points. On a winding mountain road the two numbers can differ greatly, which is why navigation systems distinguish between the distance driven and the straight-line separation of the endpoints.</p>
+        </div>
+    </div>
+
+    <h2>2.2 Speed and Velocity</h2>
+    <p>Distance and displacement tell us how far something moved. Speed and velocity tell us how quickly that change occurred. As with distance and displacement, one is a scalar and the other is a vector.</p>
+
+    <h3>Speed and Average Speed</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Speed and Average Speed</div>
+        <div class="definition-content">
+            <p><strong>Speed</strong> is a scalar quantity that describes how fast an object is moving. It is the rate at which distance is covered.</p>
+            <p><strong>Average speed</strong> is the total distance travelled divided by the total time elapsed:</p>
+            <div class="equation">
+                \(\text{Average speed} = \dfrac{\text{Total distance}}{\text{Total time}}\)
+            </div>
+            <p>The SI unit of speed is metres per second (\(\text{m/s}\)), although \(\text{km/h}\) is common in everyday life.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.3: Average Speed of a Car</div>
+        <div class="example-content">
+            <p>A car travels a total distance of \(300\ \text{km}\) in \(4\ \text{h}\). Its average speed is</p>
+            <div class="equation">
+                \(\text{Average speed} = \dfrac{300\ \text{km}}{4\ \text{h}} = 75\ \text{km/h}\)
+            </div>
+            <p>This is the rate at which distance is covered; it says nothing about the direction of travel.</p>
+        </div>
+    </div>
+
+    <h3>Velocity and Average Velocity</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Velocity and Average Velocity</div>
+        <div class="definition-content">
+            <p><strong>Velocity</strong> is a vector quantity that describes the rate of change of displacement. It specifies both how fast an object moves and in which direction.</p>
+            <p><strong>Average velocity</strong> is the total displacement divided by the time interval over which that displacement occurred:</p>
+            <div class="equation">
+                \(\bar{v} = \dfrac{\Delta x}{\Delta t} = \dfrac{x_f - x_i}{t_f - t_i}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.4: Average Velocity</div>
+        <div class="example-content">
+            <p>A car moves from \(x_i = 10\ \text{m}\) to \(x_f = 50\ \text{m}\) in \(5\ \text{s}\). Its average velocity is</p>
+            <div class="equation">
+                \(\bar{v} = \dfrac{50\ \text{m} - 10\ \text{m}}{5\ \text{s}} = \dfrac{40\ \text{m}}{5\ \text{s}} = +8\ \text{m/s}\)
+            </div>
+            <p>The positive sign shows that the car moves in the \(+x\) direction.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Speed versus Velocity</div>
+        <div class="concept-content">
+            <p>Speed and velocity have the same magnitude only when the motion is in one direction along a straight line. If an object reverses direction, its average speed and the magnitude of its average velocity can be very different.</p>
+            <table>
+                <thead>
+                    <tr><th>Feature</th><th>Speed</th><th>Velocity</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Type</td><td>Scalar</td><td>Vector</td></tr>
+                    <tr><td>Uses</td><td>Distance</td><td>Displacement</td></tr>
+                    <tr><td>Sign</td><td>Always positive or zero</td><td>Positive or negative</td></tr>
+                    <tr><td>Instrument</td><td>Speedometer</td><td>GPS with direction</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h3>Instantaneous Velocity</h3>
+    <div class="definition">
+        <div class="definition-header">Definition: Instantaneous Velocity</div>
+        <div class="definition-content">
+            <p><strong>Instantaneous velocity</strong> is the velocity of an object at one specific moment. It is the limit of the average velocity as the time interval becomes infinitesimally small:</p>
+            <div class="equation">
+                \(v(t) = \lim_{\Delta t \to 0} \dfrac{\Delta x}{\Delta t} = \dfrac{dx}{dt}\)
+            </div>
+            <p>Graphically, the instantaneous velocity at a point is the slope of the tangent to the position-time graph at that point.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="320" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A curved position-time graph with a tangent line at point P; the slope of the tangent is the instantaneous velocity">
+            <rect width="560" height="320" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-3" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+            </defs>
+            <line x1="70" y1="270" x2="510" y2="270" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-3)"/>
+            <line x1="70" y1="270" x2="70" y2="35" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-3)"/>
+            <text x="515" y="285" font-size="13" fill="#1f2937">t</text>
+            <text x="55" y="35" font-size="13" fill="#1f2937">x</text>
+            <polyline points="70,270 115,251 160,228 205,203 250,174 295,142 340,108 385,71 430,30" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="160" y1="241" x2="430" y2="43" stroke="#cc0000" stroke-width="2" stroke-dasharray="7 5"/>
+            <line x1="295" y1="142" x2="430" y2="142" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="430" y1="142" x2="430" y2="43" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle cx="295" cy="142" r="6" fill="#cc0000"/>
+            <text x="308" y="136" font-size="14" font-weight="bold" fill="#cc0000">P</text>
+            <text x="350" y="160" font-size="13" fill="#4b5563">Δt</text>
+            <text x="440" y="98" font-size="13" fill="#4b5563">Δx</text>
+            <text x="190" y="70" font-size="13" fill="#cc0000">slope = v(t)</text>
+        </svg>
+        <div class="figure-caption">Figure 2.3: Instantaneous velocity is the slope of the tangent to the position-time curve. As the interval \(\Delta t\) shrinks, the chord approaches the tangent at \(P\).</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.2: Average and Instantaneous Velocity</div>
+        <div class="practice-content">
+            <p>The position of a particle is given by \(x(t) = 2t^2 + 3t + 1\), where \(x\) is in metres and \(t\) is in seconds.</p>
+            <ol type="a">
+                <li>Find the average velocity between \(t = 1\ \text{s}\) and \(t = 3\ \text{s}\).</li>
+                <li>Find the instantaneous velocity at \(t = 2\ \text{s}\).</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>At \(t_i = 1\ \text{s}\): \(x(1) = 2(1)^2 + 3(1) + 1 = 6\ \text{m}\).<br>
+                    At \(t_f = 3\ \text{s}\): \(x(3) = 2(3)^2 + 3(3) + 1 = 28\ \text{m}\).<br>
+                    \(\bar{v} = \dfrac{28 - 6}{3 - 1} = \dfrac{22\ \text{m}}{2\ \text{s}} = 11\ \text{m/s}\).
+                </li>
+                <li>Differentiate the position function:
+                    <div class="equation">
+                        \(\begin{aligned}
+                        v(t) &= \dfrac{dx}{dt} = 4t + 3\\
+                        v(2) &= 4(2) + 3 = 11\ \text{m/s}
+                        \end{aligned}\)
+                    </div>
+                </li>
+            </ol>
+            <p>The average velocity over the two-second interval happens to equal the instantaneous velocity at its midpoint because the acceleration is constant.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A speedometer shows instantaneous speed, but it does not show direction. A navigation app that reports "12 m/s north-east" is reporting a velocity. Traffic enforcement, aircraft navigation, and sports analytics all depend on distinguishing the two.</p>
+        </div>
+    </div>
+
+    <h2>2.3 Acceleration</h2>
+    <p>Velocity can change in magnitude, in direction, or in both. The quantity that measures how quickly velocity changes is acceleration.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Average and Instantaneous Acceleration</div>
+        <div class="definition-content">
+            <p><strong>Acceleration</strong> is the vector quantity that describes the rate of change of velocity. An object accelerates if its speed changes, its direction changes, or both.</p>
+            <p><strong>Average acceleration</strong> is the change in velocity divided by the time interval:</p>
+            <div class="equation">
+                \(\bar{a} = \dfrac{\Delta v}{\Delta t} = \dfrac{v_f - v_i}{t_f - t_i}\)
+            </div>
+            <p><strong>Instantaneous acceleration</strong> is the limit of the average acceleration as the time interval approaches zero:</p>
+            <div class="equation">
+                \(a(t) = \lim_{\Delta t \to 0} \dfrac{\Delta v}{\Delta t} = \dfrac{dv}{dt} = \dfrac{d^2x}{dt^2}\)
+            </div>
+            <p>The SI unit of acceleration is metres per second squared (\(\text{m/s}^2\)).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Reading the Sign of Acceleration</div>
+        <div class="concept-content">
+            <ul>
+                <li><strong>Same signs:</strong> when velocity and acceleration have the same sign, the object speeds up.</li>
+                <li><strong>Opposite signs:</strong> when velocity and acceleration have opposite signs, the object slows down. This is often called deceleration.</li>
+                <li><strong>Zero acceleration:</strong> an object moving with constant velocity has zero acceleration.</li>
+                <li><strong>At a turning point:</strong> velocity may be zero while acceleration is not. A ball at the top of its flight has \(v = 0\) but \(a = -9.8\ \text{m/s}^2\).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.5: Calculating Acceleration</div>
+        <div class="example-content">
+            <p>A cyclist increases speed from \(4.0\ \text{m/s}\) to \(10.0\ \text{m/s}\) in \(3.0\ \text{s}\) while moving in the \(+x\) direction. The average acceleration is</p>
+            <div class="equation">
+                \(\bar{a} = \dfrac{10.0\ \text{m/s} - 4.0\ \text{m/s}}{3.0\ \text{s}} = +2.0\ \text{m/s}^2\)
+            </div>
+            <p>The positive sign means the acceleration points in the same direction as the velocity, so the cyclist speeds up.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="320" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A velocity-time graph with a straight line; the slope of the line is the acceleration">
+            <rect width="560" height="320" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-4" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+            </defs>
+            <line x1="80" y1="270" x2="510" y2="270" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-4)"/>
+            <line x1="80" y1="270" x2="80" y2="35" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-4)"/>
+            <text x="515" y="285" font-size="13" fill="#1f2937">t</text>
+            <text x="65" y="35" font-size="13" fill="#1f2937">v</text>
+            <line x1="150" y1="230" x2="430" y2="80" stroke="#cc0000" stroke-width="3"/>
+            <line x1="150" y1="230" x2="150" y2="270" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="430" y1="80" x2="430" y2="270" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="150" y1="230" x2="80" y2="230" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="430" y1="80" x2="80" y2="80" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="150" y1="230" x2="430" y2="230" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="430" y1="230" x2="430" y2="80" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="150" cy="230" r="5" fill="#cc0000"/>
+            <circle cx="430" cy="80" r="5" fill="#cc0000"/>
+            <text x="150" y="290" font-size="13" text-anchor="middle" fill="#4b5563">t_i</text>
+            <text x="430" y="290" font-size="13" text-anchor="middle" fill="#4b5563">t_f</text>
+            <text x="66" y="235" font-size="13" text-anchor="end" fill="#4b5563">v_i</text>
+            <text x="66" y="85" font-size="13" text-anchor="end" fill="#4b5563">v_f</text>
+            <text x="290" y="250" font-size="13" text-anchor="middle" fill="#4b5563">Δt</text>
+            <text x="442" y="160" font-size="13" fill="#4b5563">Δv</text>
+            <text x="250" y="120" font-size="14" fill="#cc0000">slope = Δv / Δt = a</text>
+        </svg>
+        <div class="figure-caption">Figure 2.4: On a velocity-time graph, the slope of the line gives the acceleration. A straight line means constant acceleration.</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.3: Acceleration of a Car</div>
+        <div class="practice-content">
+            <p>A car travelling at \(12\ \text{m/s}\) accelerates uniformly to \(30\ \text{m/s}\) in \(6.0\ \text{s}\).</p>
+            <ol type="a">
+                <li>Find its acceleration.</li>
+                <li>If the acceleration stays constant, what is its velocity after another \(4.0\ \text{s}\)?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol type="a">
+                <li>The acceleration is
+                    <div class="equation">
+                        \(a = \dfrac{30 - 12}{6.0} = 3.0\ \text{m/s}^2\)
+                    </div>
+                </li>
+                <li>Using \(a = \Delta v/\Delta t\) over the next \(4.0\ \text{s}\):
+                    <div class="equation">
+                        \(v = 30 + (3.0)(4.0) = 42\ \text{m/s}\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Simulation: The Moving Man</h3>
+        <div class="vector-diagram">
+            <svg width="420" height="150" viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A person walking along a straight track with velocity and acceleration arrows">
+                <rect width="420" height="150" fill="#ffffff"/>
+                <defs>
+                    <marker id="arr2-5" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                        <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                    </marker>
+                    <marker id="arr2-5r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                        <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                    </marker>
+                </defs>
+                <line x1="30" y1="110" x2="390" y2="110" stroke="#1f2937" stroke-width="3"/>
+                <rect x="120" y="72" width="34" height="38" rx="5" fill="#cc0000"/>
+                <circle cx="137" cy="62" r="10" fill="#cc0000"/>
+                <line x1="137" y1="72" x2="137" y2="35" stroke="#0066cc" stroke-width="3" marker-end="url(#arr2-5)"/>
+                <text x="145" y="30" font-size="13" fill="#0066cc">velocity</text>
+                <line x1="154" y1="90" x2="240" y2="90" stroke="#cc0000" stroke-width="3" marker-end="url(#arr2-5r)"/>
+                <text x="245" y="95" font-size="13" fill="#cc0000">acceleration</text>
+                <text x="30" y="135" font-size="12" fill="#4b5563">position axis</text>
+            </svg>
+        </div>
+        <p>Manipulate the position, velocity, and acceleration of a walking person and watch the position-time and velocity-time graphs respond in real time.</p>
+        <p><a href="https://phet.colorado.edu/sims/html/the-moving-man/latest/the-moving-man_en.html" target="_blank" rel="noopener">Open the PhET Moving Man simulation</a></p>
+    </div>
+
+    <h2>2.4 Motion with Constant Acceleration</h2>
+    <p>A very common and important type of one-dimensional motion is motion with constant acceleration. In that case the average acceleration and the instantaneous acceleration are equal, and the motion can be described by a compact set of equations called the kinematic equations.</p>
+
+    <div class="textbox">
+        <div class="textbox-header">The Kinematic Equations (for constant \(a\))</div>
+        <div class="textbox-content">
+            <p>For an object that starts at position \(x_0\) with velocity \(v_0\) and moves with constant acceleration \(a\):</p>
+            <table>
+                <thead>
+                    <tr><th>Equation</th><th>Relates</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>\(v = v_0 + at\)</td><td>velocity, acceleration, and time</td></tr>
+                    <tr><td>\(x = x_0 + v_0t + \tfrac{1}{2}at^2\)</td><td>position, acceleration, and time</td></tr>
+                    <tr><td>\(v^2 = v_0^2 + 2a(x - x_0)\)</td><td>velocity and displacement</td></tr>
+                    <tr><td>\(x = x_0 + \tfrac{1}{2}(v_0 + v)t\)</td><td>position and average velocity</td></tr>
+                </tbody>
+            </table>
+            <p>Each equation omits one variable. Choose the equation that contains the unknown you need and does not contain the quantity you neither know nor want.</p>
+        </div>
+    </div>
+
+    <h3>Deriving the Kinematic Equations</h3>
+    <p>The equations are not independent facts to memorise; they follow from the definitions of velocity and acceleration when \(a\) is constant. Starting from \(a = dv/dt\) and integrating gives</p>
+    <div class="equation">
+        \(v(t) = v_0 + at\)
+    </div>
+    <p>Substituting this expression into \(v = dx/dt\) and integrating from \(0\) to \(t\) gives</p>
+    <div class="equation">
+        \(x(t) = x_0 + v_0t + \tfrac{1}{2}at^2\)
+    </div>
+    <p>Eliminating \(t\) between these two equations yields</p>
+    <div class="equation">
+        \(v^2 = v_0^2 + 2a(x - x_0)\)
+    </div>
+    <p>Finally, because the velocity changes linearly with time, the average velocity is the arithmetic mean of the initial and final velocities, \(\bar{v} = \tfrac{1}{2}(v_0 + v)\), which gives the fourth form \(x = x_0 + \tfrac{1}{2}(v_0 + v)t\).</p>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: When the Equations Apply</div>
+        <div class="concept-content">
+            <p>The kinematic equations are valid only while the acceleration is constant. If the acceleration changes, split the motion into intervals over which it is approximately constant, or use calculus with the actual \(a(t)\). Never mix quantities from two different stages in a single application of the equations.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.6: A Train Accelerating Uniformly</div>
+        <div class="example-content">
+            <p>A train is moving at \(20\ \text{m/s}\) when it begins to accelerate uniformly at \(1.5\ \text{m/s}^2\).</p>
+            <ol type="a">
+                <li>How long does it take to reach \(35\ \text{m/s}\)?</li>
+                <li>How far does it travel during this time?</li>
+            </ol>
+            <p><strong>Given:</strong> \(v_0 = 20\ \text{m/s}\), \(a = 1.5\ \text{m/s}^2\), \(v = 35\ \text{m/s}\).</p>
+            <ol type="a">
+                <li>Use \(v = v_0 + at\):
+                    <div class="equation">
+                        \(35 = 20 + 1.5t \quad\Rightarrow\quad t = \dfrac{15}{1.5} = 10\ \text{s}\)
+                    </div>
+                </li>
+                <li>Use \(v^2 = v_0^2 + 2a\Delta x\), which does not require the time:
+                    <div class="equation">
+                        \(\begin{aligned}
+                        (35)^2 &= (20)^2 + 2(1.5)\Delta x\\
+                        1225 &= 400 + 3\Delta x
+                        \end{aligned}\)
+                    </div>
+                    <div class="equation">
+                        \(\Delta x = \dfrac{825}{3} = 275\ \text{m}\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.4: Starting from Rest</div>
+        <div class="practice-content">
+            <p>A car starts from rest and accelerates uniformly at \(2.5\ \text{m/s}^2\) for \(8.0\ \text{s}\). Find its final velocity and the distance it covers.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>With \(v_0 = 0\), \(a = 2.5\ \text{m/s}^2\), and \(t = 8.0\ \text{s}\):</p>
+            <div class="equation">
+                \(v = v_0 + at = 0 + (2.5)(8.0) = 20\ \text{m/s}\)
+            </div>
+            <div class="equation">
+                \(\Delta x = v_0t + \tfrac{1}{2}at^2 = 0 + \tfrac{1}{2}(2.5)(8.0)^2 = 80\ \text{m}\)
+            </div>
+            <p>The same displacement follows from \(\Delta x = \tfrac{1}{2}(0 + 20)(8.0) = 80\ \text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Runway lengths, elevator travel times, and the distance needed to merge onto a highway are all calculated with the constant-acceleration equations. Engineers use \(v^2 = v_0^2 + 2a\Delta x\) to size braking systems and safety zones because it links speed and distance without requiring a stopwatch.</p>
+        </div>
+    </div>
+
+    <h2>2.5 Free Fall Motion</h2>
+    <p>Near the surface of the Earth, an object dropped or thrown vertically moves with an almost constant downward acceleration once air resistance is neglected. This special case of constant acceleration is called free fall.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Free Fall</div>
+        <div class="definition-content">
+            <p><strong>Free fall</strong> is the motion of an object under the influence of gravity alone, with air resistance neglected. Near the Earth's surface every freely falling object has the same constant downward acceleration, called the acceleration due to gravity:</p>
+            <div class="equation">
+                \(g = 9.8\ \text{m/s}^2 \quad (\text{approximately } 32\ \text{ft/s}^2)\)
+            </div>
+            <p>When upward is chosen as positive, the acceleration of a freely falling object is \(a = -g = -9.8\ \text{m/s}^2\).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Working with Free Fall</div>
+        <div class="concept-content">
+            <ul>
+                <li>Use the standard kinematic equations with \(a = -g\) when upward is positive.</li>
+                <li>An object thrown upward has a positive initial velocity that decreases to zero at its maximum height.</li>
+                <li>The acceleration remains \(-9.8\ \text{m/s}^2\) even at the top of the trajectory, where the velocity is momentarily zero.</li>
+                <li>The motion is symmetric when the object returns to its starting height: the upward and downward travel times are equal, and the return speed equals the launch speed.</li>
+                <li>Mass does not appear in the equations; in the absence of air resistance, all objects fall with the same acceleration.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="380" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Motion diagram of a ball thrown vertically upward, showing its position and velocity at one-second intervals">
+            <rect width="560" height="380" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-6u" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polygon points="0 0, 9 3.5, 0 7" fill="#009966"/>
+                </marker>
+                <marker id="arr2-6d" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polygon points="0 0, 9 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+            </defs>
+            <line x1="300" y1="30" x2="300" y2="345" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="120" y1="345" x2="470" y2="345" stroke="#1f2937" stroke-width="3"/>
+            <text x="475" y="350" font-size="13" fill="#1f2937">ground</text>
+            <g fill="#0066cc">
+                <circle cx="300" cy="330" r="9"/>
+                <circle cx="300" cy="179" r="9"/>
+                <circle cx="300" cy="126" r="9"/>
+                <circle cx="300" cy="171" r="9"/>
+                <circle cx="300" cy="314" r="9"/>
+            </g>
+            <g stroke="#009966" stroke-width="3" marker-end="url(#arr2-6u)">
+                <line x1="322" y1="330" x2="322" y2="270"/>
+                <line x1="322" y1="179" x2="322" y2="149"/>
+            </g>
+            <line x1="322" y1="171" x2="322" y2="210" stroke="#cc0000" stroke-width="3" marker-end="url(#arr2-6d)"/>
+            <line x1="322" y1="314" x2="322" y2="340" stroke="#cc0000" stroke-width="3" marker-end="url(#arr2-6d)"/>
+            <g font-size="13" fill="#1f2937">
+                <text x="250" y="336">t = 0</text>
+                <text x="240" y="185">t = 1 s</text>
+                <text x="315" y="120">t = 2 s (top)</text>
+                <text x="240" y="177">t = 3 s</text>
+                <text x="240" y="320">t = 4 s</text>
+            </g>
+            <g font-size="12" fill="#4b5563">
+                <text x="330" y="255">v = 20 m/s</text>
+                <text x="330" y="145">v = 10.2 m/s</text>
+                <text x="330" y="205">v = -9.4 m/s</text>
+                <text x="330" y="325">v = -19.2 m/s</text>
+            </g>
+            <text x="150" y="60" font-size="13" fill="#4b5563">velocity arrows shrink,</text>
+            <text x="150" y="78" font-size="13" fill="#4b5563">reverse, then grow</text>
+        </svg>
+        <div class="figure-caption">Figure 2.5: A ball thrown upward at \(20\ \text{m/s}\). The velocity becomes zero at the top, but the acceleration is \(-9.8\ \text{m/s}^2\) throughout the motion.</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.7: A Ball Thrown Upward</div>
+        <div class="example-content">
+            <p>A ball is thrown vertically upward with an initial velocity of \(20\ \text{m/s}\).</p>
+            <ol type="a">
+                <li>How high does it rise?</li>
+                <li>How long does it take to reach its highest point?</li>
+                <li>What is the total time in the air before it returns to the starting point?</li>
+            </ol>
+            <p><strong>Given:</strong> \(v_0 = +20\ \text{m/s}\), \(a = -9.8\ \text{m/s}^2\). At the highest point \(v = 0\).</p>
+            <ol type="a">
+                <li>Use the equation without time:
+                    <div class="equation">
+                        \(0 = (20)^2 + 2(-9.8)\Delta y \quad\Rightarrow\quad \Delta y = \dfrac{400}{19.6} \approx 20.4\ \text{m}\)
+                    </div>
+                </li>
+                <li>Use \(v = v_0 + at\):
+                    <div class="equation">
+                        \(0 = 20 - 9.8t \quad\Rightarrow\quad t = \dfrac{20}{9.8} \approx 2.04\ \text{s}\)
+                    </div>
+                </li>
+                <li>By symmetry, the total time is twice the time to the top:
+                    <div class="equation">
+                        \(t_{\text{total}} = 2(2.04) \approx 4.08\ \text{s}\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.8: A Stone Thrown from a Cliff</div>
+        <div class="example-content">
+            <p>A stone is thrown vertically upward with a speed of \(12\ \text{m/s}\) from the edge of a \(30\ \text{m}\) cliff. Neglecting air resistance, find the time until it reaches the ground and its speed just before impact.</p>
+            <p>Take upward as positive and place the origin at the base of the cliff, so \(y_0 = +30\ \text{m}\), \(v_0 = +12\ \text{m/s}\), and \(a = -9.8\ \text{m/s}^2\). At the ground \(y = 0\):</p>
+            <div class="equation">
+                \(0 = 30 + 12t - 4.9t^2\)
+            </div>
+            <p>Rearranging gives \(4.9t^2 - 12t - 30 = 0\). The quadratic formula yields</p>
+            <div class="equation">
+                \(\begin{aligned}
+                t &= \dfrac{12 + \sqrt{(-12)^2 - 4(4.9)(-30)}}{2(4.9)}\\
+                &= \dfrac{12 + \sqrt{732}}{9.8} \approx 3.98\ \text{s}
+                \end{aligned}\)
+            </div>
+            <p>The impact velocity follows from \(v = v_0 + at\):</p>
+            <div class="equation">
+                \(v = 12 - (9.8)(3.98) \approx -27.0\ \text{m/s}\)
+            </div>
+            <p>The negative sign means the stone is moving downward at about \(27\ \text{m/s}\). The stone first rises for about \(1.2\ \text{s}\) before reversing direction; the quadratic automatically accounts for that part of the motion.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.5: Dropped from Rest</div>
+        <div class="practice-content">
+            <p>A ball is dropped from rest and falls for \(2.5\ \text{s}\) before hitting the ground. How far does it fall, and what is its speed at impact?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take downward as positive, so \(v_0 = 0\) and \(a = +9.8\ \text{m/s}^2\). The fall distance is</p>
+            <div class="equation">
+                \(\Delta y = \tfrac{1}{2}at^2 = \tfrac{1}{2}(9.8)(2.5)^2 \approx 30.6\ \text{m}\)
+            </div>
+            <p>The impact speed is</p>
+            <div class="equation">
+                \(v = at = (9.8)(2.5) = 24.5\ \text{m/s}\)
+            </div>
+            <p>Equivalently, \(v = \sqrt{2(9.8)(30.6)} \approx 24.5\ \text{m/s}\).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Free-fall equations describe the motion of a dropped phone, a diver, and a rocket coasting after its engines cut off (while gravity is the only significant force). They also explain why reaction-time tests use a falling ruler: the distance the ruler drops is a direct measure of the time delay.</p>
+        </div>
+    </div>
+
+    <h2>2.6 Graphical Analysis of Motion</h2>
+    <p>Graphs are a powerful tool for visualising and analysing motion. The three main motion graphs are connected: the slope of one graph gives the quantity plotted on the next, and the area under one graph gives a change in the next.</p>
+
+    <div class="textbox">
+        <div class="textbox-header">Interpreting Motion Graphs</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Position vs. time (\(x\)-\(t\)) graph</strong>
+                    <ul>
+                        <li>The slope at any point gives the instantaneous velocity.</li>
+                        <li>A straight line means constant velocity; a curved line means acceleration.</li>
+                        <li>A horizontal line means the object is at rest.</li>
+                    </ul>
+                </li>
+                <li><strong>Velocity vs. time (\(v\)-\(t\)) graph</strong>
+                    <ul>
+                        <li>The slope gives the acceleration.</li>
+                        <li>A straight line means constant acceleration.</li>
+                        <li>A horizontal line means constant velocity and zero acceleration.</li>
+                        <li>The area under the curve between two times gives the displacement \(\Delta x\).</li>
+                    </ul>
+                </li>
+                <li><strong>Acceleration vs. time (\(a\)-\(t\)) graph</strong>
+                    <ul>
+                        <li>The area under the curve between two times gives the change in velocity \(\Delta v\).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="760" height="280" viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three side-by-side graphs showing position versus time, velocity versus time, and acceleration versus time for constant positive acceleration">
+            <rect width="760" height="280" fill="#f7fbff"/>
+            <g stroke="#1f2937" stroke-width="2">
+                <line x1="60" y1="220" x2="220" y2="220"/>
+                <line x1="60" y1="220" x2="60" y2="60"/>
+                <line x1="300" y1="220" x2="460" y2="220"/>
+                <line x1="300" y1="220" x2="300" y2="60"/>
+                <line x1="540" y1="220" x2="700" y2="220"/>
+                <line x1="540" y1="220" x2="540" y2="60"/>
+            </g>
+            <g font-size="13" fill="#1f2937" text-anchor="middle">
+                <text x="140" y="40">Position vs. time</text>
+                <text x="380" y="40">Velocity vs. time</text>
+                <text x="620" y="40">Acceleration vs. time</text>
+            </g>
+            <g font-size="12" fill="#4b5563">
+                <text x="225" y="225">t</text>
+                <text x="45" y="65">x</text>
+                <text x="465" y="225">t</text>
+                <text x="285" y="65">v</text>
+                <text x="705" y="225">t</text>
+                <text x="525" y="65">a</text>
+            </g>
+            <polyline points="60,220 85,213 110,200 135,180 160,153 185,119 210,78" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="300" y1="220" x2="450" y2="75" stroke="#cc0000" stroke-width="3"/>
+            <line x1="550" y1="140" x2="690" y2="140" stroke="#009966" stroke-width="3"/>
+            <g font-size="11" fill="#4b5563" text-anchor="middle">
+                <text x="140" y="250">slope = velocity</text>
+                <text x="380" y="250">slope = acceleration</text>
+                <text x="380" y="266">area = displacement</text>
+                <text x="620" y="250">area = Δv</text>
+            </g>
+        </svg>
+        <div class="figure-caption">Figure 2.6: Relationships between the motion graphs for constant positive acceleration. The \(x\)-\(t\) curve steepens, the \(v\)-\(t\) line has constant slope, and the \(a\)-\(t\) graph is horizontal.</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Slope and Area</div>
+        <div class="concept-content">
+            <table>
+                <thead>
+                    <tr><th>Graph</th><th>Slope gives</th><th>Area under curve gives</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Position vs. time</td><td>Velocity</td><td>No direct physical meaning</td></tr>
+                    <tr><td>Velocity vs. time</td><td>Acceleration</td><td>Displacement</td></tr>
+                    <tr><td>Acceleration vs. time</td><td>Jerk (rate of change of acceleration)</td><td>Change in velocity</td></tr>
+                </tbody>
+            </table>
+            <p>Areas below the time axis count as negative, just as displacements in the negative direction do.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.9: A Three-Stage Trip</div>
+        <div class="example-content">
+            <p>An object's velocity rises uniformly from rest to \(12\ \text{m/s}\) in \(4.0\ \text{s}\), remains constant at \(12\ \text{m/s}\) for \(6.0\ \text{s}\), and then decreases uniformly to rest in \(3.0\ \text{s}\). Find the acceleration in each stage and the total displacement.</p>
+            <p>The acceleration is the slope of each straight segment:</p>
+            <div class="equation">
+                \(\begin{aligned}
+                a_1 &= \dfrac{12 - 0}{4.0} = 3.0\ \text{m/s}^2\\
+                a_2 &= 0\\
+                a_3 &= \dfrac{0 - 12}{3.0} = -4.0\ \text{m/s}^2
+                \end{aligned}\)
+            </div>
+            <p>The displacement is the area under the velocity-time graph. The three areas are</p>
+            <div class="equation">
+                \(\begin{aligned}
+                \Delta x_1 &= \tfrac{1}{2}(4.0)(12) = 24\ \text{m}\\
+                \Delta x_2 &= (6.0)(12) = 72\ \text{m}\\
+                \Delta x_3 &= \tfrac{1}{2}(3.0)(12) = 18\ \text{m}
+                \end{aligned}\)
+            </div>
+            <p>Thus \(\Delta x_{\text{total}} = 24 + 72 + 18 = 114\ \text{m}\). The average velocity for the whole trip is \(114/(4.0 + 6.0 + 3.0) \approx 8.8\ \text{m/s}\), which is not the simple average of the three stage velocities because the stages last for different times.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="620" height="320" viewBox="0 0 620 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Velocity-time graph for a three-stage trip: acceleration, constant velocity, and braking">
+            <rect width="620" height="320" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-7" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                </marker>
+            </defs>
+            <polygon points="70,260 250,80 250,260" fill="#dbeafe"/>
+            <polygon points="250,80 430,80 430,260 250,260" fill="#e0f2fe"/>
+            <polygon points="430,80 520,260 430,260" fill="#dbeafe"/>
+            <line x1="70" y1="260" x2="565" y2="260" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-7)"/>
+            <line x1="70" y1="260" x2="70" y2="40" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-7)"/>
+            <text x="570" y="275" font-size="13" fill="#1f2937">t (s)</text>
+            <text x="62" y="35" font-size="13" text-anchor="end" fill="#1f2937">v (m/s)</text>
+            <line x1="70" y1="260" x2="250" y2="80" stroke="#0066cc" stroke-width="3"/>
+            <line x1="250" y1="80" x2="430" y2="80" stroke="#0066cc" stroke-width="3"/>
+            <line x1="430" y1="80" x2="520" y2="260" stroke="#0066cc" stroke-width="3"/>
+            <g stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4">
+                <line x1="250" y1="80" x2="250" y2="260"/>
+                <line x1="430" y1="80" x2="430" y2="260"/>
+                <line x1="70" y1="80" x2="250" y2="80"/>
+            </g>
+            <g font-size="13" text-anchor="middle" fill="#1f2937">
+                <text x="250" y="282">4</text>
+                <text x="430" y="282">8</text>
+                <text x="520" y="282">10</text>
+                <text x="58" y="85">4</text>
+            </g>
+            <g font-size="12" text-anchor="middle" fill="#1e3a8a">
+                <text x="190" y="200">24 m</text>
+                <text x="340" y="175">72 m</text>
+                <text x="460" y="200">18 m</text>
+            </g>
+        </svg>
+        <div class="figure-caption">Figure 2.7: The velocity-time graph for Example 2.9. The shaded areas represent the displacements during acceleration, constant velocity, and braking.</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.6: Area under a Velocity-Time Graph</div>
+        <div class="practice-content">
+            <p>A car accelerates uniformly from rest to \(15\ \text{m/s}\) in \(5.0\ \text{s}\), travels at \(15\ \text{m/s}\) for \(10.0\ \text{s}\), and then brakes uniformly to rest in \(5.0\ \text{s}\). Find the total displacement of the car.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Compute the three areas under the \(v\)-\(t\) graph:</p>
+            <div class="equation">
+                \(\begin{aligned}
+                \Delta x_1 &= \tfrac{1}{2}(5.0)(15) = 37.5\ \text{m}\\
+                \Delta x_2 &= (10.0)(15) = 150\ \text{m}\\
+                \Delta x_3 &= \tfrac{1}{2}(5.0)(15) = 37.5\ \text{m}
+                \end{aligned}\)
+            </div>
+            <div class="equation">
+                \(\Delta x_{\text{total}} = 37.5 + 150 + 37.5 = 225\ \text{m}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Vehicle data loggers, fitness trackers, and rocket telemetry all record motion as graphs. Reading slope and area lets an engineer estimate acceleration and distance travelled without integrating the raw data by hand, and it makes anomalies such as sudden braking or wheel slip immediately visible.</p>
+        </div>
+    </div>
+
+    <h2>2.7 Relative Velocity in One Dimension</h2>
+    <p>Velocity is always measured with respect to some frame of reference. A passenger walking down a moving train has one velocity relative to the train and a different velocity relative to the ground. Relative-velocity reasoning lets us convert between such descriptions.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Relative Velocity</div>
+        <div class="definition-content">
+            <p><strong>Relative velocity</strong> is the velocity of an object as observed from a particular frame of reference. If object A has velocity \(v_A\) and object B has velocity \(v_B\) with respect to the ground, then the velocity of A relative to B is</p>
+            <div class="equation">
+                \(v_{A/B} = v_A - v_B\)
+            </div>
+            <p>Similarly, the velocity of B relative to A is \(v_{B/A} = v_B - v_A = -v_{A/B}\).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Solving Relative-Velocity Problems</div>
+        <div class="concept-content">
+            <ul>
+                <li>Choose a consistent coordinate system and state which direction is positive.</li>
+                <li>Identify all velocities with respect to the same reference frame, usually the ground.</li>
+                <li>Apply \(v_{A/B} = v_A - v_B\) carefully, keeping the order of the subscripts.</li>
+                <li>Pay close attention to signs: velocities in opposite directions have opposite signs.</li>
+                <li>When velocities are given relative to different frames, add or subtract them to bring them into a common frame first.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="640" height="220" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two cars moving east at different speeds; the faster car has a relative velocity of twenty kilometres per hour with respect to the slower car">
+            <rect width="640" height="220" fill="#f7fbff"/>
+            <defs>
+                <marker id="arr2-8b" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#0066cc"/>
+                </marker>
+                <marker id="arr2-8r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#cc0000"/>
+                </marker>
+                <marker id="arr2-8g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polygon points="0 0, 10 4, 0 8" fill="#009966"/>
+                </marker>
+            </defs>
+            <line x1="30" y1="175" x2="610" y2="175" stroke="#1f2937" stroke-width="3"/>
+            <rect x="120" y="125" width="70" height="35" rx="8" fill="#0066cc"/>
+            <circle cx="140" cy="166" r="8" fill="#1f2937"/>
+            <circle cx="172" cy="166" r="8" fill="#1f2937"/>
+            <rect x="360" y="125" width="70" height="35" rx="8" fill="#cc0000"/>
+            <circle cx="380" cy="166" r="8" fill="#1f2937"/>
+            <circle cx="412" cy="166" r="8" fill="#1f2937"/>
+            <line x1="195" y1="142" x2="290" y2="142" stroke="#0066cc" stroke-width="3" marker-end="url(#arr2-8b)"/>
+            <line x1="435" y1="142" x2="560" y2="142" stroke="#cc0000" stroke-width="3" marker-end="url(#arr2-8r)"/>
+            <text x="120" y="110" font-size="13" fill="#0066cc">Car A: v_A = +60 km/h</text>
+            <text x="360" y="110" font-size="13" fill="#cc0000">Car B: v_B = +80 km/h</text>
+            <line x1="195" y1="200" x2="435" y2="200" stroke="#009966" stroke-width="3" marker-end="url(#arr2-8g)"/>
+            <text x="230" y="218" font-size="13" fill="#009966">v_B/A = 80 − 60 = +20 km/h (east)</text>
+        </svg>
+        <div class="figure-caption">Figure 2.8: Both cars move east, but Car B gains on Car A at \(20\ \text{km/h}\). In Car A's frame, Car B moves east at \(20\ \text{km/h}\).</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.10: Two Cars on the Same Road</div>
+        <div class="example-content">
+            <p>Car A travels east at \(60\ \text{km/h}\) and Car B travels east at \(80\ \text{km/h}\), both relative to the ground. What is the velocity of Car B relative to Car A?</p>
+            <p>Take east as positive: \(v_{B/\text{ground}} = +80\ \text{km/h}\) and \(v_{A/\text{ground}} = +60\ \text{km/h}\). Then</p>
+            <div class="equation">
+                \(v_{B/A} = v_{B/\text{ground}} - v_{A/\text{ground}} = 80 - 60 = +20\ \text{km/h}\)
+            </div>
+            <p>Car B moves at \(20\ \text{km/h}\) east relative to Car A.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 2.7: Walking on a Train</div>
+        <div class="practice-content">
+            <p>A train moves east at \(50\ \text{m/s}\) relative to the ground. A passenger walks toward the front of the train at \(2\ \text{m/s}\) relative to the train. What is the passenger's velocity relative to the ground?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let east be positive. Then \(v_{\text{train/ground}} = +50\ \text{m/s}\) and \(v_{\text{passenger/train}} = +2\ \text{m/s}\). The passenger's velocity relative to the ground is the sum:</p>
+            <div class="equation">
+                \(\begin{aligned}
+                v_{\text{passenger/ground}} &= v_{\text{passenger/train}} + v_{\text{train/ground}}\\
+                &= 2 + 50 = +52\ \text{m/s}
+                \end{aligned}\)
+            </div>
+            <p>The passenger moves at \(52\ \text{m/s}\) east relative to the ground.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Relative velocity explains why two trains passing in opposite directions seem to flash by much faster than either one moves relative to the ground. Air-traffic control, ship navigation, and the design of overtaking lanes all rely on the same subtraction of velocities.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Most one-dimensional kinematics problems become manageable once you decide which part of the motion is uniform and which part is accelerated. A driver's reaction interval is constant-velocity motion, while the braking interval is constant-acceleration motion. Treating them as one motion with a single acceleration is a common source of error.</p>
+    <p>Begin by drawing a motion diagram or a simple sketch and marking the positive direction. Write every known quantity with its sign, because a negative acceleration does not always mean slowing down. Then apply the kinematic equations separately to each stage and combine only the final displacements and times.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Sketch the motion and choose a positive direction; state the sign convention explicitly.</li>
+                <li>List the initial and final positions, velocities, accelerations, and times for each stage, with signs.</li>
+                <li>Identify intervals of constant velocity and intervals of constant acceleration.</li>
+                <li>Use \(x = x_0 + v_0t\) for a reaction or constant-velocity stage.</li>
+                <li>Apply \(v = v_0 + at\), \(x = x_0 + v_0t + \tfrac{1}{2}at^2\), and \(v^2 = v_0^2 + 2a\Delta x\) within one stage only.</li>
+                <li>Check that the signs, units, and total time are physically reasonable.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 2.11: Reaction Time and Braking</div>
+        <div class="example-content">
+            <p>A car travels at \(25\ \text{m/s}\) on a straight road. The driver sees an obstacle and takes \(0.70\ \text{s}\) to react before braking. The brakes then produce a constant acceleration of magnitude \(6.0\ \text{m/s}^2\) opposite to the motion. Find the total stopping distance and the total time from seeing the obstacle to stopping.</p>
+            <p>Take the direction of motion as positive, so \(v_0 = +25\ \text{m/s}\) and the braking acceleration is \(a = -6.0\ \text{m/s}^2\).</p>
+            <p><strong>Stage 1: reaction.</strong> The car moves at constant velocity for \(t_1 = 0.70\ \text{s}\):</p>
+            <div class="equation">
+                \(\Delta x_1 = v_0t_1 = (25)(0.70) = 17.5\ \text{m}\)
+            </div>
+            <p><strong>Stage 2: braking.</strong> The final velocity is \(v = 0\). The braking time follows from \(v = v_0 + at\):</p>
+            <div class="equation">
+                \(t_2 = \dfrac{v - v_0}{a} = \dfrac{0 - 25}{-6.0} = 4.17\ \text{s}\)
+            </div>
+            <p>The braking distance follows from \(v^2 = v_0^2 + 2a\Delta x_2\):</p>
+            <div class="equation">
+                \(\Delta x_2 = \dfrac{0 - (25)^2}{2(-6.0)} = \dfrac{625}{12.0} = 52.1\ \text{m}\)
+            </div>
+            <p>The total stopping distance and time are</p>
+            <div class="equation">
+                \(\begin{aligned}
+                \Delta x_{\text{total}} &= 17.5 + 52.1 = 69.6\ \text{m}\\
+                t_{\text{total}} &= 0.70 + 4.17 = 4.87\ \text{s}
+                \end{aligned}\)
+            </div>
+            <p>The car stops after about \(70\ \text{m}\) and \(4.9\ \text{s}\). It would not stop within \(60\ \text{m}\), so a driver must anticipate obstacles well beyond the braking distance alone.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Road-safety design uses exactly this two-stage calculation. A following distance that ignores reaction time is too short, because at \(25\ \text{m/s}\) the car covers \(17.5\ \text{m}\) before the brakes even engage. The same reasoning sets stopping sight distances on highways and explains why tired or distracted drivers need much larger gaps.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Kinematic equations apply only while the acceleration is constant; treat reaction and braking as separate stages.</li>
+        <li>The sign of velocity and the sign of acceleration must be chosen from the same coordinate direction.</li>
+        <li>During a reaction time the vehicle travels at constant velocity, so \(d_{\text{reaction}} = vt\).</li>
+        <li>For constant acceleration, \(v^2 = v_0^2 + 2a\Delta x\) is often the fastest route when time is unknown.</li>
+        <li>Displacement is a vector; distance is the total path length and is always positive.</li>
+        <li>On a velocity-time graph, the slope gives acceleration and the area gives displacement.</li>
+        <li>Free fall is constant acceleration with \(a = -g\) when upward is positive.</li>
+        <li>Relative velocities are found by subtracting the velocity of the observer from the velocity of the object.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+    <p>This chapter introduced the fundamental concepts of kinematics: position, displacement, velocity, and acceleration. We distinguished between scalar quantities (distance and speed) and vector quantities (displacement, velocity, and acceleration). A key focus was the set of kinematic equations that govern motion under constant acceleration, a condition that applies to many real-world situations, including free fall under gravity. We also explored relative velocity in one dimension and the powerful technique of graphical analysis for understanding the relationships between position, velocity, and acceleration over time.</p>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Can an object have zero velocity but non-zero acceleration at the same time? If so, give an example.</li>
+        <li>Is it possible for an object to have a constant speed but a changing velocity? Explain.</li>
+        <li>If the average velocity of an object is zero over some time interval, what can you say about its displacement for that interval?</li>
+        <li>A car is travelling west. Can it have an acceleration directed east? What would be happening to the car?</li>
+        <li>Two objects are dropped from the same height, one second apart. As they fall, does the distance between them increase, decrease, or stay the same? Neglect air resistance.</li>
+        <li>Describe the motion of an object whose velocity-time graph is a horizontal line not at zero.</li>
+        <li>What physical quantity is represented by the area under the curve of a velocity-time graph?</li>
+        <li>If you throw a ball upward, what are the signs of its velocity and acceleration on the way up? On the way down?</li>
+        <li>A velocity-time graph crosses the time axis. Describe the object's motion before and after the crossing. Does the object reverse direction, and does its acceleration change sign?</li>
+        <li>Explain why the kinematic equations cannot be applied to the entire trip of a ball that bounces off the floor and returns to your hand.</li>
+        <li>Two cars have the same average speed over the same interval but different average velocities. How is this possible?</li>
+        <li>An object's acceleration is negative while its velocity is positive. Is the object speeding up or slowing down? Does the answer change if the velocity is also negative?</li>
+        <li>Why does a free-falling object thrown upward from a cliff spend more time above the release height than below it?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A runner completes one full lap around a \(400\ \text{m}\) circular track in \(50\ \text{s}\). Calculate:
+            <ol type="a">
+                <li>her average speed;</li>
+                <li>her average velocity for the lap.</li>
+            </ol>
+        </li>
+        <li>The position of a particle is described by \(x(t) = 4t^2 - 3t + 2\), where \(x\) is in metres and \(t\) is in seconds.
+            <ol type="a">
+                <li>Find the instantaneous velocity at \(t = 3\ \text{s}\).</li>
+                <li>Find the instantaneous acceleration at \(t = 3\ \text{s}\).</li>
+            </ol>
+        </li>
+        <li>A car accelerates uniformly from rest to a speed of \(25\ \text{m/s}\) in \(8\ \text{s}\).
+            <ol type="a">
+                <li>Determine the car's acceleration.</li>
+                <li>Find the distance the car travels in this time.</li>
+            </ol>
+        </li>
+        <li>A motorcyclist travelling at \(30\ \text{m/s}\) applies the brakes and comes to a complete stop in \(150\ \text{m}\). Assuming constant deceleration, what was the magnitude of the deceleration?</li>
+        <li>A stone is dropped from the top of a cliff and hits the ground below after \(3.5\ \text{s}\). How high is the cliff? Neglect air resistance.</li>
+        <li>A ball is thrown vertically upward from the ground with an initial speed of \(15\ \text{m/s}\).
+            <ol type="a">
+                <li>What is the maximum height it reaches?</li>
+                <li>What is the total time the ball is in the air?</li>
+            </ol>
+        </li>
+        <li>The velocity-time graph below describes the motion of an object.
+            <div class="figure">
+                <svg width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Velocity-time graph rising from zero to four metres per second at four seconds, staying constant until eight seconds, then falling to zero at ten seconds">
+                    <rect width="500" height="260" fill="#f7fbff"/>
+                    <defs>
+                        <marker id="arr2-9" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                            <polygon points="0 0, 10 4, 0 8" fill="#1f2937"/>
+                        </marker>
+                    </defs>
+                    <line x1="60" y1="210" x2="450" y2="210" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-9)"/>
+                    <line x1="60" y1="210" x2="60" y2="40" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2-9)"/>
+                    <text x="455" y="225" font-size="13" fill="#1f2937">t (s)</text>
+                    <text x="52" y="35" font-size="13" text-anchor="end" fill="#1f2937">v (m/s)</text>
+                    <line x1="60" y1="210" x2="220" y2="70" stroke="#0066cc" stroke-width="3"/>
+                    <line x1="220" y1="70" x2="380" y2="70" stroke="#0066cc" stroke-width="3"/>
+                    <line x1="380" y1="70" x2="450" y2="210" stroke="#0066cc" stroke-width="3"/>
+                    <g stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4">
+                        <line x1="220" y1="70" x2="220" y2="210"/>
+                        <line x1="380" y1="70" x2="380" y2="210"/>
+                        <line x1="60" y1="70" x2="220" y2="70"/>
+                    </g>
+                    <g font-size="13" text-anchor="middle" fill="#1f2937">
+                        <text x="220" y="230">4</text>
+                        <text x="380" y="230">8</text>
+                        <text x="450" y="230">10</text>
+                        <text x="50" y="75">4</text>
+                    </g>
+                </svg>
+                <div class="figure-caption">Figure 2.9: Velocity-time graph for Problem 7.</div>
+            </div>
+            <ol type="a">
+                <li>What is the acceleration from \(t = 0\ \text{s}\) to \(t = 4\ \text{s}\)?</li>
+                <li>What is the acceleration from \(t = 4\ \text{s}\) to \(t = 8\ \text{s}\)?</li>
+                <li>What is the total displacement of the object after \(10\ \text{s}\)?</li>
+            </ol>
+        </li>
+        <li>A cyclist accelerates uniformly from \(4.0\ \text{m/s}\) to \(10.0\ \text{m/s}\) while covering \(42\ \text{m}\). Find the acceleration and the time taken.</li>
+        <li>A ball is dropped from rest and falls for \(2.5\ \text{s}\) before hitting the ground. How far does it fall, and what is its speed at impact?</li>
+        <li>A car travelling at \(18\ \text{m/s}\) brakes uniformly and stops in \(4.5\ \text{s}\). Find the braking acceleration and the stopping distance.</li>
+        <li>A train starts from rest with an acceleration of \(0.80\ \text{m/s}^2\) for \(20\ \text{s}\), then travels at constant speed for \(30\ \text{s}\). Find the total distance travelled.</li>
+        <li>A stone is thrown downward from a bridge with an initial speed of \(8.0\ \text{m/s}\) and reaches the water \(3.0\ \text{s}\) later. How high is the bridge, and how fast is the stone moving at impact?</li>
+        <li>Two trains approach each other on parallel tracks, one at \(20\ \text{m/s}\) and the other at \(30\ \text{m/s}\). What is the speed of the first train relative to the second?</li>
+        <li>A police car travelling at \(30\ \text{m/s}\) pursues a speeding car travelling at \(25\ \text{m/s}\) in the same direction. What is the velocity of the police car relative to the speeding car? How long does it take the police car to close a \(100\ \text{m}\) gap if both speeds remain constant?</li>
+    </ol>
+
+</body>
+</html>

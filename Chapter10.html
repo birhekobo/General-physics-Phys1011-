@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Oscillations and Waves</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 10: Oscillations and Waves</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Oscillations and Waves</div>
+        <div class="textbox-content">
+            <p>Oscillations and waves are the natural way that systems return to equilibrium and how disturbances propagate through fields and media. Simple harmonic motion describes any system where the restoring force is proportional to displacement, producing sinusoidal motion with a characteristic period.</p>
+            <p>Energy in an oscillator is continuously exchanged between kinetic and potential forms while the total mechanical energy stays constant. Extending this idea to waves, we find that waves transport energy through a medium without transporting matter itself, giving rise to standing waves, resonance, and the Doppler effect.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Describe simple harmonic motion and its characteristics</li>
+                <li>Apply energy conservation to oscillating systems</li>
+                <li>Understand the relationship between SHM and circular motion</li>
+                <li>Analyze pendulum motion and calculate period</li>
+                <li>Explain resonance phenomena</li>
+                <li>Differentiate between types of mechanical waves</li>
+                <li>Analyze traveling waves and wave properties</li>
+                <li>Understand standing wave formation in strings and air columns</li>
+                <li>Apply the Doppler effect to various scenarios</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>10.1 Simple Harmonic Motion</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Simple Harmonic Motion (SHM)</strong> is a type of periodic motion where the restoring force is directly proportional to the displacement and acts in the direction opposite to that of displacement.</p>
+        </div>
+    </div>
+
+    <p>The general equation for SHM is:</p>
+    <div class="equation">
+        \(x(t) = A \cos(\omega t + \phi)\)
+    </div>
+    <p>where:</p>
+    <ul>
+        <li>\(x(t)\) is the displacement at time \(t\)</li>
+        <li>\(A\) is the amplitude (maximum displacement)</li>
+        <li>\(\omega\) is the angular frequency</li>
+        <li>\(\phi\) is the phase constant</li>
+    </ul>
+
+    <h3>10.1.1 Motion of an Object Attached to a Spring</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>For a mass-spring system, the restoring force is given by Hooke's Law:</p>
+            <div class="equation">
+                \(F = -kx\)
+            </div>
+            <p>where \(k\) is the spring constant and \(x\) is the displacement from equilibrium.</p>
+        </div>
+    </div>
+
+    <p>Using Newton's second law (\(F = ma\)), we derive:</p>
+    <div class="equation">
+        \(m\frac{d^2x}{dt^2} = -kx\)
+    </div>
+    <div class="equation">
+        \(\frac{d^2x}{dt^2} + \frac{k}{m}x = 0\)
+    </div>
+    <p>This is the differential equation for SHM, with solution:</p>
+    <div class="equation">
+        \(x(t) = A \cos(\omega t + \phi)\)
+    </div>
+    <p>where the angular frequency is:</p>
+    <div class="equation">
+        \(\omega = \sqrt{\frac{k}{m}}\)
+    </div>
+    <p>The period and frequency are:</p>
+    <div class="equation">
+        \(T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{m}{k}}, \quad f = \frac{1}{T} = \frac{1}{2\pi} \sqrt{\frac{k}{m}}\)
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Wall -->
+            <line x1="60" y1="40" x2="60" y2="200" stroke="black" stroke-width="4"/>
+            <line x1="50" y1="55" x2="60" y2="45" stroke="#666666" stroke-width="1.5"/>
+            <line x1="50" y1="80" x2="60" y2="70" stroke="#666666" stroke-width="1.5"/>
+            <line x1="50" y1="105" x2="60" y2="95" stroke="#666666" stroke-width="1.5"/>
+            <line x1="50" y1="130" x2="60" y2="120" stroke="#666666" stroke-width="1.5"/>
+            <line x1="50" y1="155" x2="60" y2="145" stroke="#666666" stroke-width="1.5"/>
+            <line x1="50" y1="180" x2="60" y2="170" stroke="#666666" stroke-width="1.5"/>
+            <!-- Spring (coils) -->
+            <polyline fill="none" stroke="#0066cc" stroke-width="2.5"
+                points="60,120 80,120 90,100 110,140 130,100 150,140 170,100 190,140 210,100 225,120 245,120"/>
+            <!-- Mass block -->
+            <rect x="245" y="85" width="80" height="70" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="285" y="128" font-size="16" text-anchor="middle">m</text>
+            <!-- Surface (frictionless) -->
+            <line x1="60" y1="200" x2="470" y2="200" stroke="black" stroke-width="3"/>
+            <line x1="85" y1="210" x2="75" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="125" y1="210" x2="115" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="165" y1="210" x2="155" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="205" y1="210" x2="195" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="245" y1="210" x2="235" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="285" y1="210" x2="275" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="325" y1="210" x2="315" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="365" y1="210" x2="355" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="405" y1="210" x2="395" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <line x1="445" y1="210" x2="435" y2="200" stroke="#666666" stroke-width="1.5"/>
+            <!-- Equilibrium line -->
+            <line x1="380" y1="60" x2="380" y2="225" stroke="#999999" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="380" y="52" font-size="13" text-anchor="middle" fill="#666666">equilibrium</text>
+            <!-- Displacement arrow -->
+            <line x1="285" y1="235" x2="378" y2="235" stroke="#cc0000" stroke-width="2" marker-end="url(#f101red)"/>
+            <text x="330" y="252" font-size="15" text-anchor="middle" fill="#cc0000">x</text>
+            <!-- Restoring force arrow -->
+            <line x1="345" y1="75" x2="300" y2="75" stroke="#009966" stroke-width="2.5" marker-end="url(#f101green)"/>
+            <text x="322" y="68" font-size="14" text-anchor="middle" fill="#009966">F = &#8722;kx</text>
+            <!-- Spring constant label -->
+            <text x="140" y="60" font-size="15" text-anchor="middle" fill="#0066cc">k</text>
+            <defs>
+                <marker id="f101red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f101green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.1: Mass-spring system executing simple harmonic motion</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 0.5 kg mass is attached to a spring with spring constant 200 N/m. Find the period and frequency of oscillation.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{200}{0.5}} = \sqrt{400} = 20\,\text{rad/s}\)
+            </div>
+            <div class="equation">
+                \(T = \frac{2\pi}{\omega} = \frac{2\pi}{20} = \frac{\pi}{10} \approx 0.314\,\text{s}\)
+            </div>
+            <div class="equation">
+                \(f = \frac{1}{T} = \frac{10}{\pi} \approx 3.18\,\text{Hz}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>10.1.2 Energy of Simple Harmonic Oscillator</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>In SHM, energy continuously transforms between kinetic and potential forms, with the total mechanical energy remaining constant.</p>
+        </div>
+    </div>
+
+    <p>The potential energy stored in a spring is:</p>
+    <div class="equation">
+        \(U = \frac{1}{2}kx^2 = \frac{1}{2}kA^2 \cos^2(\omega t + \phi)\)
+    </div>
+    <p>The kinetic energy of the oscillating mass is:</p>
+    <div class="equation">
+        \(K = \frac{1}{2}mv^2 = \frac{1}{2}m\omega^2 A^2 \sin^2(\omega t + \phi)\)
+    </div>
+    <p>Since \(\omega^2 = k/m\), we can write:</p>
+    <div class="equation">
+        \(K = \frac{1}{2}kA^2 \sin^2(\omega t + \phi)\)
+    </div>
+    <p>The total mechanical energy is:</p>
+    <div class="equation">
+        \(E = U + K = \frac{1}{2}kA^2 \cos^2(\omega t + \phi) + \frac{1}{2}kA^2 \sin^2(\omega t + \phi) = \frac{1}{2}kA^2\)
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The total energy in SHM is constant and proportional to the square of the amplitude.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 0.2 kg mass oscillates with amplitude 0.1 m on a spring with \(k = 50\) N/m. Find:</p>
+            <p>a) The total energy<br>
+            b) The maximum speed<br>
+            c) The speed when the displacement is 0.05 m</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) Total energy:</p>
+            <div class="equation">
+                \(E = \frac{1}{2}kA^2 = \frac{1}{2}(50)(0.1)^2 = \frac{1}{2}(50)(0.01) = 0.25\,\text{J}\)
+            </div>
+            <p>b) Maximum speed occurs when all energy is kinetic:</p>
+            <div class="equation">
+                \(\frac{1}{2}mv_{\text{max}}^2 = E \;\Rightarrow\; v_{\text{max}} = \sqrt{\frac{2E}{m}} = \sqrt{\frac{2(0.25)}{0.2}} = \sqrt{2.5} \approx 1.58\,\text{m/s}\)
+            </div>
+            <p>c) When \(x = 0.05\) m:</p>
+            <div class="equation">
+                \(U = \frac{1}{2}kx^2 = \frac{1}{2}(50)(0.05)^2 = \frac{1}{2}(50)(0.0025) = 0.0625\,\text{J}\)
+            </div>
+            <div class="equation">
+                \(K = E - U = 0.25 - 0.0625 = 0.1875\,\text{J}\)
+            </div>
+            <div class="equation">
+                \(v = \sqrt{\frac{2K}{m}} = \sqrt{\frac{2(0.1875)}{0.2}} = \sqrt{1.875} \approx 1.37\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 0.5 kg mass oscillates on a spring with \(k = 200\,\text{N/m}\) and amplitude \(A = 0.15\,\text{m}\). Find the total mechanical energy and the maximum speed of the oscillation.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The total mechanical energy of the oscillator is</p>
+            <div class="equation">
+                \(E = \frac{1}{2}kA^2 = \frac{1}{2}(200)(0.15)^2 = \frac{1}{2}(200)(0.0225) = 2.25\,\text{J}\)
+            </div>
+            <p>The maximum speed occurs when all energy is kinetic:</p>
+            <div class="equation">
+                \(K = E = \frac{1}{2}mv_{\text{max}}^2 \;\Rightarrow\; v_{\text{max}} = \sqrt{\frac{2E}{m}} = \sqrt{\frac{2(2.25)}{0.5}} = \sqrt{9} = 3\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>10.1.3 Comparing Simple Harmonic Motion with Uniform Circular Motion</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>There is a fundamental relationship between simple harmonic motion and uniform circular motion. The projection of uniform circular motion onto any diameter executes simple harmonic motion.</p>
+        </div>
+    </div>
+
+    <p>Consider a particle moving with constant angular velocity \(\omega\) in a circle of radius \(A\). Its x-coordinate is:</p>
+    <div class="equation">
+        \(x = A \cos(\omega t + \phi)\)
+    </div>
+    <p>which is identical to the equation for SHM.</p>
+
+    <div class="figure">
+        <svg width="460" height="400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Reference circle -->
+            <circle cx="230" cy="200" r="130" fill="none" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <!-- Axes -->
+            <line x1="80" y1="200" x2="420" y2="200" stroke="black" stroke-width="1.5"/>
+            <line x1="230" y1="55" x2="230" y2="345" stroke="black" stroke-width="1.5"/>
+            <!-- Radius to particle -->
+            <line x1="230" y1="200" x2="341" y2="155" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f102blue)"/>
+            <circle cx="341" cy="155" r="9" fill="#0066cc"/>
+            <text x="355" y="145" font-size="15" fill="#0066cc">P</text>
+            <!-- Radius label A -->
+            <text x="285" y="168" font-size="15" text-anchor="middle" fill="#0066cc">A</text>
+            <!-- Projection dashed lines -->
+            <line x1="341" y1="155" x2="341" y2="200" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <!-- x displacement -->
+            <line x1="230" y1="345" x2="341" y2="345" stroke="#cc0000" stroke-width="3" marker-end="url(#f102red)"/>
+            <text x="285" y="365" font-size="15" text-anchor="middle" fill="#cc0000">x = A cos(&#969;t + &#966;)</text>
+            <!-- Angle -->
+            <path d="M 290,200 A 60,60 0 0 0 285,170" fill="none" stroke="#009966" stroke-width="2"/>
+            <text x="265" y="188" font-size="14" fill="#009966">&#969;t + &#966;</text>
+            <!-- Angular velocity arrow -->
+            <path d="M 180,140 A 70,70 0 0 1 245,130" fill="none" stroke="#ff9900" stroke-width="2.5" marker-end="url(#f102orange)"/>
+            <text x="175" y="128" font-size="15" fill="#ff9900">&#969;</text>
+            <!-- SHM mass on axis -->
+            <rect x="331" y="188" width="20" height="24" fill="#ffd9d9" stroke="#cc0000" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text x="400" y="195" font-size="14">x&#8337;</text>
+            <text x="238" y="70" font-size="14">y&#8337;</text>
+            <defs>
+                <marker id="f102red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f102orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                </marker>
+                <marker id="f102blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.2: Reference circle connecting uniform circular motion and SHM</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The reference circle method provides a geometric interpretation of SHM:</p>
+            <ul>
+                <li>The amplitude \(A\) corresponds to the radius of the circle</li>
+                <li>The phase angle \((\omega t + \phi)\) corresponds to the angular position</li>
+                <li>The angular frequency \(\omega\) corresponds to the angular velocity</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>10.1.4 The Simple Pendulum</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>simple pendulum</strong> consists of a point mass suspended from a fixed support by a massless, inextensible string.</p>
+        </div>
+    </div>
+
+    <p>For small angles (\(\theta &lt; 10^\circ\)), the motion is approximately SHM with:</p>
+    <div class="equation">
+        \(\omega = \sqrt{\frac{g}{L}}, \quad T = 2\pi \sqrt{\frac{L}{g}}, \quad f = \frac{1}{2\pi} \sqrt{\frac{g}{L}}\)
+    </div>
+    <p>where \(L\) is the length of the pendulum and \(g\) is the acceleration due to gravity.</p>
+
+    <div class="figure">
+        <svg width="380" height="360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Support -->
+            <line x1="90" y1="40" x2="270" y2="40" stroke="black" stroke-width="4"/>
+            <line x1="100" y1="40" x2="90" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <line x1="130" y1="40" x2="120" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <line x1="160" y1="40" x2="150" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <line x1="190" y1="40" x2="180" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <line x1="220" y1="40" x2="210" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <line x1="250" y1="40" x2="240" y2="30" stroke="#666666" stroke-width="1.5"/>
+            <!-- Equilibrium vertical -->
+            <line x1="180" y1="40" x2="180" y2="320" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <!-- String at angle -->
+            <line x1="180" y1="40" x2="300" y2="240" stroke="black" stroke-width="2"/>
+            <!-- Bob -->
+            <circle cx="300" cy="245" r="20" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <!-- Angle arc -->
+            <path d="M 180,90 A 50,50 0 0 0 194,90" fill="none" stroke="#0066cc" stroke-width="2"/>
+            <text x="198" y="105" font-size="16" fill="#0066cc">&#952;</text>
+            <!-- Length label -->
+            <text x="250" y="140" font-size="15" transform="rotate(60 250 140)" text-anchor="middle">L</text>
+            <!-- Gravity force -->
+            <line x1="300" y1="265" x2="300" y2="320" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f103red)"/>
+            <text x="308" y="310" font-size="15" fill="#cc0000">mg</text>
+            <!-- Restoring force -->
+            <line x1="282" y1="256" x2="240" y2="275" stroke="#009966" stroke-width="2.5" marker-end="url(#f103green)"/>
+            <text x="230" y="295" font-size="14" fill="#009966">F</text>
+            <!-- Tension -->
+            <line x1="288" y1="228" x2="262" y2="185" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f103blue)"/>
+            <text x="245" y="185" font-size="14" fill="#0066cc">T</text>
+            <defs>
+                <marker id="f103red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f103green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f103blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.3: Simple pendulum and forces acting on the bob</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the period of a simple pendulum with length 1.0 m.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(T = 2\pi \sqrt{\frac{L}{g}} = 2\pi \sqrt{\frac{1.0}{9.8}} \approx 2\pi \sqrt{0.102} \approx 2\pi(0.319) \approx 2.00\,\text{s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The period of a simple pendulum depends only on its length and the gravitational acceleration, not on the mass of the bob.</p>
+        </div>
+    </div>
+
+    <h3>10.1.5 Damped and Driven Oscillations</h3>
+
+    <p>Real oscillators lose mechanical energy to friction and air resistance, so their amplitude gradually decreases. This is called <strong>damping</strong>. For light damping, the motion still oscillates but with an amplitude that decays exponentially:</p>
+    <div class="equation">
+        \(x(t) = A_0 e^{-bt/(2m)} \cos(\omega' t + \phi)\)
+    </div>
+    <p>where \(b\) is the damping constant. With heavy damping, the system may return to equilibrium without oscillating at all (overdamping), or just barely without crossing equilibrium (critical damping). Car shock absorbers are designed near critical damping so the vehicle settles quickly without bouncing.</p>
+    <p>If a periodic driving force is applied, the system eventually oscillates at the driving frequency rather than its natural frequency. When the driving frequency matches the natural frequency, the amplitude becomes very large: this is <strong>resonance</strong>. The sharpness of the resonance depends on the amount of damping. A swing pushed at just the right moments is a familiar example, while the collapse of the Tacoma Narrows Bridge in 1940 illustrates how resonant vibration can destroy a structure.</p>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 20,40 Q 80,90 130,70 Q 180,50 240,80" fill="none" stroke="#0066cc" stroke-width="2.5"/>
+                <path d="M 20,80 Q 80,120 130,100 Q 180,80 240,110" fill="none" stroke="#cc0000" stroke-width="2.5"/>
+                <line x1="20" y1="30" x2="20" y2="125" stroke="black" stroke-width="3"/>
+                <line x1="240" y1="30" x2="240" y2="125" stroke="black" stroke-width="3"/>
+                <line x1="20" y1="125" x2="240" y2="125" stroke="black" stroke-width="1.5"/>
+                <text x="130" y="145" font-size="12" text-anchor="middle">Waves on a string</text>
+            </svg>
+        </div>
+        <p>Explore wave motion interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html">https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h2>10.2 Resonance</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Resonance</strong> occurs when a system is driven at its natural frequency, resulting in a large amplitude response.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Resonance phenomena are observed in many systems:</p>
+            <ul>
+                <li>Musical instruments (strings, air columns)</li>
+                <li>Buildings and bridges during earthquakes</li>
+                <li>Radio and TV receivers (tuning circuits)</li>
+                <li>MRI machines in medical imaging</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="480" height="340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="70" y1="270" x2="450" y2="270" stroke="black" stroke-width="2"/>
+            <line x1="70" y1="270" x2="70" y2="40" stroke="black" stroke-width="2"/>
+            <text x="260" y="300" font-size="14" text-anchor="middle">Driving frequency f / natural frequency f&#8320;</text>
+            <text x="30" y="155" font-size="14" text-anchor="middle" transform="rotate(-90 30 155)">Amplitude</text>
+            <!-- f0 mark -->
+            <line x1="260" y1="270" x2="260" y2="50" stroke="#999999" stroke-width="1" stroke-dasharray="5,4"/>
+            <text x="260" y="288" font-size="14" text-anchor="middle">1</text>
+            <!-- Low damping (sharp peak) -->
+            <path d="M 90,268 C 180,265 230,240 250,80 C 255,50 258,55 260,50 C 262,55 265,50 270,80 C 290,240 340,265 430,268"
+                fill="none" stroke="#cc0000" stroke-width="2.5"/>
+            <!-- Medium damping -->
+            <path d="M 90,268 C 160,262 220,210 245,130 C 252,110 256,115 260,110 C 264,115 268,110 275,130 C 300,210 360,262 430,268"
+                fill="none" stroke="#ff9900" stroke-width="2.5"/>
+            <!-- High damping (broad peak) -->
+            <path d="M 90,267 C 150,255 210,225 240,180 C 250,168 255,172 260,168 C 265,172 270,168 280,180 C 310,225 370,255 430,267"
+                fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Legend -->
+            <line x1="330" y1="55" x2="360" y2="55" stroke="#cc0000" stroke-width="2.5"/>
+            <text x="365" y="60" font-size="12">low damping</text>
+            <line x1="330" y1="75" x2="360" y2="75" stroke="#ff9900" stroke-width="2.5"/>
+            <text x="365" y="80" font-size="12">medium</text>
+            <line x1="330" y1="95" x2="360" y2="95" stroke="#0066cc" stroke-width="2.5"/>
+            <text x="365" y="100" font-size="12">high damping</text>
+            <!-- Resonance label -->
+            <text x="260" y="40" font-size="14" text-anchor="middle" fill="#cc0000">Resonance</text>
+        </svg>
+        <div class="figure-caption">Figure 10.4: Resonance curves for different amounts of damping</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Resonance can be beneficial (musical instruments) or destructive (bridge collapse). Engineers must consider resonance effects when designing structures.</p>
+        </div>
+    </div>
+
+    <h2>10.3 Mechanical Waves</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>mechanical wave</strong> is a disturbance that travels through a medium, transporting energy from one point to another without transporting matter.</p>
+        </div>
+    </div>
+
+    <h3>10.3.1 Wave Types and Propagation of a Disturbance</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>There are two main types of mechanical waves:</p>
+            <ul>
+                <li><strong>Transverse waves</strong>: The particle motion is perpendicular to the wave direction (e.g., waves on a string)</li>
+                <li><strong>Longitudinal waves</strong>: The particle motion is parallel to the wave direction (e.g., sound waves in air)</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>Wave characteristics:</p>
+    <ul>
+        <li><strong>Wavelength</strong> (\(\lambda\)): Distance between successive identical points on the wave</li>
+        <li><strong>Frequency</strong> (\(f\)): Number of oscillations per unit time</li>
+        <li><strong>Period</strong> (\(T\)): Time for one complete oscillation (\(T = 1/f\))</li>
+        <li><strong>Amplitude</strong> (\(A\)): Maximum displacement from equilibrium</li>
+        <li><strong>Wave speed</strong> (\(v\)): Speed at which the wave propagates (\(v = \lambda f\))</li>
+    </ul>
+
+    <div class="figure">
+        <svg width="600" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Transverse wave -->
+            <line x1="40" y1="100" x2="570" y2="100" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <path d="M 50,100 C 82,50 115,50 147,100 C 179,150 212,150 244,100 C 276,50 309,50 341,100 C 373,150 406,150 438,100 C 470,50 503,50 535,100"
+                fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <!-- Amplitude -->
+            <line x1="147" y1="100" x2="147" y2="50" stroke="#cc0000" stroke-width="2" marker-start="url(#f105start)" marker-end="url(#f105end)"/>
+            <text x="155" y="80" font-size="15" fill="#cc0000">A</text>
+            <!-- Wavelength -->
+            <line x1="147" y1="35" x2="341" y2="35" stroke="#009966" stroke-width="2" marker-start="url(#f105start)" marker-end="url(#f105green)"/>
+            <text x="244" y="28" font-size="15" text-anchor="middle" fill="#009966">&#955;</text>
+            <!-- Wave direction -->
+            <line x1="555" y1="100" x2="590" y2="100" stroke="#0066cc" stroke-width="2" marker-end="url(#f105blue)"/>
+            <text x="565" y="90" font-size="13" fill="#0066cc">v</text>
+            <!-- Particle motion arrows (perpendicular) -->
+            <line x1="244" y1="115" x2="244" y2="145" stroke="#ff9900" stroke-width="2.5" marker-end="url(#f105orange)"/>
+            <text x="252" y="160" font-size="13" fill="#ff9900">particle motion</text>
+            <text x="150" y="180" font-size="14" text-anchor="middle" fill="#0066cc" font-weight="bold">Transverse wave</text>
+            <!-- Longitudinal wave -->
+            <line x1="40" y1="250" x2="570" y2="250" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <g fill="#0066cc">
+                <circle cx="60" cy="250" r="4"/><circle cx="75" cy="250" r="4"/><circle cx="87" cy="250" r="4"/>
+                <circle cx="97" cy="250" r="4"/><circle cx="106" cy="250" r="4"/><circle cx="115" cy="250" r="4"/>
+                <circle cx="126" cy="250" r="4"/><circle cx="142" cy="250" r="4"/><circle cx="162" cy="250" r="4"/>
+                <circle cx="185" cy="250" r="4"/><circle cx="205" cy="250" r="4"/><circle cx="216" cy="250" r="4"/>
+                <circle cx="225" cy="250" r="4"/><circle cx="234" cy="250" r="4"/><circle cx="245" cy="250" r="4"/>
+                <circle cx="261" cy="250" r="4"/><circle cx="281" cy="250" r="4"/><circle cx="304" cy="250" r="4"/>
+                <circle cx="324" cy="250" r="4"/><circle cx="335" cy="250" r="4"/><circle cx="344" cy="250" r="4"/>
+                <circle cx="353" cy="250" r="4"/><circle cx="364" cy="250" r="4"/><circle cx="380" cy="250" r="4"/>
+                <circle cx="400" cy="250" r="4"/><circle cx="423" cy="250" r="4"/><circle cx="443" cy="250" r="4"/>
+                <circle cx="454" cy="250" r="4"/><circle cx="463" cy="250" r="4"/><circle cx="472" cy="250" r="4"/>
+                <circle cx="483" cy="250" r="4"/><circle cx="499" cy="250" r="4"/><circle cx="519" cy="250" r="4"/>
+                <circle cx="542" cy="250" r="4"/><circle cx="562" cy="250" r="4"/>
+            </g>
+            <!-- Compression markers -->
+            <text x="112" y="280" font-size="13" text-anchor="middle" fill="#cc0000">compression</text>
+            <text x="195" y="280" font-size="13" text-anchor="middle" fill="#009966">rarefaction</text>
+            <!-- Wavelength longitudinal -->
+            <line x1="115" y1="222" x2="245" y2="222" stroke="#009966" stroke-width="2" marker-start="url(#f105start)" marker-end="url(#f105green)"/>
+            <text x="180" y="215" font-size="15" text-anchor="middle" fill="#009966">&#955;</text>
+            <!-- Particle motion arrows (parallel) -->
+            <line x1="470" y1="235" x2="500" y2="235" stroke="#ff9900" stroke-width="2.5" marker-end="url(#f105orange)"/>
+            <line x1="500" y1="265" x2="470" y2="265" stroke="#ff9900" stroke-width="2.5" marker-end="url(#f105orange)"/>
+            <text x="430" y="300" font-size="14" text-anchor="middle" fill="#0066cc" font-weight="bold">Longitudinal wave</text>
+            <!-- Wave direction -->
+            <line x1="555" y1="250" x2="590" y2="250" stroke="#0066cc" stroke-width="2" marker-end="url(#f105blue)"/>
+            <defs>
+                <marker id="f105end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f105green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f105blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f105orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                </marker>
+                <marker id="f105start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.5: Transverse and longitudinal waves with their characteristics</div>
+    </div>
+
+    <h3>10.3.2 A Travelling Wave</h3>
+
+    <p>The mathematical description of a sinusoidal wave traveling in the positive x-direction is:</p>
+    <div class="equation">
+        \(y(x,t) = A \sin(kx - \omega t + \phi)\)
+    </div>
+    <p>where:</p>
+    <ul>
+        <li>\(y(x,t)\) is the displacement at position \(x\) and time \(t\)</li>
+        <li>\(A\) is the amplitude</li>
+        <li>\(k = \frac{2\pi}{\lambda}\) is the wave number</li>
+        <li>\(\omega = 2\pi f\) is the angular frequency</li>
+        <li>\(\phi\) is the phase constant</li>
+    </ul>
+    <p>The wave speed is given by:</p>
+    <div class="equation">
+        \(v = \lambda f = \frac{\omega}{k}\)
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A wave is described by \(y(x,t) = 0.2 \sin(2x - 4t)\), where \(x\) and \(y\) are in meters and \(t\) is in seconds. Find:</p>
+            <p>a) The amplitude<br>
+            b) The wavelength<br>
+            c) The period<br>
+            d) The wave speed</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Comparing with the general form \(y(x,t) = A \sin(kx - \omega t)\):</p>
+            <p>a) Amplitude \(A = 0.2\) m</p>
+            <p>b) Wave number \(k = 2\) rad/m, so \(\lambda = \frac{2\pi}{k} = \frac{2\pi}{2} = \pi\) m</p>
+            <p>c) Angular frequency \(\omega = 4\) rad/s, so \(T = \frac{2\pi}{\omega} = \frac{2\pi}{4} = \frac{\pi}{2}\) s</p>
+            <p>d) Wave speed \(v = \frac{\omega}{k} = \frac{4}{2} = 2\) m/s</p>
+        </div>
+    </div>
+
+    <h3>10.3.3 Energy and Intensity of Waves</h3>
+
+    <p>A wave carries energy through a medium. For a mechanical wave, the energy transported per unit time is proportional to the square of the amplitude and to the square of the frequency. The <strong>intensity</strong> \(I\) is the power transmitted per unit area perpendicular to the direction of propagation:</p>
+    <div class="equation">
+        \(I = \frac{P}{A}\)
+    </div>
+    <p>For a point source radiating uniformly in three dimensions, the energy spreads over a spherical surface of area \(4\pi r^2\), so the intensity decreases with distance as:</p>
+    <div class="equation">
+        \(I = \frac{P}{4\pi r^2}\)
+    </div>
+    <p>This is the <strong>inverse-square law</strong>: doubling the distance reduces the intensity to one quarter.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A small loudspeaker emits sound uniformly in all directions with a power of \(2.0\,\text{W}\). Find the sound intensity at a distance of \(4.0\,\text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the inverse-square law:</p>
+            <div class="equation">
+                \(I = \frac{P}{4\pi r^2} = \frac{2.0}{4\pi(4.0)^2} = \frac{2.0}{201} \approx 1.0\times10^{-2}\,\text{W/m}^2\)
+            </div>
+            <p>At twice the distance, \(8.0\,\text{m}\), the intensity would fall to \(2.5\times10^{-3}\,\text{W/m}^2\).</p>
+        </div>
+    </div>
+
+    <h2>10.4 Standing Waves</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Standing waves</strong> are wave patterns that result from the interference of two waves of identical frequency traveling in opposite directions. They appear to be stationary.</p>
+        </div>
+    </div>
+
+    <p>The equation for a standing wave is:</p>
+    <div class="equation">
+        \(y(x,t) = 2A \sin(kx) \cos(\omega t)\)
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Standing waves have nodes (points of zero amplitude) and antinodes (points of maximum amplitude) at fixed positions.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fixed ends -->
+            <line x1="60" y1="40" x2="60" y2="260" stroke="black" stroke-width="5"/>
+            <line x1="500" y1="40" x2="500" y2="260" stroke="black" stroke-width="5"/>
+            <!-- Equilibrium -->
+            <line x1="60" y1="150" x2="500" y2="150" stroke="#999999" stroke-width="1.2" stroke-dasharray="6,4"/>
+            <!-- Standing wave envelope (n=3, three loops) -->
+            <path d="M 60,150 C 100,80 145,80 185,150 C 225,220 270,220 310,150 C 350,80 395,80 435,150 C 460,195 485,180 500,150"
+                fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <path d="M 60,150 C 100,220 145,220 185,150 C 225,80 270,80 310,150 C 350,220 395,220 435,150 C 460,105 485,120 500,150"
+                fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <!-- Nodes -->
+            <circle cx="60" cy="150" r="6" fill="#cc0000"/>
+            <circle cx="185" cy="150" r="6" fill="#cc0000"/>
+            <circle cx="310" cy="150" r="6" fill="#cc0000"/>
+            <circle cx="435" cy="150" r="6" fill="#cc0000"/>
+            <circle cx="500" cy="150" r="6" fill="#cc0000"/>
+            <!-- Antinodes -->
+            <circle cx="122" cy="150" r="6" fill="#009966"/>
+            <circle cx="247" cy="150" r="6" fill="#009966"/>
+            <circle cx="372" cy="150" r="6" fill="#009966"/>
+            <!-- Labels -->
+            <text x="60" y="175" font-size="12" fill="#cc0000">N</text>
+            <text x="185" y="175" font-size="12" fill="#cc0000">N</text>
+            <text x="310" y="175" font-size="12" fill="#cc0000">N</text>
+            <text x="435" y="175" font-size="12" fill="#cc0000">N</text>
+            <text x="115" y="205" font-size="12" fill="#009966">AN</text>
+            <text x="240" y="205" font-size="12" fill="#009966">AN</text>
+            <text x="365" y="205" font-size="12" fill="#009966">AN</text>
+            <!-- Amplitude arrows at antinode -->
+            <line x1="122" y1="150" x2="122" y2="95" stroke="#cc0000" stroke-width="2" marker-end="url(#f106red)"/>
+            <line x1="122" y1="150" x2="122" y2="205" stroke="#cc0000" stroke-width="2" marker-end="url(#f106red)"/>
+            <text x="95" y="100" font-size="14" fill="#cc0000">2A</text>
+            <!-- Harmonic label -->
+            <text x="280" y="30" font-size="15" text-anchor="middle" fill="#0066cc">Third harmonic: n = 3</text>
+            <text x="280" y="290" font-size="14" text-anchor="middle">N = Node (zero amplitude), AN = Antinode (maximum amplitude)</text>
+            <text x="280" y="315" font-size="14" text-anchor="middle" fill="#666666">The solid and dashed curves show the string at different times</text>
+            <defs>
+                <marker id="f106red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.6: Standing wave on a string fixed at both ends</div>
+    </div>
+
+    <h3>10.4.1 Standing Waves in a String</h3>
+
+    <p>For a string fixed at both ends, standing waves occur at specific frequencies called harmonics:</p>
+    <div class="equation">
+        \(f_n = \frac{n}{2L} \sqrt{\frac{T}{\mu}}, \quad n = 1, 2, 3, \ldots\)
+    </div>
+    <p>where:</p>
+    <ul>
+        <li>\(L\) is the length of the string</li>
+        <li>\(T\) is the tension in the string</li>
+        <li>\(\mu\) is the linear mass density</li>
+    </ul>
+    <p>The wavelength of the \(n\)th harmonic is:</p>
+    <div class="equation">
+        \(\lambda_n = \frac{2L}{n}\)
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A guitar string of length 0.65 m has a linear mass density of \(3.5 \times 10^{-3}\) kg/m. If the tension is 150 N, find the fundamental frequency.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(f_1 = \frac{1}{2L} \sqrt{\frac{T}{\mu}} = \frac{1}{2(0.65)} \sqrt{\frac{150}{3.5 \times 10^{-3}}} = \frac{1}{1.3} \sqrt{42857.14}\)
+            </div>
+            <div class="equation">
+                \(= 0.769 \times 207.0 \approx 159.2\,\text{Hz}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>10.4.2 Standing Waves in Air Columns</h3>
+
+    <p>Standing waves can form in air columns in pipes:</p>
+    <ul>
+        <li><strong>Open at both ends</strong>: All harmonics are present (\(f_n = \frac{nv}{2L}\), \(n = 1, 2, 3, \ldots\))</li>
+        <li><strong>Closed at one end</strong>: Only odd harmonics are present (\(f_n = \frac{nv}{4L}\), \(n = 1, 3, 5, \ldots\))</li>
+    </ul>
+
+    <div class="figure">
+        <svg width="560" height="340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Open-open pipe -->
+            <rect x="60" y="50" width="36" height="230" fill="none" stroke="black" stroke-width="3"/>
+            <rect x="240" y="50" width="36" height="230" fill="none" stroke="black" stroke-width="3"/>
+            <!-- Open-open fundamental pattern (antinode-antinode) -->
+            <path d="M 78,165 C 100,120 130,120 152,165 C 174,210 204,210 226,165 C 234,150 250,150 258,165"
+                fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <path d="M 78,165 C 100,210 130,210 152,165 C 174,120 204,120 226,165 C 234,180 250,180 258,165"
+                fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <text x="158" y="35" font-size="14" text-anchor="middle" font-weight="bold">Open at both ends</text>
+            <text x="158" y="300" font-size="13" text-anchor="middle" fill="#0066cc">Antinodes at open ends</text>
+            <text x="158" y="318" font-size="13" text-anchor="middle" fill="#cc0000">Node in the middle</text>
+            <!-- Node/antinode markers open pipe -->
+            <circle cx="78" cy="165" r="5" fill="#009966"/>
+            <circle cx="152" cy="165" r="5" fill="#cc0000"/>
+            <circle cx="258" cy="165" r="5" fill="#009966"/>
+            <!-- Closed-open pipe (closed at left) -->
+            <line x1="356" y1="50" x2="356" y2="280" stroke="black" stroke-width="5"/>
+            <rect x="356" y="50" width="36" height="230" fill="none" stroke="black" stroke-width="3"/>
+            <line x1="356" y1="50" x2="356" y2="280" stroke="black" stroke-width="6"/>
+            <!-- Hatching for closed end -->
+            <line x1="340" y1="70" x2="356" y2="60" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="100" x2="356" y2="90" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="130" x2="356" y2="120" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="160" x2="356" y2="150" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="190" x2="356" y2="180" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="220" x2="356" y2="210" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="250" x2="356" y2="240" stroke="#666666" stroke-width="1.5"/>
+            <line x1="340" y1="278" x2="356" y2="268" stroke="#666666" stroke-width="1.5"/>
+            <!-- Fundamental pattern node-at-closed -->
+            <path d="M 374,165 C 400,120 440,120 470,165 C 480,180 490,172 500,165"
+                fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <path d="M 374,165 C 400,210 440,210 470,165 C 480,150 490,158 500,165"
+                fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <text x="430" y="35" font-size="14" text-anchor="middle" font-weight="bold">Closed at one end</text>
+            <text x="430" y="300" font-size="13" text-anchor="middle" fill="#cc0000">Node at closed end</text>
+            <text x="430" y="318" font-size="13" text-anchor="middle" fill="#009966">Antinode at open end</text>
+            <!-- Node/antinode markers closed pipe -->
+            <circle cx="374" cy="165" r="5" fill="#cc0000"/>
+            <circle cx="500" cy="165" r="5" fill="#009966"/>
+            <!-- Wavelength annotation -->
+            <text x="158" y="340" font-size="13" text-anchor="middle" fill="#0066cc">Open-open: &#955;&#8321; = 2L (all harmonics)</text>
+        </svg>
+        <div class="figure-caption">Figure 10.7: Standing wave patterns in open and closed air columns</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A pipe open at both ends is 1.0 m long. The speed of sound is 340 m/s. Find the fundamental frequency and the first two overtones.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Fundamental frequency:</p>
+            <div class="equation">
+                \(f_1 = \frac{v}{2L} = \frac{340}{2(1.0)} = 170\,\text{Hz}\)
+            </div>
+            <p>First overtone (second harmonic):</p>
+            <div class="equation">
+                \(f_2 = 2f_1 = 340\,\text{Hz}\)
+            </div>
+            <p>Second overtone (third harmonic):</p>
+            <div class="equation">
+                \(f_3 = 3f_1 = 510\,\text{Hz}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>10.5 The Doppler Effect</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>Doppler effect</strong> is the change in frequency or wavelength of a wave in relation to an observer who is moving relative to the wave source.</p>
+        </div>
+    </div>
+
+    <p>For sound waves, when the source and observer are moving along the line connecting them:</p>
+    <div class="equation">
+        \(f' = f \left( \frac{v \pm v_o}{v \mp v_s} \right)\)
+    </div>
+    <p>where:</p>
+    <ul>
+        <li>\(f'\) is the observed frequency</li>
+        <li>\(f\) is the source frequency</li>
+        <li>\(v\) is the speed of sound</li>
+        <li>\(v_o\) is the speed of the observer</li>
+        <li>\(v_s\) is the speed of the source</li>
+    </ul>
+    <p>Use the upper signs (+) in numerator and (&#8722;) in denominator if the observer is moving toward the source or the source is moving toward the observer.</p>
+
+    <div class="figure">
+        <svg width="560" height="330" xmlns="http://www.w3.org/2000/svg">
+            <!-- Wavefronts (compressed ahead of ambulance) -->
+            <circle cx="370" cy="170" r="150" fill="none" stroke="#999999" stroke-width="1.2"/>
+            <circle cx="345" cy="170" r="115" fill="none" stroke="#999999" stroke-width="1.2"/>
+            <circle cx="320" cy="170" r="80" fill="none" stroke="#999999" stroke-width="1.2"/>
+            <circle cx="295" cy="170" r="45" fill="none" stroke="#999999" stroke-width="1.2"/>
+            <!-- Ambulance (source) -->
+            <rect x="250" y="145" width="70" height="45" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <rect x="295" y="152" width="20" height="18" fill="#cce5ff" stroke="#0066cc" stroke-width="1.5"/>
+            <circle cx="265" cy="195" r="8" fill="#333333"/>
+            <circle cx="305" cy="195" r="8" fill="#333333"/>
+            <line x1="270" y1="140" x2="280" y2="145" stroke="#cc0000" stroke-width="2.5"/>
+            <!-- v_s arrow -->
+            <line x1="255" y1="110" x2="335" y2="110" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f108red)"/>
+            <text x="295" y="100" font-size="14" text-anchor="middle" fill="#cc0000">v&#8347; = 30 m/s</text>
+            <!-- Observer -->
+            <circle cx="80" cy="150" r="10" fill="#009966"/>
+            <line x1="80" y1="160" x2="80" y2="200" stroke="#009966" stroke-width="3"/>
+            <line x1="80" y1="175" x2="62" y2="190" stroke="#009966" stroke-width="2.5"/>
+            <line x1="80" y1="175" x2="98" y2="190" stroke="#009966" stroke-width="2.5"/>
+            <line x1="80" y1="200" x2="66" y2="230" stroke="#009966" stroke-width="2.5"/>
+            <line x1="80" y1="200" x2="94" y2="230" stroke="#009966" stroke-width="2.5"/>
+            <text x="80" y="250" font-size="14" text-anchor="middle" fill="#009966">Observer</text>
+            <text x="80" y="268" font-size="13" text-anchor="middle" fill="#666666">(stationary)</text>
+            <!-- Frequency labels -->
+            <text x="470" y="240" font-size="14" text-anchor="middle" fill="#cc0000">Wavefronts</text>
+            <text x="470" y="258" font-size="13" text-anchor="middle" fill="#666666">closer together</text>
+            <text x="470" y="274" font-size="13" text-anchor="middle" fill="#666666">(higher f&#8242;)</text>
+            <text x="200" y="60" font-size="14" text-anchor="middle">Source approaching observer</text>
+            <text x="200" y="80" font-size="13" text-anchor="middle" fill="#cc0000">f&#8242; &gt; f (observer hears higher pitch)</text>
+            <defs>
+                <marker id="f108red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 10.8: Doppler effect for an ambulance approaching a stationary observer</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An ambulance with siren emitting at 1000 Hz moves toward a stationary observer at 30 m/s. The speed of sound is 340 m/s. What frequency does the observer hear?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The source is moving toward the observer, so:</p>
+            <div class="equation">
+                \(f' = f \left( \frac{v}{v - v_s} \right) = 1000 \left( \frac{340}{340 - 30} \right) = 1000 \left( \frac{340}{310} \right) \approx 1097\,\text{Hz}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An observer moves toward a stationary source emitting sound at \(500\,\text{Hz}\) with a speed of \(25\,\text{m/s}\). The speed of sound is \(340\,\text{m/s}\). Find the observed frequency.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The observer is moving toward the source, so the numerator uses the plus sign:</p>
+            <div class="equation">
+                \(f' = f\left(\frac{v + v_o}{v}\right) = 500\left(\frac{340 + 25}{340}\right) = 500\left(\frac{365}{340}\right) \approx 537\,\text{Hz}\)
+            </div>
+            <p>The observer encounters more wave crests per second, so the pitch is higher. If the observer moved away at the same speed, the frequency would fall to about \(463\,\text{Hz}\).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>For electromagnetic waves (light, radio waves), the Doppler effect formula is different due to relativistic effects:</p>
+            <div class="equation">
+                \(f' = f \sqrt{\frac{1 + v/c}{1 - v/c}}\)
+            </div>
+            <p>for relative approach, where \(c\) is the speed of light.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A galaxy emits light at a frequency of \(5.0 \times 10^{14}\,\text{Hz}\). If the galaxy is moving away from Earth at \(0.2c\), what frequency does an Earth-based observer measure? (Use the relativistic Doppler formula.)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Because the source is receding, use the redshift form of the relativistic Doppler formula:</p>
+            <div class="equation">
+                \(f' = f\sqrt{\frac{1 - v/c}{1 + v/c}} = (5.0 \times 10^{14})\sqrt{\frac{1 - 0.2}{1 + 0.2}} = (5.0 \times 10^{14})\sqrt{\frac{0.8}{1.2}} \approx 4.08 \times 10^{14}\,\text{Hz}\)
+            </div>
+            <p>The observed frequency is lower (redshifted) because the source is moving away from the observer.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Oscillation and wave problems become manageable once you identify the physical system and the quantity the question asks for. Begin by deciding whether you are treating a mass on a spring, a pendulum, a wave on a string, or an air column. Then list the known values in SI units, sketch the equilibrium position and the displacement, and mark the direction of the restoring force. For oscillations, the key parameters are mass, spring constant or pendulum length, amplitude, period, and frequency; for waves they are speed, wavelength, frequency, and the boundary conditions at each end.</p>
+    <p>Standing-wave problems are really boundary-condition problems. A fixed end must be a node, an open end must be an antinode, and the allowed wavelengths follow from fitting the pattern into the available length. Once the wavelength is known, \(v=\lambda f\) converts between wavelength and frequency. Always check that overtones lie above the fundamental, that only permitted harmonics appear, and that the final unit is hertz or metres as requested.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Identify the oscillating or wave system and list the known quantities in SI units.</li>
+                <li>For SHM, find \(\omega\), \(T\), and \(f\) from \(k/m\) or \(L/g\), and confirm that the small-angle approximation is valid for a pendulum.</li>
+                <li>For energy questions, use \(E=\frac{1}{2}kA^2\) and conserve \(K+U\) at two positions.</li>
+                <li>For travelling waves, relate speed, wavelength, and frequency with \(v=\lambda f\).</li>
+                <li>For standing waves, identify nodes and antinodes first, then select the allowed harmonics.</li>
+                <li>Check units, significant figures, and whether each overtone is higher than the fundamental.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A pipe closed at one end and open at the other is \(0.85\,\text{m}\) long. The speed of sound is \(340\,\text{m/s}\). Find the fundamental frequency and wavelength, and the frequency and wavelength of the first two overtones.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>A pipe closed at one end supports only odd harmonics. The fundamental wavelength is four times the pipe length:</p>
+            <div class="equation">
+                \(\lambda_1 = 4L = 4(0.85\,\text{m}) = 3.40\,\text{m}\)
+            </div>
+            <p>The fundamental frequency is therefore:</p>
+            <div class="equation">
+                \(f_1 = \frac{v}{\lambda_1} = \frac{340\,\text{m/s}}{3.40\,\text{m}} = 100\,\text{Hz}\)
+            </div>
+            <p>The first overtone is the third harmonic, with \(n=3\):</p>
+            <div class="equation">
+                \(f_3 = 3f_1 = 3(100\,\text{Hz}) = 300\,\text{Hz}, \qquad \lambda_3 = \frac{4L}{3} = \frac{3.40\,\text{m}}{3} \approx 1.13\,\text{m}\)
+            </div>
+            <p>The second overtone is the fifth harmonic, with \(n=5\):</p>
+            <div class="equation">
+                \(f_5 = 5f_1 = 5(100\,\text{Hz}) = 500\,\text{Hz}, \qquad \lambda_5 = \frac{4L}{5} = \frac{3.40\,\text{m}}{5} = 0.680\,\text{m}\)
+            </div>
+            <p>The even harmonics are absent, and the predicted frequencies are \(100\,\text{Hz}\), \(300\,\text{Hz}\), and \(500\,\text{Hz}\), with wavelengths \(3.40\,\text{m}\), \(1.13\,\text{m}\), and \(0.680\,\text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A clarinet behaves approximately like a pipe closed at one end, which is why its lowest register emphasizes odd harmonics and has a distinctive hollow tone. Instrument makers use these boundary conditions when choosing bore length and tone-hole positions, while tuners rely on the same harmonic relationships to set a reliable reference pitch.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Simple harmonic motion occurs when the restoring force is proportional and opposite to the displacement, \(F=-kx\).</li>
+        <li>For a mass-spring system, \(\omega=\sqrt{k/m}\) and \(T=2\pi\sqrt{m/k}\); for a small-angle pendulum, \(T=2\pi\sqrt{L/g}\).</li>
+        <li>The total energy of an ideal oscillator is constant, \(E=\frac{1}{2}kA^2\), while kinetic and potential energy exchange continuously.</li>
+        <li>A travelling wave transports energy without transporting matter, with speed \(v=\lambda f\).</li>
+        <li>Standing waves have nodes and antinodes fixed by the boundaries of the medium.</li>
+        <li>Strings and pipes open at both ends support all harmonics, \(f_n=nv/(2L)\), while a pipe closed at one end supports only odd harmonics, \(f_n=nv/(4L)\) with \(n\) odd.</li>
+        <li>The Doppler effect raises the observed frequency when source and observer approach and lowers it when they separate.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 10</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Simple harmonic motion is characterized by a restoring force proportional to displacement: \(F = -kx\)</li>
+                <li>Mass-spring systems oscillate with \(\omega = \sqrt{k/m}\) and \(T = 2\pi\sqrt{m/k}\)</li>
+                <li>The energy in SHM oscillates between kinetic and potential forms, with constant total energy \(E = \frac{1}{2}kA^2\)</li>
+                <li>SHM is related to the projection of uniform circular motion onto a diameter</li>
+                <li>Pendulums exhibit SHM for small amplitudes with period \(T = 2\pi\sqrt{L/g}\), independent of mass</li>
+                <li>Resonance occurs when a system is driven at its natural frequency</li>
+                <li>Mechanical waves transport energy without transporting matter; \(v = \lambda f\)</li>
+                <li>Standing waves result from interference of waves traveling in opposite directions; they have nodes and antinodes</li>
+                <li>Strings support all harmonics (\(f_n = nv/2L\)); closed air columns support only odd harmonics</li>
+                <li>The Doppler effect causes frequency shifts due to relative motion between source and observer</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why does the period of a simple pendulum not depend on the mass of the bob?</li>
+        <li>Explain why soldiers break step when marching across a bridge.</li>
+        <li>How does the energy of a wave relate to its amplitude?</li>
+        <li>Why do different instruments playing the same note sound different?</li>
+        <li>Explain how the Doppler effect is used in radar speed detectors.</li>
+        <li>Why does the amplitude of a real pendulum gradually decrease, and what happens to its energy?</li>
+        <li>Explain why a car's shock absorbers are designed to be near critically damped.</li>
+        <li>Why can a singer shatter a glass by singing at just the right frequency?</li>
+        <li>Two sound waves have the same frequency but different amplitudes. How do their intensities compare?</li>
+        <li>Why does the sound of a siren change pitch as it passes you, even if it moves at constant speed?</li>
+        <li>A wave travels from a thick rope into a thin rope. What happens to its speed, wavelength, and frequency?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A 0.8 kg mass oscillates on a spring with amplitude 15 cm and period 0.5 s. Find:
+            <ol type="a">
+                <li>The spring constant</li>
+                <li>The maximum speed</li>
+                <li>The total energy</li>
+            </ol>
+        </li>
+        <li>A simple pendulum has a period of 2.0 s on Earth. What would be its period on the Moon, where gravity is 1/6 that of Earth?</li>
+        <li>A wave on a string is described by \(y(x,t) = 0.03 \sin(3x - 12t)\), where \(x\) and \(y\) are in meters and \(t\) is in seconds. Find:
+            <ol type="a">
+                <li>The wavelength, frequency, and wave speed</li>
+                <li>The maximum transverse speed of any point on the string</li>
+            </ol>
+        </li>
+        <li>A train whistle emits sound at 800 Hz. What frequency is heard by a stationary observer when the train approaches at 30 m/s? (Speed of sound = 340 m/s)</li>
+        <li>A guitar string 0.7 m long has a fundamental frequency of 330 Hz. Find:
+            <ol type="a">
+                <li>The wave speed on the string</li>
+                <li>The frequency of the third harmonic</li>
+            </ol>
+        </li>
+        <li>A mass-spring system has \(m = 0.40\,\text{kg}\) and \(k = 160\,\text{N/m}\). Find its angular frequency, period, and frequency.</li>
+        <li>A pendulum has a period of \(1.5\,\text{s}\) on Earth. Find its length.</li>
+        <li>A wave has frequency \(50\,\text{Hz}\) and wavelength \(4.0\,\text{m}\). Find its speed and the distance it travels in \(0.20\,\text{s}\).</li>
+        <li>A pipe closed at one end is \(0.50\,\text{m}\) long. Find the first three resonant frequencies. Take \(v = 340\,\text{m/s}\).</li>
+        <li>An observer moves away from a stationary \(600\,\text{Hz}\) source at \(20\,\text{m/s}\). Find the observed frequency. Take \(v = 340\,\text{m/s}\).</li>
+        <li>A sound source of power \(0.50\,\text{W}\) radiates uniformly. Find the intensity at \(2.0\,\text{m}\) and at \(6.0\,\text{m}\).</li>
+    </ol>
+</body>
+</html>

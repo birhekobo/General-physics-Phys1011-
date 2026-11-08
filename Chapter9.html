@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Heat and Thermodynamics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 9: Heat and Thermodynamics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Heat and Thermodynamics</div>
+        <div class="textbox-content">
+            <p>Heat and thermodynamics describe how energy moves and transforms when thermal effects are involved. Temperature tells us how hot a system is, but heat is the actual transfer of energy between systems at different temperatures.</p>
+            <p>The concepts of specific heat and latent heat let us calculate the energy required to raise temperature or cause phase changes, while the First Law of Thermodynamics, \( \Delta U = Q - W \), puts thermal processes on an energy balance sheet.</p>
+            <p>Combined with the mechanisms of heat transfer — conduction, convection, and radiation — this chapter gives a complete picture of how thermal energy behaves in nature and technology.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the concept of temperature and the Zeroth Law of Thermodynamics</li>
+                <li>Convert between different temperature scales and understand absolute temperature</li>
+                <li>Calculate thermal expansion for solids and liquids</li>
+                <li>Distinguish between heat and temperature</li>
+                <li>Calculate heat transfer using specific heat and latent heat concepts</li>
+                <li>Understand and apply the three mechanisms of heat transfer</li>
+                <li>Apply the First Law of Thermodynamics to various systems</li>
+                <li>Solve problems involving thermal expansion, heat transfer, and energy conservation</li>
+                <li>Analyze real-world applications of thermodynamic principles</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>9.1 The Concept of Temperature: Zeroth Law of Thermodynamics</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Temperature</strong> is a measure of the average kinetic energy of the particles in a substance. It determines the direction of heat flow between objects.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Zeroth Law of Thermodynamics:</strong> If two systems are each in thermal equilibrium with a third system, then they are in thermal equilibrium with each other.</p>
+            <p>This law establishes temperature as a fundamental property and allows for temperature measurement using thermometers.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about temperature and thermal equilibrium:</p>
+            <ul>
+                <li>Objects in thermal equilibrium have the same temperature</li>
+                <li>Heat flows from higher temperature to lower temperature</li>
+                <li>The Zeroth Law justifies the use of thermometers</li>
+                <li>Thermal equilibrium does not mean no energy exchange, but rather no net energy exchange</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three systems A, B and C in thermal equilibrium">
+            <circle cx="130" cy="220" r="52" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <circle cx="390" cy="220" r="52" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <circle cx="260" cy="85" r="52" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <text x="130" y="228" font-size="18" text-anchor="middle" fill="#0066cc">A</text>
+            <text x="390" y="228" font-size="18" text-anchor="middle" fill="#0066cc">B</text>
+            <text x="260" y="93" font-size="18" text-anchor="middle" fill="#0066cc">C</text>
+            <line x1="165" y1="183" x2="225" y2="122" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="7,5"/>
+            <line x1="295" y1="122" x2="355" y2="183" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="7,5"/>
+            <line x1="182" y1="220" x2="338" y2="220" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="7,5"/>
+            <text x="260" y="318" font-size="15" text-anchor="middle" fill="#333333">If A is in equilibrium with C and B is in equilibrium with C,</text>
+            <text x="260" y="340" font-size="15" text-anchor="middle" fill="#333333">then A and B are in thermal equilibrium.</text>
+        </svg>
+        <div class="figure-caption">Figure 9.1: Zeroth Law of Thermodynamics</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>If thermometer A reads the same temperature when in contact with object B and when in contact with object C, what can we conclude about the temperatures of B and C?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>According to the Zeroth Law of Thermodynamics, if thermometer A is in thermal equilibrium with both B and C, then B and C are in thermal equilibrium with each other and have the same temperature.</p>
+        </div>
+    </div>
+
+    <h2>9.2 Temperature Scales and Absolute Temperature</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The three common temperature scales are:</p>
+            <ul>
+                <li><strong>Celsius (°C):</strong> Based on water's freezing (0°C) and boiling (100°C) points</li>
+                <li><strong>Fahrenheit (°F):</strong> Used primarily in the United States</li>
+                <li><strong>Kelvin (K):</strong> The SI unit of temperature, with absolute zero at 0 K</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Absolute zero</strong> is the theoretical temperature at which all molecular motion ceases. It is 0 K on the Kelvin scale, which is approximately \(-273.15\,^\circ\text{C}\).</p>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Temperature Conversion Formulas</div>
+        <div class="textbox-content">
+            <div class="equation">
+                \(T_K = T_C + 273.15\)
+            </div>
+            <div class="equation">
+                \(T_C = \frac{5}{9}(T_F - 32)\)
+            </div>
+            <div class="equation">
+                \(T_F = \frac{9}{5}T_C + 32\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="620" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of Kelvin and Celsius temperature scales">
+            <line x1="60" y1="120" x2="560" y2="120" stroke="#000000" stroke-width="2"/>
+            <polygon points="560,120 548,114 548,126" fill="#000000"/>
+            <text x="570" y="125" font-size="13" text-anchor="end">Temperature</text>
+            <line x1="110" y1="112" x2="110" y2="128" stroke="#000000" stroke-width="2"/>
+            <line x1="250" y1="112" x2="250" y2="128" stroke="#000000" stroke-width="2"/>
+            <line x1="390" y1="112" x2="390" y2="128" stroke="#000000" stroke-width="2"/>
+            <line x1="530" y1="112" x2="530" y2="128" stroke="#000000" stroke-width="2"/>
+            <text x="110" y="88" font-size="14" text-anchor="middle">Absolute Zero</text>
+            <text x="250" y="88" font-size="14" text-anchor="middle">Freezing Point</text>
+            <text x="390" y="88" font-size="14" text-anchor="middle">Boiling Point</text>
+            <text x="530" y="88" font-size="14" text-anchor="middle">Example</text>
+            <text x="110" y="152" font-size="13" text-anchor="middle" fill="#0066cc">0 K</text>
+            <text x="250" y="152" font-size="13" text-anchor="middle" fill="#0066cc">273.15 K</text>
+            <text x="390" y="152" font-size="13" text-anchor="middle" fill="#0066cc">373.15 K</text>
+            <text x="530" y="152" font-size="13" text-anchor="middle" fill="#0066cc">473.15 K</text>
+            <text x="110" y="178" font-size="13" text-anchor="middle" fill="#cc0000">−273.15°C</text>
+            <text x="250" y="178" font-size="13" text-anchor="middle" fill="#cc0000">0°C</text>
+            <text x="390" y="178" font-size="13" text-anchor="middle" fill="#cc0000">100°C</text>
+            <text x="530" y="178" font-size="13" text-anchor="middle" fill="#cc0000">200°C</text>
+            <text x="60" y="205" font-size="12" fill="#0066cc">Kelvin</text>
+            <text x="60" y="225" font-size="12" fill="#cc0000">Celsius</text>
+        </svg>
+        <div class="figure-caption">Figure 9.2: Kelvin and Celsius temperature scales</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Convert 25°C to Kelvin and Fahrenheit.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>To Kelvin:</p>
+            <div class="equation">
+                \(T_K = T_C + 273.15 = 25 + 273.15 = 298.15\,\text{K}\)
+            </div>
+            <p>To Fahrenheit:</p>
+            <div class="equation">
+                \(T_F = \frac{9}{5}T_C + 32 = \frac{9}{5}(25) + 32 = 45 + 32 = 77\,^\circ\text{F}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Convert 98.6°F (human body temperature) to Celsius and Kelvin.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>To Celsius:</p>
+            <div class="equation">
+                \(T_C = \frac{5}{9}(T_F - 32) = \frac{5}{9}(98.6 - 32) = \frac{5}{9}(66.6) = 37\,^\circ\text{C}\)
+            </div>
+            <p>To Kelvin:</p>
+            <div class="equation">
+                \(T_K = T_C + 273.15 = 37 + 273.15 = 310.15\,\text{K}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>9.3 Thermal Expansion</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Thermal expansion</strong> is the tendency of matter to change its volume in response to temperature changes.</p>
+        </div>
+    </div>
+
+    <h3>9.3.1 Linear Expansion</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Linear expansion</strong> describes the change in length of an object with temperature:</p>
+            <div class="equation">
+                \(\Delta L = \alpha L_0 \Delta T\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\Delta L\) = change in length</li>
+                <li>\(\alpha\) = coefficient of linear expansion</li>
+                <li>\(L_0\) = original length</li>
+                <li>\(\Delta T\) = change in temperature</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>9.3.2 Volume Expansion</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Volume expansion</strong> describes the change in volume of an object with temperature:</p>
+            <div class="equation">
+                \(\Delta V = \beta V_0 \Delta T\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\Delta V\) = change in volume</li>
+                <li>\(\beta\) = coefficient of volume expansion (\(\beta \approx 3\alpha\) for isotropic materials)</li>
+                <li>\(V_0\) = original volume</li>
+                <li>\(\Delta T\) = change in temperature</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about thermal expansion:</p>
+            <ul>
+                <li>Different materials have different expansion coefficients</li>
+                <li>Bimetallic strips use differential expansion for temperature measurement</li>
+                <li>Expansion joints in bridges and buildings accommodate thermal expansion</li>
+                <li>Water is unusual because it expands when freezing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original and expanded solid object">
+            <rect x="70" y="80" width="150" height="150" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <text x="145" y="160" font-size="20" text-anchor="middle" fill="#0066cc">L₀</text>
+            <text x="145" y="265" font-size="14" text-anchor="middle">At T₁</text>
+            <rect x="330" y="70" width="165" height="165" fill="#ffecec" stroke="#cc0000" stroke-width="2.5"/>
+            <text x="412" y="158" font-size="18" text-anchor="middle" fill="#cc0000">L₀ + ΔL</text>
+            <text x="412" y="265" font-size="14" text-anchor="middle">At T₂ &gt; T₁</text>
+            <line x1="225" y1="155" x2="255" y2="155" stroke="#0066cc" stroke-width="2.5"/>
+            <polygon points="258,155 248,150 248,160" fill="#0066cc"/>
+            <line x1="412" y1="70" x2="412" y2="45" stroke="#0066cc" stroke-width="2.5"/>
+            <polygon points="412,42 407,52 417,52" fill="#0066cc"/>
+            <text x="260" y="35" font-size="13" fill="#0066cc">Expansion</text>
+        </svg>
+        <div class="figure-caption">Figure 9.3: Thermal expansion of a solid object</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An aluminum rod is 2.0 m long at 20°C. If the coefficient of linear expansion for aluminum is \(24 \times 10^{-6}/^\circ\text{C}\), how much does it expand when heated to 100°C?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta L = \alpha L_0 \Delta T = (24 \times 10^{-6})(2.0)(100 - 20) = (24 \times 10^{-6})(2.0)(80) = 3.84 \times 10^{-3}\,\text{m} = 3.84\,\text{mm}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A glass flask has a volume of 500 mL at 20°C. If the coefficient of volume expansion for glass is \(27 \times 10^{-6}/^\circ\text{C}\), what is its volume at 80°C?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta V = \beta V_0 \Delta T = (27 \times 10^{-6})(500)(80 - 20) = (27 \times 10^{-6})(500)(60) = 0.81\,\text{mL}\)
+            </div>
+            <div class="equation">
+                \(V = V_0 + \Delta V = 500 + 0.81 = 500.81\,\text{mL}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>9.4 The Concept of Heat and Energy</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Heat</strong> is the transfer of thermal energy between objects due to a temperature difference. It flows from hotter objects to cooler objects.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Internal energy</strong> is the total energy contained within a system, including both kinetic and potential energy of its molecules.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Thermal equilibrium</strong> occurs when two objects in contact reach the same temperature and no net heat flows between them.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key distinctions:</p>
+            <ul>
+                <li>Temperature measures average kinetic energy per molecule</li>
+                <li>Heat is energy transferred due to temperature difference</li>
+                <li>Internal energy is the total energy of all molecules</li>
+                <li>Objects contain internal energy, not heat</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Heat vs. Temperature</div>
+        <div class="textbox-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heat</th>
+                        <th>Temperature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Form of energy</td>
+                        <td>Measure of hotness or coldness</td>
+                    </tr>
+                    <tr>
+                        <td>Measured in joules (J)</td>
+                        <td>Measured in Kelvin (K), Celsius (°C), or Fahrenheit (°F)</td>
+                    </tr>
+                    <tr>
+                        <td>Depends on mass and material</td>
+                        <td>Independent of mass and material</td>
+                    </tr>
+                    <tr>
+                        <td>Transferred between systems</td>
+                        <td>Not transferred, but determines heat flow direction</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2>9.5 Specific Heat and Latent Heat</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Specific heat capacity</strong> (\(c\)) is the amount of heat required to raise the temperature of 1 kg of a substance by 1°C (or 1 K):</p>
+            <div class="equation">
+                \(Q = mc\Delta T\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(Q\) = heat transferred (joules, J)</li>
+                <li>\(m\) = mass (kilograms, kg)</li>
+                <li>\(c\) = specific heat capacity (J/kg·K)</li>
+                <li>\(\Delta T\) = temperature change (K or °C)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Latent heat</strong> is the heat required for a phase change at constant temperature:</p>
+            <div class="equation">
+                \(Q = mL\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(Q\) = heat transferred (joules, J)</li>
+                <li>\(m\) = mass (kilograms, kg)</li>
+                <li>\(L\) = latent heat (J/kg)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about specific heat and latent heat:</p>
+            <ul>
+                <li>Different phases have different specific heat capacities</li>
+                <li>Latent heat of fusion (\(L_f\)) is for solid-liquid transitions</li>
+                <li>Latent heat of vaporization (\(L_v\)) is for liquid-gas transitions</li>
+                <li>During phase changes, temperature remains constant despite heat input</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heating curve showing solid, melting, liquid, boiling and gas stages">
+            <line x1="70" y1="310" x2="520" y2="310" stroke="#000000" stroke-width="2"/>
+            <polygon points="520,310 508,304 508,316" fill="#000000"/>
+            <text x="535" y="315" font-size="13" text-anchor="end">Heat Added</text>
+            <line x1="70" y1="310" x2="70" y2="40" stroke="#000000" stroke-width="2"/>
+            <polygon points="70,37 64,49 76,49" fill="#000000"/>
+            <text x="70" y="25" font-size="13" text-anchor="middle">Temperature</text>
+            <polyline points="70,270 150,270 150,210 300,210 300,140 440,140 440,80 520,80" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <text x="110" y="260" font-size="13" text-anchor="middle">Solid</text>
+            <text x="225" y="200" font-size="13" text-anchor="middle">Liquid</text>
+            <text x="390" y="130" font-size="13" text-anchor="middle">Gas</text>
+            <text x="158" y="245" font-size="12" fill="#cc0000">Melting</text>
+            <text x="308" y="178" font-size="12" fill="#cc0000">Boiling</text>
+            <text x="80" y="290" font-size="12" fill="#009966">Q = mcₛΔT</text>
+            <text x="185" y="250" font-size="12" fill="#009966">Q = mL_f</text>
+            <text x="205" y="190" font-size="12" fill="#009966">Q = mc_lΔT</text>
+            <text x="315" y="170" font-size="12" fill="#009966">Q = mL_v</text>
+            <text x="420" y="110" font-size="12" fill="#009966">Q = mc_gΔT</text>
+        </svg>
+        <div class="figure-caption">Figure 9.4: Heating curve showing specific heat and latent heat regions</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>How much heat is required to raise the temperature of 2 kg of water from 20°C to 80°C? (Specific heat of water = 4186 J/kg·K)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(Q = mc\Delta T = (2)(4186)(80 - 20) = (2)(4186)(60) = 502{,}320\,\text{J} = 502.32\,\text{kJ}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>How much heat is required to melt 0.5 kg of ice at 0°C? (Latent heat of fusion for ice = 334,000 J/kg)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(Q = mL_f = (0.5)(334{,}000) = 167{,}000\,\text{J} = 167\,\text{kJ}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>In a calorimetry experiment, 0.4 kg of water at 80°C is mixed with 0.2 kg of water at 20°C. Assuming no heat is lost to the surroundings, what is the final temperature of the mixture? (Specific heat of water = 4186 J/kg·K)</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Heat lost by the hot water equals heat gained by the cold water:</p>
+            <div class="equation">
+                \(m_h c (T_h - T_f) = m_c c (T_f - T_c)\)
+            </div>
+            <div class="equation">
+                \(0.4(80 - T_f) = 0.2(T_f - 20)\)
+            </div>
+            <div class="equation">
+                \(32 - 0.4T_f = 0.2T_f - 4 \;\Rightarrow\; 36 = 0.6T_f \;\Rightarrow\; T_f = 60\,\text{°C}\)
+            </div>
+            <p>The final temperature of the mixture is 60°C.</p>
+        </div>
+    </div>
+
+    <h2>9.6 Heat Transfer Mechanisms</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>Heat transfer mechanisms:</p>
+            <ul>
+                <li><strong>Conduction:</strong> Heat transfer through direct molecular contact</li>
+                <li><strong>Convection:</strong> Heat transfer through fluid movement</li>
+                <li><strong>Radiation:</strong> Heat transfer through electromagnetic waves</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>9.6.1 Conduction</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Conduction</strong> is heat transfer through direct molecular contact. The rate of conductive heat transfer is given by:</p>
+            <div class="equation">
+                \(\frac{Q}{t} = kA\frac{\Delta T}{d}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(Q/t\) = heat transfer rate (watts, W)</li>
+                <li>\(k\) = thermal conductivity (W/m·K)</li>
+                <li>\(A\) = cross-sectional area (m²)</li>
+                <li>\(\Delta T\) = temperature difference (K or °C)</li>
+                <li>\(d\) = thickness of the material (m)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>9.6.2 Convection</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Convection</strong> is heat transfer through the movement of fluids (liquids or gases). It occurs when warmer, less dense fluid rises and cooler, denser fluid sinks.</p>
+        </div>
+    </div>
+
+    <h3>9.6.3 Radiation</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Radiation</strong> is heat transfer through electromagnetic waves. All objects emit thermal radiation according to the Stefan-Boltzmann law:</p>
+            <div class="equation">
+                \(P = \varepsilon\sigma A T^4\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(P\) = radiated power (watts, W)</li>
+                <li>\(\varepsilon\) = emissivity (0 to 1, perfect blackbody = 1)</li>
+                <li>\(\sigma\) = Stefan-Boltzmann constant (\(5.67 \times 10^{-8}\,\text{W/m}^2\cdot\text{K}^4\))</li>
+                <li>\(A\) = surface area (m²)</li>
+                <li>\(T\) = absolute temperature (K)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about heat transfer mechanisms:</p>
+            <ul>
+                <li>Conduction works best in solids, especially metals</li>
+                <li>Convection requires fluid motion and is enhanced by density differences</li>
+                <li>Radiation can occur through vacuum and doesn't require a medium</li>
+                <li>Real-world heat transfer often involves multiple mechanisms</li>
+                <li>Insulators work by reducing all forms of heat transfer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="620" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conduction, convection and radiation heat transfer">
+            <rect x="45" y="75" width="120" height="110" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <line x1="80" y1="130" x2="130" y2="130" stroke="#cc0000" stroke-width="3"/>
+            <polygon points="133,130 123,125 123,135" fill="#cc0000"/>
+            <text x="105" y="210" font-size="14" text-anchor="middle">Conduction</text>
+            <text x="105" y="232" font-size="12" text-anchor="middle" fill="#555555">Molecular contact</text>
+            <rect x="245" y="75" width="120" height="110" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <path d="M285 155 Q330 155 330 120 Q330 90 300 90 Q270 90 270 115" fill="none" stroke="#cc0000" stroke-width="2.5"/>
+            <polygon points="270,118 265,107 275,107" fill="#cc0000"/>
+            <text x="305" y="210" font-size="14" text-anchor="middle">Convection</text>
+            <text x="305" y="232" font-size="12" text-anchor="middle" fill="#555555">Fluid motion</text>
+            <rect x="445" y="75" width="120" height="110" fill="#eef6ff" stroke="#0066cc" stroke-width="2.5"/>
+            <line x1="545" y1="100" x2="590" y2="80" stroke="#cc0000" stroke-width="2.5"/>
+            <polygon points="593,78 583,78 587,87" fill="#cc0000"/>
+            <line x1="545" y1="130" x2="595" y2="130" stroke="#cc0000" stroke-width="2.5"/>
+            <polygon points="598,130 588,125 588,135" fill="#cc0000"/>
+            <line x1="545" y1="160" x2="590" y2="180" stroke="#cc0000" stroke-width="2.5"/>
+            <polygon points="593,182 587,173 583,182" fill="#cc0000"/>
+            <text x="505" y="210" font-size="14" text-anchor="middle">Radiation</text>
+            <text x="505" y="232" font-size="12" text-anchor="middle" fill="#555555">EM waves</text>
+        </svg>
+        <div class="figure-caption">Figure 9.5: The three mechanisms of heat transfer</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A copper rod (\(k = 400\,\text{W/m}\cdot\text{K}\)) with cross-sectional area 0.01 m² and length 0.5 m connects two reservoirs at 100°C and 20°C. What is the rate of heat conduction?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\frac{Q}{t} = kA\frac{\Delta T}{d} = (400)(0.01)\frac{(100 - 20)}{0.5} = (4)\frac{80}{0.5} = 4 \times 160 = 640\,\text{W}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A blackbody sphere (emissivity = 1) with radius 0.1 m is at 500 K. How much power does it radiate?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(A = 4\pi r^2 = 4\pi(0.1)^2 = 0.1257\,\text{m}^2\)
+            </div>
+            <div class="equation">
+                \(P = \varepsilon\sigma A T^4 = (1)(5.67 \times 10^{-8})(0.1257)(500)^4\)
+            </div>
+            <div class="equation">
+                \(= (1)(5.67 \times 10^{-8})(0.1257)(6.25 \times 10^{10}) = 444.7\,\text{W}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A blackbody sphere of radius \(0.10\,\text{m}\) is at \(500\,\text{K}\) and is placed in surroundings at \(300\,\text{K}\). Find the net rate at which it loses energy by radiation.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The sphere both emits and absorbs radiation. Its surface area is \(A = 4\pi r^2 = 0.126\,\text{m}^2\), so the net radiated power is:</p>
+            <div class="equation">
+                \(P_{\text{net}} = \varepsilon\sigma A\left(T^4 - T_{\text{sur}}^4\right)\)
+            </div>
+            <div class="equation">
+                \(P_{\text{net}} = (1)(5.67\times10^{-8})(0.126)\left(500^4 - 300^4\right)\)
+            </div>
+            <div class="equation">
+                \(= (7.14\times10^{-9})(6.25\times10^{10} - 8.1\times10^{9}) \approx 389\,\text{W}\)
+            </div>
+            <p>The sphere therefore loses energy at a net rate of about \(389\,\text{W}\); it would cool unless energy were supplied.</p>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <p>Explore heat transfer and temperature changes with the PhET Energy Forms and Changes simulation:</p>
+        <p><a href="https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_en.html">Open the simulation</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h2>9.7 First Law of Thermodynamics</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>First Law of Thermodynamics:</strong> The change in internal energy of a system equals the heat added to the system minus the work done by the system:</p>
+            <div class="equation">
+                \(\Delta U = Q - W\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\Delta U\) = change in internal energy (J)</li>
+                <li>\(Q\) = heat added to the system (J)</li>
+                <li>\(W\) = work done by the system (J)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about the First Law:</p>
+            <ul>
+                <li>Energy is conserved in thermodynamic processes</li>
+                <li>Internal energy depends only on the state of the system</li>
+                <li>Heat and work are process-dependent, not state functions</li>
+                <li>The sign convention: \(Q &gt; 0\) when heat enters, \(W &gt; 0\) when work is done by the system</li>
+                <li>For ideal gases, internal energy depends only on temperature</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">First Law Sign Conventions</div>
+        <div class="textbox-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Positive</th>
+                        <th>Negative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heat (\(Q\))</td>
+                        <td>Added to system</td>
+                        <td>Removed from system</td>
+                    </tr>
+                    <tr>
+                        <td>Work (\(W\))</td>
+                        <td>Done by system</td>
+                        <td>Done on system</td>
+                    </tr>
+                    <tr>
+                        <td>\(\Delta U\)</td>
+                        <td>Increases</td>
+                        <td>Decreases</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="480" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy balance for a thermodynamic system">
+            <circle cx="240" cy="130" r="78" fill="#eef6ff" stroke="#0066cc" stroke-width="3"/>
+            <text x="240" y="122" font-size="18" text-anchor="middle" fill="#0066cc">System</text>
+            <text x="240" y="150" font-size="16" text-anchor="middle">ΔU = Q − W</text>
+            <line x1="70" y1="130" x2="150" y2="130" stroke="#cc0000" stroke-width="3"/>
+            <polygon points="153,130 143,125 143,135" fill="#cc0000"/>
+            <text x="110" y="115" font-size="15" text-anchor="middle" fill="#cc0000">Q in</text>
+            <line x1="330" y1="130" x2="420" y2="130" stroke="#0066cc" stroke-width="3"/>
+            <polygon points="423,130 413,125 413,135" fill="#0066cc"/>
+            <text x="375" y="115" font-size="15" text-anchor="middle" fill="#0066cc">W out</text>
+        </svg>
+        <div class="figure-caption">Figure 9.6: First Law of Thermodynamics: energy balance for a system</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A system absorbs 500 J of heat and does 200 J of work on its surroundings. What is its change in internal energy?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta U = Q - W = 500 - 200 = 300\,\text{J}\)
+            </div>
+            <p>The internal energy increases by 300 J.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>If a system's internal energy decreases by 150 J while it does 100 J of work, how much heat is transferred?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta U = Q - W \Rightarrow -150 = Q - 100 \Rightarrow Q = -150 + 100 = -50\,\text{J}\)
+            </div>
+            <p>50 J of heat is removed from the system.</p>
+        </div>
+    </div>
+
+    <h2>9.8 Applications of Thermodynamic Principles</h2>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Real-world applications of thermodynamics:</p>
+            <ul>
+                <li><strong>Refrigeration and air conditioning:</strong> Use phase changes and heat transfer to move thermal energy</li>
+                <li><strong>Heat engines:</strong> Convert thermal energy to mechanical work (Carnot cycle, Otto cycle)</li>
+                <li><strong>Building design:</strong> Insulation, windows, and ventilation systems optimize heat transfer</li>
+                <li><strong>Meteorology:</strong> Atmospheric convection drives weather patterns</li>
+                <li><strong>Medical applications:</strong> Fever measurement, cryotherapy, thermal imaging</li>
+                <li><strong>Cooking and food preservation:</strong> Heat transfer controls chemical reactions</li>
+                <li><strong>Energy production:</strong> Power plants use thermodynamic cycles</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Explain why a ceramic coffee mug feels warmer than a metal spoon at the same temperature.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Metal has higher thermal conductivity than ceramic. When you touch both objects at room temperature, heat flows from your hand more rapidly into the metal, making it feel colder. The ceramic mug, with lower conductivity, doesn't draw heat from your hand as quickly, so it feels warmer despite being at the same temperature.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Why do bridges have expansion joints?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Bridges expand and contract with temperature changes due to thermal expansion. Without expansion joints, this would create enormous stresses that could damage the bridge structure. The joints allow the bridge to expand and contract safely.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Calorimetry problems are energy-conservation problems in disguise. For an insulated mixture, the heat lost by the warmer object equals the heat gained by the cooler object, provided no phase change occurs. Begin by listing masses, specific heats, and initial temperatures.</p>
+    <p>Use \(Q = mc\Delta T\) with a positive temperature difference on each side, or use explicit signs and set the algebraic sum of all heat transfers to zero. After solving for the final temperature, check that it lies between the initial temperatures and that no substance would melt or boil at that temperature.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Identify the hot and cold objects, their masses, specific heats, and initial temperatures.</li>
+                <li>Decide whether any phase change occurs; if not, use \(Q = mc\Delta T\) for each object.</li>
+                <li>For an insulated container, write \(Q_{\text{lost}} = Q_{\text{gained}}\).</li>
+                <li>Keep each temperature change positive on its own side so the signs do not cancel incorrectly.</li>
+                <li>Solve the resulting linear equation for the final temperature.</li>
+                <li>Check that the final temperature lies between the initial temperatures and that no phase change was missed.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A 0.50 kg copper block at \(200^\circ\text{C}\) is dropped into 0.80 kg of water at \(20^\circ\text{C}\) in an insulated container. Taking \(c_{\text{Cu}} = 387\,\text{J/(kg}\cdot\text{K)}\) and \(c_{\text{water}} = 4186\,\text{J/(kg}\cdot\text{K)}\), find the final temperature. Assume no heat loss to the surroundings and no boiling.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The copper cools while the water warms, so the heat lost by the copper equals the heat gained by the water:</p>
+            <div class="equation">
+                \(m_{\text{Cu}}c_{\text{Cu}}(T_{\text{Cu}} - T_f) = m_{\text{water}}c_{\text{water}}(T_f - T_{\text{water}})\)
+            </div>
+            <p>Substitute the known values:</p>
+            <div class="equation">
+                \((0.50)(387)(200 - T_f) = (0.80)(4186)(T_f - 20)\)
+            </div>
+            <div class="equation">
+                \(193.5(200 - T_f) = 3348.8(T_f - 20)\)
+            </div>
+            <div class="equation">
+                \(38{,}700 - 193.5T_f = 3348.8T_f - 66{,}976\)
+            </div>
+            <p>Collect the temperature terms on one side:</p>
+            <div class="equation">
+                \(38{,}700 + 66{,}976 = 3348.8T_f + 193.5T_f\)
+            </div>
+            <div class="equation">
+                \(105{,}676 = 3542.3T_f\)
+            </div>
+            <div class="equation">
+                \(T_f = \frac{105{,}676}{3542.3} \approx 29.8^\circ\text{C}\)
+            </div>
+            <p>The final temperature is about \(30^\circ\text{C}\), which lies between \(20^\circ\text{C}\) and \(200^\circ\text{C}\), so the assumption of no phase change is consistent. The copper transfers roughly \(3.3 \times 10^4\,\text{J}\) to the water.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Calorimetry is used to measure the specific heats of materials, the energy content of foods and fuels, and the performance of engine coolants. The same heat balance guides the design of heat exchangers, thermal storage systems, and insulated buildings.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(0.20\,\text{kg}\) block of ice at \(0^\circ\text{C}\) is added to \(1.0\,\text{kg}\) of water at \(30^\circ\text{C}\) in an insulated container. Find the final temperature. Use \(L_f = 3.34\times10^{5}\,\text{J/kg}\) and \(c_{\text{water}} = 4186\,\text{J/(kg}\cdot\text{K)}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First check whether the ice can be completely melted. The heat released when the water cools to \(0^\circ\text{C}\) is:</p>
+            <div class="equation">
+                \(Q_{\text{available}} = (1.0)(4186)(30) \approx 1.26\times10^{5}\,\text{J}\)
+            </div>
+            <p>The heat needed to melt all the ice is:</p>
+            <div class="equation">
+                \(Q_{\text{melt}} = (0.20)(3.34\times10^{5}) = 6.68\times10^{4}\,\text{J}\)
+            </div>
+            <p>Since \(Q_{\text{available}} > Q_{\text{melt}}\), all the ice melts and the final mixture is liquid water above \(0^\circ\text{C}\). Energy conservation gives:</p>
+            <div class="equation">
+                \((1.0)(4186)(30 - T_f) = (0.20)(3.34\times10^{5}) + (0.20)(4186)(T_f - 0)\)
+            </div>
+            <div class="equation">
+                \(125{,}580 - 4186T_f = 66{,}800 + 837.2T_f\)
+            </div>
+            <div class="equation">
+                \(58{,}780 = 5023.2T_f \quad \Rightarrow \quad T_f \approx 11.7^\circ\text{C}\)
+            </div>
+            <p>The final temperature is about \(12^\circ\text{C}\), consistent with all the ice having melted.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Temperature measures the average molecular kinetic energy and determines the direction of heat flow.</li>
+        <li>Heat is energy transferred because of a temperature difference; internal energy is the total molecular energy of a system.</li>
+        <li>The heat needed to change temperature without a phase change is \(Q = mc\Delta T\).</li>
+        <li>During a phase change at constant temperature, the heat transferred is \(Q = mL\).</li>
+        <li>In an insulated mixture, heat lost by warmer objects equals heat gained by cooler objects.</li>
+        <li>Conduction rate is \(Q/t = kA\Delta T/d\); convection and radiation are the other heat-transfer mechanisms.</li>
+        <li>The first law of thermodynamics, \(\Delta U = Q - W\), expresses energy conservation for a system.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 9</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Temperature measures average molecular kinetic energy and determines heat flow direction</li>
+                <li>The Zeroth Law establishes temperature measurement and thermal equilibrium</li>
+                <li>Different temperature scales (Celsius, Fahrenheit, Kelvin) are used for different applications</li>
+                <li>Materials expand when heated (\(\Delta L = \alpha L_0 \Delta T\), \(\Delta V = \beta V_0 \Delta T\))</li>
+                <li>Heat is energy transfer due to temperature difference</li>
+                <li>Specific heat (\(Q = mc\Delta T\)) and latent heat (\(Q = mL\)) govern temperature and phase changes</li>
+                <li>Heat transfers via conduction, convection, and radiation</li>
+                <li>The First Law of Thermodynamics (\(\Delta U = Q - W\)) conserves energy</li>
+                <li>Thermodynamic principles apply to many real-world systems and technologies</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+
+    <ol>
+        <li>What is the difference between heat and temperature?</li>
+        <li>Why does ice float on water?</li>
+        <li>How does a thermometer work based on the Zeroth Law?</li>
+        <li>Explain why gaps are left between railway tracks.</li>
+        <li>Describe the three mechanisms of heat transfer with examples.</li>
+        <li>What does the First Law of Thermodynamics tell us about energy?</li>
+        <li>Why do materials expand when heated?</li>
+        <li>Explain why water takes longer to heat up than most other substances.</li>
+        <li>How does insulation work to keep buildings warm?</li>
+        <li>Why is the Kelvin scale considered an absolute temperature scale?</li>
+        <li>Two objects have the same temperature but different internal energies. Is this possible? Explain.</li>
+        <li>Why does a pressure cooker cook food faster than an ordinary pot, even at the same stove setting?</li>
+        <li>Explain why deserts can be very hot during the day and very cold at night using the concept of specific heat.</li>
+        <li>A bimetallic strip made of brass (\(\alpha = 19\times10^{-6}/^\circ\text{C}\)) and steel (\(\alpha = 12\times10^{-6}/^\circ\text{C}\)) bends toward the steel side when heated. Explain why.</li>
+        <li>Why does blowing on hot food cool it? Identify the heat-transfer mechanisms involved.</li>
+        <li>Is it possible for heat to flow from a colder object to a hotter object without doing work? Explain using the first law.</li>
+    </ol>
+
+    <h2>Problems</h2>
+
+    <ol>
+        <li>Convert the following temperatures:
+            <ol type="a">
+                <li>25°C to Kelvin and Fahrenheit</li>
+                <li>98.6°F to Celsius and Kelvin</li>
+                <li>300 K to Celsius and Fahrenheit</li>
+            </ol>
+        </li>
+        <li>A steel beam is 10 m long at 20°C. If the coefficient of linear expansion for steel is \(12 \times 10^{-6}/^\circ\text{C}\):
+            <ol type="a">
+                <li>How much does it expand when heated to 50°C?</li>
+                <li>What would be its length at −10°C?</li>
+            </ol>
+        </li>
+        <li>How much heat is required to:
+            <ol type="a">
+                <li>Raise 2 kg of water from 20°C to 80°C? (\(c = 4186\,\text{J/kg}\cdot\text{K}\))</li>
+                <li>Melt 0.5 kg of ice at 0°C? (\(L_f = 334{,}000\,\text{J/kg}\))</li>
+                <li>Boil 1 kg of water at 100°C? (\(L_v = 2{,}260{,}000\,\text{J/kg}\))</li>
+            </ol>
+        </li>
+        <li>A 0.5 kg piece of aluminum at 80°C is dropped into 1 kg of water at 20°C. What is the final temperature? (\(c_{Al} = 900\,\text{J/kg}\cdot\text{K}\), \(c_{water} = 4186\,\text{J/kg}\cdot\text{K}\))</li>
+        <li>A glass window is 1 m × 2 m and 0.5 cm thick. If the inside temperature is 20°C and outside is 0°C (\(k = 0.8\,\text{W/m}\cdot\text{K}\)):
+            <ol type="a">
+                <li>What is the rate of heat conduction?</li>
+                <li>How much energy is lost in 1 hour?</li>
+            </ol>
+        </li>
+        <li>A system absorbs 500 J of heat and does 200 J of work:
+            <ol type="a">
+                <li>What is its change in internal energy?</li>
+                <li>If instead it does 500 J of work while its internal energy decreases by 100 J, how much heat is transferred?</li>
+            </ol>
+        </li>
+        <li>A blackbody sphere of radius 0.2 m is at 400 K:
+            <ol type="a">
+                <li>How much power does it radiate?</li>
+                <li>If its temperature doubles to 800 K, how does the radiated power change?</li>
+            </ol>
+        </li>
+        <li>Explain the following phenomena using thermodynamic principles:
+            <ol type="a">
+                <li>Why does a metal spoon feel colder than a wooden spoon at room temperature?</li>
+                <li>Why do lakes freeze from the top down?</li>
+                <li>How does a thermos bottle keep liquids hot or cold?</li>
+            </ol>
+        </li>
+        <li>A bimetallic strip is made of brass (\(\alpha = 19 \times 10^{-6}/^\circ\text{C}\)) and steel (\(\alpha = 12 \times 10^{-6}/^\circ\text{C}\)). If both are 10 cm long at 20°C:
+            <ol type="a">
+                <li>What is the difference in their lengths at 100°C?</li>
+                <li>Explain how this principle is used in thermostats.</li>
+            </ol>
+        </li>
+        <li>A 2 kg block of ice at −10°C is heated until it becomes steam at 120°C. Calculate the total heat required. (\(c_{ice} = 2100\,\text{J/kg}\cdot\text{K}\), \(c_{water} = 4186\,\text{J/kg}\cdot\text{K}\), \(c_{steam} = 2010\,\text{J/kg}\cdot\text{K}\), \(L_f = 334{,}000\,\text{J/kg}\), \(L_v = 2{,}260{,}000\,\text{J/kg}\))</li>
+        <li>A \(0.30\,\text{kg}\) piece of ice at \(0^\circ\text{C}\) is placed in \(2.0\,\text{kg}\) of water at \(25^\circ\text{C}\). Find the final temperature and state whether all the ice melts.</li>
+        <li>A \(500\,\text{g}\) iron block at \(300^\circ\text{C}\) is quenched in \(2.0\,\text{kg}\) of oil at \(20^\circ\text{C}\). Taking \(c_{\text{Fe}} = 450\,\text{J/(kg}\cdot\text{K)}\) and \(c_{\text{oil}} = 2000\,\text{J/(kg}\cdot\text{K)}\), find the final temperature.</li>
+        <li>A wall of area \(12\,\text{m}^2\) and thickness \(0.20\,\text{m}\) has thermal conductivity \(0.50\,\text{W/(m}\cdot\text{K)}\). If the temperature difference across the wall is \(25\,\text{K}\), find the heat flow per hour.</li>
+        <li>A system absorbs \(800\,\text{J}\) of heat while \(300\,\text{J}\) of work is done on it. Find the change in internal energy.</li>
+        <li>A \(0.15\,\text{kg}\) aluminum rod at \(150^\circ\text{C}\) is dropped into \(0.40\,\text{kg}\) of water at \(15^\circ\text{C}\). Find the final temperature. (\(c_{\text{Al}} = 900\,\text{J/(kg}\cdot\text{K)}\), \(c_{\text{water}} = 4186\,\text{J/(kg}\cdot\text{K)}\))</li>
+        <li>The surface temperature of the Sun is about \(5800\,\text{K}\) and its radius is \(7.0\times10^{8}\,\text{m}\). Treating it as a blackbody, estimate the total power it radiates.</li>
+    </ol>
+</body>
+</html>

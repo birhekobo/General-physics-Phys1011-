@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Dynamics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 4: Dynamics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Dynamics</div>
+        <div class="textbox-content">
+            <p>Dynamics is the branch of physics that studies the relationship between motion and the forces that cause it. While kinematics describes how objects move, dynamics explains why they move as they do.</p>
+            <p>Every dynamic problem starts with a force: a push or pull from another object. Because force is a vector, forces can be added, resolved into components, and combined with Newton's laws to predict motion. The central equation is Newton's second law, \(\vec{F}_{\text{net}} = m\vec{a}\), which is a vector equation and must be satisfied component by component.</p>
+            <p>This chapter builds the force toolkit step by step: the three laws, free-body diagrams, contact and field forces, friction and tension, inclined planes and pulleys, circular motion, apparent weight, and drag. The same mathematical objects you mastered in Chapter 1 reappear here in their physical roles, now as causes of motion.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the concept of force as a measure of interaction</li>
+                <li>Identify different types of forces and their characteristics</li>
+                <li>Apply Newton's three laws of motion to solve problems</li>
+                <li>Analyze motion with friction and calculate frictional forces</li>
+                <li>Understand the dynamics of circular motion and centripetal force</li>
+                <li>Solve problems involving various force interactions, including inclined planes and pulleys</li>
+                <li>Draw and interpret free-body diagrams for complex systems</li>
+                <li>Apply problem-solving strategies to dynamics problems</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>4.1 The Concept of Force as a Measure of Interaction</h2>
+    <p>Dynamics is the branch of physics that studies the relationship between motion and the forces that cause it. While kinematics describes how objects move, dynamics explains why they move as they do.</p>
+
+    <h3>4.1.1 The Concept of Force</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>force</strong> is a push or pull upon an object resulting from its interaction with another object. Forces can:</p>
+            <ul>
+                <li>Cause an object to accelerate (change its velocity)</li>
+                <li>Change the shape of an object (deformation)</li>
+                <li>Create rotational motion (torque)</li>
+            </ul>
+            <p>Force is a vector quantity with both magnitude and direction, measured in newtons (N) in the SI system:</p>
+            <div class="equation">
+                \(1\,\text{N} = 1\,\text{kg} \cdot \text{m/s}^2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="300" height="170" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="150" cy="85" r="45" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,4"/>
+                <circle cx="150" cy="85" r="5" fill="black"/>
+                <line x1="150" y1="85" x2="210" y2="35" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f4torqblue)"/>
+                <line x1="210" y1="35" x2="275" y2="35" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f4torqred)"/>
+                <path d="M 150 45 A 40 40 0 0 1 190 85" fill="none" stroke="#009966" stroke-width="2" marker-end="url(#f4torqgreen)"/>
+                <text x="172" y="52" font-size="12" fill="#0066cc">r</text>
+                <text x="238" y="28" font-size="12" fill="#cc0000">F</text>
+                <text x="196" y="72" font-size="12" fill="#009966">&#964;</text>
+                <text x="150" y="165" font-size="12" text-anchor="middle">Force applied at a distance creates torque</text>
+                <defs>
+                    <marker id="f4torqblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                    </marker>
+                    <marker id="f4torqred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                    </marker>
+                    <marker id="f4torqgreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Apply forces at different distances and angles to see how torque produces rotation:</p>
+        <p><a href="https://phet.colorado.edu/en/simulations/torque">https://phet.colorado.edu/en/simulations/torque</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key properties of forces:</p>
+            <ul>
+                <li>Forces require an agent (something that exerts the force)</li>
+                <li>Forces result from interactions between objects</li>
+                <li>Forces can act through contact or at a distance</li>
+                <li>Multiple forces can act simultaneously on an object</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>4.1.2 The Vector Nature of Force</h3>
+    <p>Since force is a vector quantity, it obeys the rules of vector mathematics:</p>
+    <ul>
+        <li>Forces can be resolved into components: \(\vec{F} = F_x\hat{i} + F_y\hat{j} + F_z\hat{k}\)</li>
+        <li>The magnitude of a force is: \(F = \sqrt{F_x^2 + F_y^2 + F_z^2}\)</li>
+        <li>Multiple forces acting on an object can be added vectorially: \(\vec{F}_{\text{net}} = \sum \vec{F}_i\)</li>
+        <li>The direction of a force is crucial to its effect</li>
+    </ul>
+
+    <div class="figure">
+        <svg width="420" height="260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="60" y1="220" x2="390" y2="220" stroke="black" stroke-width="1.5" marker-end="url(#f41black)"/>
+            <line x1="60" y1="220" x2="60" y2="30" stroke="black" stroke-width="1.5" marker-end="url(#f41black)"/>
+            <!-- Force vector -->
+            <line x1="60" y1="220" x2="330" y2="70" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f41blue)"/>
+            <!-- Components (dashed) -->
+            <line x1="330" y1="70" x2="330" y2="220" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="330" y1="70" x2="60" y2="70" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <!-- Angle arc -->
+            <path d="M 95 220 A 35 35 0 0 0 90.4 202.9" stroke="black" fill="none" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text x="378" y="240" font-size="14">x</text>
+            <text x="44" y="36" font-size="14">y</text>
+            <text x="42" y="238" font-size="13">O</text>
+            <text x="185" y="128" font-size="16" fill="#0066cc">F⃗;</text>
+            <text x="336" y="150" font-size="14" fill="#0066cc">F<tspan baseline-shift="sub" font-size="10">x</tspan></text>
+            <text x="180" y="62" font-size="14" fill="#0066cc">F<tspan baseline-shift="sub" font-size="10">y</tspan></text>
+            <text x="103" y="215" font-size="14">&#952;</text>
+            <defs>
+                <marker id="f41black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f41blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 4.1: Resolution of a force vector into components</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A force of 10 N is applied at an angle of 30° above the horizontal. Find its x and y components.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(F_x = F \cos\theta = 10 \cos 30^\circ = 10 \times \frac{\sqrt{3}}{2} \approx 8.66\,\text{N}\)
+            </div>
+            <div class="equation">
+                \(F_y = F \sin\theta = 10 \sin 30^\circ = 10 \times \frac{1}{2} = 5\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>4.2 Types of Interactions</h2>
+    <p>Forces can be classified based on how they act and their fundamental nature.</p>
+
+    <h3>4.2.1 Contact and Field Forces</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Contact forces</strong> require physical contact between objects. Examples include:</p>
+            <ul>
+                <li>Normal force</li>
+                <li>Frictional force</li>
+                <li>Tension force</li>
+                <li>Applied force (push or pull)</li>
+                <li>Spring force</li>
+            </ul>
+            <p><strong>Field forces</strong> act at a distance without physical contact. Examples include:</p>
+            <ul>
+                <li>Gravitational force</li>
+                <li>Electromagnetic force</li>
+                <li>Nuclear forces</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>4.2.2 Fundamental Forces — Forces of Nature</h3>
+
+    <div class="textbox">
+        <div class="textbox-header">The Four Fundamental Forces</div>
+        <div class="textbox-content">
+            <ol>
+                <li><strong>Gravitational Force:</strong> The attraction between masses. It's the weakest force but acts over infinite range.</li>
+                <li><strong>Electromagnetic Force:</strong> The force between charged particles. It's responsible for most everyday forces.</li>
+                <li><strong>Strong Nuclear Force:</strong> The force that holds atomic nuclei together. It's the strongest force but acts only over very short distances.</li>
+                <li><strong>Weak Nuclear Force:</strong> Responsible for radioactive decay processes like beta decay.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>4.3 Newton's Laws of Motion</h2>
+    <p>Sir Isaac Newton formulated three fundamental laws that describe the relationship between forces and motion.</p>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ground -->
+                <line x1="10" y1="100" x2="250" y2="100" stroke="black" stroke-width="2"/>
+                <!-- Box -->
+                <rect x="90" y="62" width="70" height="38" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                <!-- Applied force arrow -->
+                <line x1="30" y1="80" x2="86" y2="80" stroke="#009966" stroke-width="3" marker-end="url(#f4simgreen)"/>
+                <!-- Friction arrow -->
+                <line x1="200" y1="80" x2="164" y2="80" stroke="#cc0000" stroke-width="3" marker-end="url(#f4simred)"/>
+                <!-- Weight and normal -->
+                <line x1="125" y1="100" x2="125" y2="116" stroke="#0066cc" stroke-width="2" marker-end="url(#f4simblue)"/>
+                <line x1="125" y1="62" x2="125" y2="44" stroke="#0066cc" stroke-width="2" marker-end="url(#f4simblue)"/>
+                <text x="52" y="72" font-size="13" fill="#009966">F</text>
+                <text x="176" y="72" font-size="13" fill="#cc0000">f</text>
+                <text x="132" y="115" font-size="13" fill="#0066cc">W</text>
+                <text x="132" y="52" font-size="13" fill="#0066cc">N</text>
+                <text x="130" y="18" font-size="13" text-anchor="middle">Free-body diagram of a pushed box</text>
+                <defs>
+                    <marker id="f4simgreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                    </marker>
+                    <marker id="f4simred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                    </marker>
+                    <marker id="f4simblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Explore forces and motion interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html">https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h3>4.3.1 Newton's First Law of Motion</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Newton's First Law (Law of Inertia):</strong> An object at rest remains at rest, and an object in motion continues in motion with constant velocity, unless acted upon by a net external force.</p>
+        </div>
+    </div>
+
+    <h3>4.3.2 Newton's Second Law of Motion</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Newton's Second Law:</strong> The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.</p>
+            <div class="equation">
+                \(\vec{F}_{\text{net}} = m\vec{a}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Problem-Solving Strategy for Newton's Second Law</div>
+        <div class="textbox-content">
+            <ol>
+                <li>Identify all forces acting on the object of interest.</li>
+                <li>Draw a clear <strong>free-body diagram</strong> showing all forces acting on that object.</li>
+                <li>Choose a convenient coordinate system (often aligning one axis with the direction of acceleration).</li>
+                <li>Resolve forces into components along the chosen axes.</li>
+                <li>Apply Newton's Second Law to each component: \(\sum F_x = ma_x\) and \(\sum F_y = ma_y\).</li>
+                <li>Solve the resulting system of equations for the unknown quantities.</li>
+                <li>Check your answer for reasonableness (units, magnitude, and direction).</li>
+            </ol>
+        </div>
+    </div>
+
+    <h3>4.3.3 Drawing and Using Free-Body Diagrams</h3>
+    <p>A free-body diagram (FBD) is a drawing of a single object with every external force acting on it represented by an arrow. It is the most reliable way to translate a word problem into Newton's second law.</p>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p><strong>Rules for a correct free-body diagram:</strong></p>
+            <ol>
+                <li>Draw one object only. Forces that act on other objects do not belong on its diagram.</li>
+                <li>Include every external force: weight, normal force, tension, friction, drag, and any applied force.</li>
+                <li>Draw each force arrow starting on the object and pointing in the direction the force acts.</li>
+                <li>Label magnitudes symbolically first, then substitute numbers.</li>
+                <li>Choose axes that simplify the problem---often along the acceleration or along an incline.</li>
+                <li>Never include both a force and its components on the same diagram; use one or the other.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(10\,\text{kg}\) crate is pushed across a horizontal floor by a horizontal force of \(40\,\text{N}\). The coefficient of kinetic friction is \(0.30\). Find the acceleration of the crate.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The vertical forces balance: \(N = mg = (10)(9.8) = 98\,\text{N}\). The kinetic friction is</p>
+            <div class="equation">
+                \(f_k = \mu_k N = (0.30)(98) = 29.4\,\text{N}\)
+            </div>
+            <p>Taking the push direction as positive, the net horizontal force is</p>
+            <div class="equation">
+                \(F_{\text{net}} = 40 - 29.4 = 10.6\,\text{N}\)
+            </div>
+            <p>Thus</p>
+            <div class="equation">
+                \(a = \frac{F_{\text{net}}}{m} = \frac{10.6}{10} = 1.06\,\text{m/s}^2\)
+            </div>
+            <p>The crate accelerates in the direction of the push, but much less than it would without friction.</p>
+        </div>
+    </div>
+
+    <h3>4.3.4 Newton's Third Law of Motion</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Newton's Third Law:</strong> For every action, there is an equal and opposite reaction. If object A exerts a force on object B, then object B exerts an equal and opposite force on object A.</p>
+            <div class="equation">
+                \(\vec{F}_{AB} = -\vec{F}_{BA}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Action-reaction pairs always act on <strong>different objects</strong>. They can never cancel each other out when analyzing the motion of a single object.</p>
+        </div>
+    </div>
+
+    <h2>4.4 Common Forces in Dynamics</h2>
+
+    <h3>4.4.1 Weight and the Normal Force</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Weight</strong> (\(\vec{W}\) or \(\vec{F}_g\)) is the gravitational force exerted on an object by a large body, typically the Earth. Its magnitude is \(W = mg\), and it always acts vertically downward.</p>
+            <p>The <strong>normal force</strong> (\(\vec{N}\) or \(\vec{F}_N\)) is a contact force exerted by a surface on an object. It is always directed perpendicular to the surface. Its magnitude is <strong>not</strong> always equal to \(mg\).</p>
+        </div>
+    </div>
+
+    <h3>4.4.2 Friction</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Friction</strong> (\(\vec{f}\)) is the force that opposes the relative motion or attempted motion of surfaces in contact.</p>
+            <ul>
+                <li><strong>Static friction</strong> prevents motion from starting. Its magnitude adjusts to the applied force up to a maximum value:
+                    <div class="equation">
+                        \(f_s \leq \mu_s N\)
+                    </div>
+                    where \(\mu_s\) is the coefficient of static friction.
+                </li>
+                <li><strong>Kinetic friction</strong> opposes ongoing motion. Its magnitude is approximately constant:
+                    <div class="equation">
+                        \(f_k = \mu_k N\)
+                    </div>
+                    where \(\mu_k\) is the coefficient of kinetic friction. Generally, \(\mu_k &lt; \mu_s\).
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>4.4.3 Tension</h3>
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Tension</strong> (\(\vec{T}\)) is the pulling force transmitted through a string, rope, cable, or similar object. It is directed along the rope, away from the object it is attached to. In this course, we will assume ropes are massless and do not stretch.</p>
+        </div>
+    </div>
+
+    <h2>4.5 Applications of Newton's Laws in Complex Systems</h2>
+    <p>Let's apply the problem-solving strategy to more complex scenarios involving multiple objects and forces.</p>
+
+    <h3>4.5.1 Example 1: Object on an Inclined Plane with Friction</h3>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 5.0 kg block is placed on a plane inclined at an angle of \(\theta = 30^\circ\) to the horizontal. The coefficient of kinetic friction between the block and the plane is \(\mu_k = 0.2\). The block is released from rest. Find the acceleration of the block as it slides down the incline.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>1. Draw a Free-Body Diagram (FBD):</strong></p>
+            <p>We identify four forces: weight (\(mg\)), normal force (\(N\)), and kinetic friction (\(f_k\)).</p>
+
+            <p><strong>2. Choose a Coordinate System:</strong></p>
+            <p>It is most convenient to align the x-axis parallel to the incline (downwards) and the y-axis perpendicular to the incline (upwards).</p>
+
+            <div class="figure">
+                <svg width="480" height="320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Incline -->
+                    <polygon points="40,280 440,280 440,50" fill="#f9f9f9" stroke="black" stroke-width="2"/>
+                    <!-- Angle arc -->
+                    <path d="M 70 280 A 30 30 0 0 0 66 265" stroke="black" fill="none" stroke-width="1.5"/>
+                    <text x="78" y="274" font-size="14">&#952;</text>
+                    <!-- Block -->
+                    <rect x="205" y="137" width="90" height="44" fill="#cce5ff" stroke="#0066cc" stroke-width="2" transform="rotate(-30 250 159)"/>
+                    <text x="243" y="164" font-size="15">m</text>
+                    <!-- Normal force -->
+                    <line x1="250" y1="159" x2="210" y2="90" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f42red)"/>
+                    <text x="196" y="86" font-size="14" fill="#cc0000">N</text>
+                    <!-- Friction -->
+                    <line x1="250" y1="159" x2="315" y2="121" stroke="#ff9900" stroke-width="2.5" marker-end="url(#f42orange)"/>
+                    <text x="320" y="118" font-size="14" fill="#ff9900">f<tspan baseline-shift="sub" font-size="10">k</tspan></text>
+                    <!-- Weight -->
+                    <line x1="250" y1="159" x2="250" y2="250" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f42blue)"/>
+                    <text x="256" y="246" font-size="14" fill="#0066cc">mg</text>
+                    <!-- Component parallel -->
+                    <line x1="250" y1="159" x2="189" y2="194" stroke="#009966" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#f42green)"/>
+                    <text x="184" y="212" font-size="13" fill="#009966" text-anchor="end">mg sin&#952;</text>
+                    <!-- Component perpendicular -->
+                    <line x1="250" y1="159" x2="285" y2="220" stroke="#009966" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#f42green)"/>
+                    <text x="292" y="234" font-size="13" fill="#009966">mg cos&#952;</text>
+                    <defs>
+                        <marker id="f42red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                        </marker>
+                        <marker id="f42orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ff9900" />
+                        </marker>
+                        <marker id="f42blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                        </marker>
+                        <marker id="f42green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                        </marker>
+                    </defs>
+                </svg>
+                <div class="figure-caption">Figure 4.2: Free-body diagram for a block on an inclined plane.</div>
+            </div>
+
+            <p><strong>3. Resolve Forces:</strong></p>
+            <p>The weight vector \(mg\) must be resolved into components parallel (\(mg\sin\theta\)) and perpendicular (\(mg\cos\theta\)) to the incline.</p>
+
+            <p><strong>4. Apply Newton's Second Law:</strong></p>
+            <p><em>Perpendicular to the incline (y-axis):</em><br>
+            The block does not accelerate in the y-direction, so \(a_y = 0\).</p>
+            <div class="equation">
+                \(\sum F_y = N - mg\cos\theta = 0\)
+            </div>
+            <p>This gives us the magnitude of the normal force:</p>
+            <div class="equation">
+                \(N = mg\cos\theta\)
+            </div>
+            <p><em>Parallel to the incline (x-axis):</em><br>
+            The net force causes the acceleration \(a_x = a\) down the incline. The component of gravity pulls it down, while friction opposes this motion (acts up the incline).</p>
+            <div class="equation">
+                \(\sum F_x = mg\sin\theta - f_k = ma\)
+            </div>
+
+            <p><strong>5. Solve the Equations:</strong></p>
+            <p>First, calculate the normal force:</p>
+            <div class="equation">
+                \(N = (5.0\,\text{kg})(9.8\,\text{m/s}^2)\cos(30^\circ) = (49\,\text{N})(0.866) = 42.4\,\text{N}\)
+            </div>
+            <p>Now, find the kinetic friction force:</p>
+            <div class="equation">
+                \(f_k = \mu_k N = (0.2)(42.4\,\text{N}) = 8.48\,\text{N}\)
+            </div>
+            <p>Finally, substitute this into the x-axis equation to find the acceleration:</p>
+            <div class="equation">
+                \(mg\sin\theta - f_k = ma\)
+            </div>
+            <div class="equation">
+                \((5.0\,\text{kg})(9.8\,\text{m/s}^2)\sin(30^\circ) - 8.48\,\text{N} = (5.0\,\text{kg})a\)
+            </div>
+            <div class="equation">
+                \((49\,\text{N})(0.5) - 8.48\,\text{N} = 5a\)
+            </div>
+            <div class="equation">
+                \(24.5\,\text{N} - 8.48\,\text{N} = 5a\)
+            </div>
+            <div class="equation">
+                \(16.02\,\text{N} = 5a\)
+            </div>
+            <div class="equation">
+                \(a = \frac{16.02\,\text{N}}{5.0\,\text{kg}} = 3.2\,\text{m/s}^2\)
+            </div>
+            <p>The acceleration of the block down the incline is 3.2 m/s².</p>
+        </div>
+    </div>
+
+    <h3>4.5.2 Example 2: The Atwood Machine</h3>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Two masses, \(m_1 = 4.0\) kg and \(m_2 = 6.0\) kg, are connected by a massless string that passes over a frictionless, massless pulley (an Atwood machine). The masses are released from rest. Find the acceleration of the system and the tension in the string.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>1. FBDs and Coordinate Systems:</strong></p>
+            <p>We need separate FBDs for each mass. Let's define the upward direction as positive for both. Since the masses are connected, \(m_2\) will accelerate downwards and \(m_1\) will accelerate upwards. Therefore, \(a_2 = -a\) and \(a_1 = a\). The tension \(T\) is the same for both.</p>
+
+            <div class="figure">
+                <svg width="480" height="370" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Support -->
+                    <line x1="240" y1="20" x2="240" y2="40" stroke="black" stroke-width="3"/>
+                    <line x1="210" y1="20" x2="270" y2="20" stroke="black" stroke-width="3"/>
+                    <!-- Pulley -->
+                    <circle cx="240" cy="72" r="34" fill="#ffffff" stroke="black" stroke-width="2"/>
+                    <circle cx="240" cy="72" r="4" fill="black"/>
+                    <!-- Ropes -->
+                    <line x1="206" y1="72" x2="206" y2="215" stroke="black" stroke-width="2"/>
+                    <line x1="274" y1="72" x2="274" y2="235" stroke="black" stroke-width="2"/>
+                    <!-- Mass 1 -->
+                    <rect x="184" y="215" width="44" height="55" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                    <text x="199" y="248" font-size="15">m&#8321;</text>
+                    <!-- Mass 2 -->
+                    <rect x="252" y="235" width="44" height="72" fill="#e0e0e0" stroke="#666666" stroke-width="2"/>
+                    <text x="267" y="277" font-size="15">m&#8322;</text>
+                    <!-- Forces on m1 -->
+                    <line x1="206" y1="215" x2="206" y2="165" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f43blue)"/>
+                    <text x="212" y="175" font-size="14" fill="#0066cc">T</text>
+                    <line x1="206" y1="270" x2="206" y2="330" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f43red)"/>
+                    <text x="212" y="320" font-size="14" fill="#cc0000">m&#8321;g</text>
+                    <!-- Forces on m2 -->
+                    <line x1="274" y1="235" x2="274" y2="185" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f43blue)"/>
+                    <text x="280" y="195" font-size="14" fill="#0066cc">T</text>
+                    <line x1="274" y1="307" x2="274" y2="360" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f43red)"/>
+                    <text x="280" y="352" font-size="14" fill="#cc0000">m&#8322;g</text>
+                    <!-- Labels -->
+                    <text x="110" y="200" font-size="13">FBD for m&#8321;</text>
+                    <text x="316" y="220" font-size="13">FBD for m&#8322;</text>
+                    <defs>
+                        <marker id="f43blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                        </marker>
+                        <marker id="f43red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                        </marker>
+                    </defs>
+                </svg>
+                <div class="figure-caption">Figure 4.3: The Atwood Machine and its free-body diagrams.</div>
+            </div>
+
+            <p><strong>2. Apply Newton's Second Law:</strong></p>
+            <p><em>For mass \(m_1\):</em></p>
+            <div class="equation">
+                \(\sum F_1 = T - m_1g = m_1a_1 = m_1a \quad \text{(Equation 1)}\)
+            </div>
+            <p><em>For mass \(m_2\):</em><br>
+            Since we defined up as positive, the acceleration of \(m_2\) is negative (\(a_2 = -a\)).</p>
+            <div class="equation">
+                \(\sum F_2 = T - m_2g = m_2a_2 = -m_2a \quad \text{(Equation 2)}\)
+            </div>
+
+            <p><strong>3. Solve the System of Equations:</strong></p>
+            <p>We have two equations and two unknowns (\(a\) and \(T\)). A common method is to solve for \(T\) in both equations and set them equal, or to add/subtract the equations. Let's add them to eliminate \(T\). First, rearrange Equation 2: \(m_2g - T = m_2a\).</p>
+            <p>(Eq 1): \(T - m_1g = m_1a\)<br>
+            (Eq 2): \(m_2g - T = m_2a\)</p>
+            <p>Adding them together:</p>
+            <div class="equation">
+                \((T - m_1g) + (m_2g - T) = m_1a + m_2a\)
+            </div>
+            <div class="equation">
+                \(m_2g - m_1g = (m_1 + m_2)a\)
+            </div>
+            <div class="equation">
+                \(a = \frac{(m_2 - m_1)g}{m_1 + m_2}\)
+            </div>
+            <p>Now plug in the values:</p>
+            <div class="equation">
+                \(a = \frac{(6.0\,\text{kg} - 4.0\,\text{kg})(9.8\,\text{m/s}^2)}{4.0\,\text{kg} + 6.0\,\text{kg}} = \frac{(2.0\,\text{kg})(9.8\,\text{m/s}^2)}{10.0\,\text{kg}} = 1.96\,\text{m/s}^2\)
+            </div>
+            <p>To find the tension, substitute the value of \(a\) back into Equation 1:</p>
+            <div class="equation">
+                \(T = m_1g + m_1a = m_1(g+a)\)
+            </div>
+            <div class="equation">
+                \(T = (4.0\,\text{kg})(9.8\,\text{m/s}^2 + 1.96\,\text{m/s}^2) = (4.0\,\text{kg})(11.76\,\text{m/s}^2) = 47.04\,\text{N}\)
+            </div>
+            <p>The acceleration of the system is 1.96 m/s², and the tension in the string is 47.04 N.</p>
+        </div>
+    </div>
+
+    <h3>4.5.3 Example 3: Inclined Plane and Pulley System</h3>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A block of mass \(m_1 = 4.0\) kg rests on a frictionless plane inclined at \(30^\circ\). It is connected by a massless string over a massless, frictionless pulley to a second block of mass \(m_2 = 2.0\) kg, which hangs freely. Find the acceleration of the system and the tension in the string.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>1. FBDs and Coordinate System:</strong></p>
+            <p>For \(m_1\), use a coordinate system with the x-axis parallel to the incline. For \(m_2\), use a vertical y-axis. Assume the direction of motion is \(m_1\) sliding down the incline and \(m_2\) moving up. So, \(a_1 = a\) and \(a_2 = a\). If our assumption is wrong, the acceleration will be negative.</p>
+
+            <div class="figure">
+                <svg width="560" height="360" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Incline -->
+                    <polygon points="40,300 440,300 440,69" fill="#f9f9f9" stroke="black" stroke-width="2"/>
+                    <path d="M 70 300 A 30 30 0 0 0 66 285" stroke="black" fill="none" stroke-width="1.5"/>
+                    <text x="78" y="294" font-size="14">&#952;</text>
+                    <!-- Pulley at apex -->
+                    <line x1="440" y1="69" x2="464" y2="69" stroke="black" stroke-width="3"/>
+                    <circle cx="484" cy="69" r="22" fill="#ffffff" stroke="black" stroke-width="2"/>
+                    <circle cx="484" cy="69" r="3" fill="black"/>
+                    <!-- Block m1 on incline -->
+                    <rect x="205" y="157" width="90" height="44" fill="#cce5ff" stroke="#0066cc" stroke-width="2" transform="rotate(-30 250 179)"/>
+                    <text x="243" y="184" font-size="15">m&#8321;</text>
+                    <!-- Rope segment 1 (along incline to pulley) -->
+                    <line x1="300" y1="150" x2="464" y2="58" stroke="black" stroke-width="2"/>
+                    <!-- Rope segment 2 (hanging) -->
+                    <line x1="506" y1="69" x2="506" y2="150" stroke="black" stroke-width="2"/>
+                    <!-- Block m2 hanging -->
+                    <rect x="484" y="150" width="44" height="80" fill="#e0e0e0" stroke="#666666" stroke-width="2"/>
+                    <text x="497" y="195" font-size="15">m&#8322;</text>
+                    <!-- Forces on m1 -->
+                    <line x1="250" y1="179" x2="310" y2="144" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f44blue)"/>
+                    <text x="316" y="138" font-size="14" fill="#0066cc">T</text>
+                    <line x1="250" y1="179" x2="214" y2="117" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f44red)"/>
+                    <text x="200" y="112" font-size="14" fill="#cc0000">N</text>
+                    <line x1="250" y1="179" x2="250" y2="270" stroke="#009966" stroke-width="2.5" marker-end="url(#f44green)"/>
+                    <text x="256" y="266" font-size="14" fill="#009966">m&#8321;g</text>
+                    <!-- Forces on m2 -->
+                    <line x1="506" y1="150" x2="506" y2="100" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f44blue)"/>
+                    <text x="512" y="112" font-size="14" fill="#0066cc">T</text>
+                    <line x1="506" y1="230" x2="506" y2="300" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f44red)"/>
+                    <text x="512" y="294" font-size="14" fill="#cc0000">m&#8322;g</text>
+                    <!-- FBD labels -->
+                    <text x="120" y="150" font-size="13">FBD for m&#8321;</text>
+                    <text x="524" y="140" font-size="13">FBD for m&#8322;</text>
+                    <defs>
+                        <marker id="f44blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                        </marker>
+                        <marker id="f44red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                        </marker>
+                        <marker id="f44green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                        </marker>
+                    </defs>
+                </svg>
+                <div class="figure-caption">Figure 4.4: System with an inclined plane and pulley.</div>
+            </div>
+
+            <p><strong>2. Apply Newton's Second Law:</strong></p>
+            <p><em>For mass \(m_1\) (along the incline):</em><br>
+            The component of gravity pulling it down the incline is \(m_1g\sin\theta\). The tension pulls it up the incline.</p>
+            <div class="equation">
+                \(\sum F_{1x} = m_1g\sin\theta - T = m_1a \quad \text{(Equation 1)}\)
+            </div>
+            <p>(No need for the perpendicular forces as there is no friction.)</p>
+            <p><em>For mass \(m_2\) (vertical):</em><br>
+            Tension pulls up, gravity pulls down.</p>
+            <div class="equation">
+                \(\sum F_{2y} = T - m_2g = m_2a \quad \text{(Equation 2)}\)
+            </div>
+
+            <p><strong>3. Solve the System of Equations:</strong></p>
+            <p>Let's add the two equations to eliminate \(T\):</p>
+            <div class="equation">
+                \((m_1g\sin\theta - T) + (T - m_2g) = m_1a + m_2a\)
+            </div>
+            <div class="equation">
+                \(m_1g\sin\theta - m_2g = (m_1 + m_2)a\)
+            </div>
+            <div class="equation">
+                \(a = \frac{(m_1\sin\theta - m_2)g}{m_1 + m_2}\)
+            </div>
+            <p>Now plug in the values:</p>
+            <div class="equation">
+                \(m_1\sin\theta = (4.0\,\text{kg})\sin(30^\circ) = (4.0\,\text{kg})(0.5) = 2.0\,\text{kg}\)
+            </div>
+            <p>Notice that this is exactly equal to \(m_2\).</p>
+            <div class="equation">
+                \(a = \frac{(2.0\,\text{kg} - 2.0\,\text{kg})g}{4.0\,\text{kg} + 2.0\,\text{kg}} = \frac{0}{6.0\,\text{kg}} = 0\,\text{m/s}^2\)
+            </div>
+            <p>The acceleration is zero! This means the system is in equilibrium. The downward pull on \(m_1\) from gravity along the incline is perfectly balanced by the weight of \(m_2\).</p>
+            <p>To find the tension, use Equation 2:</p>
+            <div class="equation">
+                \(T - m_2g = m_2a = 0\)
+            </div>
+            <div class="equation">
+                \(T = m_2g = (2.0\,\text{kg})(9.8\,\text{m/s}^2) = 19.6\,\text{N}\)
+            </div>
+            <p>The system remains at rest (or moves at a constant velocity if already in motion), and the tension is 19.6 N.</p>
+        </div>
+    </div>
+
+    <h2>4.6 Dynamics of Circular Motion</h2>
+    <p>Circular motion requires a net force directed toward the center of the circle. This centripetal force is not a new type of force but rather the net result of existing forces.</p>
+
+    <h3>4.6.1 Centripetal Force</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Centripetal force</strong> is the net force that causes an object to follow a circular path. It is always directed toward the center of the circle and has magnitude:</p>
+            <div class="equation">
+                \(F_c = ma_c = m\frac{v^2}{r} = m\omega^2 r\)
+            </div>
+            <p>where \(v\) is the tangential speed and \(r\) is the radius of the circular path.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Circle path -->
+            <circle cx="200" cy="155" r="90" fill="none" stroke="#999999" stroke-width="2" stroke-dasharray="7,5"/>
+            <!-- Radius -->
+            <line x1="200" y1="155" x2="200" y2="65" stroke="#999999" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="208" y="115" font-size="14">r</text>
+            <!-- Object -->
+            <circle cx="200" cy="65" r="12" fill="#0066cc"/>
+            <!-- Velocity (tangent) -->
+            <line x1="212" y1="65" x2="300" y2="65" stroke="#009966" stroke-width="2.5" marker-end="url(#f45green)"/>
+            <text x="306" y="70" font-size="15" fill="#009966">v</text>
+            <!-- Centripetal force -->
+            <line x1="200" y1="77" x2="200" y2="135" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f45red)"/>
+            <text x="208" y="132" font-size="15" fill="#cc0000">F<tspan baseline-shift="sub" font-size="10">c</tspan></text>
+            <!-- Center marker -->
+            <circle cx="200" cy="155" r="4" fill="black"/>
+            <text x="176" y="176" font-size="13">center</text>
+            <text x="200" y="285" font-size="13" text-anchor="middle">The velocity is tangent to the path; the net force points inward.</text>
+            <defs>
+                <marker id="f45green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f45red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 4.5: Centripetal force and velocity in circular motion</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Important points about centripetal force:</p>
+            <ul>
+                <li>It is not a fundamental force, but the net force pointing toward the center.</li>
+                <li>It can be provided by tension, gravity, friction, or a normal force.</li>
+                <li>Without a centripetal force, an object in motion will travel in a straight line (Newton's First Law).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A car of mass 1200 kg rounds a curve of radius 50 m at a speed of 15 m/s. What is the minimum coefficient of static friction needed to prevent skidding?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The centripetal force required is provided by static friction:</p>
+            <div class="equation">
+                \(F_c = f_{s,\text{max}} = \frac{mv^2}{r}\)
+            </div>
+            <p>We also know that \(f_{s,\text{max}} = \mu_s N = \mu_s mg\).</p>
+            <div class="equation">
+                \(\mu_s mg = \frac{mv^2}{r}\)
+            </div>
+            <div class="equation">
+                \(\mu_s = \frac{v^2}{gr} = \frac{(15\,\text{m/s})^2}{(9.8\,\text{m/s}^2)(50\,\text{m})} = \frac{225}{490} \approx 0.46\)
+            </div>
+            <p>The minimum coefficient of static friction required is 0.46.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 0.5 kg ball is attached to a 1 m string and whirled in a vertical circle at a constant speed of 4 m/s.</p>
+            <ol type="a">
+                <li>What is the tension in the string at the bottom of the circle?</li>
+                <li>What is the tension in the string at the top of the circle?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The required centripetal force is:</p>
+            <div class="equation">
+                \(F_c = \frac{mv^2}{r} = \frac{(0.5\,\text{kg})(4\,\text{m/s})^2}{1\,\text{m}} = 8\,\text{N}\)
+            </div>
+            <ol type="a">
+                <li>At the bottom, tension points up (towards the center) and gravity points down.
+                    <div class="equation">
+                        \(\sum F_{\text{center}} = T_{\text{bottom}} - mg = F_c\)
+                    </div>
+                    <div class="equation">
+                        \(T_{\text{bottom}} = F_c + mg = 8\,\text{N} + (0.5\,\text{kg})(9.8\,\text{m/s}^2) = 8\,\text{N} + 4.9\,\text{N} = 12.9\,\text{N}\)
+                    </div>
+                </li>
+                <li>At the top, both tension and gravity point down (towards the center).
+                    <div class="equation">
+                        \(\sum F_{\text{center}} = T_{\text{top}} + mg = F_c\)
+                    </div>
+                    <div class="equation">
+                        \(T_{\text{top}} = F_c - mg = 8\,\text{N} - 4.9\,\text{N} = 3.1\,\text{N}\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A highway curve of radius \(80\,\text{m}\) is banked at \(10^\circ\). At what speed can a car negotiate the curve without relying on friction?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>On a frictionless banked curve, the horizontal component of the normal force supplies the centripetal force:</p>
+            <div class="equation">
+                \(N\sin\theta = \frac{mv^2}{r}, \qquad N\cos\theta = mg\)
+            </div>
+            <p>Dividing the first equation by the second eliminates \(N\) and \(m\):</p>
+            <div class="equation">
+                \(\tan\theta = \frac{v^2}{rg} \quad \Rightarrow \quad v = \sqrt{rg\tan\theta}\)
+            </div>
+            <p>Substituting \(r = 80\,\text{m}\), \(g = 9.8\,\text{m/s}^2\), and \(\theta = 10^\circ\):</p>
+            <div class="equation">
+                \(v = \sqrt{(80)(9.8)(0.176)} \approx \sqrt{138} \approx 11.8\,\text{m/s}\)
+            </div>
+            <p>This is the design speed: at higher speeds, friction must point down the bank to keep the car on the curve; at lower speeds, friction must point up the bank.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="720" height="300" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertical circular motion with tension and gravity at the bottom and top of the circle">
+            <rect width="720" height="300" fill="#f7fbff"/>
+            <circle cx="250" cy="150" r="110" fill="none" stroke="#999999" stroke-width="2" stroke-dasharray="7,5"/>
+            <circle cx="250" cy="40" r="12" fill="#0066cc"/>
+            <circle cx="250" cy="260" r="12" fill="#0066cc"/>
+            <!-- top: tension and gravity toward center (down) -->
+            <line x1="250" y1="40" x2="250" y2="150" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f46red)"/>
+            <line x1="250" y1="40" x2="250" y2="97" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f46red)"/>
+            <text x="258" y="75" font-size="14" fill="#cc0000">F&#8320;</text>
+            <text x="258" y="45" font-size="14" fill="#cc0000">mg</text>
+            <text x="250" y="12" font-size="13" text-anchor="middle" fill="#333333">top of the circle: T + mg = F&#8320;</text>
+            <!-- bottom: tension and gravity away from center -->
+            <line x1="250" y1="260" x2="250" y2="150" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f46red)"/>
+            <line x1="250" y1="260" x2="250" y2="215" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f46red)"/>
+            <text x="258" y="235" font-size="14" fill="#cc0000">F&#8320;</text>
+            <text x="258" y="272" font-size="14" fill="#cc0000">mg</text>
+            <text x="250" y="292" font-size="13" text-anchor="middle" fill="#333333">bottom of the circle: T &#8722; mg = F&#8320;</text>
+            <defs>
+                <marker id="f46red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 4.6: In a vertical circle, the tension and gravity combine differently depending on whether the mass is above or below the centre. At the top both point toward the centre; at the bottom they oppose.</div>
+    </div>
+
+    <h2>4.7 Apparent Weight</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Apparent weight</strong> is the reading on a scale, which equals the normal force exerted by the scale on the person. In an accelerating frame, the apparent weight differs from the true weight (\(mg\)).</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Consider a person of mass \(m\) in an elevator:</p>
+            <ul>
+                <li><strong>At rest or moving at constant velocity:</strong> \(N - mg = 0 \implies N = mg\) (apparent weight = true weight)</li>
+                <li><strong>Accelerating upward with acceleration \(a\):</strong> \(N - mg = ma \implies N = m(g+a)\) (heavier)</li>
+                <li><strong>Accelerating downward with acceleration \(a\):</strong> \(mg - N = ma \implies N = m(g-a)\) (lighter)</li>
+                <li><strong>In free fall</strong> (\(a = g\) downward): \(N = 0\) (weightlessness)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 60 kg person stands on a scale in an elevator accelerating upward at \(2.0\,\text{m/s}^2\). What does the scale read?</p>
+            <div class="equation">
+                \(N = m(g+a) = 60(9.8 + 2.0) = 60(11.8) = 708\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>The same \(60\,\text{kg}\) person stands on the scale while the elevator accelerates downward at \(3.0\,\text{m/s}^2\). What does the scale read, and what would it read if the cable snapped?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>With downward acceleration, the scale force is</p>
+            <div class="equation">
+                \(N = m(g-a) = 60(9.8 - 3.0) = 60(6.8) = 408\,\text{N}\)
+            </div>
+            <p>The person feels lighter because the floor is falling away beneath them. If the cable snapped, the elevator and person would be in free fall with \(a = g\), so</p>
+            <div class="equation">
+                \(N = m(g-g) = 0\)
+            </div>
+            <p>The scale would read zero even though gravity still acts; this is apparent weightlessness, not the absence of gravity.</p>
+        </div>
+    </div>
+
+    <h2>4.8 Drag Forces and Terminal Velocity</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Drag force</strong> (\(\vec{F}_D\)) is a resistive force exerted by a fluid (air or liquid) on a moving object. It opposes the motion of the object and depends on the object's speed, cross-sectional area, shape, and the properties of the fluid.</p>
+            <p>For many objects moving at moderate speeds, the magnitude of the drag force is approximately:</p>
+            <div class="equation">
+                \(F_D = \frac{1}{2}\rho C_D A v^2\)
+            </div>
+            <p>where \(\rho\) is the density of the fluid, \(C_D\) is the drag coefficient, \(A\) is the cross-sectional area, and \(v\) is the speed.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p><strong>Terminal velocity</strong> occurs when the drag force equals the weight of a falling object, so the net force is zero and the object falls at constant velocity:</p>
+            <div class="equation">
+                \(mg = \frac{1}{2}\rho C_D A v_t^2 \implies v_t = \sqrt{\frac{2mg}{\rho C_D A}}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(75\,\text{kg}\) skydiver falls in air of density \(1.2\,\text{kg/m}^3\). Take the drag coefficient as \(1.0\) and the cross-sectional area as \(0.70\,\text{m}^2\). Estimate the terminal speed.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>At terminal velocity the drag force equals the weight:</p>
+            <div class="equation">
+                \(mg = \tfrac{1}{2}\rho C_D A v_t^2\)
+            </div>
+            <p>Solving for \(v_t\):</p>
+            <div class="equation">
+                \(v_t = \sqrt{\frac{2mg}{\rho C_D A}} = \sqrt{\frac{2(75)(9.8)}{(1.2)(1.0)(0.70)}} = \sqrt{\frac{1470}{0.84}} \approx 42\,\text{m/s}\)
+            </div>
+            <p>This is about \(150\,\text{km/h}\). A spread-eagled skydiver has a larger area and therefore a lower terminal speed; a head-down diver has a smaller area and falls faster.</p>
+        </div>
+    </div>
+
+        <h2>Problem-Solving Workshop</h2>
+    <p>Dynamics problems are decided by the free-body diagram, not by the equations. Before writing anything, isolate each object, draw every external force acting on it, and choose axes that match the likely acceleration. For a block on a table connected to a hanging mass, the table block accelerates horizontally while the hanging mass accelerates vertically, yet the two accelerations have the same magnitude because the string is inextensible.</p>
+    <p>Apply Newton's second law separately to each object, then link the equations through the tension and the common acceleration. Keep the positive direction consistent with the assumed motion, and check the result by substituting back into both equations. If the tension comes out negative or larger than the driving weight, the assumed direction or the algebra is wrong.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Identify the system and isolate each object that has its own free-body diagram.</li>
+                <li>Draw all external forces: weight, normal force, tension, friction, and applied forces.</li>
+                <li>Choose axes along the direction of motion and resolve any forces that are not aligned with them.</li>
+                <li>Write \(\sum F = ma\) separately for each object and each axis.</li>
+                <li>Use the constraint that connected objects share the same magnitude of acceleration and tension.</li>
+                <li>Solve the equations, then check signs, units, and limiting cases such as \(m_1 = 0\) or \(m_2 = 0\).</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A \(3.0\,\text{kg}\) block rests on a frictionless horizontal table. A light string tied to the block passes over a frictionless pulley and supports a \(2.0\,\text{kg}\) hanging mass. Find the acceleration of the system, the tension in the string, and the speed of the hanging mass after it has descended \(0.60\,\text{m}\) from rest.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let \(m_1 = 3.0\,\text{kg}\) be the table block and \(m_2 = 2.0\,\text{kg}\) the hanging mass. Take the direction of motion as positive: \(m_1\) accelerates horizontally toward the pulley, and \(m_2\) accelerates downward. Both have the same acceleration magnitude \(a\), and the string tension \(T\) is the same on both sides of the ideal pulley.</p>
+            <p><strong>Free-body equations.</strong> For \(m_1\), the normal force and weight cancel vertically, leaving only tension horizontally:</p>
+            <div class="equation">
+                \(T = m_1 a\)
+            </div>
+            <p>For \(m_2\), tension acts upward and weight acts downward:</p>
+            <div class="equation">
+                \(m_2 g - T = m_2 a\)
+            </div>
+            <p><strong>Acceleration.</strong> Substituting \(T = m_1a\) into the second equation gives:</p>
+            <div class="equation">
+                \(m_2 g = (m_1 + m_2)a \quad \Rightarrow \quad a = \frac{m_2 g}{m_1 + m_2} = \frac{(2.0)(9.8)}{3.0 + 2.0} = 3.92\,\text{m/s}^2\)
+            </div>
+            <p><strong>Tension.</strong> From the first equation:</p>
+            <div class="equation">
+                \(T = m_1 a = (3.0)(3.92) = 11.8\,\text{N}\)
+            </div>
+            <p>As a check, \(m_2g - T = 19.6 - 11.8 = 7.8\,\text{N}\), which equals \(m_2a = (2.0)(3.92)\).</p>
+            <p><strong>Speed after \(0.60\,\text{m}\).</strong> Starting from rest, \(v^2 = 2a\Delta x\):</p>
+            <div class="equation">
+                \(v = \sqrt{2(3.92)(0.60)} = \sqrt{4.70} = 2.17\,\text{m/s}\)
+            </div>
+            <p>The system accelerates at \(3.9\,\text{m/s}^2\), the tension is about \(12\,\text{N}\), and the hanging mass is moving at \(2.2\,\text{m/s}\) after descending \(0.60\,\text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A counterweighted elevator uses the same force balance. The motor does not have to support the full weight of the car and passengers; the counterweight supplies part of the tension, so the motor mainly overcomes the difference between the two sides. Engineers size motors and cables by applying Newton's second law to each moving part, just as in the two-block problem above.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Force is an interaction; a net force changes velocity, not necessarily speed.</li>
+        <li>Newton's first law describes motion when the net force is zero; the second law relates net force, mass, and acceleration.</li>
+        <li>Third-law pairs act on different objects and never cancel in a single free-body diagram.</li>
+        <li>Static friction adjusts up to a maximum; kinetic friction has a fixed value \(\mu_k N\).</li>
+        <li>On an incline, resolve weight into components parallel and perpendicular to the surface.</li>
+        <li>Objects connected by an ideal string share the same acceleration magnitude and tension.</li>
+        <li>Circular motion requires a net inward force, \(F_c = mv^2/r\), which may be supplied by friction, tension, gravity, or a normal force.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 4</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Force:</strong> A push or pull that can cause acceleration; measured in newtons (N).</li>
+                <li><strong>Newton's Laws:</strong>
+                    <ol>
+                        <li><strong>Inertia:</strong> Objects maintain constant velocity unless a net force acts.</li>
+                        <li><strong>F = ma:</strong> \(\vec{F}_{\text{net}} = m\vec{a}\).</li>
+                        <li><strong>Action-Reaction:</strong> Forces occur in equal and opposite pairs on different objects.</li>
+                    </ol>
+                </li>
+                <li><strong>Free-Body Diagrams:</strong> An essential tool for visualizing and analyzing all forces on a single object.</li>
+                <li><strong>Friction:</strong> Static (\(f_s \leq \mu_s N\)) opposes impending motion; Kinetic (\(f_k = \mu_k N\)) opposes existing motion.</li>
+                <li><strong>Inclined Planes:</strong> It is crucial to resolve forces into components parallel and perpendicular to the inclined surface.</li>
+                <li><strong>Pulley Systems:</strong> All objects connected by a non-stretching string have the same magnitude of acceleration. The tension is the same throughout a single massless string.</li>
+                <li><strong>Centripetal Force:</strong> The net force directed toward the center of a circular path, required for circular motion: \(F_c = \frac{mv^2}{r}\).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Explain why a passenger in a car tends to lurch forward when the car suddenly brakes, using the concept of inertia.</li>
+        <li>If you push on a heavy box but it doesn't move, draw its free-body diagram. What is the magnitude of the static friction force?</li>
+        <li>Can the normal force on an object ever be greater than its weight? Provide an example.</li>
+        <li>An object is in uniform circular motion. Is its velocity constant? Is its acceleration constant? Explain.</li>
+        <li>In an Atwood machine, if the two masses are equal (\(m_1 = m_2\)), what is the acceleration and tension?</li>
+        <li>If the Earth exerts a gravitational force on the Moon, what is the reaction force according to Newton's Third Law?</li>
+        <li>Why do you feel "pushed outward" when a car turns a corner? Explain from the perspective of an inertial reference frame.</li>
+        <li>Can an object have zero net force acting on it and still be moving? Explain.</li>
+        <li>A block is sliding down a frictionless incline. Does the normal force do work on the block? Why or why not?</li>
+        <li>In a tug-of-war, the winning team pulls the rope and the other team across the line. Compare the magnitude of the force the winning team exerts on the rope to the force the losing team exerts on the rope.</li>
+        <li>A book rests on a table. Identify all forces on the book and all forces on the table, and explain which pairs are third-law pairs.</li>
+        <li>Explain why the normal force is not always equal to \(mg\). Give two situations in which \(N \neq mg\).</li>
+        <li>A car accelerates forward. What force actually pushes the car forward, and what is the reaction force?</li>
+        <li>Why does a frictionless banked curve have a preferred design speed? What happens at speeds above and below that value?</li>
+        <li>A skydiver opens a parachute and slows down. Describe how the drag force, net force, and acceleration change during the deceleration.</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A 5 kg object is acted upon by three forces: \(\vec{F}_1 = 10\hat{i}\) N, \(\vec{F}_2 = -5\hat{i} + 8\hat{j}\) N, and \(\vec{F}_3 = 3\hat{i} - 12\hat{j}\) N. Find the acceleration of the object.</li>
+        <li>A 15 kg box is pulled with a force of 60 N at an angle of 40° above the horizontal. The coefficient of kinetic friction is 0.25. Find the acceleration of the box.</li>
+        <li>A 2 kg block slides down a 37° incline. The coefficient of kinetic friction is 0.3.
+            <ol type="a">
+                <li>Find the acceleration of the block.</li>
+                <li>If the block starts from rest, how long does it take to slide 5 m down the incline?</li>
+            </ol>
+        </li>
+        <li>A car of mass 1500 kg rounds a banked curve of radius 80 m. The road is banked at an angle of 10°. At what speed can the car take the turn without relying on friction?</li>
+        <li>A 60 kg person stands on a scale in an elevator. What does the scale read (in Newtons) when the elevator is (a) at rest, (b) accelerating upward at 2 m/s², and (c) accelerating downward at 3 m/s²?</li>
+        <li>(Atwood Machine) Two blocks are connected by a light string over a frictionless pulley. Block A has mass 4 kg and block B has mass 6 kg. They are released from rest. Find the acceleration of the system and the tension in the string.</li>
+        <li>(Modified Atwood Machine) A 5 kg block sits on a horizontal table. The coefficient of kinetic friction between the block and table is 0.2. A string connects this block to a 3 kg hanging block over a pulley. Find the acceleration of the system and the tension.</li>
+        <li>(Inclined Plane System) A 10 kg block is on an incline of 30°. A string connects this block to a hanging 8 kg block over a pulley. The coefficient of kinetic friction on the incline is 0.1. Does the 10 kg block slide up or down the incline? What is the acceleration of the system?</li>
+        <li>A 0.8 kg ball is attached to a 1.2 m string and whirled in a vertical circle.
+            <ol type="a">
+                <li>What is the minimum speed at the top for the ball to complete the circle (i.e., for the string to remain taut)?</li>
+                <li>If the speed at the bottom is 8 m/s, what is the tension at the bottom?</li>
+            </ol>
+        </li>
+        <li>A 5000 kg rocket accelerates vertically upward. The engine produces a thrust of 80,000 N. What is the acceleration of the rocket? (Don't forget the force of gravity).</li>
+        <li>A 12 kg box is pulled across a rough floor by a rope at \(25^\circ\) above the horizontal with a force of \(50\,\text{N}\). The coefficient of kinetic friction is \(0.20\). Find the normal force and the acceleration.</li>
+        <li>Two forces act on a \(4.0\,\text{kg}\) object: \(18\,\text{N}\) to the east and \(10\,\text{N}\) to the north. Find the magnitude and direction of the acceleration.</li>
+        <li>A \(70\,\text{kg}\) person stands on a bathroom scale in an elevator. The scale reads \(560\,\text{N}\). Find the acceleration of the elevator and state its direction.</li>
+        <li>A \(0.25\,\text{kg}\) ball on a string moves in a horizontal circle of radius \(0.80\,\text{m}\) at \(3.0\,\text{m/s}\). Find the tension in the string and the angle it makes with the vertical.</li>
+        <li>A \(1500\,\text{kg}\) car travels over the top of a hill of radius \(60\,\text{m}\) at \(20\,\text{m/s}\). Find the normal force on the car and the speed at which the car would lose contact with the road.</li>
+        <li>A crate is pushed up a \(20^\circ\) incline with a force of \(200\,\text{N}\) parallel to the incline. The crate has mass \(30\,\text{kg}\) and the coefficient of kinetic friction is \(0.25\). Find the acceleration of the crate.</li>
+    </ol>
+</body>
+</html>

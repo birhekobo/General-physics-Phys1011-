@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Kinematics in Two Dimensions</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 3: Kinematics in Two Dimensions</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Two-Dimensional Kinematics</div>
+        <div class="textbox-content">
+            <p>In one dimension, a position is a single coordinate and a motion is a straight line. In two dimensions, position, velocity, and acceleration become vectors that live in a plane. That is why this chapter is where vectors stop being a preliminary and become the main character of the mathematics.</p>
+            <p>A position vector \(\vec{r}\) describes a point through its components along two perpendicular axes: \(\vec{r} = x\hat{i} + y\hat{j}\). Velocity is the rate of change of position, \(\vec{v} = \frac{d\vec{r}}{dt} = v_x\hat{i} + v_y\hat{j}\), and acceleration is the rate of change of velocity, \(\vec{a} = \frac{d\vec{v}}{dt} = a_x\hat{i} + a_y\hat{j}\).</p>
+            <p>The key idea is that the horizontal and vertical components are independent one-dimensional problems glued together by time. Once each component is handled, the full vector can be reconstructed with components and magnitudes.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Extend kinematic concepts from one dimension to two dimensions</li>
+                <li>Understand and work with vectors in two dimensions</li>
+                <li>Analyze projectile motion and solve related problems</li>
+                <li>Describe circular motion and understand centripetal acceleration</li>
+                <li>Differentiate between tangential and radial acceleration</li>
+                <li>Solve problems involving relative motion in two dimensions</li>
+                <li>Apply kinematic equations to two-dimensional motion scenarios</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3.1 Displacement, Velocity and Acceleration in Two Dimensions</h2>
+    <p>In two-dimensional kinematics, we extend the concepts from one dimension to describe motion in a plane. This requires using vector mathematics to account for both magnitude and direction.</p>
+
+    <h3>Position and Displacement</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Position and Displacement</div>
+        <div class="definition-content">
+            <p>The <strong>position vector</strong> \(\vec{r}\) of an object in two dimensions specifies its location relative to a coordinate system. In Cartesian coordinates:</p>
+            <div class="equation">
+                \(\vec{r} = x\hat{i} + y\hat{j}\)
+            </div>
+            <p>where \(x\) and \(y\) are the coordinates, and \(\hat{i}\) and \(\hat{j}\) are unit vectors in the \(x\) and \(y\) directions.</p>
+            <p>The <strong>displacement vector</strong> \(\Delta\vec{r}\) is the change in position:</p>
+            <div class="equation">
+                \(\Delta\vec{r} = \vec{r}_f - \vec{r}_i = (x_f - x_i)\hat{i} + (y_f - y_i)\hat{j} = \Delta x\hat{i} + \Delta y\hat{j}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="460" height="300" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Position vectors to points A and B and the displacement vector from A to B">
+            <rect width="460" height="300" fill="#f7fbff"/>
+            <line x1="50" y1="250" x2="430" y2="250" stroke="#333333" stroke-width="1.8" marker-end="url(#f3dispx)"/>
+            <line x1="50" y1="250" x2="50" y2="30" stroke="#333333" stroke-width="1.8" marker-end="url(#f3dispy)"/>
+            <text x="435" y="256" font-size="13">x</text>
+            <text x="38" y="28" font-size="13">y</text>
+            <line x1="50" y1="250" x2="170" y2="170" stroke="#009966" stroke-width="2.5" marker-end="url(#f3dispA)"/>
+            <line x1="50" y1="250" x2="350" y2="70" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f3dispB)"/>
+            <line x1="170" y1="170" x2="350" y2="70" stroke="#cc0000" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#f3dispd)"/>
+            <circle cx="170" cy="170" r="5" fill="#009966"/>
+            <circle cx="350" cy="70" r="5" fill="#0066cc"/>
+            <text x="150" y="192" font-size="14" fill="#009966">A</text>
+            <text x="358" y="64" font-size="14" fill="#0066cc">B</text>
+            <text x="90" y="198" font-size="14" fill="#009966">r&#7744;A</text>
+            <text x="190" y="130" font-size="14" fill="#0066cc">r&#7744;B</text>
+            <text x="265" y="108" font-size="14" fill="#cc0000">&#8966;r&#7744;</text>
+            <defs>
+                <marker id="f3dispx" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333333"/></marker>
+                <marker id="f3dispy" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333333"/></marker>
+                <marker id="f3dispA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#009966"/></marker>
+                <marker id="f3dispB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/></marker>
+                <marker id="f3dispd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/></marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 3.1: Position vectors \(\vec{r}_A\) and \(\vec{r}_B\) from the origin, and the displacement \(\Delta\vec{r} = \vec{r}_B - \vec{r}_A\) between them.</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 3.1: Displacement from Coordinates</div>
+        <div class="example-content">
+            <p>A hiker walks from a position \(A\) with coordinates \((1\,\text{km}, 2\,\text{km})\) to a camp \(B\) at \((4\,\text{km}, 6\,\text{km})\). The displacement vector is:</p>
+            <div class="equation">
+                \(\Delta\vec{r} = (4 - 1)\hat{i} + (6 - 2)\hat{j} = 3\hat{i} + 4\hat{j}\,\text{km}\)
+            </div>
+            <p>The magnitude of the displacement, which is the straight-line distance, is:</p>
+            <div class="equation">
+                \(|\Delta\vec{r}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\,\text{km}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Position Versus Displacement</div>
+        <div class="concept-content">
+            <p>A <strong>position</strong> is where an object is, with a specified reference frame. A <strong>displacement</strong> is the change of position, which is itself a vector. The same displacement can occur between many different pairs of positions, and it is independent of how we labelled the points.</p>
+        </div>
+    </div>
+
+    <h3>Velocity</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Average and Instantaneous Velocity</div>
+        <div class="definition-content">
+            <p>The <strong>average velocity</strong> \(\vec{v}_{\text{avg}}\) in two dimensions is:</p>
+            <div class="equation">
+                \(\vec{v}_{\text{avg}} = \frac{\Delta\vec{r}}{\Delta t} = \frac{\Delta x}{\Delta t}\hat{i} + \frac{\Delta y}{\Delta t}\hat{j}\)
+            </div>
+            <p>The <strong>instantaneous velocity</strong> \(\vec{v}\) is the derivative of the position vector:</p>
+            <div class="equation">
+                \(\vec{v} = \lim_{\Delta t \to 0}\frac{\Delta\vec{r}}{\Delta t} = \frac{d\vec{r}}{dt} = \frac{dx}{dt}\hat{i} + \frac{dy}{dt}\hat{j} = v_x\hat{i} + v_y\hat{j}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Properties of Velocity in Two Dimensions</div>
+        <div class="concept-content">
+            <ul>
+                <li>Velocity is a vector quantity with both magnitude and direction.</li>
+                <li>The magnitude of velocity is the speed: \(v = \sqrt{v_x^2 + v_y^2}\).</li>
+                <li>The direction of velocity is tangent to the path of motion.</li>
+                <li>The components \(v_x\) and \(v_y\) represent the rates of change in the \(x\) and \(y\) directions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="280" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curved path with velocity arrows tangent to the path at two points">
+            <rect width="500" height="280" fill="#f7fbff"/>
+            <path d="M55 215 C 160 80, 310 250, 445 95" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="135" y1="130" x2="230" y2="155" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f3velarrow)"/>
+            <line x1="330" y1="205" x2="415" y2="155" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f3velarrow)"/>
+            <circle cx="135" cy="130" r="5" fill="#0066cc"/>
+            <circle cx="330" cy="205" r="5" fill="#0066cc"/>
+            <text x="205" y="140" font-size="14" fill="#cc0000">v&#7744;</text>
+            <text x="390" y="145" font-size="14" fill="#cc0000">v&#7744;</text>
+            <text x="70" y="60" font-size="13" fill="#666666">path of motion</text>
+            <defs>
+                <marker id="f3velarrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/></marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 3.2: Velocity vectors are always tangent to the path of motion.</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 3.1: Average and Instantaneous Velocity</div>
+        <div class="practice-content">
+            <p>The position of a particle is given by \(\vec{r}(t) = (3t^2)\hat{i} + (4t - t^3)\hat{j}\) meters.</p>
+            <ol>
+                <li>Find the velocity vector at time \(t = 2\) seconds.</li>
+                <li>Find the acceleration vector at time \(t = 2\) seconds.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <ol>
+                <li>First, find the velocity function by differentiating the position function:<br />
+                <div class="equation">
+                    \(\vec{v}(t) = \frac{d\vec{r}}{dt} = \frac{d}{dt}(3t^2)\hat{i} + \frac{d}{dt}(4t - t^3)\hat{j} = (6t)\hat{i} + (4 - 3t^2)\hat{j}\)
+                </div><br />
+                Now, evaluate at \(t = 2\) s:<br />
+                <div class="equation">
+                    \(\vec{v}(2) = (6 \times 2)\hat{i} + (4 - 3 \times 2^2)\hat{j} = 12\hat{i} + (4 - 12)\hat{j} = 12\hat{i} - 8\hat{j}\)
+                </div>
+                (The units are metres per second.)
+                </li>
+                <li>Next, find the acceleration function by differentiating the velocity function:<br />
+                <div class="equation">
+                    \(\vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d}{dt}(6t)\hat{i} + \frac{d}{dt}(4 - 3t^2)\hat{j} = 6\hat{i} - 6t\hat{j}\)
+                </div><br />
+                Now, evaluate at \(t = 2\) s:<br />
+                <div class="equation">
+                    \(\vec{a}(2) = 6\hat{i} - (6 \times 2)\hat{j} = 6\hat{i} - 12\hat{j}\)
+                </div>
+                (The units are metres per second squared.)
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <h3>Acceleration</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Average and Instantaneous Acceleration</div>
+        <div class="definition-content">
+            <p>The <strong>average acceleration</strong> \(\vec{a}_{\text{avg}}\) is the change in velocity over time:</p>
+            <div class="equation">
+                \(\vec{a}_{\text{avg}} = \frac{\Delta\vec{v}}{\Delta t} = \frac{\vec{v}_f - \vec{v}_i}{\Delta t}\)
+            </div>
+            <p>The <strong>instantaneous acceleration</strong> \(\vec{a}\) is the derivative of the velocity vector:</p>
+            <div class="equation">
+                \(\vec{a} = \lim_{\Delta t \to 0}\frac{\Delta\vec{v}}{\Delta t} = \frac{d\vec{v}}{dt} = \frac{dv_x}{dt}\hat{i} + \frac{dv_y}{dt}\hat{j} = a_x\hat{i} + a_y\hat{j}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Properties of Acceleration in Two Dimensions</div>
+        <div class="concept-content">
+            <ul>
+                <li>Acceleration is a vector quantity with magnitude \(a = \sqrt{a_x^2 + a_y^2}\) and direction.</li>
+                <li>Acceleration can change the magnitude of velocity (speeding up or slowing down).</li>
+                <li>Acceleration can change the direction of velocity (turning).</li>
+                <li>The direction of acceleration is not necessarily the same as the direction of velocity.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 3.2: Acceleration of a Particle</div>
+        <div class="practice-content">
+            <p>Given the position vector \(\vec{r}(t) = (3t^2)\hat{i} + (4t - t^3)\hat{j}\), find the velocity and acceleration vectors at time \(t = 2\) seconds, and use them to describe the motion.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>We have already found in Practice 3.1 that \(\vec{v}(2) = 12\hat{i} - 8\hat{j}\,\text{m/s}\) and \(\vec{a}(2) = 6\hat{i} - 12\hat{j}\,\text{m/s}^2\). At \(t = 2\) s the particle is speeding up or slowing down depending on the dot product of \(\vec{v}\) and \(\vec{a}\).</p>
+            <div class="equation">
+                \(\vec{v} \cdot \vec{a} = (12)(6) + (-8)(-12) = 72 + 96 = 168 > 0\)
+            </div>
+            <p>The dot product is positive, so the acceleration has a component in the direction of velocity; the particle is speeding up. Its acceleration is not purely radial or tangential here because the motion is neither purely circular nor purely straight.</p>
+        </div>
+    </div>
+
+    <h2>3.2 Projectile Motion</h2>
+    <p>Projectile motion is a classic example of two-dimensional motion where an object moves under the influence of gravity only, with all other forces like air resistance neglected. The path followed by a projectile is its <strong>trajectory</strong>, which is parabolic.</p>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="320" height="170" viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="145" x2="300" y2="145" stroke="black" stroke-width="2"/>
+                <path d="M 40 145 Q 160 -15 280 145" fill="none" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="6,4"/>
+                <line x1="40" y1="145" x2="95" y2="100" stroke="#009966" stroke-width="2.5" marker-end="url(#f3projgreen)"/>
+                <line x1="40" y1="145" x2="85" y2="145" stroke="#cc0000" stroke-width="2" stroke-dasharray="4,3"/>
+                <line x1="40" y1="145" x2="40" y2="100" stroke="#cc0000" stroke-width="2" stroke-dasharray="4,3"/>
+                <circle cx="160" cy="65" r="5" fill="#cc0000"/>
+                <text x="92" y="95" font-size="12" fill="#009966">v&#8320;</text>
+                <text x="60" y="140" font-size="11" fill="#cc0000">v&#8320;&#8339;</text>
+                <text x="24" y="112" font-size="11" fill="#cc0000">v&#8320;&#8342;</text>
+                <text x="160" y="166" font-size="12" text-anchor="middle">Parabolic projectile trajectory</text>
+                <defs>
+                    <marker id="f3projgreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Launch projectiles and explore how speed, launch angle, mass, and air resistance affect the trajectory:</p>
+        <p><a href="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_en.html">https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Projectile Motion</div>
+        <div class="definition-content">
+            <p><strong>Projectile motion</strong> is the motion of an object thrown or projected into the air, subject only to the acceleration of gravity. The path followed by a projectile is its <strong>trajectory</strong>, which is parabolic.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Characteristics of Projectile Motion</div>
+        <div class="concept-content">
+            <ul>
+                <li>The motion is separated into independent horizontal and vertical components.</li>
+                <li><strong>Horizontal motion</strong>: The acceleration is zero (\(a_x = 0\)). The horizontal velocity is constant (\(v_x = v_{0x}\)).</li>
+                <li><strong>Vertical motion</strong>: The acceleration is constant and downwards (\(a_y = -g \approx -9.8\,\text{m/s}^2\)). The vertical velocity changes uniformly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Kinematic Equations for Projectile Motion</h3>
+    <p>For a projectile launched with initial velocity \(\vec{v}_0\) at an angle \(\theta\) to the horizontal, the initial velocity components are \(v_{0x} = v_0\cos\theta\) and \(v_{0y} = v_0\sin\theta\).</p>
+    <p><strong>Horizontal motion</strong>:</p>
+    <div class="equation">
+        \(\begin{aligned}
+        a_x &= 0 \\
+        v_x &= v_{0x} \\
+        x &= x_0 + v_{0x}t
+        \end{aligned}\)
+    </div>
+    <p><strong>Vertical motion</strong>:</p>
+    <div class="equation">
+        \(\begin{aligned}
+        a_y &= -g \\
+        v_y &= v_{0y} - gt \\
+        y &= y_0 + v_{0y}t - \frac{1}{2}gt^2 \\
+        v_y^2 &= v_{0y}^2 - 2g\Delta y
+        \end{aligned}\)
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Useful Equations (for launch and landing at same height)</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Time of flight: \(T = \frac{2v_0\sin\theta}{g}\)</li>
+                <li>Maximum height: \(H = \frac{v_0^2\sin^2\theta}{2g}\)</li>
+                <li>Range: \(R = \frac{v_0^2\sin 2\theta}{g}\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>The Trajectory Equation</h3>
+    <p>The shape of a projectile's path can be found by eliminating time. From the horizontal equation, \(t = x/v_{0x}\). Substituting into the vertical equation gives</p>
+    <div class="equation">
+        \(y = (\tan\theta)x - \frac{g}{2v_0^2\cos^2\theta}x^2\)
+    </div>
+    <p>This is the equation of a downward-opening parabola. It shows explicitly that the path is not a straight line even though the horizontal motion is uniform: gravity bends the trajectory increasingly as \(x\) grows.</p>
+
+    <p>The range formula follows by setting \(y = 0\) and solving for \(x\). Because \(\sin 2\theta\) is symmetric about \(45^\circ\), two launch angles that add to \(90^\circ\) (such as \(30^\circ\) and \(60^\circ\)) produce the same range, although the higher-angle shot stays in the air longer and reaches a greater height. For a given launch speed, the maximum range occurs at exactly \(45^\circ\) when air resistance is neglected.</p>
+
+    <div class="example">
+        <div class="example-header">Example 3.2: Height at a Given Horizontal Distance</div>
+        <div class="example-content">
+            <p>A projectile is launched at \(20\,\text{m/s}\) and \(30^\circ\) above the horizontal. Find its height when it has traveled \(15\,\text{m}\) horizontally.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The horizontal velocity is \(v_{0x} = 20\cos 30^\circ = 17.3\,\text{m/s}\), so the time to travel \(15\,\text{m}\) is</p>
+            <div class="equation">
+                \(t = \frac{x}{v_{0x}} = \frac{15}{17.3} = 0.866\,\text{s}\)
+            </div>
+            <p>The height is then</p>
+            <div class="equation">
+                \(y = (20\sin 30^\circ)(0.866) - \tfrac{1}{2}(9.8)(0.866)^2 = 8.66 - 3.67 \approx 5.0\,\text{m}\)
+            </div>
+            <p>Equivalently, substituting directly into the trajectory equation gives the same result.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="310" viewBox="0 0 520 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parabolic projectile trajectory with initial velocity components and velocity at the apex">
+            <rect width="520" height="310" fill="#f7fbff"/>
+            <line x1="55" y1="260" x2="485" y2="260" stroke="#333333" stroke-width="1.8" marker-end="url(#f3projx)"/>
+            <line x1="55" y1="260" x2="55" y2="30" stroke="#333333" stroke-width="1.8" marker-end="url(#f3projy)"/>
+            <text x="490" y="266" font-size="13">x</text>
+            <text x="40" y="28" font-size="13">y</text>
+            <path d="M55 260 Q 260 30 465 260" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="55" y1="260" x2="155" y2="150" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f3projv)"/>
+            <line x1="55" y1="260" x2="155" y2="260" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#f3projcomp)"/>
+            <line x1="55" y1="260" x2="55" y2="150" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#f3projcomp)"/>
+            <line x1="255" y1="145" x2="325" y2="145" stroke="#009966" stroke-width="2.5" marker-end="url(#f3projv)"/>
+            <circle cx="260" cy="145" r="5" fill="#0066cc"/>
+            <text x="160" y="150" font-size="13" fill="#cc0000">v&#7744;0</text>
+            <text x="165" y="278" font-size="13" fill="#666666">v0x</text>
+            <text x="26" y="155" font-size="13" fill="#666666">v0y</text>
+            <text x="330" y="140" font-size="13" fill="#009966">v at apex</text>
+            <text x="250" y="290" font-size="13" fill="#0066cc">range</text>
+            <defs>
+                <marker id="f3projx" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333333"/></marker>
+                <marker id="f3projy" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333333"/></marker>
+                <marker id="f3projv" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/></marker>
+                <marker id="f3projcomp" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#666666"/></marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 3.3: The parabolic trajectory of a projectile, showing velocity components and constant downward acceleration.</div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice 3.2: Dropped from a Cliff</div>
+        <div class="practice-content">
+            <p>A ball is thrown from a cliff \(80\,\text{m}\) high with an initial horizontal speed of \(15\,\text{m/s}\).</p>
+            <ol>
+                <li>How long does it take to reach the ground?</li>
+                <li>How far from the base of the cliff does it land?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Given: \(y_0 = 80\,\text{m}\), \(y = 0\), \(v_{0x} = 15\,\text{m/s}\), \(v_{0y} = 0\).</p>
+            <ol>
+                <li>We use the vertical motion equation to find the time:
+                    <div class="equation">
+                        \(y = y_0 + v_{0y}t - \frac{1}{2}gt^2\)
+                    </div>
+                    <div class="equation">
+                        \(0 = 80 + (0)t - \frac{1}{2}(9.8)t^2\)
+                    </div>
+                    <div class="equation">
+                        \(4.9t^2 = 80\)
+                    </div>
+                    <div class="equation">
+                        \(t = \sqrt{\frac{80}{4.9}} \approx 4.04\,\text{s}\)
+                    </div>
+                </li>
+                <li>Now we use the horizontal motion equation to find the range:
+                    <div class="equation">
+                        \(x = x_0 + v_{0x}t\)
+                    </div>
+                    <div class="equation">
+                        \(x = 0 + (15)(4.04) \approx 60.6\,\text{m}\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>3.3 Circular Motion</h2>
+    <p>Circular motion describes an object moving along a circular path.</p>
+
+    <h3 id="uniform-circular-motion">Uniform Circular Motion</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Uniform Circular Motion</div>
+        <div class="definition-content">
+            <p><strong>Uniform circular motion</strong> is the motion of an object traveling at a constant speed along a circular path. Even though the speed is constant, the velocity is continuously changing because its direction is changing. This change in velocity means there must be an acceleration.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept: Centripetal Acceleration</div>
+        <div class="concept-content">
+            <p>In uniform circular motion, the acceleration is directed toward the center of the circle. This is called <strong>centripetal acceleration</strong> (\(a_c\)). Its magnitude is given by: \(a_c = \frac{v^2}{r}\), where \(v\) is the constant speed and \(r\) is the radius of the circle. The time for one complete revolution is the <strong>period</strong> (\(T\)), given by \(T = \frac{2\pi r}{v}\).</p>
+            <p>To see where the centripetal acceleration comes from, consider two nearby positions on the circle separated by a small angle \(\Delta\theta\). The velocity vectors at those positions have the same length \(v\) but different directions, and the change in velocity \(\Delta\vec{v}\) points toward the center. The triangle formed by the two velocity vectors is similar to the triangle formed by the two position vectors, so \(\frac{|\Delta\vec{v}|}{v} \approx \frac{|\Delta\vec{r}|}{r}\). For a small interval, \(|\Delta\vec{r}| \approx v\Delta t\), and therefore \(a_c = \lim_{\Delta t\to 0}\frac{|\Delta\vec{v}|}{\Delta t} = \frac{v}{r}\lim_{\Delta t\to 0}\frac{|\Delta\vec{r}|}{\Delta t} = \frac{v^2}{r}\). This derivation explains why the acceleration is directed toward the center: it is produced by the continuous change in the <em>direction</em> of the velocity, not by a change in speed.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="440" height="300" viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Object in uniform circular motion with tangent velocity and inward centripetal acceleration">
+            <rect width="440" height="300" fill="#f7fbff"/>
+            <circle cx="220" cy="155" r="105" fill="none" stroke="#0066cc" stroke-width="2.5"/>
+            <circle cx="220" cy="155" r="5" fill="#333333"/>
+            <circle cx="294" cy="81" r="7" fill="#009966"/>
+            <line x1="220" y1="155" x2="294" y2="81" stroke="#333333" stroke-width="2" marker-end="url(#f3circr)"/>
+            <line x1="294" y1="81" x2="365" y2="42" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f3circv)"/>
+            <line x1="294" y1="81" x2="248" y2="127" stroke="#009966" stroke-width="2.5" marker-end="url(#f3circa)"/>
+            <text x="245" y="112" font-size="14" fill="#333333">r</text>
+            <text x="330" y="48" font-size="14" fill="#cc0000">v&#7744;</text>
+            <text x="250" y="150" font-size="14" fill="#009966">a&#7744;c</text>
+            <text x="190" y="180" font-size="12" fill="#333333">center</text>
+            <defs>
+                <marker id="f3circr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333333"/></marker>
+                <marker id="f3circv" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/></marker>
+                <marker id="f3circa" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#009966"/></marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 3.4: In uniform circular motion, the velocity vector \(\vec{v}\) is tangent to the circle, while the centripetal acceleration \(\vec{a}_c\) points to the center.</div>
+    </div>
+
+    <h3 id="tangential-and-radial-acceleration">Tangential and Radial Acceleration</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Radial and Tangential Acceleration</div>
+        <div class="definition-content">
+            <ul>
+                <li><strong>Radial Acceleration (\(a_r\))</strong>: This is the centripetal acceleration, responsible for changing the direction of the velocity. It always points toward the center. \(a_r = a_c = \frac{v^2}{r}\)</li>
+                <li><strong>Tangential Acceleration (\(a_t\))</strong>: This component is tangent to the circular path and is responsible for changing the speed of the object. \(a_t = \frac{dv}{dt}\)</li>
+            </ul>
+            <p>The total acceleration \(\vec{a}\) is the vector sum: \(\vec{a} = \vec{a}_r + \vec{a}_t\). The magnitude is \(a = \sqrt{a_r^2 + a_t^2}\).</p>
+        </div>
+    </div>
+
+    <h2>3.4 Relative Motion in Two Dimensions</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition: Relative Motion</div>
+        <div class="definition-content">
+            <p><strong>Relative motion</strong> analysis is used when objects are moving with respect to a reference frame that is also moving. The key equation is:</p>
+            <div class="equation">
+                \(\vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C}\)
+            </div>
+            <p>where \(\vec{v}_{A/C}\) is the velocity of object \(A\) relative to frame \(C\), \(\vec{v}_{A/B}\) is the velocity of \(A\) relative to frame \(B\), and \(\vec{v}_{B/C}\) is the velocity of frame \(B\) relative to frame \(C\).</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 3.3: Boat and River</div>
+        <div class="example-content">
+            <p>A boat that can travel at \(4\,\text{m/s}\) in still water heads directly across a river that is flowing east at \(3\,\text{m/s}\). What is the velocity of the boat relative to the ground?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let \(B =\) Boat, \(W =\) Water, \(G =\) Ground. We are given:</p>
+            <ul>
+                <li>\(\vec{v}_{B/W} = 4\hat{j}\,\text{m/s}\) (velocity of boat relative to water)</li>
+                <li>\(\vec{v}_{W/G} = 3\hat{i}\,\text{m/s}\) (velocity of water relative to ground)</li>
+            </ul>
+            <p>We want to find \(\vec{v}_{B/G}\). Using the relative velocity formula:</p>
+            <div class="equation">
+                \(\vec{v}_{B/G} = \vec{v}_{B/W} + \vec{v}_{W/G} = 3\hat{i} + 4\hat{j}\,\text{m/s}\)
+            </div>
+            <p>The speed relative to the ground is \(|\vec{v}_{B/G}| = \sqrt{3^2 + 4^2} = 5\,\text{m/s}\). The direction is \(\theta = \tan^{-1}(4/3) \approx 53.1^\circ\) north of east.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example 3.4: Heading Upstream</div>
+        <div class="example-content">
+            <p>A river flows east at \(3.0\,\text{m/s}\). A boat can travel at \(5.0\,\text{m/s}\) in still water. At what angle upstream should the boat head so that it lands directly across the river, and how long does the crossing take if the river is \(100\,\text{m}\) wide?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let the boat's heading make an angle \(\theta\) upstream of the north direction. The eastward component of the boat's velocity relative to the water must cancel the river current:</p>
+            <div class="equation">
+                \(5.0\sin\theta = 3.0 \quad \Rightarrow \quad \theta = \sin^{-1}(0.60) \approx 36.9^\circ\)
+            </div>
+            <p>The northward component is then</p>
+            <div class="equation">
+                \(v_{\text{north}} = 5.0\cos 36.9^\circ = 4.0\,\text{m/s}\)
+            </div>
+            <p>The crossing time is</p>
+            <div class="equation">
+                \(t = \frac{100\,\text{m}}{4.0\,\text{m/s}} = 25\,\text{s}\)
+            </div>
+            <p>Pointing upstream is essential; if the boat headed straight across, the current would carry it downstream while it crossed.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Projectile problems look like two separate one-dimensional problems connected only by time. The horizontal motion has no acceleration, while the vertical motion has the constant acceleration \(-g\). Keeping those two columns separate prevents the most common mistake: applying a single acceleration to the whole velocity vector.</p>
+    <p>Resolve the launch velocity first, then choose axes with \(+x\) in the direction of horizontal travel and \(+y\) upward. Write the known components, decide whether the unknown is a time, a height, or a range, and select the equation that contains that quantity. At the end, reconstruct the final velocity from its components rather than guessing its direction.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Draw the trajectory and mark the launch point, landing point, and positive axes.</li>
+                <li>Resolve the initial velocity into \(v_{0x} = v_0\cos\theta\) and \(v_{0y} = v_0\sin\theta\).</li>
+                <li>Set \(a_x = 0\) and \(a_y = -g\); never mix horizontal and vertical equations.</li>
+                <li>Use the vertical motion to find the time of flight or the maximum height.</li>
+                <li>Use \(x = v_{0x}t\) to find the horizontal range.</li>
+                <li>Combine \(v_x\) and \(v_y\) at the end to obtain the final speed and direction.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A ball is kicked from level ground with an initial speed of \(25\,\text{m/s}\) at \(30^\circ\) above the horizontal. Neglecting air resistance, find the time of flight, the maximum height, the horizontal range, and the velocity components just before the ball lands.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take the launch point as the origin, with \(+x\) horizontal and \(+y\) upward. The initial components are:</p>
+            <div class="equation">
+                \(v_{0x} = 25\cos 30^\circ = 21.7\,\text{m/s}, \qquad v_{0y} = 25\sin 30^\circ = 12.5\,\text{m/s}\)
+            </div>
+            <p><strong>Time of flight.</strong> Because the ground is level, the vertical displacement is zero. Using \(y = v_{0y}t - \frac{1}{2}gt^2\) with \(g = 9.8\,\text{m/s}^2\):</p>
+            <div class="equation">
+                \(0 = t\left(12.5 - 4.9t\right) \quad \Rightarrow \quad t = \frac{12.5}{4.9} = 2.55\,\text{s}\)
+            </div>
+            <p><strong>Maximum height.</strong> At the top \(v_y = 0\), so:</p>
+            <div class="equation">
+                \(H = \frac{v_{0y}^2}{2g} = \frac{(12.5)^2}{2(9.8)} = \frac{156.25}{19.6} = 7.97\,\text{m}\)
+            </div>
+            <p><strong>Range.</strong> The horizontal velocity is constant:</p>
+            <div class="equation">
+                \(R = v_{0x}t = (21.7)(2.55) = 55.3\,\text{m}\)
+            </div>
+            <p><strong>Velocity at landing.</strong> The horizontal component is unchanged, and the vertical component is reversed by symmetry:</p>
+            <div class="equation">
+                \(v_x = 21.7\,\text{m/s}, \qquad v_y = -12.5\,\text{m/s}\)
+            </div>
+            <p>The speed is \(\sqrt{(21.7)^2 + (12.5)^2} = 25.0\,\text{m/s}\), directed \(30^\circ\) below the horizontal.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Sports scientists and coaches use these equations when analysing a football kick. A ball struck at \(25\,\text{m/s}\) and \(30^\circ\) would stay airborne for about \(2.6\,\text{s}\) and land roughly \(55\,\text{m}\) away if air resistance were negligible; in a real match, drag shortens the flight, so players learn to strike harder or at a slightly different angle. The same component method is used in video analysis to separate technique from luck.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Horizontal and vertical motions are independent and are linked only by the common time.</li>
+        <li>With air resistance neglected, \(v_x\) stays constant while \(v_y\) changes at the rate \(-g\).</li>
+        <li>Resolving the launch velocity into components is the essential first step.</li>
+        <li>The time of flight on level ground is \(T = 2v_0\sin\theta/g\).</li>
+        <li>The maximum height depends only on the vertical component of the launch velocity.</li>
+        <li>For level ground and no drag, the range is \(R = v_0^2\sin 2\theta/g\), which peaks at \(\theta = 45^\circ\).</li>
+        <li>The landing speed equals the launch speed on level ground, but the velocity direction is reversed in the vertical component.</li>
+    </ul>
+
+    <h2 id="conceptual-questions">Conceptual Questions</h2>
+    <ol>
+        <li>In projectile motion, at what point in its trajectory is the speed at a minimum?</li>
+        <li>An object is in uniform circular motion. If the radius of the path is doubled while the speed remains the same, what happens to the centripetal acceleration?</li>
+        <li>Can an object have a constant speed and a non-zero acceleration? Explain.</li>
+        <li>A pilot drops a package from a plane flying horizontally at a constant speed. Where will the plane be relative to the package when the package hits the ground (neglecting air resistance)?</li>
+        <li>Explain why the acceleration vector in uniform circular motion is perpendicular to the velocity vector.</li>
+        <li>Can an object have zero velocity and non-zero acceleration at the same time? Give an example in two-dimensional motion.</li>
+        <li>Explain the difference between tangential and radial acceleration in circular motion.</li>
+        <li>In relative motion, if \(\vec{v}_{A/B} = -\vec{v}_{B/A}\), what does this mean physically?</li>
+        <li>Can centripetal acceleration change the speed of an object in circular motion? Explain.</li>
+        <li>In projectile motion, is there any point on the trajectory where the velocity and acceleration vectors are perpendicular? If so, where?</li>
+        <li>Two projectiles are launched with the same speed, one at \(30^\circ\) and one at \(60^\circ\). Which stays in the air longer, and which travels farther horizontally? Explain.</li>
+        <li>Why does the trajectory equation contain \(x^2\) rather than \(x\)? What would the path look like if the vertical acceleration were zero?</li>
+        <li>A car rounds a curve at constant speed. Is its acceleration zero? If not, in what direction does it point, and what provides it?</li>
+        <li>An object moves in a circle with increasing speed. Sketch the directions of its tangential and radial acceleration and explain why the total acceleration does not point exactly toward the center.</li>
+        <li>A boat heads straight across a river but the current carries it downstream. Can the boat ever land directly opposite its starting point without changing its heading? Explain.</li>
+    </ol>
+
+    <h2 id="problems">Problems</h2>
+    <ol>
+        <li>A particle moves in the xy-plane with position vector \(\vec{r}(t) = (2t^2)\hat{i} + (3t - 1)\hat{j}\) meters.
+            <ol>
+                <li>Find the velocity vector at time \(t = 2\) seconds.</li>
+                <li>Find the acceleration vector at time \(t = 2\) seconds.</li>
+            </ol>
+        </li>
+        <li>A projectile is launched with an initial velocity of \(40\,\text{m/s}\) at an angle of \(60^\circ\) above the horizontal. Find its time of flight, maximum height, and range, assuming it lands at the same height from which it was launched.</li>
+        <li>A ball is thrown horizontally from a roof \(45\) meters high with a speed of \(20\,\text{m/s}\).
+            <ol>
+                <li>How long does it take to hit the ground?</li>
+                <li>How far from the base of the building does it land?</li>
+                <li>What is its velocity just before impact?</li>
+            </ol>
+        </li>
+        <li>A car moves around a circular track of radius \(150\,\text{m}\) at a constant speed of \(25\,\text{m/s}\).
+            <ol>
+                <li>What is the centripetal acceleration?</li>
+                <li>What is the period of the motion?</li>
+            </ol>
+        </li>
+        <li>A Ferris wheel with radius \(10\,\text{m}\) makes one complete revolution every \(20\,\text{s}\).
+            <ol>
+                <li>What is the speed of a rider?</li>
+                <li>What is the centripetal acceleration of a rider?</li>
+            </ol>
+        </li>
+        <li>A particle moves in a circle of radius \(2\,\text{m}\) with its speed given by \(v(t) = 3t^2\,\text{m/s}\). Find the tangential, radial, and total acceleration at \(t = 2\) seconds.</li>
+        <li>A river flows due east at \(2\,\text{m/s}\). A boat that can travel at \(5\,\text{m/s}\) in still water is pointed due north.
+            <ol>
+                <li>What is the velocity of the boat relative to the ground?</li>
+                <li>If the river is \(100\,\text{m}\) wide, how long does it take to cross?</li>
+                <li>How far downstream does the boat land?</li>
+            </ol>
+        </li>
+        <li>A particle's position is given by \(\vec{r}(t) = (3\cos(2t))\hat{i} + (3\sin(2t))\hat{j}\) meters.
+            <ol>
+                <li>Show that the particle moves in a circle and find its radius.</li>
+                <li>Find the velocity vector and show that the speed is constant.</li>
+                <li>Find the acceleration vector and show that it is always directed toward the center.</li>
+            </ol>
+        </li>
+        <li>A projectile is launched from ground level with an initial speed of \(30\,\text{m/s}\).
+            <ol>
+                <li>What launch angle will give the maximum range?</li>
+                <li>What is this maximum range?</li>
+            </ol>
+        </li>
+        <li>A basketball player shoots a ball at an angle of \(55^\circ\) above the horizontal from an initial height of \(2\,\text{m}\). The basket is at a height of \(3.05\,\text{m}\) and is \(4.5\,\text{m}\) horizontally from the player. What initial speed is needed for the ball to go through the basket?</li>
+        <li>A projectile is launched at \(18\,\text{m/s}\) and \(40^\circ\) above the horizontal. Find the equation of its trajectory and use it to determine its height at \(x = 12\,\text{m}\).</li>
+        <li>A ball rolls off a table \(1.2\,\text{m}\) high with a horizontal speed of \(2.5\,\text{m/s}\). Find the time of flight, the horizontal distance from the table edge, and the velocity vector at impact.</li>
+        <li>A satellite orbits Earth at a radius of \(7.0\times10^6\,\text{m}\) with a period of \(5800\,\text{s}\). Find its speed and centripetal acceleration.</li>
+        <li>A particle moves on a circular path of radius \(0.50\,\text{m}\) with speed \(v(t) = 2.0t\,\text{m/s}\). At \(t = 3.0\,\text{s}\), find the tangential acceleration, radial acceleration, and total acceleration.</li>
+        <li>A plane has an airspeed of \(120\,\text{m/s}\) and points due north while a wind blows from the west at \(40\,\text{m/s}\). Find the plane's velocity relative to the ground and the direction it must actually point to travel due north.</li>
+        <li>A ball is thrown from the ground at \(15\,\text{m/s}\) and \(50^\circ\). Find the time at which it passes a height of \(5.0\,\text{m}\) on the way up and on the way down.</li>
+    </ol>
+
+</body>
+</html>

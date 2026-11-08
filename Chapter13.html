@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13: Cross-Cutting Application of Physics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 13: Cross-Cutting Application of Physics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Cross-Cutting Applications of Physics</div>
+        <div class="textbox-content">
+            <p>Physics rarely stops at the equations on the page. The same physical laws reappear in agriculture, industry, medicine, archaeology, and the study of Earth and space. Recognizing the underlying principle lets us apply tools from mechanics, electricity, waves, and thermodynamics to unfamiliar contexts.</p>
+            <p>This chapter examines how energy balance, orbital mechanics, radioactivity, medical imaging, and signal analysis show up in real-world systems, and how applied-physics reasoning turns context into solvable problems.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand how physics principles apply to agricultural systems and soil science</li>
+                <li>Analyze the role of physics in various industrial processes and technologies</li>
+                <li>Explain the physics behind medical imaging techniques and radiation therapy</li>
+                <li>Describe how physics methods are used in archaeological research and dating</li>
+                <li>Apply physics concepts to earth and space sciences, including satellite orbits</li>
+                <li>Understand the physics principles behind various power generation methods</li>
+                <li>Analyze the environmental impacts of different energy technologies</li>
+                <li>Apply physics concepts to solve interdisciplinary problems</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>13.1 Application in Agriculture</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Agricultural physics</strong> is the application of physics principles and methods to agricultural systems, including soil science, plant physiology, and agricultural engineering.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Physics applications in agriculture include:</p>
+            <ul>
+                <li>Soil moisture measurement and management</li>
+                <li>Irrigation system design and optimization</li>
+                <li>Greenhouse climate control</li>
+                <li>Precision agriculture using GPS and sensors</li>
+                <li>Post-harvest technology and storage</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>13.1.1 Energy Balance in Soils</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>The energy balance in soils is governed by the first law of thermodynamics:</p>
+            <div class="equation">
+                \(Q = mc\Delta T\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(Q\) is the heat energy transferred</li>
+                <li>\(m\) is the mass of soil</li>
+                <li>\(c\) is the specific heat capacity of soil</li>
+                <li>\(\Delta T\) is the temperature change</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The surface energy balance equation:</p>
+            <div class="equation">
+                \(R_n = H + LE + G\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(R_n\) is the net radiation at the surface</li>
+                <li>\(H\) is the sensible heat flux to the atmosphere</li>
+                <li>\(LE\) is the latent heat flux (evaporation)</li>
+                <li>\(G\) is the soil heat flux</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="330" fill="#f7fbff"/>
+            <rect x="0" y="230" width="560" height="100" fill="#d9c2a3"/>
+            <line x1="0" y1="230" x2="560" y2="230" stroke="#8b5a2b" stroke-width="4"/>
+            <circle cx="70" cy="60" r="26" fill="#ffd633" stroke="#e6b800" stroke-width="2"/>
+            <line x1="70" y1="18" x2="70" y2="6" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="70" y1="102" x2="70" y2="114" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="28" y1="60" x2="16" y2="60" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="112" y1="60" x2="124" y2="60" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="40" y1="30" x2="32" y2="22" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="100" y1="90" x2="108" y2="98" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="100" y1="30" x2="108" y2="22" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <line x1="40" y1="90" x2="32" y2="98" stroke="#e6b800" stroke-width="2" marker-end="url(#f133gold)"/>
+            <text x="70" y="128" font-size="13" text-anchor="middle" fill="#666666">sun</text>
+            <line x1="150" y1="95" x2="255" y2="205" stroke="#cc0000" stroke-width="3" marker-end="url(#f131red)"/>
+            <text x="150" y="82" font-size="14" fill="#cc0000">Rn net radiation</text>
+            <line x1="325" y1="205" x2="325" y2="95" stroke="#0066cc" stroke-width="3" marker-end="url(#f131blue)"/>
+            <text x="290" y="85" font-size="14" fill="#0066cc">H sensible heat</text>
+            <line x1="400" y1="205" x2="430" y2="95" stroke="#009966" stroke-width="3" marker-end="url(#f131green)"/>
+            <text x="445" y="85" font-size="14" fill="#009966">LE latent heat</text>
+            <line x1="480" y1="245" x2="480" y2="315" stroke="#8b5a2b" stroke-width="3" marker-end="url(#f131brown)"/>
+            <text x="370" y="290" font-size="14" fill="#8b5a2b">G soil heat</text>
+            <text x="20" y="215" font-size="13" fill="#666666">atmosphere</text>
+            <text x="20" y="320" font-size="13" fill="#5c3d1f">soil</text>
+            <defs>
+                <marker id="f131red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+                <marker id="f131blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+                </marker>
+                <marker id="f131green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966"/>
+                </marker>
+                <marker id="f131brown" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#8b5a2b"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.1: Surface energy balance of a soil</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the heat required to raise the temperature of 1 hectare of soil (to 15 cm depth) by 5&#176;C. Assume soil density of 1.3 g/cm&#179; and specific heat capacity of 0.8 J/g&#176;C.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First, calculate the mass of soil:</p>
+            <div class="equation">
+                \(\text{Area} = 1\,\text{hectare} = 10{,}000\,\text{m}^2 = 10^8\,\text{cm}^2\)
+            </div>
+            <div class="equation">
+                \(\text{Volume} = \text{Area} \times \text{depth} = 10^8\,\text{cm}^2 \times 15\,\text{cm} = 1.5 \times 10^9\,\text{cm}^3\)
+            </div>
+            <div class="equation">
+                \(\text{Mass} = \text{Density} \times \text{Volume} = 1.3\,\text{g/cm}^3 \times 1.5 \times 10^9\,\text{cm}^3 = 1.95 \times 10^9\,\text{g}\)
+            </div>
+            <p>Now calculate the heat required:</p>
+            <div class="equation">
+                \(Q = mc\Delta T = (1.95 \times 10^9\,\text{g}) \times (0.8\,\text{J\,g}^{-1}\,^{\circ}\text{C}^{-1}) \times (5\,^{\circ}\text{C}) = 7.8 \times 10^9\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>13.1.2 Physics of Soils</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>Soil physics involves the study of physical properties and processes of soils, including:</p>
+            <ul>
+                <li>Soil texture and structure</li>
+                <li>Water retention and movement</li>
+                <li>Heat transfer</li>
+                <li>Aeration and gas exchange</li>
+                <li>Mechanical properties</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Darcy's Law for water flow in soils:</p>
+            <div class="equation">
+                \(Q = -KA\frac{dh}{dl}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(Q\) is the discharge rate (m&#179;/s)</li>
+                <li>\(K\) is the hydraulic conductivity (m/s)</li>
+                <li>\(A\) is the cross-sectional area (m&#178;)</li>
+                <li>\(\frac{dh}{dl}\) is the hydraulic gradient</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="540" height="330" viewBox="0 0 540 330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="540" height="330" fill="#f7fbff"/>
+            <rect x="150" y="70" width="250" height="210" fill="#e8d5b7" stroke="#8b5a2b" stroke-width="3"/>
+            <rect x="150" y="70" width="250" height="45" fill="#b3dcff"/>
+            <path d="M 150,115 Q 190,105 230,115 T 310,115 T 400,115" fill="none" stroke="#0066cc" stroke-width="2"/>
+            <line x1="150" y1="175" x2="400" y2="175" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <line x1="120" y1="175" x2="150" y2="175" stroke="#666666" stroke-width="1.5"/>
+            <line x1="400" y1="175" x2="430" y2="175" stroke="#666666" stroke-width="1.5"/>
+            <text x="110" y="180" font-size="14" text-anchor="end" fill="#666666">A</text>
+            <line x1="275" y1="88" x2="275" y2="245" stroke="#cc0000" stroke-width="3" marker-end="url(#f132red)"/>
+            <text x="285" y="170" font-size="15" fill="#cc0000">Q</text>
+            <text x="410" y="145" font-size="13" fill="#666666">hydraulic</text>
+            <text x="410" y="163" font-size="13" fill="#666666">gradient</text>
+            <text x="410" y="181" font-size="13" fill="#666666">dh/dl</text>
+            <text x="275" y="300" font-size="13" text-anchor="middle" fill="#5c3d1f">soil column</text>
+            <text x="275" y="55" font-size="14" text-anchor="middle" fill="#0066cc">water surface</text>
+            <defs>
+                <marker id="f132red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+                <marker id="f132blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.2: Darcy's law for water flow through a soil column</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Soil water potential components:</p>
+            <ul>
+                <li>Gravitational potential: \(\psi_g = \rho g h\)</li>
+                <li>Matric potential: \(\psi_m\) (due to soil matrix forces)</li>
+                <li>Osmotic potential: \(\psi_o\) (due to dissolved salts)</li>
+            </ul>
+            <p>Total water potential: \(\psi_t = \psi_g + \psi_m + \psi_o\)</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A soil sample has a bulk density of 1.2 g/cm&#179; and particle density of 2.65 g/cm&#179;. Calculate the porosity of the soil.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Porosity is the fraction of the total volume occupied by pore space:</p>
+            <div class="equation">
+                \(\phi = 1 - \frac{\rho_{\text{bulk}}}{\rho_{\text{particle}}} = 1 - \frac{1.2}{2.65} \approx 0.55\)
+            </div>
+            <p>About \(55\%\) of the soil volume is pore space, which can hold air or water. This high porosity is typical of well-aggregated agricultural soil and is important for root respiration and water storage.</p>
+        </div>
+    </div>
+
+    <h2>13.2 Physics and Industries</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Industrial physics</strong> applies physics principles to solve problems in industrial settings and develop new technologies.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Physics applications in industries include:</p>
+            <ul>
+                <li>Materials science and engineering</li>
+                <li>Quality control and non-destructive testing</li>
+                <li>Process optimization and control</li>
+                <li>Energy efficiency and conservation</li>
+                <li>Automation and robotics</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Non-destructive testing methods:</p>
+            <ul>
+                <li>Ultrasonic testing: Uses high-frequency sound waves</li>
+                <li>Radiographic testing: Uses X-rays or gamma rays</li>
+                <li>Magnetic particle testing: For ferromagnetic materials</li>
+                <li>Liquid penetrant testing: For surface defects</li>
+                <li>Eddy current testing: For conductive materials</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="330" fill="#f7fbff"/>
+            <rect x="130" y="150" width="300" height="120" fill="#c9ced6" stroke="#555555" stroke-width="3"/>
+            <rect x="130" y="150" width="300" height="120" fill="url(#f133hatch)" opacity="0.35"/>
+            <rect x="245" y="80" width="70" height="50" rx="6" fill="#0066cc" stroke="#003d7a" stroke-width="2"/>
+            <text x="280" y="70" font-size="13" text-anchor="middle" fill="#0066cc">transducer</text>
+            <line x1="280" y1="135" x2="280" y2="215" stroke="#cc0000" stroke-width="3" marker-end="url(#f133red)"/>
+            <text x="265" y="165" font-size="13" text-anchor="end" fill="#cc0000">incident pulse</text>
+            <ellipse cx="280" cy="225" rx="34" ry="12" fill="#cc0000" fill-opacity="0.75"/>
+            <text x="280" y="255" font-size="13" text-anchor="middle" fill="#cc0000">defect</text>
+            <line x1="335" y1="218" x2="335" y2="135" stroke="#009966" stroke-width="3" marker-end="url(#f133green)"/>
+            <text x="345" y="175" font-size="13" fill="#009966">echo</text>
+            <text x="280" y="300" font-size="14" text-anchor="middle" fill="#555555">steel component</text>
+            <text x="450" y="110" font-size="13" fill="#666666">v = 5960 m/s</text>
+            <defs>
+                <pattern id="f133hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="#888888" stroke-width="1"/>
+                </pattern>
+                <marker id="f133red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+                <marker id="f133green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966"/>
+                </marker>
+                <marker id="f133gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#e6b800"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.3: Ultrasonic testing of a steel component</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>In ultrasonic testing, a 5 MHz pulse is used to inspect a steel component. If the speed of sound in steel is 5960 m/s, calculate the wavelength of the ultrasound.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\lambda = \frac{v}{f} = \frac{5960\,\text{m/s}}{5 \times 10^6\,\text{Hz}} = 1.192 \times 10^{-3}\,\text{m} = 1.192\,\text{mm}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Process control in industries often uses feedback systems based on:</p>
+            <ul>
+                <li>Temperature sensors (thermocouples, RTDs)</li>
+                <li>Pressure sensors (piezoelectric, strain gauge)</li>
+                <li>Flow sensors (ultrasonic, electromagnetic)</li>
+                <li>Level sensors (capacitive, ultrasonic)</li>
+                <li>Analytical instruments (spectroscopy, chromatography)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>13.3 Physics in Health Sciences and Medical Imaging</h2>
+
+    <h3>13.3.1 Radioactivity</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Radioactivity</strong> is the process by which unstable atomic nuclei emit radiation to become more stable.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of radioactive decay:</p>
+            <ul>
+                <li>Alpha decay: Emission of alpha particles (\(^4_2\)He nuclei)</li>
+                <li>Beta decay: Emission of electrons or positrons</li>
+                <li>Gamma decay: Emission of high-energy photons</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The radioactive decay law:</p>
+            <div class="equation">
+                \(N = N_0 e^{-\lambda t}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(N\) is the number of radioactive atoms at time \(t\)</li>
+                <li>\(N_0\) is the initial number of radioactive atoms</li>
+                <li>\(\lambda\) is the decay constant</li>
+            </ul>
+            <p>Half-life: \(t_{1/2} = \frac{\ln 2}{\lambda}\)</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="330" fill="#ffffff"/>
+            <line x1="70" y1="270" x2="520" y2="270" stroke="#000000" stroke-width="2"/>
+            <line x1="70" y1="270" x2="70" y2="40" stroke="#000000" stroke-width="2"/>
+            <text x="520" y="295" font-size="14" text-anchor="end">time</text>
+            <text x="50" y="50" font-size="14" text-anchor="end">N</text>
+            <text x="50" y="75" font-size="13" text-anchor="end">N0</text>
+            <path d="M 70,60 C 110,60 120,120 170,145 C 220,170 240,195 290,212 C 350,232 420,245 500,255" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="70" y1="60" x2="70" y2="270" stroke="#999999" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="70" y1="145" x2="170" y2="145" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="170" y1="145" x2="170" y2="270" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="70" y1="205" x2="290" y2="205" stroke="#009966" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="290" y1="205" x2="290" y2="270" stroke="#009966" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="70" y1="232" x2="410" y2="232" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="410" y1="232" x2="410" y2="270" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <text x="170" y="290" font-size="13" text-anchor="middle" fill="#cc0000">t1/2</text>
+            <text x="290" y="290" font-size="13" text-anchor="middle" fill="#009966">2t1/2</text>
+            <text x="410" y="290" font-size="13" text-anchor="middle" fill="#ff9900">3t1/2</text>
+            <text x="60" y="149" font-size="12" text-anchor="end" fill="#cc0000">N0/2</text>
+            <text x="60" y="209" font-size="12" text-anchor="end" fill="#009966">N0/4</text>
+            <text x="60" y="236" font-size="12" text-anchor="end" fill="#ff9900">N0/8</text>
+            <text x="300" y="60" font-size="14" fill="#0066cc">N = N0 e^(-λt)</text>
+        </svg>
+        <div class="figure-caption">Figure 13.4: Exponential decay of a radioactive sample</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A radioactive isotope has a half-life of 8 days. What fraction of the original material remains after 24 days?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Number of half-lives: \(\frac{24}{8} = 3\)</p>
+            <div class="equation">
+                \(\text{Fraction remaining} = \left(\frac{1}{2}\right)^3 = \frac{1}{8} = 0.125 = 12.5\%\)
+            </div>
+        </div>
+    </div>
+
+    <h3>13.3.2 Health Effects of Radiation</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Radiation dose</strong> measures the amount of radiation energy absorbed by tissue:</p>
+            <ul>
+                <li>Absorbed dose: Gray (Gy) = 1 J/kg</li>
+                <li>Equivalent dose: Sievert (Sv) = Gy &#215; radiation weighting factor</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Radiation protection principles:</p>
+            <ul>
+                <li>Time: Minimize exposure time</li>
+                <li>Distance: Maximize distance from source</li>
+                <li>Shielding: Use appropriate shielding materials</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A patient receives an absorbed dose of \(2.0\,\text{mGy}\) from alpha particles, which have a radiation weighting factor of \(20\). Find the equivalent dose.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(H = D\,w_R = (2.0\,\text{mGy})(20) = 40\,\text{mSv}\)
+            </div>
+            <p>Although the absorbed energy is small, alpha particles deposit it densely along their short tracks, so the biological effect is much larger than for the same absorbed dose of X-rays.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Biological effects of radiation:</p>
+            <ul>
+                <li>Deterministic effects: Occur above threshold doses (e.g., radiation sickness)</li>
+                <li>Stochastic effects: Probability increases with dose (e.g., cancer)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>13.3.3 Medical Imaging</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Medical imaging</strong> uses various physical principles to create visual representations of the interior of the body.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Common medical imaging techniques:</p>
+            <ul>
+                <li>X-ray imaging: Uses electromagnetic radiation</li>
+                <li>Computed Tomography (CT): Combines multiple X-ray measurements</li>
+                <li>Magnetic Resonance Imaging (MRI): Uses nuclear magnetic resonance</li>
+                <li>Ultrasound: Uses high-frequency sound waves</li>
+                <li>Nuclear medicine: Uses radioactive tracers</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="340" viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="340" fill="#f7fbff"/>
+            <rect x="110" y="60" width="340" height="210" rx="24" fill="#e6f2ff" stroke="#0066cc" stroke-width="4"/>
+            <rect x="150" y="100" width="260" height="130" rx="16" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <ellipse cx="280" cy="165" rx="82" ry="52" fill="#ffffff" stroke="#009966" stroke-width="2.5"/>
+            <line x1="170" y1="165" x2="390" y2="165" stroke="#999999" stroke-width="2" stroke-dasharray="8,5"/>
+            <rect x="235" y="150" width="90" height="30" rx="14" fill="#ffe0b3" stroke="#cc8800" stroke-width="2"/>
+            <circle cx="280" cy="165" r="7" fill="#cc0000"/>
+            <line x1="280" y1="158" x2="280" y2="140" stroke="#cc0000" stroke-width="2" marker-end="url(#f135red)"/>
+            <text x="280" y="125" font-size="13" text-anchor="middle" fill="#cc0000">proton spin</text>
+            <line x1="210" y1="215" x2="350" y2="215" stroke="#0066cc" stroke-width="2" marker-end="url(#f135blue)"/>
+            <text x="355" y="220" font-size="14" fill="#0066cc">B0</text>
+            <text x="280" y="54" font-size="14" text-anchor="middle" fill="#0066cc">MRI scanner</text>
+            <text x="280" y="300" font-size="13" text-anchor="middle" fill="#666666">RF coil detects the precession of hydrogen nuclei</text>
+            <text x="470" y="145" font-size="14" fill="#0066cc">f = γB0</text>
+            <text x="470" y="168" font-size="13" fill="#666666">Larmor</text>
+            <text x="470" y="186" font-size="13" fill="#666666">frequency</text>
+            <defs>
+                <marker id="f135red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+                <marker id="f135blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.5: Basic principle of magnetic resonance imaging (MRI)</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>In MRI, the Larmor frequency is given by \(\omega = \gamma B\), where \(\gamma\) is the gyromagnetic ratio. For hydrogen nuclei, \(\gamma = 42.58\) MHz/T. Calculate the resonance frequency in a 1.5 T MRI scanner.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(f = \gamma B = (42.58\,\text{MHz/T}) \times (1.5\,\text{T}) = 63.87\,\text{MHz}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Physics in therapy:</p>
+            <ul>
+                <li>Radiation therapy: Uses ionizing radiation to treat cancer</li>
+                <li>Hyperthermia: Uses heat to treat tumors</li>
+                <li>Photodynamic therapy: Uses light-activated drugs</li>
+                <li>Ultrasound therapy: Uses focused ultrasound for various treatments</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>13.4 Physics and Archaeology</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Archaeological physics</strong> applies physics methods to study archaeological materials and sites.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Physics techniques in archaeology:</p>
+            <ul>
+                <li>Radiocarbon dating: Determines the age of organic materials</li>
+                <li>Thermoluminescence dating: Dates pottery and burnt stones</li>
+                <li>Dendrochronology: Uses tree-ring patterns for dating</li>
+                <li>Ground-penetrating radar: Maps subsurface features</li>
+                <li>X-ray fluorescence: Analyzes elemental composition</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Radiocarbon dating principle:</p>
+            <ul>
+                <li>Living organisms maintain a constant \(^{14}\text{C}/^{12}\text{C}\) ratio</li>
+                <li>After death, \(^{14}\text{C}\) decays with half-life of 5730 years</li>
+                <li>Measuring the remaining \(^{14}\text{C}\) gives the age</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="330" fill="#ffffff"/>
+            <line x1="80" y1="270" x2="520" y2="270" stroke="#000000" stroke-width="2"/>
+            <line x1="80" y1="270" x2="80" y2="40" stroke="#000000" stroke-width="2"/>
+            <text x="515" y="295" font-size="14" text-anchor="end">age (years)</text>
+            <text x="60" y="50" font-size="13" text-anchor="end">14C</text>
+            <text x="60" y="75" font-size="13" text-anchor="end">100%</text>
+            <text x="60" y="145" font-size="13" text-anchor="end">50%</text>
+            <text x="60" y="205" font-size="13" text-anchor="end">25%</text>
+            <text x="60" y="235" font-size="13" text-anchor="end">12.5%</text>
+            <path d="M 80,60 C 120,60 140,120 190,140 C 240,160 260,185 310,200 C 370,218 430,230 500,238" fill="none" stroke="#0066cc" stroke-width="3"/>
+            <line x1="80" y1="140" x2="190" y2="140" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="190" y1="140" x2="190" y2="270" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="80" y1="200" x2="310" y2="200" stroke="#009966" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="310" y1="200" x2="310" y2="270" stroke="#009966" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="80" y1="231" x2="430" y2="231" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <line x1="430" y1="231" x2="430" y2="270" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <text x="190" y="290" font-size="13" text-anchor="middle" fill="#cc0000">5730</text>
+            <text x="310" y="290" font-size="13" text-anchor="middle" fill="#009966">11,460</text>
+            <text x="430" y="290" font-size="13" text-anchor="middle" fill="#ff9900">17,190</text>
+
+        </svg>
+        <div class="figure-caption">Figure 13.6: Radiocarbon decay and archaeological dating</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>An archaeological sample has \(^{14}\text{C}\) activity that is 25% of modern standards. Estimate the age of the sample.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Fraction remaining = 0.25</p>
+            <p>Number of half-lives: \(\left(\frac{1}{2}\right)^n = 0.25 \Rightarrow n = 2\)</p>
+            <div class="equation">
+                \(\text{Age} = n \times t_{1/2} = 2 \times 5730 = 11{,}460\,\text{years}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Other dating methods:</p>
+            <ul>
+                <li>Potassium-argon dating: For volcanic rocks (half-life: 1.3 billion years)</li>
+                <li>Uranium-series dating: For carbonate materials</li>
+                <li>Electron spin resonance: For tooth enamel and shells</li>
+                <li>Archaeomagnetic dating: Based on Earth's magnetic field variations</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>13.5 Application in Earth and Space Sciences</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Geophysics</strong> applies physics principles to study the Earth, while <strong>space physics</strong> studies physical phenomena in space.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Application</div>
+        <div class="application-content">
+            <p>Physics applications in earth and space sciences:</p>
+            <ul>
+                <li>Seismology: Study of earthquakes and seismic waves</li>
+                <li>Geodesy: Measurement and representation of Earth</li>
+                <li>Atmospheric physics: Study of atmospheric phenomena</li>
+                <li>Planetary science: Study of planets and solar systems</li>
+                <li>Astrophysics: Study of celestial objects and phenomena</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Seismic wave types:</p>
+            <ul>
+                <li>P-waves: Primary, compressional waves (fastest)</li>
+                <li>S-waves: Secondary, shear waves (slower)</li>
+                <li>Surface waves: Travel along Earth's surface (most destructive)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>13.5.1 Satellite Orbits</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>satellite orbit</strong> is the curved path of a satellite around a planet or other celestial body.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Types of satellite orbits:</p>
+            <ul>
+                <li>Low Earth Orbit (LEO): 160&#8211;2,000 km altitude</li>
+                <li>Medium Earth Orbit (MEO): 2,000&#8211;35,786 km altitude</li>
+                <li>Geostationary Orbit (GEO): 35,786 km altitude, stationary relative to Earth's surface</li>
+                <li>Polar Orbit: Passes over or near both poles</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Orbital velocity for a circular orbit:</p>
+            <div class="equation">
+                \(v = \sqrt{\frac{GM}{r}}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(G\) is the gravitational constant</li>
+                <li>\(M\) is the mass of the central body</li>
+                <li>\(r\) is the orbital radius</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="340" viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="340" fill="#f7fbff"/>
+            <circle cx="260" cy="180" r="76" fill="#b3dcff" stroke="#0066cc" stroke-width="2"/>
+            <path d="M 205,140 Q 230,120 260,135 Q 290,115 315,145 Q 330,165 305,185 Q 320,215 285,220 Q 250,235 225,210 Q 200,195 205,140 Z" fill="#009966" opacity="0.75"/>
+            <ellipse cx="260" cy="180" rx="200" ry="125" fill="none" stroke="#999999" stroke-width="2" stroke-dasharray="8,6"/>
+            <circle cx="460" cy="180" r="7" fill="#cc0000" stroke="#990000" stroke-width="1.5"/>
+            <line x1="460" y1="160" x2="460" y2="110" stroke="#cc0000" stroke-width="2" marker-end="url(#f137red)"/>
+            <text x="470" y="112" font-size="13" fill="#cc0000">v</text>
+            <text x="420" y="220" font-size="13" fill="#666666">satellite</text>
+            <line x1="260" y1="180" x2="460" y2="180" stroke="#666666" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="360" y="172" font-size="13" text-anchor="middle" fill="#666666">r</text>
+            <text x="260" y="184" font-size="13" text-anchor="middle" fill="#0066cc">Earth</text>
+            <text x="260" y="320" font-size="13" text-anchor="middle" fill="#666666">circular orbit of radius r</text>
+            <text x="90" y="60" font-size="14" fill="#0066cc">v = √(GM/r)</text>
+            <defs>
+                <marker id="f137red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.7: Satellite in a circular orbit around Earth</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the orbital velocity of a satellite in circular orbit 400 km above Earth's surface. Earth's radius = 6371 km, mass = 5.97 &#215; 10&#178;&#8308; kg.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Orbital radius: \(r = 6371 + 400 = 6771\) km = \(6.771 \times 10^6\) m</p>
+            <div class="equation">
+                \(v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{(6.67 \times 10^{-11}) \times (5.97 \times 10^{24})}{6.771 \times 10^6}}\)
+            </div>
+            <div class="equation">
+                \(= \sqrt{\frac{3.982 \times 10^{14}}{6.771 \times 10^6}} = \sqrt{5.882 \times 10^7} = 7670\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>13.5.2 Application in Power Generation</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Power generation</strong> involves converting various forms of energy into electrical energy using physical principles.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Major power generation methods:</p>
+            <ul>
+                <li>Thermal power: Converts heat to electricity (Rankine cycle)</li>
+                <li>Hydroelectric: Uses gravitational potential energy of water</li>
+                <li>Nuclear: Uses nuclear fission or fusion</li>
+                <li>Solar: Converts sunlight to electricity (photovoltaic or thermal)</li>
+                <li>Wind: Converts kinetic energy of wind to electricity</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Energy conversion efficiency:</p>
+            <div class="equation">
+                \(\eta = \frac{\text{Useful energy output}}{\text{Total energy input}} \times 100\%\)
+            </div>
+        </div>
+    </div>
+
+    <p>For a heat engine operating between a hot reservoir at absolute temperature \(T_h\) and a cold reservoir at \(T_c\), the Carnot efficiency sets the upper limit:</p>
+    <div class="equation">
+        \(\eta_{\text{Carnot}} = 1 - \frac{T_c}{T_h}\)
+    </div>
+    <p>No real engine can exceed this value; irreversibilities such as friction, heat leakage, and finite-rate heat transfer always reduce the efficiency below it.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A geothermal plant uses hot water at \(180^\circ\text{C}\) and discharges it at \(80^\circ\text{C}\). Find the maximum possible (Carnot) efficiency.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Convert the temperatures to kelvin:</p>
+            <div class="equation">
+                \(T_h = 180 + 273 = 453\,\text{K}, \qquad T_c = 80 + 273 = 353\,\text{K}\)
+            </div>
+            <div class="equation">
+                \(\eta_{\text{Carnot}} = 1 - \frac{353}{453} \approx 0.22 = 22\%\)
+            </div>
+            <p>At best, about \(22\%\) of the extracted heat could become electrical work; a real plant will do somewhat worse because of pump losses, pipe friction, and imperfect insulation.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="340" viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="560" height="340" fill="#f7fbff"/>
+            <line x1="0" y1="300" x2="560" y2="300" stroke="#5c8a3c" stroke-width="4"/>
+            <rect x="252" y="140" width="16" height="160" fill="#d9d9d9" stroke="#666666" stroke-width="2"/>
+            <rect x="238" y="126" width="44" height="20" rx="6" fill="#999999" stroke="#555555" stroke-width="2"/>
+            <circle cx="260" cy="136" r="10" fill="#666666" stroke="#333333" stroke-width="2"/>
+            <line x1="260" y1="136" x2="342" y2="136" stroke="#333333" stroke-width="7" stroke-linecap="round"/>
+            <line x1="260" y1="136" x2="219" y2="204" stroke="#333333" stroke-width="7" stroke-linecap="round"/>
+            <line x1="260" y1="136" x2="219" y2="68" stroke="#333333" stroke-width="7" stroke-linecap="round"/>
+            <line x1="50" y1="100" x2="170" y2="100" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f138blue)"/>
+            <line x1="50" y1="140" x2="170" y2="140" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f138blue)"/>
+            <line x1="50" y1="180" x2="170" y2="180" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f138blue)"/>
+            <text x="100" y="80" font-size="14" fill="#0066cc">wind v</text>
+            <line x1="260" y1="260" x2="390" y2="260" stroke="#009966" stroke-width="2.5" marker-end="url(#f138green)"/>
+            <text x="395" y="265" font-size="14" fill="#009966">electrical power</text>
+            <text x="260" y="320" font-size="13" text-anchor="middle" fill="#666666">rotor diameter D</text>
+            <text x="350" y="100" font-size="14" fill="#333333">P = ½ ρ A v³ Cp</text>
+            <text x="350" y="122" font-size="13" fill="#666666">A = πr²</text>
+            <defs>
+                <marker id="f138blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+                </marker>
+                <marker id="f138green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966"/>
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 13.8: Wind turbine converting kinetic energy into electrical power</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A wind turbine with rotor diameter 80 m operates in wind with speed 12 m/s and density 1.2 kg/m&#179;. If the power coefficient is 0.4, calculate the electrical power output.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First, calculate the swept area:</p>
+            <div class="equation">
+                \(A = \pi r^2 = \pi (40)^2 = 5026.55\,\text{m}^2\)
+            </div>
+            <p>Wind power available:</p>
+            <div class="equation">
+                \(P_{\text{wind}} = \frac{1}{2} \rho A v^3 = \frac{1}{2} \times 1.2 \times 5026.55 \times (12)^3\)
+            </div>
+            <div class="equation">
+                \(= 0.6 \times 5026.55 \times 1728 = 0.6 \times 8{,}685{,}878.4 = 5{,}211{,}527\,\text{W}\)
+            </div>
+            <p>Electrical power output:</p>
+            <div class="equation">
+                \(P_{\text{elec}} = C_p \times P_{\text{wind}} = 0.4 \times 5{,}211{,}527 = 2{,}084{,}611\,\text{W} \approx 2.08\,\text{MW}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Environmental considerations in power generation:</p>
+            <ul>
+                <li>Carbon emissions and climate change</li>
+                <li>Air and water pollution</li>
+                <li>Land use and habitat impact</li>
+                <li>Waste management (especially for nuclear)</li>
+                <li>Resource depletion</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A satellite of mass 500 kg is in a circular low-Earth orbit at a radius of \(6.4 \times 10^6\,\text{m}\) from Earth's center. Find its orbital speed and its orbital period.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The orbital speed follows from gravity providing the centripetal force:</p>
+            <div class="equation">
+                \(v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{(6.674 \times 10^{-11})(5.97 \times 10^{24})}{6.4 \times 10^6}} \approx 7.9 \times 10^3\,\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(T = 2\pi\sqrt{\frac{r^3}{GM}} = 2\pi\sqrt{\frac{(6.4 \times 10^6)^3}{(6.674 \times 10^{-11})(5.97 \times 10^{24})}} \approx 5.1 \times 10^3\,\text{s} \approx 85\,\text{min}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Applied-physics problems often look unfamiliar because they are dressed in the language of farming, medicine, archaeology, or energy. The first step is to strip away the context and identify the underlying principle: radioactive decay, wave propagation, energy conversion, or orbital motion. Then list the given data, convert everything to SI units, and decide what quantity the application actually needs. A sketch, a table of values, or a simple block diagram can prevent you from losing track of the physical situation.</p>
+    <p>Many of these problems are multi-step. A decay problem may require a fraction, a number of half-lives, and then an age; an energy problem may require input power, efficiency, and operating time. Keep the units attached at every stage, use powers of ten carefully, and finish by translating the number back into the original context. An answer such as \(1.44\,\text{kWh}\) becomes meaningful when you explain what appliance it could run or what fraction of a household demand it supplies.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Identify the physical principle behind the application before choosing an equation.</li>
+                <li>List the given values and the required unknown, converting all data to SI units.</li>
+                <li>Choose the appropriate model, such as exponential decay, wave travel, or energy conversion.</li>
+                <li>Carry units and powers of ten through every step of the calculation.</li>
+                <li>Check the result against limiting cases and common sense for the application.</li>
+                <li>State the final answer with units and interpret what it means in the real-world setting.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A rooftop solar panel has an area of \(1.6\,\text{m}^2\) and an efficiency of \(18\%\). The solar irradiance is \(1000\,\text{W/m}^2\), and the panel receives this irradiance for \(5.0\,\text{h}\) on a clear day. Find the electrical power output and the daily electrical energy in kWh. If a household uses \(12\,\text{kWh}\) per day, what fraction of that demand does the panel supply?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The solar power incident on the panel is the irradiance multiplied by the panel area:</p>
+            <div class="equation">
+                \(P_{\text{in}} = IA = (1000\,\text{W/m}^2)(1.6\,\text{m}^2) = 1600\,\text{W} = 1.6\,\text{kW}\)
+            </div>
+            <p>The panel converts \(18\%\) of this incident power into electrical power:</p>
+            <div class="equation">
+                \(P_{\text{elec}} = \eta P_{\text{in}} = (0.18)(1600\,\text{W}) = 288\,\text{W} \approx 0.288\,\text{kW}\)
+            </div>
+            <p>Over \(5.0\,\text{h}\), the electrical energy delivered is:</p>
+            <div class="equation">
+                \(E = P_{\text{elec}}t = (0.288\,\text{kW})(5.0\,\text{h}) = 1.44\,\text{kWh}\)
+            </div>
+            <p>The fraction of the household's daily demand supplied by this panel is:</p>
+            <div class="equation">
+                \(\text{Fraction} = \frac{1.44\,\text{kWh}}{12\,\text{kWh}} = 0.12 = 12\%\)
+            </div>
+            <p>The panel delivers about \(288\,\text{W}\) and \(1.44\,\text{kWh}\) per day, which is roughly \(12\%\) of the household's \(12\,\text{kWh}\) daily use under these ideal conditions.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Solar installers use exactly this calculation to size rooftop systems. A single \(1.6\,\text{m}^2\) panel supplying \(1.44\,\text{kWh}\) per day would need to be combined with several others to cover a typical household demand. Real output is lower than the ideal estimate because of cloudy weather, shallow sunlight angles, dust, temperature effects, and inverter losses, so designers add a safety margin when planning an array.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Applied physics connects fundamental principles to agriculture, industry, medicine, archaeology, Earth science, and energy technology.</li>
+        <li>Soil energy balance is described by \(Q=mc\Delta T\) and by the surface balance \(R_n=H+LE+G\).</li>
+        <li>Radioactive decay follows \(N=N_0e^{-\lambda t}\), with half-life \(t_{1/2}=\ln 2/\lambda\) and a remaining fraction \((1/2)^n\) after \(n\) half-lives.</li>
+        <li>Radiation dose is measured in gray for absorbed energy and sievert for biological effect, and protection relies on time, distance, and shielding.</li>
+        <li>Medical imaging uses distinct physical processes: X-ray attenuation, CT reconstruction, MRI nuclear resonance, and ultrasound echoes.</li>
+        <li>Radiocarbon dating uses the \(5730\)-year half-life of carbon-14, while other methods suit rocks, pottery, and tooth enamel.</li>
+        <li>Satellites obey \(v=\sqrt{GM/r}\) for circular orbits, and power systems are compared by their conversion efficiency \(\eta=E_{\text{out}}/E_{\text{in}}\).</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 13</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Agricultural physics applies heat transfer, soil physics, irrigation, and sensing to farming systems</li>
+                <li>Soil energy balance is described by \(Q = mc\Delta T\) and \(R_n = H + LE + G\)</li>
+                <li>Darcy's law governs water flow in soils: \(Q = -KA\,dh/dl\)</li>
+                <li>Soil water potential includes gravitational, matric, and osmotic components</li>
+                <li>Industrial physics supports non-destructive testing, process control, and automation</li>
+                <li>Radioactivity follows the decay law \(N = N_0 e^{-\lambda t}\), with half-life \(t_{1/2} = \ln 2/\lambda\)</li>
+                <li>Radiation dose is measured in gray (absorbed) and sievert (equivalent), and protection relies on time, distance, and shielding</li>
+                <li>Medical imaging uses X-rays, CT, MRI, ultrasound, and radioactive tracers</li>
+                <li>Physics-based dating methods include radiocarbon, thermoluminescence, and potassium-argon dating</li>
+                <li>Geophysics and space physics study Earth and celestial phenomena, including seismic waves and satellite orbits</li>
+                <li>Orbital velocity for a circular orbit is \(v = \sqrt{GM/r}\)</li>
+                <li>Power generation converts thermal, hydro, nuclear, solar, and wind energy into electricity, with efficiency \(\eta = E_{\text{out}}/E_{\text{in}}\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Explain how the principles of heat transfer are applied in greenhouse design for agriculture.</li>
+        <li>Why is understanding soil physics important for sustainable agriculture?</li>
+        <li>How does non-destructive testing benefit industrial quality control?</li>
+        <li>Compare and contrast the physical principles behind X-ray and MRI imaging.</li>
+        <li>Explain why different radioactive dating methods are used for different archaeological materials.</li>
+        <li>How does the half-life of a radioactive isotope affect its usefulness for dating?</li>
+        <li>What factors determine the choice of orbit for different types of satellites?</li>
+        <li>Explain the energy conversion processes in a hydroelectric power plant.</li>
+        <li>How do photovoltaic cells convert sunlight into electricity?</li>
+        <li>What are the environmental trade-offs between different power generation methods?</li>
+        <li>How does ground-penetrating radar help in archaeological investigations?</li>
+        <li>Explain the importance of radiation protection principles in medical settings.</li>
+        <li>How does the Doppler effect apply in weather radar systems?</li>
+        <li>What role does physics play in precision agriculture?</li>
+        <li>Explain how seismic waves provide information about Earth's interior structure.</li>
+        <li>Why does a soil with high porosity not necessarily have high hydraulic conductivity?</li>
+        <li>Why is the equivalent dose in sieverts a better measure of biological risk than the absorbed dose in grays?</li>
+        <li>Why must a radiocarbon sample be free of contamination from modern carbon?</li>
+        <li>Why does the Carnot efficiency increase as the temperature difference between the reservoirs increases?</li>
+        <li>Why does a satellite in low Earth orbit need periodic reboosting, while a geostationary satellite does not?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A soil sample has a dry mass of 120 g and volume of 80 cm&#179;. When saturated, its mass is 180 g. Calculate:
+            <ol type="a">
+                <li>Bulk density</li>
+                <li>Porosity</li>
+                <li>Water content at saturation</li>
+            </ol>
+        </li>
+        <li>A radioactive medical tracer has a half-life of 6 hours. If 100 MBq is administered to a patient, what activity remains after 24 hours?</li>
+        <li>Calculate the Larmor frequency for hydrogen nuclei in a 3.0 T MRI scanner (\(\gamma = 42.58\) MHz/T).</li>
+        <li>An archaeological wood sample has \(^{14}\text{C}\) activity that is 12.5% of modern standards. Estimate its age (\(t_{1/2} = 5730\) years).</li>
+        <li>A satellite is in circular orbit 500 km above Earth's surface. Calculate:
+            <ol type="a">
+                <li>Orbital velocity</li>
+                <li>Orbital period</li>
+            </ol>
+            (Earth's radius = 6371 km, mass = 5.97 &#215; 10&#178;&#8308; kg)
+        </li>
+        <li>A solar panel with area 2 m&#178; has efficiency 18%. Calculate the electrical power output when solar irradiance is 800 W/m&#178;.</li>
+        <li>A wind turbine has blades 50 m long operating in wind of speed 10 m/s and density 1.2 kg/m&#179;. If the power coefficient is 0.35, calculate the electrical power output.</li>
+        <li>In ultrasonic testing, a defect echo is received 40 &#181;s after the initial pulse. If the speed of sound in the material is 6000 m/s, how far is the defect from the transducer?</li>
+        <li>A patient receives a radiation dose of 2.5 mGy from X-rays with radiation weighting factor 1. Calculate the equivalent dose in mSv.</li>
+        <li>A geothermal power plant uses hot water at 180&#176;C and discharges at 80&#176;C. If the plant generates 50 MW of electricity, calculate the minimum required flow rate of water (specific heat of water = 4.18 kJ/kg&#176;C).</li>
+        <li>A satellite in geostationary orbit appears stationary relative to Earth's surface. Calculate:
+            <ol type="a">
+                <li>The orbital radius</li>
+                <li>The orbital velocity</li>
+            </ol>
+            (Earth's mass = 5.97 &#215; 10&#178;&#8308; kg, rotation period = 24 hours)
+        </li>
+        <li>A CT scanner uses X-rays with energy 140 keV. Calculate:
+            <ol type="a">
+                <li>The wavelength of these X-rays</li>
+                <li>The frequency</li>
+            </ol>
+        </li>
+        <li>An irrigation system delivers water at 20 L/s through a pipe of diameter 15 cm. Calculate the flow velocity in the pipe.</li>
+        <li>A nuclear power plant has thermal efficiency 33%. If it generates 1000 MW of electrical power, calculate:
+            <ol type="a">
+                <li>The thermal power required</li>
+                <li>The amount of heat rejected to the environment</li>
+            </ol>
+        </li>
+        <li>A radioisotope with half-life 30 years is used in an industrial gauge. If the activity must be at least 25% of initial activity for proper operation, how long can the gauge be used before replacement?</li>
+        <li>A soil sample has a bulk density of \(1.35\,\text{g/cm}^3\) and a particle density of \(2.65\,\text{g/cm}^3\). Find its porosity.</li>
+        <li>A patient receives \(3.0\,\text{mGy}\) from gamma rays (weighting factor 1) and \(1.0\,\text{mGy}\) from alpha particles (weighting factor 20). Find the total equivalent dose.</li>
+        <li>A heat engine operates between \(500\,\text{K}\) and \(300\,\text{K}\). Find its maximum possible efficiency and the work output if it absorbs \(2.0\,\text{kJ}\) of heat per cycle at that efficiency.</li>
+        <li>A wooden artifact has \(^{14}\text{C}\) activity that is \(6.25\%\) of a modern sample. Estimate its age using \(t_{1/2}=5730\) years.</li>
+        <li>A satellite orbits Earth at a radius of \(7.0\times10^6\,\text{m}\). Find its orbital speed and period. (Earth's mass \(=5.97\times10^{24}\,\text{kg}\))</li>
+    </ol>
+</body>
+</html>

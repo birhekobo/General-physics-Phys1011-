@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Gravitation and Kepler's Laws of Motion</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 5: Gravitation and Kepler's Laws of Motion</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Gravitation and Kepler's Laws</div>
+        <div class="textbox-content">
+            <p>In 1687, Isaac Newton published his work on the law of universal gravitation, which revolutionized our understanding of the motion of celestial bodies and completed the framework of classical mechanics. The same force that pulls an apple toward the ground keeps the Moon in orbit and holds the planets in their paths around the Sun.</p>
+            <p>Gravitation is the weakest of the fundamental forces, yet it is the dominant force on cosmic scales. Newton's law gives the force directly from masses and distance: \(F_g = G\frac{m_1m_2}{r^2}\). Setting that force equal to the centripetal force needed for circular motion turns an orbit into a solvable equation, and Kepler's empirical laws turn observation into a beautiful quantitative pattern.</p>
+            <p>This chapter combines the dynamics of Chapter 4 with the kinematics of Chapter 3, then adds energy and orbital reasoning that extend circular motion to the solar system.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>State and apply Newton's Law of Universal Gravitation</li>
+                <li>Calculate gravitational forces between objects</li>
+                <li>Understand the relationship between gravitational force and free-fall acceleration</li>
+                <li>Define and calculate gravitational potential energy</li>
+                <li>Determine escape speed for celestial bodies</li>
+                <li>State and apply Kepler's three laws of planetary motion</li>
+                <li>Solve problems involving orbital mechanics</li>
+                <li>Understand the relationship between Kepler's laws and Newton's gravitation</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>5.1 Newton's Law of Gravitation</h2>
+    <p>In 1687, Isaac Newton published his work on the law of universal gravitation, which revolutionized our understanding of the motion of celestial bodies and completed the framework of classical mechanics.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Newton's Law of Universal Gravitation</strong> states that every particle in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers:</p>
+            <div class="equation">
+                \(F_g = G \frac{m_1 m_2}{r^2}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(F_g\) = gravitational force between the two objects (N)</li>
+                <li>\(G\) = gravitational constant = \(6.674 \times 10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2\)</li>
+                <li>\(m_1\), \(m_2\) = masses of the two objects (kg)</li>
+                <li>\(r\) = distance between the centers of the two objects (m)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key properties of gravitational force:</p>
+            <ul>
+                <li>It is always attractive (never repulsive)</li>
+                <li>It acts along the line joining the centers of the two masses</li>
+                <li>It obeys Newton's third law (\(F_{12} = -F_{21}\))</li>
+                <li>It is a conservative force (work done is path-independent)</li>
+                <li>It has infinite range (though it decreases with \(1/r^2\))</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mass 1 -->
+            <circle cx="90" cy="80" r="40" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="90" y="86" font-size="16" text-anchor="middle">m&#8321;</text>
+            <!-- Mass 2 -->
+            <circle cx="400" cy="80" r="30" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="400" y="86" font-size="16" text-anchor="middle">m&#8322;</text>
+            <!-- Force vectors -->
+            <line x1="130" y1="80" x2="250" y2="80" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f51blue)"/>
+            <text x="183" y="72" font-size="14" fill="#0066cc">F<tspan baseline-shift="sub" font-size="10">21</tspan></text>
+            <line x1="370" y1="80" x2="255" y2="80" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f51red)"/>
+            <text x="300" y="99" font-size="14" fill="#cc0000">F<tspan baseline-shift="sub" font-size="10">12</tspan></text>
+            <!-- Distance dimension -->
+            <line x1="90" y1="120" x2="90" y2="155" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="400" y1="110" x2="400" y2="155" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="90" y1="155" x2="400" y2="155" stroke="black" stroke-width="1.5" marker-start="url(#f51start)" marker-end="url(#f51end)"/>
+            <text x="245" y="148" font-size="14" text-anchor="middle">r</text>
+            <text x="260" y="188" font-size="13" text-anchor="middle">Newton's Law of Universal Gravitation</text>
+            <defs>
+                <marker id="f51blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f51red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f51end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f51start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 5.1: Gravitational force between two masses</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the gravitational force between Earth and Moon.</p>
+            <div class="equation">
+                \(\text{Mass of Earth } m_E = 5.97 \times 10^{24}\,\text{kg}\)
+            </div>
+            <div class="equation">
+                \(\text{Mass of Moon } m_M = 7.35 \times 10^{22}\,\text{kg}\)
+            </div>
+            <div class="equation">
+                \(\text{Average distance } r = 3.84 \times 10^8\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(F_g = G \frac{m_E m_M}{r^2} = (6.674 \times 10^{-11}) \frac{(5.97 \times 10^{24})(7.35 \times 10^{22})}{(3.84 \times 10^8)^2} \approx 1.98 \times 10^{20}\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Calculate the gravitational force between two 100 kg spheres whose centers are 0.5 m apart.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(F_g = G \frac{m_1 m_2}{r^2} = (6.674 \times 10^{-11}) \frac{(100)(100)}{(0.5)^2} = (6.674 \times 10^{-11}) \frac{10000}{0.25} = 2.67 \times 10^{-6}\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="140" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="70" r="28" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                <circle cx="200" cy="70" r="20" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+                <line x1="90" y1="70" x2="140" y2="70" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f5simblue)"/>
+                <line x1="178" y1="70" x2="130" y2="70" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f5simred)"/>
+                <line x1="60" y1="105" x2="60" y2="122" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="200" y1="95" x2="200" y2="122" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="60" y1="122" x2="200" y2="122" stroke="black" stroke-width="1.5" marker-start="url(#f5simstart)" marker-end="url(#f5simend)"/>
+                <text x="130" y="116" font-size="12" text-anchor="middle">r</text>
+                <text x="130" y="16" font-size="12" text-anchor="middle">Gravitational attraction between masses</text>
+                <defs>
+                    <marker id="f5simblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                    </marker>
+                    <marker id="f5simred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                    </marker>
+                    <marker id="f5simend" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                    </marker>
+                    <marker id="f5simstart" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                        <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Explore gravitational forces interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_en.html">https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h3>5.1.1 Free-Fall Acceleration and the Gravitational Force</h3>
+    <p>The acceleration due to gravity that we experience on Earth is a result of the gravitational force exerted by Earth on objects near its surface.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>free-fall acceleration</strong> \(g\) at a distance \(r\) from the center of a planet of mass \(M\) is given by:</p>
+            <div class="equation">
+                \(g = \frac{F_g}{m} = \frac{G M}{r^2}\)
+            </div>
+            <p>where \(m\) is the mass of the falling object.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Important points about free-fall acceleration:</p>
+            <ul>
+                <li>It is independent of the mass of the falling object (all objects fall with the same acceleration)</li>
+                <li>It decreases with altitude (\(g \propto 1/r^2\))</li>
+                <li>On Earth's surface (\(r = R_E = 6.37 \times 10^6\) m):
+                    <div class="equation">
+                        \(g = \frac{G M_E}{R_E^2} = \frac{(6.674 \times 10^{-11})(5.97 \times 10^{24})}{(6.37 \times 10^6)^2} \approx 9.80\,\text{m/s}^2\)
+                    </div>
+                </li>
+                <li>The value of \(g\) varies slightly with latitude due to Earth's rotation and shape</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="460" height="340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Earth -->
+            <circle cx="200" cy="230" r="80" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="200" y="236" font-size="15" text-anchor="middle">Earth</text>
+            <!-- Object -->
+            <circle cx="200" cy="110" r="9" fill="#cc0000"/>
+            <text x="216" y="104" font-size="13" fill="#cc0000">Object</text>
+            <!-- Radius line -->
+            <line x1="200" y1="230" x2="200" y2="110" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <text x="190" y="176" font-size="14">r</text>
+            <!-- Dimension guides -->
+            <line x1="200" y1="230" x2="330" y2="230" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="200" y1="150" x2="330" y2="150" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="200" y1="110" x2="330" y2="110" stroke="#999999" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="330" y1="230" x2="330" y2="150" stroke="black" stroke-width="1.5" marker-start="url(#f52start)" marker-end="url(#f52end)"/>
+            <text x="338" y="195" font-size="13">R<tspan baseline-shift="sub" font-size="9">E</tspan></text>
+            <line x1="330" y1="150" x2="330" y2="110" stroke="black" stroke-width="1.5" marker-start="url(#f52start)" marker-end="url(#f52end)"/>
+            <text x="338" y="135" font-size="13">h</text>
+            <!-- Force and acceleration -->
+            <line x1="186" y1="119" x2="186" y2="165" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f52red)"/>
+            <text x="120" y="150" font-size="14" fill="#cc0000">F<tspan baseline-shift="sub" font-size="10">g</tspan></text>
+            <line x1="216" y1="119" x2="216" y2="165" stroke="#009966" stroke-width="2.5" marker-end="url(#f52green)"/>
+            <text x="224" y="150" font-size="14" fill="#009966">a = g</text>
+            <text x="230" y="330" font-size="13" text-anchor="middle">g = G M<tspan baseline-shift="sub" font-size="9">E</tspan> / r<tspan baseline-shift="super" font-size="9">2</tspan>, &#160; r = R<tspan baseline-shift="sub" font-size="9">E</tspan> + h</text>
+            <defs>
+                <marker id="f52red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f52green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f52end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f52start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 5.2: Free-fall acceleration at height h above Earth's surface</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the acceleration due to gravity at an altitude of 400 km above Earth's surface.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(R_E = 6.37 \times 10^6\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(h = 400\,\text{km} = 4 \times 10^5\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(r = R_E + h = 6.77 \times 10^6\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(g = \frac{G M_E}{r^2} = \frac{(6.674 \times 10^{-11})(5.97 \times 10^{24})}{(6.77 \times 10^6)^2} \approx 8.70\,\text{m/s}^2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>At what altitude above Earth's surface would the acceleration due to gravity be half its surface value?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(g_{\text{surface}} = \frac{G M_E}{R_E^2}\)
+            </div>
+            <div class="equation">
+                \(g_{\text{altitude}} = \frac{G M_E}{r^2} = \frac{1}{2} \frac{G M_E}{R_E^2}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{r^2} = \frac{1}{2 R_E^2} \;\Rightarrow\; r^2 = 2 R_E^2 \;\Rightarrow\; r = R_E \sqrt{2} \approx 1.414 R_E\)
+            </div>
+            <div class="equation">
+                \(h = r - R_E = R_E(\sqrt{2} - 1) \approx 0.414 R_E \approx 2637\,\text{km}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>5.1.2 Gravitational Field</h3>
+    <p>Instead of saying that one mass pulls another directly, it is often useful to say that a mass creates a <strong>gravitational field</strong> in the space around it. The field strength \(\vec{g}\) at a point is the gravitational force per unit mass that a small test mass would experience there:</p>
+    <div class="equation">
+        \(\vec{g} = \frac{\vec{F}_g}{m} = -G\frac{M}{r^2}\hat{r}\)
+    </div>
+    <p>where \(\hat{r}\) points away from the source mass. The negative sign shows that the field points toward the source. Near Earth's surface, \(|\vec{g}| \approx 9.8\,\text{N/kg} = 9.8\,\text{m/s}^2\), which is why the gravitational field strength and the free-fall acceleration have the same value.</p>
+    <p>Fields from several masses add as vectors. This superposition principle lets us find the net field of a planet and its moon, or of a galaxy, by adding the individual contributions.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>At what point on the line between Earth and the Moon is the net gravitational field zero? Use \(M_E = 5.97 \times 10^{24}\,\text{kg}\), \(M_M = 7.35 \times 10^{22}\,\text{kg}\), and \(r = 3.84 \times 10^8\,\text{m}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let \(x\) be the distance from Earth's centre. At the balance point the field strengths are equal:</p>
+            <div class="equation">
+                \(G\frac{M_E}{x^2} = G\frac{M_M}{(r-x)^2}\)
+            </div>
+            <p>Taking the square root of both sides gives</p>
+            <div class="equation">
+                \(\frac{\sqrt{M_E}}{x} = \frac{\sqrt{M_M}}{r-x} \quad \Rightarrow \quad x = \frac{\sqrt{M_E}}{\sqrt{M_E}+\sqrt{M_M}}\,r\)
+            </div>
+            <p>With \(\sqrt{M_E/M_M} \approx \sqrt{81.2} \approx 9.01\),</p>
+            <div class="equation">
+                \(x = \frac{9.01}{9.01+1}(3.84 \times 10^8) \approx 3.46 \times 10^8\,\text{m}\)
+            </div>
+            <p>The balance point lies about \(3.46 \times 10^8\,\text{m}\) from Earth, roughly \(90\%\) of the way to the Moon.</p>
+        </div>
+    </div>
+
+    <h3>5.1.3 Gravitational Potential Energy</h3>
+    <p>Gravitational potential energy represents the energy stored in a system of masses due to their gravitational interaction.</p>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>gravitational potential energy</strong> \(U\) between two point masses \(m_1\) and \(m_2\) separated by distance \(r\) is:</p>
+            <div class="equation">
+                \(U = -G \frac{m_1 m_2}{r}\)
+            </div>
+            <p>The negative sign indicates that the force is attractive, and the potential energy increases (becomes less negative) as the separation increases.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key properties of gravitational potential energy:</p>
+            <ul>
+                <li>It is always negative (approaching zero as \(r \to \infty\))</li>
+                <li>The zero point is chosen at infinite separation (\(U = 0\) when \(r = \infty\))</li>
+                <li>It represents the work that would be done to separate the masses to infinity</li>
+                <li>For objects near Earth's surface, we can use the approximation \(U = mgh\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="70" y1="275" x2="70" y2="40" stroke="black" stroke-width="1.5" marker-end="url(#f53black)"/>
+            <line x1="70" y1="60" x2="505" y2="60" stroke="black" stroke-width="1.5" marker-end="url(#f53black)"/>
+            <!-- Potential curve -->
+            <polyline fill="none" stroke="#0066cc" stroke-width="2.5" points="120,250 130,218 140,196 150,179 160,166 170,155 180,146 190,139 200,133 210,128 220,123 230,119 240,116 250,113 260,110 270,108 280,105 290,103 300,101 320,98 340,95 360,93 380,91 400,89 420,87 440,86 460,84 480,83"/>
+            <!-- Labels -->
+            <text x="512" y="65" font-size="14">r</text>
+            <text x="60" y="35" font-size="14" text-anchor="end">U(r)</text>
+            <text x="455" y="50" font-size="13">U = 0</text>
+            <text x="330" y="215" font-size="14" fill="#0066cc">U(r) = &#8722;G m&#8321;m&#8322; / r</text>
+            <text x="290" y="285" font-size="13" text-anchor="middle">The energy well of gravitational attraction</text>
+            <defs>
+                <marker id="f53black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 5.3: Gravitational potential energy as a function of distance</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the gravitational potential energy of a 1000 kg satellite in orbit 400 km above Earth's surface.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(M_E = 5.97 \times 10^{24}\,\text{kg}, \quad m = 1000\,\text{kg}\)
+            </div>
+            <div class="equation">
+                \(R_E = 6.37 \times 10^6\,\text{m}, \quad h = 4 \times 10^5\,\text{m}, \quad r = R_E + h = 6.77 \times 10^6\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(U = -G \frac{M_E m}{r} = -(6.674 \times 10^{-11}) \frac{(5.97 \times 10^{24})(1000)}{6.77 \times 10^6} \approx -5.89 \times 10^{10}\,\text{J}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>5.1.4 Escape Speed</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>The <strong>escape speed</strong> is the minimum speed needed for an object to escape from the gravitational influence of a celestial body without further propulsion. It is given by:</p>
+            <div class="equation">
+                \(v_{\text{esc}} = \sqrt{\frac{2 G M}{R}}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(M\) = mass of the celestial body</li>
+                <li>\(R\) = radius of the celestial body</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about escape speed:</p>
+            <ul>
+                <li>It is independent of the mass of the escaping object</li>
+                <li>It depends only on the mass and radius of the celestial body</li>
+                <li>It represents the speed where total energy \(E = K + U = 0\)</li>
+                <li>For Earth: \(v_{\text{esc}} \approx 11.2\) km/s</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Escape Speed Derivation</div>
+        <div class="textbox-content">
+            <p>Escape speed derivation:</p>
+            <div class="equation">
+                \(\begin{aligned}
+                    E &amp;= K + U = 0 \quad \text{(minimum energy to escape)} \\
+                    \frac{1}{2} m v_{\text{esc}}^2 - G \frac{M m}{R} &amp;= 0 \\
+                    \frac{1}{2} m v_{\text{esc}}^2 &amp;= G \frac{M m}{R} \\
+                    v_{\text{esc}}^2 &amp;= \frac{2 G M}{R} \\
+                    v_{\text{esc}} &amp;= \sqrt{\frac{2 G M}{R}}
+                \end{aligned}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the escape speed from Earth.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(M_E = 5.97 \times 10^{24}\,\text{kg}, \quad R_E = 6.37 \times 10^6\,\text{m}\)
+            </div>
+            <div class="equation">
+                \(v_{\text{esc}} = \sqrt{\frac{2 G M_E}{R_E}} = \sqrt{\frac{2 (6.674 \times 10^{-11})(5.97 \times 10^{24})}{6.37 \times 10^6}} \approx 11{,}200\,\text{m/s} = 11.2\,\text{km/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Calculate the escape speed from the Moon (\(M_M = 7.35 \times 10^{22}\) kg, \(R_M = 1.74 \times 10^6\) m).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(v_{\text{esc}} = \sqrt{\frac{2 G M_M}{R_M}} = \sqrt{\frac{2 (6.674 \times 10^{-11})(7.35 \times 10^{22})}{1.74 \times 10^6}} \approx 2{,}370\,\text{m/s} = 2.37\,\text{km/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>5.1.5 Orbital Energy</h3>
+    <p>A satellite in a circular orbit has both kinetic and potential energy. Combining \(v = \sqrt{GM/r}\) with \(K = \tfrac{1}{2}mv^2\) gives</p>
+    <div class="equation">
+        \(K = \frac{GMm}{2r}\)
+    </div>
+    <p>while the potential energy is</p>
+    <div class="equation">
+        \(U = -\frac{GMm}{r}\)
+    </div>
+    <p>The total mechanical energy is therefore</p>
+    <div class="equation">
+        \(E = K + U = -\frac{GMm}{2r}\)
+    </div>
+    <p>The negative sign means the satellite is bound to the planet. Adding energy raises the orbit; the satellite must be given energy to move to a larger radius. Escape corresponds to raising the total energy to zero, which reproduces the escape-speed formula derived earlier.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(1000\,\text{kg}\) satellite orbits Earth at an altitude of \(400\,\text{km}\). Find its kinetic energy, potential energy, and total mechanical energy.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The orbital radius is \(r = R_E + h = 6.37 \times 10^6 + 4.00 \times 10^5 = 6.77 \times 10^6\,\text{m}\). Using \(GM_E = 3.985 \times 10^{14}\,\text{m}^3/\text{s}^2\):</p>
+            <div class="equation">
+                \(U = -\frac{GM_E m}{r} = -\frac{(3.985 \times 10^{14})(1000)}{6.77 \times 10^6} \approx -5.89 \times 10^{10}\,\text{J}\)
+            </div>
+            <p>For a circular orbit, \(K = -U/2\), so</p>
+            <div class="equation">
+                \(K \approx 2.94 \times 10^{10}\,\text{J}, \qquad E = K + U \approx -2.94 \times 10^{10}\,\text{J}\)
+            </div>
+            <p>The total energy is negative by exactly the amount of kinetic energy, a general result for circular orbits.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Estimate the escape speed of a spacecraft from Earth's surface, where the radius is \(R_E = 6.37 \times 10^6\,\text{m}\) and the Earth's mass is \(5.97 \times 10^{24}\,\text{kg}\). Use \(G = 6.674 \times 10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Setting the escape kinetic energy equal to the gravitational potential energy at the surface gives</p>
+            <div class="equation">
+                \(\frac{1}{2}mv_{\text{esc}}^2 = \frac{GM_E m}{R_E}\)
+            </div>
+            <p>Cancelling the mass \(m\) and rearranging:</p>
+            <div class="equation">
+                \(v_{\text{esc}} = \sqrt{\frac{2GM_E}{R_E}} = \sqrt{\frac{2(6.674 \times 10^{-11})(5.97 \times 10^{24})}{6.37 \times 10^6}} = \sqrt{1.25 \times 10^{11}} \approx 1.12 \times 10^5\,\text{m/s} = 11.2\,\text{km/s}\)
+            </div>
+            <p>The escape speed from Earth is about \(11.2\,\text{km/s}\) (about \(25,000\,\text{mph}\)). A rocket that exceeds this speed does not need to climb out of the gravity well; it has just enough energy to reach infinity with zero speed.</p>
+        </div>
+    </div>
+
+    <h2>5.2 Kepler's Laws and the Motion of Planets</h2>
+    <p>Johannes Kepler (1571–1630) formulated three empirical laws that describe the motion of planets around the Sun. These laws were later explained by Newton's law of universal gravitation.</p>
+
+    <h3>5.2.1 Kepler's First Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kepler's First Law (Law of Orbits):</strong></p>
+            <p><em>All planets move in elliptical orbits with the Sun at one focus.</em></p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about elliptical orbits:</p>
+            <ul>
+                <li>An ellipse has two foci; the Sun is at one focus</li>
+                <li>The semi-major axis \(a\) is half the longest diameter</li>
+                <li>The semi-minor axis \(b\) is half the shortest diameter</li>
+                <li>The eccentricity \(e\) measures how elongated the ellipse is (\(0 \leq e &lt; 1\))</li>
+                <li>For planets, most orbits are nearly circular (\(e \approx 0\))</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ellipse -->
+            <ellipse cx="260" cy="160" rx="180" ry="110" fill="none" stroke="#0066cc" stroke-width="2"/>
+            <!-- Axes -->
+            <line x1="80" y1="160" x2="440" y2="160" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="260" y1="50" x2="260" y2="270" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <text x="445" y="164" font-size="12" fill="#666666">Major axis</text>
+            <text x="266" y="45" font-size="12" fill="#666666">Minor axis</text>
+            <!-- Foci -->
+            <circle cx="118" cy="160" r="5" fill="#cc0000"/>
+            <text x="118" y="188" font-size="13" text-anchor="middle" fill="#cc0000">Focus 1 (Sun)</text>
+            <circle cx="402" cy="160" r="5" fill="#cc0000"/>
+            <text x="402" y="188" font-size="13" text-anchor="middle" fill="#cc0000">Focus 2</text>
+            <!-- Semi-axes -->
+            <line x1="260" y1="160" x2="440" y2="160" stroke="black" stroke-width="1.5" marker-start="url(#f54start)" marker-end="url(#f54end)"/>
+            <text x="350" y="153" font-size="14">a</text>
+            <line x1="260" y1="160" x2="260" y2="50" stroke="black" stroke-width="1.5" marker-start="url(#f54start)" marker-end="url(#f54end)"/>
+            <text x="270" y="108" font-size="14">b</text>
+            <!-- Planet -->
+            <circle cx="398" cy="89" r="6" fill="#0066cc"/>
+            <text x="408" y="85" font-size="13" fill="#0066cc">Planet</text>
+            <defs>
+                <marker id="f54end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f54start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 5.4: Elliptical orbit described by Kepler's First Law</div>
+    </div>
+
+    <h3>5.2.2 Kepler's Second Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kepler's Second Law (Law of Areas):</strong></p>
+            <p><em>A line joining a planet and the Sun sweeps out equal areas in equal intervals of time.</em></p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about the Law of Areas:</p>
+            <ul>
+                <li>Planets move faster when closer to the Sun (perihelion)</li>
+                <li>Planets move slower when farther from the Sun (aphelion)</li>
+                <li>This is a consequence of conservation of angular momentum</li>
+                <li>The area swept out per unit time is constant</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>The second law follows from conservation of angular momentum. For a planet of mass \(m\) at position \(\vec{r}\) from the Sun, the angular momentum is \(\vec{L} = \vec{r}\times m\vec{v}\). Because the gravitational force points along \(\vec{r}\), it exerts no torque about the Sun, so \(\vec{L}\) is constant. In a short time \(dt\), the line from the Sun sweeps out a small triangle of area</p>
+    <div class="equation">
+        \(dA = \tfrac{1}{2}|\vec{r}\times\vec{v}|\,dt = \frac{L}{2m}dt\)
+    </div>
+    <p>Since \(L\) and \(m\) are constant, \(dA/dt = L/(2m)\) is constant. A planet therefore moves faster near perihelion, where \(r\) is small, and slower near aphelion, where \(r\) is large.</p>
+
+    <div class="figure">
+        <svg width="520" height="320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ellipse -->
+            <ellipse cx="260" cy="160" rx="180" ry="110" fill="none" stroke="#0066cc" stroke-width="2"/>
+            <!-- Swept areas -->
+            <polygon points="118,160 80,160 144,76" fill="#009966" fill-opacity="0.3" stroke="#009966" stroke-width="1.5"/>
+            <polygon points="118,160 440,160 439,150" fill="#009966" fill-opacity="0.3" stroke="#009966" stroke-width="1.5"/>
+            <!-- Sun -->
+            <circle cx="118" cy="160" r="8" fill="#ffcc00" stroke="#ff9900" stroke-width="1.5"/>
+            <text x="118" y="188" font-size="13" text-anchor="middle">Sun</text>
+            <!-- Planet near perihelion (fast) -->
+            <circle cx="80" cy="160" r="6" fill="#0066cc"/>
+            <text x="72" y="145" font-size="13" text-anchor="end" fill="#0066cc">A (fast)</text>
+            <line x1="68" y1="160" x2="68" y2="110" stroke="#009966" stroke-width="2.5" marker-end="url(#f55green)"/>
+            <!-- Planet near aphelion (slow) -->
+            <circle cx="440" cy="160" r="6" fill="#0066cc"/>
+            <text x="448" y="145" font-size="13" fill="#0066cc">B (slow)</text>
+            <line x1="452" y1="160" x2="452" y2="136" stroke="#009966" stroke-width="2.5" marker-end="url(#f55green)"/>
+            <!-- Labels -->
+            <text x="150" y="110" font-size="12" fill="#007a4d">equal area</text>
+            <text x="300" y="245" font-size="13" text-anchor="middle" fill="#007a4d">Equal areas in equal times</text>
+            <text x="46" y="102" font-size="12" fill="#007a4d">v</text>
+            <text x="458" y="130" font-size="12" fill="#007a4d">v</text>
+            <defs>
+                <marker id="f55green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 5.5: Kepler's Second Law — equal areas in equal times</div>
+    </div>
+
+    <h3>5.2.3 Kepler's Third Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kepler's Third Law (Law of Periods):</strong></p>
+            <p><em>The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.</em></p>
+            <p>Mathematically:</p>
+            <div class="equation">
+                \(T^2 \propto a^3 \quad \text{or} \quad \frac{T^2}{a^3} = \text{constant}\)
+            </div>
+            <p>For planets orbiting the Sun, the constant is the same for all planets.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about the Law of Periods:</p>
+            <ul>
+                <li>It relates orbital period to orbital size</li>
+                <li>Planets farther from the Sun have longer orbital periods</li>
+                <li>Newton showed that the constant is \(\frac{4\pi^2}{G M_S}\), where \(M_S\) is the Sun's mass</li>
+                <li>The exact form is: \(T^2 = \frac{4\pi^2}{G M_S} a^3\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the orbital period of Earth around the Sun.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(M_S = 1.99 \times 10^{30}\,\text{kg}\)
+            </div>
+            <div class="equation">
+                \(a = 1.496 \times 10^{11}\,\text{m} \quad \text{(1 astronomical unit)}\)
+            </div>
+            <div class="equation">
+                \(T^2 = \frac{4\pi^2}{G M_S} a^3\)
+            </div>
+            <div class="equation">
+                \(T = \sqrt{\frac{4\pi^2 (1.496 \times 10^{11})^3}{(6.674 \times 10^{-11})(1.99 \times 10^{30})}} \approx 3.156 \times 10^7\,\text{s} \approx 365.25\,\text{days}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Mars has an orbital semi-major axis of 1.524 AU. Calculate its orbital period in Earth years.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using Kepler's Third Law:</p>
+            <div class="equation">
+                \(\frac{T_M^2}{a_M^3} = \frac{T_E^2}{a_E^3} \;\Rightarrow\; T_M = T_E \left( \frac{a_M}{a_E} \right)^{3/2} = 1 \times (1.524)^{3/2} \approx 1.88\,\text{years}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Kepler's Laws Summary</div>
+        <div class="textbox-content">
+            <ol>
+                <li><strong>First Law (Orbits):</strong> Planets move in elliptical orbits with the Sun at one focus.</li>
+                <li><strong>Second Law (Areas):</strong> A line joining a planet and the Sun sweeps out equal areas in equal times.</li>
+                <li><strong>Third Law (Periods):</strong> The square of the orbital period is proportional to the cube of the semi-major axis:
+                    <div class="equation">
+                        \(T^2 = \frac{4\pi^2}{G M} a^3\)
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+        <h2>Problem-Solving Workshop</h2>
+    <p>Orbital problems are circular-motion problems in disguise. The gravitational force supplies the centripetal force, so the satellite's mass cancels from the speed equation. The first step is always to convert an altitude into an orbital radius by adding Earth's radius; using \(h\) in place of \(r\) is the most common error in this chapter.</p>
+    <p>Write the force equation \(G M m/r^2 = mv^2/r\), cancel \(m\) and one factor of \(r\), and solve for the speed. The period then follows from the circumference divided by the speed, or from Kepler's third law. Check that the result is reasonable: low-Earth-orbit periods are about 90 to 100 minutes, while geostationary periods are about 24 hours.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Identify the central body and its mass \(M\), and convert altitude to \(r = R + h\).</li>
+                <li>State the condition for circular orbit: gravitational force equals the required centripetal force.</li>
+                <li>Write \(G M m/r^2 = mv^2/r\) and cancel the satellite mass \(m\).</li>
+                <li>Solve for the orbital speed \(v = \sqrt{GM/r}\).</li>
+                <li>Find the period from \(T = 2\pi r/v\), or use \(T^2 = 4\pi^2 r^3/(GM)\).</li>
+                <li>Check units and compare the period with known orbits such as the ISS or a geostationary satellite.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A remote-sensing satellite moves in a circular orbit \(800\,\text{km}\) above Earth's surface. Using \(M_E = 5.97 \times 10^{24}\,\text{kg}\), \(R_E = 6.37 \times 10^6\,\text{m}\), and \(G = 6.674 \times 10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2\), find its orbital speed and orbital period.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p><strong>Orbital radius.</strong> The altitude must be added to Earth's radius:</p>
+            <div class="equation">
+                \(r = R_E + h = 6.37 \times 10^6 + 8.00 \times 10^5 = 7.17 \times 10^6\,\text{m}\)
+            </div>
+            <p><strong>Orbital speed.</strong> Gravity provides the centripetal force:</p>
+            <div class="equation">
+                \(G\frac{M_E m}{r^2} = \frac{mv^2}{r} \quad \Rightarrow \quad v = \sqrt{\frac{GM_E}{r}}\)
+            </div>
+            <div class="equation">
+                \(v = \sqrt{\frac{(6.674 \times 10^{-11})(5.97 \times 10^{24})}{7.17 \times 10^6}} = \sqrt{5.56 \times 10^7} = 7.45 \times 10^3\,\text{m/s}\)
+            </div>
+            <p><strong>Orbital period.</strong> One revolution covers \(2\pi r\):</p>
+            <div class="equation">
+                \(T = \frac{2\pi r}{v} = \frac{2\pi(7.17 \times 10^6)}{7.45 \times 10^3} = 6.04 \times 10^3\,\text{s}\)
+            </div>
+            <p>Converting to minutes and hours:</p>
+            <div class="equation">
+                \(T \approx 101\,\text{min} \approx 1.68\,\text{h}\)
+            </div>
+            <p>The satellite travels at about \(7.45\,\text{km/s}\) and completes one orbit in about \(101\) minutes, which is typical of a low-Earth orbit.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Earth-observation and imaging satellites are often placed in low orbits so that their cameras are close enough to resolve small features. An \(800\,\text{km}\) orbit gives a period of about \(101\) minutes, so the satellite circles Earth roughly fourteen times per day and its ground track shifts westward each pass. Mission planners use exactly this calculation to choose an altitude that balances image resolution against revisit time.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Newton's law of gravitation is an inverse-square law: \(F_g = Gm_1m_2/r^2\).</li>
+        <li>The gravitational field strength near a body is \(g = GM/r^2\), measured outward from its centre.</li>
+        <li>Gravitational potential energy is negative when the zero is set at infinite separation.</li>
+        <li>Escape speed is \(v_{\text{esc}} = \sqrt{2GM/R}\) and is independent of the escaping object's mass.</li>
+        <li>Kepler's laws describe elliptical orbits, equal areas in equal times, and \(T^2 \propto a^3\).</li>
+        <li>For a circular orbit, \(v = \sqrt{GM/r}\) and \(T = 2\pi r/v\), with \(r = R + h\).</li>
+        <li>The mass of the orbiting satellite cancels out of the orbital speed and period.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 5</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Newton's Law of Universal Gravitation:</strong>
+                    <div class="equation">
+                        \(F_g = G \frac{m_1 m_2}{r^2}\)
+                    </div>
+                </li>
+                <li><strong>Free-fall acceleration:</strong>
+                    <div class="equation">
+                        \(g = \frac{G M}{r^2}\)
+                    </div>
+                </li>
+                <li><strong>Gravitational potential energy:</strong>
+                    <div class="equation">
+                        \(U = -G \frac{m_1 m_2}{r}\)
+                    </div>
+                </li>
+                <li><strong>Escape speed:</strong>
+                    <div class="equation">
+                        \(v_{\text{esc}} = \sqrt{\frac{2 G M}{R}}\)
+                    </div>
+                </li>
+                <li><strong>Kepler's First Law:</strong> Planets orbit in ellipses with Sun at one focus</li>
+                <li><strong>Kepler's Second Law:</strong> Equal areas swept in equal times</li>
+                <li><strong>Kepler's Third Law:</strong>
+                    <div class="equation">
+                        \(T^2 = \frac{4\pi^2}{G M} a^3\)
+                    </div>
+                </li>
+                <li><strong>Gravitational constant:</strong> \(G = 6.674 \times 10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why does the gravitational force between two objects not depend on their individual sizes, only on the distance between their centers?</li>
+        <li>Explain why astronauts in orbit experience weightlessness even though gravity is still present.</li>
+        <li>Why is the gravitational potential energy always negative? What does this signify physically?</li>
+        <li>How does Kepler's Second Law relate to the conservation of angular momentum?</li>
+        <li>Why does the escape speed from a planet not depend on the mass of the escaping object?</li>
+        <li>Explain how Newton's law of gravitation explains Kepler's Third Law.</li>
+        <li>Why do we use the approximation \(U = mgh\) for objects near Earth's surface instead of the exact formula?</li>
+        <li>How would the orbital period of planets change if the Sun's mass suddenly doubled?</li>
+        <li>Why are geosynchronous satellites placed at specific altitudes above Earth?</li>
+        <li>Explain why the gravitational force is considered a conservative force.</li>
+        <li>Why does the gravitational field inside a uniform spherical shell vanish, while the field outside behaves as if all the mass were at the centre?</li>
+        <li>A satellite in a circular orbit fires its engine briefly in the direction of motion. Describe what happens to its speed, orbital radius, and total energy immediately after the burn.</li>
+        <li>Explain why a geostationary satellite must orbit above the equator and in the same direction as Earth's rotation.</li>
+        <li>Two satellites orbit Earth at different altitudes. Which has the greater speed, and which has the longer period? Justify your answer with the relevant equations.</li>
+        <li>The total energy of a bound orbit is negative. What would a zero total energy imply about the orbit?</li>
+        <li>Why is the balance point between Earth and the Moon closer to the Moon than to Earth?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>Calculate the gravitational force between two 500 kg spheres whose centers are 2.0 m apart.</li>
+        <li>A satellite orbits Earth at an altitude of 500 km.
+            <ol type="a">
+                <li>Calculate the orbital speed of the satellite.</li>
+                <li>Calculate the orbital period.</li>
+            </ol>
+        </li>
+        <li>Calculate the gravitational potential energy of the Earth-Moon system.
+            <div class="equation">
+                \(M_E = 5.97 \times 10^{24}\,\text{kg}, \quad M_M = 7.35 \times 10^{22}\,\text{kg}, \quad r = 3.84 \times 10^8\,\text{m}\)
+            </div>
+        </li>
+        <li>Calculate the escape speed from:
+            <ol type="a">
+                <li>The Sun (\(M_S = 1.99 \times 10^{30}\) kg, \(R_S = 6.96 \times 10^8\) m)</li>
+                <li>Jupiter (\(M_J = 1.90 \times 10^{27}\) kg, \(R_J = 7.15 \times 10^7\) m)</li>
+            </ol>
+        </li>
+        <li>The Hubble Space Telescope orbits Earth at an altitude of 569 km.
+            <ol type="a">
+                <li>Calculate its orbital speed.</li>
+                <li>Calculate its orbital period.</li>
+            </ol>
+        </li>
+        <li>A planet is discovered with twice Earth's radius and three times Earth's mass.
+            <ol type="a">
+                <li>What is the acceleration due to gravity on its surface?</li>
+                <li>What is the escape speed from this planet?</li>
+            </ol>
+        </li>
+        <li>Using Kepler's Third Law, calculate the orbital period of:
+            <ol type="a">
+                <li>Venus (semi-major axis = 0.723 AU)</li>
+                <li>Saturn (semi-major axis = 9.537 AU)</li>
+            </ol>
+        </li>
+        <li>A communications satellite is in geosynchronous orbit (period = 24 hours).
+            <ol type="a">
+                <li>Calculate the orbital radius.</li>
+                <li>Calculate the orbital altitude.</li>
+            </ol>
+        </li>
+        <li>The International Space Station orbits at an altitude of approximately 400 km.
+            <ol type="a">
+                <li>Calculate the gravitational acceleration at this altitude.</li>
+                <li>Calculate the orbital speed.</li>
+            </ol>
+        </li>
+        <li>A planet has a moon that orbits with a period of 7.2 days at a distance of \(4.2 \times 10^8\) m.
+            <ol type="a">
+                <li>Calculate the mass of the planet.</li>
+                <li>If the planet's radius is \(6.0 \times 10^6\) m, calculate the escape speed.</li>
+            </ol>
+        </li>
+        <li>Find the gravitational field strength at a point \(2.0 \times 10^7\,\text{m}\) from the centre of Earth, and compare it with the surface value.</li>
+        <li>A \(500\,\text{kg}\) satellite is in a circular orbit of radius \(8.0 \times 10^6\,\text{m}\) around Earth. Find its speed, period, kinetic energy, and total energy.</li>
+        <li>Two masses, \(8.0\,\text{kg}\) and \(12\,\text{kg}\), are separated by \(0.60\,\text{m}\). Find the gravitational force on each and the gravitational field at the midpoint between them.</li>
+        <li>A spacecraft is in a circular orbit at \(3.0 \times 10^7\,\text{m}\) from Earth's centre. How much additional energy is needed to escape Earth's gravity?</li>
+        <li>The asteroid Ceres has a mass of \(9.4 \times 10^{20}\,\text{kg}\) and a radius of \(4.7 \times 10^5\,\text{m}\). Find the acceleration due to gravity on its surface and its escape speed.</li>
+        <li>A comet has a perihelion distance of \(0.60\,\text{AU}\) and an aphelion distance of \(5.4\,\text{AU}\). Find its semi-major axis and orbital period in years.</li>
+        <li>Show that the ratio of the orbital speeds of two satellites in circular orbits of radii \(r_1\) and \(r_2\) is \(v_1/v_2 = \sqrt{r_2/r_1}\).</li>
+    </ol>
+</body>
+</html>

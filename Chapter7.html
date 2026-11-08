@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Linear Momentum</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>
+    <h1>Chapter 7: Linear Momentum</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Linear Momentum</div>
+        <div class="textbox-content">
+            <p>Linear momentum is the quantity that classical physics says is conserved when no net external force acts. It is defined as the product of mass and velocity: \(\vec{p} = m\vec{v}\), and it is a vector whose direction follows the velocity.</p>
+            <p>The impulse-momentum theorem connects a force acting over time to a change in momentum: \(\vec{J} = \Delta\vec{p} = \vec{p}_f - \vec{p}_i\). Together with Newton's second law, this framework makes collisions, explosions, and rocket motion exercises in bookkeeping rather than in repeated force calculations.</p>
+            <p>This chapter develops momentum conservation, collision analysis, and the center of mass, providing the bookkeeping tools used later in gravity, energy, and electromagnetism.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Understand the concept of momentum and impulse</li>
+                <li>Apply the impulse-momentum theorem to solve problems</li>
+                <li>Understand and apply the principle of conservation of momentum</li>
+                <li>Analyze different types of collisions (elastic, inelastic, perfectly inelastic)</li>
+                <li>Solve problems involving one-dimensional and two-dimensional collisions</li>
+                <li>Understand the concept of center of mass and its calculation</li>
+                <li>Apply momentum conservation to complex systems</li>
+                <li>Analyze rocket propulsion using momentum principles</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>7.1 The Concept of Momentum and Impulse</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Linear momentum</strong> of an object is defined as the product of its mass and velocity:</p>
+            <div class="equation">
+                \(\vec{p} = m\vec{v}\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\vec{p}\) = momentum (kg·m/s)</li>
+                <li>\(m\) = mass (kg)</li>
+                <li>\(\vec{v}\) = velocity (m/s)</li>
+            </ul>
+            <p>Momentum is a vector quantity with the same direction as the velocity.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about momentum:</p>
+            <ul>
+                <li>Momentum depends on both mass and velocity</li>
+                <li>A large mass moving slowly can have the same momentum as a small mass moving fast</li>
+                <li>Momentum is conserved in isolated systems</li>
+                <li>The rate of change of momentum equals the net force applied (Newton's second law)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Impulse</strong> is defined as the product of force and the time interval during which the force acts:</p>
+            <div class="equation">
+                \(\vec{J} = \vec{F}\Delta t\)
+            </div>
+            <p>where:</p>
+            <ul>
+                <li>\(\vec{J}\) = impulse (N·s)</li>
+                <li>\(\vec{F}\) = average force (N)</li>
+                <li>\(\Delta t\) = time interval (s)</li>
+            </ul>
+            <p>Note: 1 N·s = 1 kg·m/s (same units as momentum)</p>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Impulse-Momentum Theorem</div>
+        <div class="textbox-content">
+            <p><strong>Impulse-Momentum Theorem:</strong> The impulse on an object equals its change in momentum:</p>
+            <div class="equation">
+                \(\vec{J} = \Delta\vec{p} = \vec{p}_f - \vec{p}_i\)
+            </div>
+            <p>This is equivalent to Newton's second law: \(\vec{F} = \frac{d\vec{p}}{dt}\)</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="70" y1="240" x2="490" y2="240" stroke="black" stroke-width="2" marker-end="url(#f71black)"/>
+            <line x1="70" y1="240" x2="70" y2="40" stroke="black" stroke-width="2" marker-end="url(#f71black)"/>
+            <text x="495" y="245" font-size="14">Time</text>
+            <text x="62" y="35" font-size="14" text-anchor="end">Force</text>
+            <!-- Impulse area -->
+            <rect x="120" y="100" width="300" height="140" fill="#0066cc" fill-opacity="0.15"/>
+            <!-- Constant force -->
+            <line x1="120" y1="100" x2="420" y2="100" stroke="#0066cc" stroke-width="3" marker-end="url(#f71blue)"/>
+            <text x="270" y="90" font-size="14" text-anchor="middle" fill="#0066cc">Constant Force</text>
+            <!-- Dashed guides -->
+            <line x1="120" y1="100" x2="120" y2="240" stroke="#666666" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="420" y1="100" x2="420" y2="240" stroke="#666666" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <text x="120" y="262" font-size="13" text-anchor="middle">t<tspan baseline-shift="sub" font-size="9">i</tspan></text>
+            <text x="420" y="262" font-size="13" text-anchor="middle">t<tspan baseline-shift="sub" font-size="9">f</tspan></text>
+            <!-- Area label -->
+            <text x="270" y="178" font-size="15" text-anchor="middle">Area = F&#916;t = J</text>
+            <!-- Caption -->
+            <text x="270" y="290" font-size="13" text-anchor="middle">Impulse = Area under force-time curve</text>
+            <defs>
+                <marker id="f71black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f71blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 7.1: Graphical representation of impulse</div>
+    </div>
+
+    <p>For a force that varies with time, the impulse is the integral of the force over the interval:</p>
+    <div class="equation">
+        \(\vec{J} = \int_{t_i}^{t_f}\vec{F}\,dt\)
+    </div>
+    <p>Graphically, this is the area under the force-time curve. The average force is then defined so that the rectangular area \(F_{\text{avg}}\Delta t\) equals the actual impulse:</p>
+    <div class="equation">
+        \(F_{\text{avg}} = \frac{1}{\Delta t}\int_{t_i}^{t_f}F\,dt\)
+    </div>
+    <p>This is why airbags and crumple zones work: they extend the collision time, reducing the average force for the same change in momentum.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 0.5 kg ball moving at 4 m/s is struck by a bat. After the impact, it moves at 6 m/s in the opposite direction. If the contact time is 0.02 s, what is the average force exerted by the bat?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta p = m(v_f - v_i) = 0.5(-6 - 4) = 0.5(-10) = -5\,\text{kg·m/s}\)
+            </div>
+            <div class="equation">
+                \(J = \Delta p = -5\,\text{N·s}\)
+            </div>
+            <div class="equation">
+                \(F = \frac{J}{\Delta t} = \frac{-5}{0.02} = -250\,\text{N}\)
+            </div>
+            <p>The negative sign indicates the force is opposite to the initial velocity.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 1000 kg car accelerates from 20 m/s to 30 m/s in 5 seconds. What is the average force required?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\Delta p = m(v_f - v_i) = 1000(30 - 20) = 10{,}000\,\text{kg·m/s}\)
+            </div>
+            <div class="equation">
+                \(F = \frac{\Delta p}{\Delta t} = \frac{10{,}000}{5} = 2{,}000\,\text{N}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="140" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="55" cy="70" r="24" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+                <text x="55" y="75" font-size="13" text-anchor="middle">m&#8321;</text>
+                <circle cx="205" cy="70" r="16" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+                <text x="205" y="75" font-size="13" text-anchor="middle">m&#8322;</text>
+                <line x1="82" y1="70" x2="130" y2="70" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f7simblue)"/>
+                <line x1="187" y1="70" x2="150" y2="70" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f7simred)"/>
+                <text x="106" y="60" font-size="12" text-anchor="middle" fill="#0066cc">v</text>
+                <text x="168" y="60" font-size="12" text-anchor="middle" fill="#cc0000">v</text>
+                <text x="130" y="125" font-size="12" text-anchor="middle">Collisions and momentum conservation</text>
+                <defs>
+                    <marker id="f7simblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                    </marker>
+                    <marker id="f7simred" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <p>Explore collisions interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/collision-lab/latest/collision-lab_en.html">https://phet.colorado.edu/sims/html/collision-lab/latest/collision-lab_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h2>7.2 Conservation of Momentum</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Conservation of Momentum:</strong> In an isolated system (no external forces), the total momentum remains constant:</p>
+            <div class="equation">
+                \(\sum\vec{p}_{\text{initial}} = \sum\vec{p}_{\text{final}}\)
+            </div>
+            <p>or</p>
+            <div class="equation">
+                \(m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = m_1\vec{v}_{1f} + m_2\vec{v}_{2f}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Key points about momentum conservation:</p>
+            <ul>
+                <li>Momentum is conserved in all directions separately</li>
+                <li>The system must be isolated (no net external force)</li>
+                <li>Internal forces (between objects in the system) don't affect the total momentum</li>
+                <li>Momentum conservation applies to both elastic and inelastic collisions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Titles -->
+            <text x="260" y="32" font-size="15" text-anchor="middle">Before Collision</text>
+            <text x="260" y="150" font-size="15" text-anchor="middle">&#931;p<tspan baseline-shift="sub" font-size="11">i</tspan> = &#931;p<tspan baseline-shift="sub" font-size="11">f</tspan></text>
+            <text x="260" y="198" font-size="15" text-anchor="middle">After Collision</text>
+            <!-- Before: m1 -->
+            <circle cx="70" cy="80" r="22" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="70" y="85" font-size="14" text-anchor="middle">m&#8321;</text>
+            <line x1="96" y1="80" x2="210" y2="80" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f72blue)"/>
+            <text x="150" y="70" font-size="14" text-anchor="middle" fill="#0066cc">v&#8321; &#7522;</text>
+            <!-- Before: m2 -->
+            <circle cx="450" cy="80" r="22" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="450" y="85" font-size="14" text-anchor="middle">m&#8322;</text>
+            <line x1="424" y1="80" x2="320" y2="80" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f72red)"/>
+            <text x="370" y="70" font-size="14" text-anchor="middle" fill="#cc0000">v&#8322; &#7522;</text>
+            <!-- After: m1 -->
+            <circle cx="70" cy="245" r="22" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="70" y="250" font-size="14" text-anchor="middle">m&#8321;</text>
+            <line x1="96" y1="245" x2="185" y2="245" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f72blue)"/>
+            <text x="140" y="235" font-size="14" text-anchor="middle" fill="#0066cc">v&#8321; &#8327;</text>
+            <!-- After: m2 -->
+            <circle cx="450" cy="245" r="22" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="450" y="250" font-size="14" text-anchor="middle">m&#8322;</text>
+            <line x1="424" y1="245" x2="345" y2="245" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f72red)"/>
+            <text x="385" y="235" font-size="14" text-anchor="middle" fill="#cc0000">v&#8322; &#8327;</text>
+            <defs>
+                <marker id="f72blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f72red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 7.2: Conservation of momentum in collisions</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 kg object moving at 3 m/s collides with a stationary 3 kg object. After the collision, the 2 kg object moves at 1 m/s. What is the velocity of the 3 kg object?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using conservation of momentum:</p>
+            <div class="equation">
+                \(m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}\)
+            </div>
+            <div class="equation">
+                \((2)(3) + (3)(0) = (2)(1) + (3)v_{2f}\)
+            </div>
+            <div class="equation">
+                \(6 = 2 + 3v_{2f}\)
+            </div>
+            <div class="equation">
+                \(3v_{2f} = 4 \;\Rightarrow\; v_{2f} = \frac{4}{3} \approx 1.33\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 0.1 kg bullet is fired into a 2 kg block at rest on a frictionless surface. The bullet remains in the block, and they move together at 4 m/s. What was the bullet's initial speed?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(m_bv_{bi} + m_{bl}v_{bli} = (m_b + m_{bl})v_f\)
+            </div>
+            <div class="equation">
+                \((0.1)v_{bi} + (2)(0) = (2.1)(4)\)
+            </div>
+            <div class="equation">
+                \(0.1v_{bi} = 8.4 \;\Rightarrow\; v_{bi} = 84\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(4.0\,\text{kg}\) rifle fires a \(0.020\,\text{kg}\) bullet at \(600\,\text{m/s}\). Find the recoil speed of the rifle and explain why the rifle does not hurt the shoulder as much as the bullet hurts its target.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take the bullet's direction as positive. The system is initially at rest, so</p>
+            <div class="equation">
+                \(0 = m_bv_b + m_rv_r\)
+            </div>
+            <div class="equation">
+                \(v_r = -\frac{m_b}{m_r}v_b = -\frac{0.020}{4.0}(600) = -3.0\,\text{m/s}\)
+            </div>
+            <p>The rifle recoils at \(3.0\,\text{m/s}\) in the opposite direction. The momentum magnitudes are equal, but the rifle's much larger mass means a much smaller speed. The rifle is also held against the shoulder for a relatively long time, so the average force on the shoulder is smaller than the force the bullet experiences over its short stopping time.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 kg ball moving at \(4\,\text{m/s}\) collides inelastically with a 3 kg ball moving at \(2\,\text{m/s}\) in the opposite direction. Find the velocity of the combined mass after the collision.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For a perfectly inelastic collision, the objects stick together, so the final velocity is a single unknown:</p>
+            <div class="equation">
+                \(m_1v_1 + m_2v_2 = (m_1 + m_2)v_f\)
+            </div>
+            <div class="equation">
+                \((2)(4) + (3)(-2) = (5)v_f\)
+            </div>
+            <div class="equation">
+                \(8 - 6 = 5v_f \;\Rightarrow\; v_f = \frac{2}{5} = 0.4\,\text{m/s}\)
+            </div>
+            <p>The combined mass moves at \(0.4\,\text{m/s}\) in the original direction of the 2 kg ball. Momentum is conserved, but kinetic energy is not: part of it was converted into heat, sound, and deformation during the collision.</p>
+        </div>
+    </div>
+
+    <h2>7.3 Collisions in One Dimension and in Two Dimensions</h2>
+
+    <h3>7.3.1 Perfectly Inelastic Collisions</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Perfectly Inelastic Collision:</strong> A collision where the objects stick together after impact. Maximum kinetic energy is lost.</p>
+            <div class="equation">
+                \(m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = (m_1 + m_2)\vec{v}_f\)
+            </div>
+            <p>Kinetic energy is not conserved: \(K_f &lt; K_i\)</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Characteristics of perfectly inelastic collisions:</p>
+            <ul>
+                <li>Objects move together with common velocity after collision</li>
+                <li>Maximum possible kinetic energy is lost</li>
+                <li>Momentum is conserved but kinetic energy is not</li>
+                <li>Some kinetic energy is converted to other forms (heat, sound, deformation)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 1000 kg car moving at 20 m/s collides with a stationary 1500 kg car. If they stick together, what is their final velocity?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f\)
+            </div>
+            <div class="equation">
+                \((1000)(20) + (1500)(0) = (2500)v_f\)
+            </div>
+            <div class="equation">
+                \(20{,}000 = 2500v_f \;\Rightarrow\; v_f = 8\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>7.3.2 Elastic Collisions</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Elastic Collision:</strong> A collision where both momentum and kinetic energy are conserved.</p>
+            <div class="equation">
+                \(m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = m_1\vec{v}_{1f} + m_2\vec{v}_{2f}\)
+            </div>
+            <div class="equation">
+                \(\frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Special Cases for Elastic Collisions</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Equal masses:</strong> Objects exchange velocities</li>
+                <li><strong>Stationary target:</strong>
+                    <div class="equation">
+                        \(v_{1f} = \frac{m_1 - m_2}{m_1 + m_2}v_{1i}, \quad v_{2f} = \frac{2m_1}{m_1 + m_2}v_{1i}\)
+                    </div>
+                </li>
+                <li><strong>Heavy target</strong> (\(m_2 \gg m_1\)): Light object rebounds with nearly same speed</li>
+                <li><strong>Light target</strong> (\(m_2 \ll m_1\)): Heavy object continues almost unaffected</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 2 kg object moving at 4 m/s collides elastically with a stationary 1 kg object. Find their final velocities.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using the formulas for stationary target:</p>
+            <div class="equation">
+                \(v_{1f} = \frac{m_1 - m_2}{m_1 + m_2}v_{1i} = \frac{2 - 1}{2 + 1}(4) = \frac{1}{3}(4) = \frac{4}{3}\,\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(v_{2f} = \frac{2m_1}{m_1 + m_2}v_{1i} = \frac{4}{2 + 1}(4) = \frac{4}{3}(4) = \frac{16}{3}\,\text{m/s}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>7.3.3 Two Dimensional (Glancing) Collisions</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Two-Dimensional Collisions:</strong> Collisions where objects don't move along a single line. Both x and y components of momentum must be conserved separately.</p>
+            <div class="equation">
+                \(\sum p_{x,\text{initial}} = \sum p_{x,\text{final}}\)
+            </div>
+            <div class="equation">
+                \(\sum p_{y,\text{initial}} = \sum p_{y,\text{final}}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>For two-dimensional collisions:</p>
+            <ul>
+                <li>Momentum is conserved in both x and y directions separately</li>
+                <li>Usually need additional information (angles, one final velocity, etc.)</li>
+                <li>Set up coordinate system and resolve velocities into components</li>
+                <li>Solve the system of equations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="70" y1="230" x2="450" y2="230" stroke="black" stroke-width="1.8" marker-end="url(#f73black)"/>
+            <line x1="70" y1="230" x2="70" y2="40" stroke="black" stroke-width="1.8" marker-end="url(#f73black)"/>
+            <text x="456" y="235" font-size="14">x</text>
+            <text x="64" y="36" font-size="14" text-anchor="end">y</text>
+            <!-- Initial velocity -->
+            <line x1="70" y1="230" x2="410" y2="230" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f73blue)"/>
+            <text x="240" y="252" font-size="14" text-anchor="middle" fill="#0066cc">v&#8321; &#7522;</text>
+            <!-- Final velocities -->
+            <line x1="70" y1="230" x2="303" y2="74" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f73red)"/>
+            <text x="270" y="86" font-size="14" fill="#cc0000">v&#8321; &#8327;</text>
+            <line x1="70" y1="230" x2="198" y2="326" stroke="#009966" stroke-width="2.5" marker-end="url(#f73green)"/>
+            <text x="206" y="336" font-size="14" fill="#009966">v&#8322; &#8327;</text>
+            <!-- Angles -->
+            <path d="M 115 230 A 45 45 0 0 0 107.5 205.1" stroke="black" fill="none" stroke-width="1.5"/>
+            <text x="124" y="224" font-size="14">&#952;</text>
+            <path d="M 115 230 A 45 45 0 0 1 106 257" stroke="black" fill="none" stroke-width="1.5"/>
+            <text x="124" y="252" font-size="14">&#966;</text>
+            <!-- Title -->
+            <text x="250" y="28" font-size="15" text-anchor="middle">Two-Dimensional Collision</text>
+            <defs>
+                <marker id="f73black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f73blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f73red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f73green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 7.3: Glancing collision with velocity components</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Two identical balls collide. One was initially stationary. After collision, the first ball moves at 30° to its original direction. If the collision is elastic, find the directions and speeds.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For elastic collision of equal masses with one stationary:</p>
+            <div class="equation">
+                \(v_{1f} = v_{1i}\cos\theta, \quad v_{2f} = v_{1i}\sin\theta\)
+            </div>
+            <div class="equation">
+                \(\theta + \phi = 90^\circ\)
+            </div>
+            <p>Given \(\theta = 30^\circ\), then \(\phi = 60^\circ\)</p>
+            <div class="equation">
+                \(v_{1f} = v_{1i}\cos 30^\circ = 0.866v_{1i}\)
+            </div>
+            <div class="equation">
+                \(v_{2f} = v_{1i}\sin 30^\circ = 0.5v_{1i}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>7.3.4 Rocket Propulsion</h3>
+    <p>A rocket is a dramatic application of momentum conservation. The rocket and its exhaust gases form an isolated system: the momentum gained by the rocket is equal and opposite to the momentum carried away by the gas. If the engine ejects mass at a rate \(dm/dt\) with exhaust speed \(v_{\text{ex}}\) relative to the rocket, the thrust is</p>
+    <div class="equation">
+        \(F_{\text{thrust}} = v_{\text{ex}}\frac{dm}{dt}\)
+    </div>
+    <p>This thrust does not require anything to push against; the rocket pushes on its own exhaust. As fuel is burned, the rocket's mass decreases, so its acceleration increases even if the thrust stays constant. This is why the rocket equation is logarithmic rather than linear, although a full derivation is beyond this chapter.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A rocket engine ejects gas at \(2.5 \times 10^3\,\text{m/s}\) relative to the rocket at a rate of \(80\,\text{kg/s}\). Find the thrust. If the rocket's mass is \(4.0 \times 10^3\,\text{kg}\), find its initial acceleration.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The thrust is</p>
+            <div class="equation">
+                \(F_{\text{thrust}} = v_{\text{ex}}\frac{dm}{dt} = (2.5 \times 10^3)(80) = 2.0 \times 10^5\,\text{N}\)
+            </div>
+            <p>The net force at liftoff is thrust minus weight:</p>
+            <div class="equation">
+                \(F_{\text{net}} = 2.0 \times 10^5 - (4.0 \times 10^3)(9.8) = 2.0 \times 10^5 - 3.92 \times 10^4 = 1.61 \times 10^5\,\text{N}\)
+            </div>
+            <p>Thus</p>
+            <div class="equation">
+                \(a = \frac{F_{\text{net}}}{m} = \frac{1.61 \times 10^5}{4.0 \times 10^3} \approx 40\,\text{m/s}^2\)
+            </div>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Before: rocket and fuel move together -->
+            <line x1="60" y1="70" x2="330" y2="70" stroke="#0066cc" stroke-width="3" marker-end="url(#f75blue)"/>
+            <text x="195" y="54" font-size="13" text-anchor="middle" fill="#0066cc">Before: p_rocket + p_fuel</text>
+            <rect x="330" y="85" width="70" height="40" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <!-- After: rocket and exhaust separate -->
+            <line x1="60" y1="120" x2="330" y2="120" stroke="#0066cc" stroke-width="3" marker-end="url(#f75blue)"/>
+            <text x="195" y="104" font-size="13" text-anchor="middle" fill="#0066cc">After: p_rocket</text>
+            <line x1="330" y1="160" x2="60" y2="160" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f75red)"/>
+            <text x="195" y="184" font-size="13" text-anchor="middle" fill="#cc0000">p_exhaust</text>
+            <rect x="330" y="130" width="70" height="40" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <!-- Title -->
+            <text x="260" y="30" font-size="15" text-anchor="middle">Rocket propulsion and momentum conservation</text>
+            <defs>
+                <marker id="f75blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f75red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 7.5: Rocket propulsion as an internal momentum exchange</div>
+    </div>
+
+    <h2>7.4 The Concept of Center of Mass</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Center of Mass:</strong> The point where the total mass of a system can be considered to be concentrated. For a system of particles:</p>
+            <div class="equation">
+                \(\vec{r}_{CM} = \frac{\sum m_i\vec{r}_i}{\sum m_i} = \frac{m_1\vec{r}_1 + m_2\vec{r}_2 + \cdots + m_n\vec{r}_n}{m_1 + m_2 + \cdots + m_n}\)
+            </div>
+            <p>In component form:</p>
+            <div class="equation">
+                \(x_{CM} = \frac{\sum m_ix_i}{\sum m_i}, \quad y_{CM} = \frac{\sum m_iy_i}{\sum m_i}, \quad z_{CM} = \frac{\sum m_iz_i}{\sum m_i}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>Properties of center of mass:</p>
+            <ul>
+                <li>The center of mass moves as if all mass were concentrated there</li>
+                <li>External forces accelerate the center of mass as if it were a point particle</li>
+                <li>Internal forces don't affect the motion of the center of mass</li>
+                <li>The center of mass may not coincide with any actual mass point</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="textbox">
+        <div class="textbox-header">Center of Mass Velocity and Acceleration</div>
+        <div class="textbox-content">
+            <div class="equation">
+                \(\vec{v}_{CM} = \frac{\sum m_i\vec{v}_i}{\sum m_i}, \quad \vec{a}_{CM} = \frac{\sum m_i\vec{a}_i}{\sum m_i} = \frac{\sum \vec{F}_{ext}}{M}\)
+            </div>
+            <p>The center of mass accelerates according to Newton's second law with all external forces.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="500" height="310" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="60" y1="270" x2="470" y2="270" stroke="black" stroke-width="1.5" marker-end="url(#f74black)"/>
+            <line x1="60" y1="270" x2="60" y2="30" stroke="black" stroke-width="1.5" marker-end="url(#f74black)"/>
+            <text x="476" y="275" font-size="13">x</text>
+            <text x="54" y="26" font-size="13" text-anchor="end">y</text>
+            <!-- Dashed lines to CM -->
+            <line x1="150" y1="190" x2="270" y2="120" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="420" y1="120" x2="270" y2="120" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <line x1="240" y1="50" x2="270" y2="120" stroke="#999999" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <!-- Masses -->
+            <circle cx="150" cy="190" r="17" fill="#cce5ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="150" y="195" font-size="13" text-anchor="middle">m&#8321;</text>
+            <circle cx="420" cy="120" r="17" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="420" y="125" font-size="13" text-anchor="middle">m&#8322;</text>
+            <circle cx="240" cy="50" r="17" fill="#d6f2e6" stroke="#009966" stroke-width="2"/>
+            <text x="240" y="55" font-size="13" text-anchor="middle">m&#8323;</text>
+            <!-- Center of mass -->
+            <circle cx="270" cy="120" r="8" fill="black"/>
+            <text x="284" y="112" font-size="14">CM</text>
+            <text x="270" y="300" font-size="13" text-anchor="middle">Center of Mass of a system of particles</text>
+            <defs>
+                <marker id="f74black" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 7.4: Center of mass of a system of particles</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Find the center of mass of a system with a 2 kg mass at (1,2) and a 3 kg mass at (4,1).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(x_{CM} = \frac{(2)(1) + (3)(4)}{2 + 3} = \frac{2 + 12}{5} = \frac{14}{5} = 2.8\)
+            </div>
+            <div class="equation">
+                \(y_{CM} = \frac{(2)(2) + (3)(1)}{2 + 3} = \frac{4 + 3}{5} = \frac{7}{5} = 1.4\)
+            </div>
+            <p>Center of mass is at (2.8, 1.4)</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A 1 kg mass is at (0,0), a 2 kg mass at (3,0), and a 3 kg mass at (0,4). Find the center of mass.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(x_{CM} = \frac{(1)(0) + (2)(3) + (3)(0)}{1 + 2 + 3} = \frac{0 + 6 + 0}{6} = 1\)
+            </div>
+            <div class="equation">
+                \(y_{CM} = \frac{(1)(0) + (2)(0) + (3)(4)}{6} = \frac{0 + 0 + 12}{6} = 2\)
+            </div>
+            <p>Center of mass is at (1, 2)</p>
+        </div>
+    </div>
+
+    <p>For a uniform symmetric body, the center of mass lies at its geometric centre: the midpoint of a rod, the centre of a disk or sphere, and the intersection of the medians for a triangular plate. For a composite body, treat each part as a point mass located at that part's own centre of mass and apply the same weighted-average formula.</p>
+    <p>The center of mass is especially useful because it obeys Newton's second law for the system as a whole:</p>
+    <div class="equation">
+        \(\vec{F}_{\text{ext}} = M\vec{a}_{CM}\)
+    </div>
+    <p>Internal forces, however violent, cannot change the motion of the centre of mass. In an explosion, for example, the fragments fly apart but their centre of mass continues along the same path it would have followed without the explosion.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A uniform \(2.0\,\text{m}\) board of mass \(6.0\,\text{kg}\) rests horizontally. A \(4.0\,\text{kg}\) mass is placed at one end. Find the center of mass of the combined system, measured from that end.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The board's centre of mass is at its midpoint, \(1.0\,\text{m}\) from the end. Treat the board and the added mass as two point masses:</p>
+            <div class="equation">
+                \(x_{CM} = \frac{m_{\text{board}}x_{\text{board}} + m_{\text{mass}}x_{\text{mass}}}{m_{\text{board}} + m_{\text{mass}}} = \frac{(6.0)(1.0) + (4.0)(0)}{10.0} = 0.60\,\text{m}\)
+            </div>
+            <p>The combined centre of mass is \(0.60\,\text{m}\) from the loaded end, closer to the heavier board's midpoint than to the added mass.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Momentum is a vector, so a two-dimensional collision cannot be handled by a single equation. Set up \(x\)- and \(y\)-axes, write the initial momentum components, and require each component to be conserved separately. For a perfectly inelastic collision, the objects share one final velocity vector.</p>
+    <p>After finding that velocity, treat kinetic energy separately. Momentum conservation does not imply kinetic energy conservation; in a perfectly inelastic collision the missing kinetic energy has been converted into deformation, heat, and sound. Calculate \(K_i\) and \(K_f\) explicitly and report the difference.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Choose the system and confirm that external impulses during the collision are negligible.</li>
+                <li>Draw the "before" and "after" situation and label a convenient \(x\)-\(y\) coordinate system.</li>
+                <li>Resolve every initial velocity into \(x\)- and \(y\)-components.</li>
+                <li>For a perfectly inelastic collision, set the final velocity common to both objects and write momentum conservation in each direction.</li>
+                <li>Combine the final components to obtain the speed and the direction angle.</li>
+                <li>Compute \(K_i\), \(K_f\), and the kinetic energy lost; interpret the loss as deformation, heat, and sound.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A 1200 kg car traveling east at \(20\,\text{m/s}\) collides at an intersection with a 1800 kg truck traveling north at \(15\,\text{m/s}\). The vehicles stick together after the collision. Find the velocity of the wreckage immediately afterward and the kinetic energy lost in the collision.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Take east as the \(+x\)-direction and north as the \(+y\)-direction. The initial momentum components are:</p>
+            <div class="equation">
+                \(p_x = m_1v_{1x} + m_2v_{2x} = (1200)(20) + (1800)(0) = 2.40 \times 10^4\,\text{kg}\cdot\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(p_y = m_1v_{1y} + m_2v_{2y} = (1200)(0) + (1800)(15) = 2.70 \times 10^4\,\text{kg}\cdot\text{m/s}\)
+            </div>
+            <p>The combined mass is \(M = 1200 + 1800 = 3000\,\text{kg}\). Since the vehicles stick together, momentum conservation gives the final velocity components:</p>
+            <div class="equation">
+                \(v_x = \frac{p_x}{M} = \frac{2.40 \times 10^4}{3000} = 8.0\,\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(v_y = \frac{p_y}{M} = \frac{2.70 \times 10^4}{3000} = 9.0\,\text{m/s}\)
+            </div>
+            <p>The final speed and direction are:</p>
+            <div class="equation">
+                \(v_f = \sqrt{v_x^2 + v_y^2} = \sqrt{8.0^2 + 9.0^2} = \sqrt{145} \approx 12.0\,\text{m/s}\)
+            </div>
+            <div class="equation">
+                \(\theta = \tan^{-1}\left(\frac{9.0}{8.0}\right) \approx 48^\circ \text{ north of east}\)
+            </div>
+            <p>The initial and final kinetic energies are:</p>
+            <div class="equation">
+                \(K_i = \frac{1}{2}(1200)(20)^2 + \frac{1}{2}(1800)(15)^2 = 240{,}000 + 202{,}500 = 442{,}500\,\text{J}\)
+            </div>
+            <div class="equation">
+                \(K_f = \frac{1}{2}(3000)(\sqrt{145})^2 = \frac{1}{2}(3000)(145) = 217{,}500\,\text{J}\)
+            </div>
+            <div class="equation">
+                \(\Delta K = K_f - K_i = 217{,}500 - 442{,}500 = -225{,}000\,\text{J}\)
+            </div>
+            <p>About \(2.25 \times 10^5\,\text{J}\) of kinetic energy is lost, roughly 51% of the initial kinetic energy. That energy appears as deformation of the vehicles, heat, and sound.</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>Accident investigators use momentum components and skid-mark directions to reconstruct intersection collisions and estimate impact speeds. The same vector bookkeeping is used in spacecraft docking, where two craft must match both speed and direction before they latch together.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Momentum is a vector, \(\vec{p} = m\vec{v}\), so direction matters.</li>
+        <li>Impulse equals the change in momentum, \(\vec{J} = \vec{F}\Delta t = \Delta\vec{p}\).</li>
+        <li>In an isolated system, total momentum is conserved in every direction separately.</li>
+        <li>In a perfectly inelastic collision, the objects stick together and share one final velocity.</li>
+        <li>Momentum is conserved in all collisions, but kinetic energy is conserved only in elastic collisions.</li>
+        <li>Two-dimensional collisions require separate \(x\)- and \(y\)-momentum equations.</li>
+        <li>The center of mass moves as though all external forces acted at that point.</li>
+    </ul>
+
+    <h2>Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 7</div>
+        <div class="textbox-content">
+            <ul>
+                <li><strong>Momentum:</strong> \(\vec{p} = m\vec{v}\) (kg·m/s)</li>
+                <li><strong>Impulse:</strong> \(\vec{J} = \vec{F}\Delta t = \Delta\vec{p}\) (N·s)</li>
+                <li><strong>Conservation of momentum:</strong> \(\sum\vec{p}_{\text{initial}} = \sum\vec{p}_{\text{final}}\) (isolated systems)</li>
+                <li><strong>Perfectly inelastic collisions:</strong> Objects stick together, max KE loss</li>
+                <li><strong>Elastic collisions:</strong> Both momentum and KE conserved</li>
+                <li><strong>Center of mass:</strong> \(\vec{r}_{CM} = \frac{\sum m_i\vec{r}_i}{\sum m_i}\)</li>
+                <li><strong>CM motion:</strong> \(\vec{a}_{CM} = \frac{\sum \vec{F}_{ext}}{M}\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why is momentum conserved in collisions but kinetic energy is not always conserved?</li>
+        <li>Explain why a bullet fired from a gun causes the gun to recoil.</li>
+        <li>How does the impulse-momentum theorem relate to car safety features like airbags?</li>
+        <li>Why is the center of mass important in analyzing the motion of extended objects?</li>
+        <li>Explain why a perfectly elastic collision is an idealization that doesn't occur in reality.</li>
+        <li>How does rocket propulsion demonstrate conservation of momentum?</li>
+        <li>Why do objects tend to rotate around their center of mass when thrown?</li>
+        <li>Explain the difference between elastic and inelastic collisions in terms of energy.</li>
+        <li>How does the concept of impulse help explain why follow-through is important in sports?</li>
+        <li>Why is the center of mass of a uniform rod at its midpoint?</li>
+        <li>A ball hits a wall and bounces back with the same speed. Is its momentum conserved? Is its kinetic energy conserved? Explain.</li>
+        <li>Explain why a longer collision time reduces the force on an object even when the change in momentum is fixed.</li>
+        <li>In a perfectly inelastic collision, where does the lost kinetic energy go? Give examples from everyday life.</li>
+        <li>A rocket in deep space has no air to push against. How can it accelerate?</li>
+        <li>An astronaut throws a wrench while floating at rest. Describe the motion of the astronaut and of the system's centre of mass.</li>
+        <li>Two unequal masses collide elastically head-on. Is it possible for both to be at rest afterward? Explain.</li>
+        <li>Why does the centre of mass of a high-jumper pass under the bar even when the jumper's body clears it?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>A 0.5 kg ball moving at 6 m/s strikes a wall and rebounds at 4 m/s.
+            <ol type="a">
+                <li>What is the change in momentum?</li>
+                <li>If the contact time is 0.1 s, what is the average force?</li>
+            </ol>
+        </li>
+        <li>Two cars collide head-on: Car A (1200 kg) at 20 m/s and Car B (1500 kg) at 15 m/s in the opposite direction.
+            <ol type="a">
+                <li>If they stick together, find their final velocity.</li>
+                <li>Calculate the kinetic energy lost.</li>
+            </ol>
+        </li>
+        <li>A 0.02 kg bullet is fired into a 2 kg block at rest. They move together at 3 m/s.
+            <ol type="a">
+                <li>Find the bullet's initial speed.</li>
+                <li>Calculate the kinetic energy lost.</li>
+            </ol>
+        </li>
+        <li>Two identical balls collide elastically. One was initially stationary.
+            <ol type="a">
+                <li>If the first ball moves at 45° after collision, find both final velocities.</li>
+                <li>What are the angles of motion?</li>
+            </ol>
+        </li>
+        <li>Find the center of mass of three masses: 2 kg at (0,0), 3 kg at (4,0), and 5 kg at (2,3).</li>
+        <li>A 60 kg person stands at one end of a 4 m, 20 kg boat. How far does the boat move when the person walks to the other end?</li>
+        <li>A 0.1 kg ball dropped from 2 m height rebounds to 1.5 m.
+            <ol type="a">
+                <li>What is the impulse from the floor?</li>
+                <li>If contact time is 0.01 s, what is the average force?</li>
+            </ol>
+        </li>
+        <li>Two objects collide elastically: \(m_1 = 2\) kg at 5 m/s, \(m_2 = 3\) kg at rest.
+            <ol type="a">
+                <li>Find their final velocities.</li>
+                <li>Verify that kinetic energy is conserved.</li>
+            </ol>
+        </li>
+        <li>A rocket ejects gas at 2000 m/s relative to itself at rate of 100 kg/s.
+            <ol type="a">
+                <li>What thrust is produced?</li>
+                <li>What acceleration does a 5000 kg rocket experience?</li>
+            </ol>
+        </li>
+        <li>A 2 kg object moving at 3 m/s collides with a 1 kg object at rest.
+            <ol type="a">
+                <li>If the collision is perfectly inelastic, find the final velocity.</li>
+                <li>If elastic, find the final velocities.</li>
+                <li>Compare the kinetic energy in both cases.</li>
+            </ol>
+        </li>
+        <li>A \(0.15\,\text{kg}\) baseball moving at \(40\,\text{m/s}\) is hit back along the same line at \(50\,\text{m/s}\). Find the impulse and the average force if contact lasts \(1.5\,\text{ms}\).</li>
+        <li>A \(2.0\,\text{kg}\) block moving at \(4.0\,\text{m/s}\) collides with a \(3.0\,\text{kg}\) block moving at \(-2.0\,\text{m/s}\). After the collision, the \(2.0\,\text{kg}\) block moves at \(-1.0\,\text{m/s}\). Find the final velocity of the \(3.0\,\text{kg}\) block and the kinetic energy lost.</li>
+        <li>A \(1200\,\text{kg}\) car moving at \(15\,\text{m/s}\) collides with a \(2000\,\text{kg}\) truck moving at \(10\,\text{m/s}\) in the same direction. They stick together. Find their common velocity and the fraction of kinetic energy lost.</li>
+        <li>A \(0.020\,\text{kg}\) bullet moving at \(400\,\text{m/s}\) passes through a \(1.0\,\text{kg}\) block initially at rest and emerges at \(200\,\text{m/s}\). Find the speed of the block and the kinetic energy lost.</li>
+        <li>A firecracker at rest explodes into three pieces. A \(0.20\,\text{kg}\) piece moves east at \(8.0\,\text{m/s}\) and a \(0.30\,\text{kg}\) piece moves north at \(6.0\,\text{m/s}\). Find the velocity of the \(0.50\,\text{kg}\) third piece and the system's centre of mass velocity.</li>
+        <li>A \(70\,\text{kg}\) astronaut at rest throws a \(2.0\,\text{kg}\) tool at \(6.0\,\text{m/s}\). Find the astronaut's recoil speed and the total kinetic energy produced.</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,404 @@
+/* Shared styles for all chapter pages */
+
+:root {
+    --chapter-page: #ffffff;
+    --chapter-ink: #000000;
+    --chapter-accent: #0066cc;
+    --chapter-accent-soft: #cce5ff;
+    --chapter-surface: #f0f0f0;
+    --chapter-surface-alt: #f9f9f9;
+    --chapter-highlight: #ffffcc;
+    --chapter-success: #009966;
+    --chapter-on-success: #ffffff;
+}
+
+html[data-theme="dark"] {
+    --chapter-page: #0f1720;
+    --chapter-ink: #e7eef8;
+    --chapter-accent: #78b7ff;
+    --chapter-accent-soft: #163b5f;
+    --chapter-surface: #162231;
+    --chapter-surface-alt: #111b27;
+    --chapter-highlight: #3a3418;
+    --chapter-success: #3fbf93;
+    --chapter-on-success: #04231a;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --chapter-page: #0f1720;
+        --chapter-ink: #e7eef8;
+        --chapter-accent: #78b7ff;
+        --chapter-accent-soft: #163b5f;
+        --chapter-surface: #162231;
+        --chapter-surface-alt: #111b27;
+        --chapter-highlight: #3a3418;
+        --chapter-success: #3fbf93;
+        --chapter-on-success: #04231a;
+    }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background-color: var(--chapter-page);
+            color: var(--chapter-ink);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: var(--chapter-accent);
+            font-size: 2.5em;
+            text-align: center;
+            margin: 30px 0;
+            border-bottom: 3px solid var(--chapter-accent);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--chapter-accent);
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid var(--chapter-accent);
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            color: var(--chapter-accent);
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+        
+        h4 {
+            color: var(--chapter-accent);
+            font-size: 1.3em;
+            margin: 25px 0 10px 0;
+        }
+        
+        .textbox {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .textbox-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .textbox-content {
+            padding: 15px;
+        }
+        
+        .objectivebox {
+            background-color: var(--chapter-highlight);
+            border: 2px solid var(--chapter-success);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .objectivebox-header {
+            background-color: var(--chapter-success);
+            color: var(--chapter-on-success);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .objectivebox-content {
+            padding: 15px;
+        }
+        
+        ul, ol {
+            margin: 10px 0 10px 40px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .definition {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .definition-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .definition-content {
+            padding: 15px;
+        }
+        
+        .example {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .example-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .example-content {
+            padding: 15px;
+        }
+        
+        .practice {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .practice-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .practice-content {
+            padding: 15px;
+        }
+        
+        .solution {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .solution-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .solution-content {
+            padding: 15px;
+        }
+        
+        .concept {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .concept-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .concept-content {
+            padding: 15px;
+        }
+        
+        .application {
+            background-color: var(--chapter-surface);
+            border: 1px solid var(--chapter-accent);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .application-header {
+            background-color: var(--chapter-accent-soft);
+            color: var(--chapter-ink);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .application-content {
+            padding: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .figure-caption {
+            font-style: italic;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .vector-diagram {
+            border: 2px solid var(--chapter-ink);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: var(--chapter-surface-alt);
+        }
+        
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+        
+        th, td {
+            border: 1px solid var(--chapter-ink);
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--chapter-surface);
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .sim-box {
+            border: 2px solid var(--chapter-ink);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            background-color: var(--chapter-surface-alt);
+        }
+        
+        .circuit-diagram {
+            text-align: center;
+            margin: 20px 0;
+        }
+    
+
+a {
+    color: var(--chapter-accent);
+}
+
+.figure svg {
+    max-width: 100%;
+    height: auto;
+}
+
+html[data-theme="dark"] .figure svg,
+html[data-theme="dark"] .sim-box svg,
+html[data-theme="dark"] .vector-diagram svg,
+html[data-theme="dark"] .circuit-diagram svg {
+    background: #f7fbff;
+    border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .figure svg,
+    :root:not([data-theme="light"]) .sim-box svg,
+    :root:not([data-theme="light"]) .vector-diagram svg,
+    :root:not([data-theme="light"]) .circuit-diagram svg {
+        background: #f7fbff;
+        border-radius: 8px;
+    }
+}
+
+@media print {
+    :root {
+        --chapter-page: #ffffff;
+        --chapter-ink: #000000;
+        --chapter-accent: #000000;
+        --chapter-accent-soft: #f2f2f2;
+        --chapter-surface: #f2f2f2;
+        --chapter-surface-alt: #f7f7f7;
+        --chapter-highlight: #f7f7f7;
+        --chapter-success: #006644;
+        --chapter-on-success: #ffffff;
+    }
+
+    body {
+        max-width: none;
+        padding: 0;
+        background: #ffffff;
+        color: #000000;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: underline;
+    }
+
+    .textbox,
+    .objectivebox,
+    .definition,
+    .example,
+    .practice,
+    .solution,
+    .concept,
+    .application,
+    .sim-box,
+    .figure,
+    table,
+    pre,
+    blockquote {
+        break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        break-after: avoid;
+    }
+
+    .figure svg,
+    .sim-box svg,
+    .vector-diagram svg,
+    .circuit-diagram svg {
+        background: #ffffff;
+    }
+
+    @page {
+        margin: 18mm;
+    }
+}

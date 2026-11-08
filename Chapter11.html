@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Electromagnetism and Electronics</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/chapter.css">
+<link rel="stylesheet" href="assets/site.css">
+    <script src="assets/course.js" defer></script>
+</head>
+<body>    <h1>Chapter 11: Electromagnetism and Electronics</h1>
+
+    <div class="textbox">
+        <div class="textbox-header">Welcome to Electromagnetism and Electronics</div>
+        <div class="textbox-content">
+            <p>Electromagnetism governs how electric and magnetic fields are produced and interact, and it underpins the electronics that power modern technology. Coulomb's law and electric fields describe the forces between charges, while electric potential gives energy per charge and leads to electric potential energy.</p>
+            <p>Current, resistance, and Ohm's law form the foundation of electrical circuits, and electrical power measures the rate of energy transfer. Moving into magnetic fields, flux, induction, and electromagnetic waves completes the classical picture of how electricity and magnetism are unified in Maxwell's equations.</p>
+        </div>
+    </div>
+
+    <div class="objectivebox">
+        <div class="objectivebox-header">Chapter Objectives</div>
+        <div class="objectivebox-content">
+            <p>By the end of this chapter, you should be able to:</p>
+            <ul>
+                <li>Apply Coulomb's law to calculate electric forces between charges</li>
+                <li>Calculate electric fields for various charge distributions</li>
+                <li>Understand electric potential and potential energy</li>
+                <li>Apply Ohm's law to circuit analysis</li>
+                <li>Calculate electrical power and energy consumption</li>
+                <li>Analyze complex circuits using equivalent resistance and Kirchhoff's laws</li>
+                <li>Understand magnetic fields and magnetic flux</li>
+                <li>Apply Faraday's law of electromagnetic induction</li>
+                <li>Explain semiconductor properties and diode operation</li>
+                <li>Analyze basic electronic circuits with active components</li>
+                <li>Solve problems involving capacitors and RC circuits</li>
+                <li>Understand electromagnetic waves and their properties</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>11.1 Coulomb's Law and Electric Fields</h2>
+
+    <h3>11.1.1 Coulomb's Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Coulomb's Law</strong> states that the magnitude of the electrostatic force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them:</p>
+            <div class="equation">
+                \(F = k \frac{|q_1 q_2|}{r^2}\)
+            </div>
+            <p>where \(k = 8.99 \times 10^9\,\text{N}\cdot\text{m}^2/\text{C}^2\) is Coulomb's constant.</p>
+        </div>
+    </div>
+
+    <p>The force is attractive if the charges have opposite signs and repulsive if they have the same sign.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Two point charges, \(q_1 = +2.0\,\mu\text{C}\) and \(q_2 = -3.0\,\mu\text{C}\), are separated by 0.5 m. Calculate the electrostatic force between them.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(F = k \frac{|q_1 q_2|}{r^2} = (8.99 \times 10^9) \frac{|(2.0 \times 10^{-6})(-3.0 \times 10^{-6})|}{(0.5)^2}\)
+            </div>
+            <div class="equation">
+                \(= (8.99 \times 10^9) \frac{6.0 \times 10^{-12}}{0.25} = (8.99 \times 10^9)(2.4 \times 10^{-11}) = 0.2158\,\text{N}\)
+            </div>
+            <p>The force is attractive since the charges have opposite signs.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Three point charges are arranged in a right triangle as shown below. Calculate the net electrostatic force on charge \(q_3\).</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="420" height="330" xmlns="http://www.w3.org/2000/svg">
+            <line x1="100" y1="240" x2="300" y2="240" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <line x1="100" y1="240" x2="100" y2="90" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <line x1="300" y1="240" x2="100" y2="90" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <circle cx="100" cy="240" r="12" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="100" y="246" font-size="18" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="300" cy="240" r="12" fill="#d9e8ff" stroke="#0066cc" stroke-width="2"/>
+            <text x="300" y="247" font-size="20" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="100" cy="90" r="12" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="100" y="96" font-size="18" text-anchor="middle" fill="#cc0000">+</text>
+            <text x="100" y="280" font-size="14" text-anchor="middle">q&#8321; = +2 &#956;C</text>
+            <text x="310" y="280" font-size="14" text-anchor="middle">q&#8322; = &#8722;3 &#956;C</text>
+            <text x="100" y="62" font-size="14" text-anchor="middle">q&#8323; = +4 &#956;C</text>
+            <text x="200" y="260" font-size="13" text-anchor="middle" fill="#666666">4 m</text>
+            <text x="88" y="170" font-size="13" text-anchor="end" fill="#666666">3 m</text>
+            <text x="215" y="160" font-size="13" text-anchor="middle" fill="#666666">5 m</text>
+            <polyline fill="none" stroke="#666666" stroke-width="1.5" points="100,222 118,222 118,240"/>
+        </svg>
+        <div class="figure-caption">Figure 11.1: Three charges arranged in a right triangle</div>
+    </div>
+
+    <h3>11.1.2 Electric Fields</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>An <strong>electric field</strong> is a region of space around a charged object where a test charge would experience an electric force. The electric field \(\vec{E}\) at a point is defined as:</p>
+            <div class="equation">
+                \(\vec{E} = \frac{\vec{F}}{q_0}\)
+            </div>
+            <p>where \(\vec{F}\) is the force experienced by a test charge \(q_0\) placed at that point.</p>
+        </div>
+    </div>
+
+    <p>For a point charge \(q\), the electric field at distance \(r\) is:</p>
+    <div class="equation">
+        \(E = k \frac{|q|}{r^2}\)
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="320" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 156,160 C 170,80 350,80 364,160" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f112blue)"/>
+            <path d="M 156,160 C 170,240 350,240 364,160" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f112blue)"/>
+            <path d="M 148,140 C 120,50 400,50 372,140" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f112blue)"/>
+            <path d="M 148,180 C 120,270 400,270 372,180" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f112blue)"/>
+            <path d="M 126,155 C 60,100 460,100 394,155" fill="none" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f112blue)"/>
+            <path d="M 126,165 C 60,220 460,220 394,165" fill="none" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f112blue)"/>
+            <line x1="124" y1="160" x2="376" y2="160" stroke="#0066cc" stroke-width="2" marker-end="url(#f112blue)"/>
+            <path d="M 110,150 C 40,20 480,20 410,150" fill="none" stroke="#0066cc" stroke-width="1.2" marker-end="url(#f112blue)"/>
+            <path d="M 110,170 C 40,300 480,300 410,170" fill="none" stroke="#0066cc" stroke-width="1.2" marker-end="url(#f112blue)"/>
+            <line x1="120" y1="130" x2="95" y2="105" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f112blue)"/>
+            <line x1="120" y1="190" x2="95" y2="215" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f112blue)"/>
+            <circle cx="140" cy="160" r="16" fill="#ffd9d9" stroke="#cc0000" stroke-width="2.5"/>
+            <text x="140" y="167" font-size="22" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="380" cy="160" r="16" fill="#d9e8ff" stroke="#0066cc" stroke-width="2.5"/>
+            <text x="380" y="168" font-size="24" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <text x="140" y="300" font-size="15" text-anchor="middle" fill="#cc0000">+q</text>
+            <text x="380" y="300" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;q</text>
+            <defs>
+                <marker id="f112blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.2: Electric field lines of an electric dipole</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Electric field lines:</p>
+            <ul>
+                <li>Begin on positive charges and end on negative charges</li>
+                <li>Never cross each other</li>
+                <li>Are denser where the field is stronger</li>
+                <li>The direction of the field is tangent to the field lines</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the electric field 0.3 m from a point charge of \(+5.0\,\mu\text{C}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(E = k \frac{|q|}{r^2} = (8.99 \times 10^9) \frac{5.0 \times 10^{-6}}{(0.3)^2} = (8.99 \times 10^9) \frac{5.0 \times 10^{-6}}{0.09}\)
+            </div>
+            <div class="equation">
+                \(= (8.99 \times 10^9)(5.56 \times 10^{-5}) = 5.0 \times 10^5\,\text{N/C}\)
+            </div>
+            <p>The field points radially outward from the positive charge.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>For continuous charge distributions, we integrate the contributions of infinitesimal charge elements:</p>
+            <div class="equation">
+                \(\vec{E} = \int d\vec{E} = \int k \frac{dq}{r^2} \hat{r}\)
+            </div>
+            <p>This approach is used for lines of charge, charged surfaces, and charged volumes.</p>
+        </div>
+    </div>
+
+    <h2>11.2 Electric Potential and Electric Potential Energy of Point Charge</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electric potential energy</strong> is the energy a charged object possesses due to its position in an electric field. For two point charges:</p>
+            <div class="equation">
+                \(U = k \frac{q_1 q_2}{r}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electric potential</strong> (voltage) at a point is the electric potential energy per unit charge:</p>
+            <div class="equation">
+                \(V = \frac{U}{q_0}\)
+            </div>
+            <p>For a point charge:</p>
+            <div class="equation">
+                \(V = k \frac{q}{r}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Electric potential is a scalar quantity, while electric field is a vector quantity. Potential differences are measured in volts (V).</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the electric potential 0.2 m from a point charge of \(+3.0\,\mu\text{C}\).</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(V = k \frac{q}{r} = (8.99 \times 10^9) \frac{3.0 \times 10^{-6}}{0.2} = (8.99 \times 10^9)(1.5 \times 10^{-5}) = 1.35 \times 10^5\,\text{V}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Two point charges, \(q_1 = +2.0\,\mu\text{C}\) and \(q_2 = -2.0\,\mu\text{C}\), are \(0.60\,\text{m}\) apart. Find the electric potential at the midpoint between them.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Potential is a scalar, so the contributions simply add algebraically. Each charge is \(0.30\,\text{m}\) from the midpoint:</p>
+            <div class="equation">
+                \(V = k\frac{q_1}{r_1} + k\frac{q_2}{r_2} = (8.99\times10^9)\left(\frac{2.0\times10^{-6}}{0.30} + \frac{-2.0\times10^{-6}}{0.30}\right) = 0\)
+            </div>
+            <p>The field at the midpoint is not zero, however; it points from the positive toward the negative charge. This illustrates that potential and field are different quantities.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Four point charges are arranged at the corners of a square of side length 0.1 m. The charges are: \(q_1 = +1\,\mu\text{C}\), \(q_2 = +2\,\mu\text{C}\), \(q_3 = -3\,\mu\text{C}\), \(q_4 = +4\,\mu\text{C}\). Calculate the electric potential at the center of the square.</p>
+        </div>
+    </div>
+    <h2>11.3 Current, Resistance and Ohm's Law</h2>
+
+    <h3>11.3.1 Current</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electric current</strong> is the rate of flow of electric charge:</p>
+            <div class="equation">
+                \(I = \frac{\Delta Q}{\Delta t}\)
+            </div>
+            <p>where \(I\) is current in amperes (A), \(\Delta Q\) is charge in coulombs (C), and \(\Delta t\) is time in seconds (s).</p>
+        </div>
+    </div>
+
+    <h3>11.3.2 Resistance and Ohm's Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Resistance</strong> is the opposition to the flow of electric current. For a given material, the resistance is:</p>
+            <div class="equation">
+                \(R = \rho \frac{L}{A}\)
+            </div>
+            <p>where \(\rho\) is the resistivity, \(L\) is the length, and \(A\) is the cross-sectional area.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Ohm's Law</strong> states that the current through a conductor is directly proportional to the voltage across it and inversely proportional to its resistance:</p>
+            <div class="equation">
+                \(V = IR\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A copper wire (\(\rho = 1.68 \times 10^{-8}\,\Omega\cdot\text{m}\)) has length 10 m and diameter 2 mm. Calculate its resistance.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>First, find the cross-sectional area:</p>
+            <div class="equation">
+                \(A = \pi r^2 = \pi (0.001)^2 = 3.14 \times 10^{-6}\,\text{m}^2\)
+            </div>
+            <p>Now calculate resistance:</p>
+            <div class="equation">
+                \(R = \rho \frac{L}{A} = (1.68 \times 10^{-8}) \frac{10}{3.14 \times 10^{-6}} = (1.68 \times 10^{-8})(3.18 \times 10^6) = 0.0534\,\Omega\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The resistivity of materials depends on temperature:</p>
+            <div class="equation">
+                \(\rho = \rho_0 [1 + \alpha (T - T_0)]\)
+            </div>
+            <p>where \(\alpha\) is the temperature coefficient of resistivity.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 12 V battery is connected to a resistor with a resistance of 4.5 ohms. Find the current through the circuit and the electrical power dissipated.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Using Ohm's law, \(I = V/R\), the current is</p>
+            <div class="equation">
+                \(I = \frac{V}{R} = \frac{12}{4.5} = 2.67\,\text{A}\)
+            </div>
+            <p>The electrical power dissipated is</p>
+            <div class="equation">
+                \(P = VI = (12)(2.67) = 32\,\text{W}\)
+            </div>
+        </div>
+    </div>
+
+    <h2>11.4 Electrical Energy and Power</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electrical power</strong> is the rate at which electrical energy is transferred:</p>
+            <div class="equation">
+                \(P = IV = I^2R = \frac{V^2}{R}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electrical energy</strong> consumed over time:</p>
+            <div class="equation">
+                \(E = Pt = IVt\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 60 W light bulb operates on 120 V. Calculate:</p>
+            <p>a) The current through the bulb<br>
+            b) The resistance of the bulb<br>
+            c) The energy consumed in 5 hours<br>
+            d) The cost of operating the bulb for 5 hours if electricity costs $0.12 per kWh</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) \(P = IV \Rightarrow I = \frac{P}{V} = \frac{60}{120} = 0.5\,\text{A}\)</p>
+            <p>b) \(R = \frac{V}{I} = \frac{120}{0.5} = 240\,\Omega\) or \(R = \frac{V^2}{P} = \frac{120^2}{60} = 240\,\Omega\)</p>
+            <p>c) \(E = Pt = 60\,\text{W} \times 5\,\text{h} = 300\,\text{Wh} = 0.3\,\text{kWh}\)</p>
+            <p>d) Cost = \(0.3\,\text{kWh} \times \$0.12/\text{kWh} = \$0.036\)</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>An electric heater has a resistance of 20 &#937; and operates on 240 V. Calculate:</p>
+            <p>a) The power consumption<br>
+            b) The current drawn<br>
+            c) The energy consumed in 8 hours of operation<br>
+            d) The cost of operation if electricity costs $0.15 per kWh</p>
+        </div>
+    </div>
+
+    <h2>11.5 Equivalent Resistance and Kirchhoff's Law</h2>
+
+    <h3>11.5.1 Sources of Electromotive Forces (emf)</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electromotive force (emf)</strong> is the energy per unit charge supplied by a source such as a battery or generator. It represents the maximum potential difference between the terminals of the source.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Real voltage sources have internal resistance \(r\), so the terminal voltage is:</p>
+            <div class="equation">
+                \(V = \mathcal{E} - Ir\)
+            </div>
+            <p>where \(\mathcal{E}\) is the emf and \(I\) is the current.</p>
+        </div>
+    </div>
+
+    <h3>11.5.2 Combinations of Resistors</h3>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p><strong>Series combination</strong>:</p>
+            <div class="equation">
+                \(R_{\text{eq}} = R_1 + R_2 + R_3 + \cdots\)
+            </div>
+            <p>The same current flows through all resistors.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p><strong>Parallel combination</strong>:</p>
+            <div class="equation">
+                \(\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots\)
+            </div>
+            <p>The same voltage appears across all resistors.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="360" xmlns="http://www.w3.org/2000/svg">
+            <line x1="90" y1="70" x2="130" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="200" y1="70" x2="240" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="310" y1="70" x2="350" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="420" y1="70" x2="470" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="470" y1="70" x2="470" y2="150" stroke="black" stroke-width="2"/>
+            <line x1="470" y1="150" x2="90" y2="150" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="150" x2="90" y2="125" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="75" x2="90" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="70" y1="100" x2="110" y2="100" stroke="black" stroke-width="2.5"/>
+            <line x1="82" y1="112" x2="98" y2="112" stroke="black" stroke-width="4"/>
+            <line x1="90" y1="125" x2="90" y2="112" stroke="black" stroke-width="2"/>
+            <rect x="130" y="60" width="70" height="20" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <rect x="240" y="60" width="70" height="20" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <rect x="350" y="60" width="70" height="20" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="165" y="55" font-size="14" text-anchor="middle">R&#8321;</text>
+            <text x="275" y="55" font-size="14" text-anchor="middle">R&#8322;</text>
+            <text x="385" y="55" font-size="14" text-anchor="middle">R&#8323;</text>
+            <line x1="155" y1="95" x2="195" y2="95" stroke="#009966" stroke-width="2.5" marker-end="url(#f113green)"/>
+            <text x="175" y="112" font-size="13" text-anchor="middle" fill="#009966">I</text>
+            <text x="280" y="30" font-size="15" text-anchor="middle" fill="#cc0000">Series: R&#8337;&#8342; = R&#8321; + R&#8322; + R&#8323;</text>
+            <text x="280" y="200" font-size="15" text-anchor="middle" fill="#0066cc">Parallel</text>
+            <line x1="90" y1="230" x2="90" y2="255" stroke="black" stroke-width="2"/>
+            <line x1="70" y1="255" x2="110" y2="255" stroke="black" stroke-width="2.5"/>
+            <line x1="82" y1="267" x2="98" y2="267" stroke="black" stroke-width="4"/>
+            <line x1="90" y1="267" x2="90" y2="280" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="230" x2="90" y2="218" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="218" x2="470" y2="218" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="280" x2="470" y2="280" stroke="black" stroke-width="2"/>
+            <line x1="180" y1="218" x2="180" y2="280" stroke="black" stroke-width="2"/>
+            <rect x="168" y="238" width="24" height="44" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <line x1="280" y1="218" x2="280" y2="280" stroke="black" stroke-width="2"/>
+            <rect x="268" y="238" width="24" height="44" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <line x1="380" y1="218" x2="380" y2="280" stroke="black" stroke-width="2"/>
+            <rect x="368" y="238" width="24" height="44" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="180" y="248" font-size="12" text-anchor="middle">R&#8321;</text>
+            <text x="280" y="248" font-size="12" text-anchor="middle">R&#8322;</text>
+            <text x="380" y="248" font-size="12" text-anchor="middle">R&#8323;</text>
+            <text x="280" y="320" font-size="15" text-anchor="middle" fill="#0066cc">1/R&#8337;&#8342; = 1/R&#8321; + 1/R&#8322; + 1/R&#8323;</text>
+            <text x="280" y="345" font-size="13" text-anchor="middle" fill="#666666">Same voltage across each branch; currents add</text>
+            <defs>
+                <marker id="f113green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.3: Series and parallel combinations of resistors</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the equivalent resistance of three resistors: \(R_1 = 10\,\Omega\), \(R_2 = 20\,\Omega\), and \(R_3 = 30\,\Omega\) connected in:</p>
+            <p>a) Series<br>b) Parallel</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) Series: \(R_{\text{eq}} = 10 + 20 + 30 = 60\,\Omega\)</p>
+            <p>b) Parallel:</p>
+            <div class="equation">
+                \(\frac{1}{R_{\text{eq}}} = \frac{1}{10} + \frac{1}{20} + \frac{1}{30} = \frac{6 + 3 + 2}{60} = \frac{11}{60}\)
+            </div>
+            <div class="equation">
+                \(R_{\text{eq}} = \frac{60}{11} \approx 5.45\,\Omega\)
+            </div>
+        </div>
+    </div>
+
+    <h3>11.5.3 Kirchhoff's Law</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kirchhoff's Current Law (KCL)</strong>: The sum of currents entering a junction equals the sum of currents leaving the junction.</p>
+            <div class="equation">
+                \(\sum I_{\text{in}} = \sum I_{\text{out}}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Kirchhoff's Voltage Law (KVL)</strong>: The sum of potential differences around any closed loop in a circuit is zero.</p>
+            <div class="equation">
+                \(\sum V = 0\)
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Circuit Example</div>
+        <div class="example-content">
+            <p>Analyze the circuit below using Kirchhoff's laws:</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="440" height="320" xmlns="http://www.w3.org/2000/svg">
+            <line x1="90" y1="70" x2="90" y2="130" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="190" x2="90" y2="260" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="130" x2="112" y2="130" stroke="black" stroke-width="2.5"/>
+            <line x1="81" y1="144" x2="99" y2="144" stroke="black" stroke-width="4.5"/>
+            <line x1="90" y1="144" x2="90" y2="160" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="160" x2="90" y2="176" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="176" x2="112" y2="176" stroke="black" stroke-width="2.5"/>
+            <line x1="81" y1="162" x2="99" y2="162" stroke="black" stroke-width="4.5"/>
+            <text x="50" y="120" font-size="14" fill="#cc0000">12 V</text>
+            <line x1="90" y1="130" x2="90" y2="144" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="176" x2="90" y2="190" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="70" x2="150" y2="70" stroke="black" stroke-width="2"/>
+            <rect x="150" y="58" width="56" height="24" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="178" y="52" font-size="14" text-anchor="middle">4 &#937;</text>
+            <line x1="206" y1="70" x2="280" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="280" y1="70" x2="280" y2="100" stroke="black" stroke-width="2"/>
+            <rect x="268" y="100" width="24" height="56" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="308" y="132" font-size="14">6 &#937;</text>
+            <line x1="280" y1="156" x2="280" y2="260" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="260" x2="150" y2="260" stroke="black" stroke-width="2"/>
+            <rect x="150" y="248" width="56" height="24" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="178" y="290" font-size="14" text-anchor="middle">8 &#937;</text>
+            <line x1="206" y1="260" x2="280" y2="260" stroke="black" stroke-width="2"/>
+            <line x1="280" y1="70" x2="380" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="380" y1="70" x2="380" y2="100" stroke="black" stroke-width="2"/>
+            <rect x="368" y="100" width="24" height="56" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="408" y="132" font-size="14">2 &#937;</text>
+            <line x1="380" y1="156" x2="380" y2="260" stroke="black" stroke-width="2"/>
+            <line x1="280" y1="260" x2="380" y2="260" stroke="black" stroke-width="2"/>
+            <circle cx="280" cy="70" r="4" fill="black"/>
+            <circle cx="280" cy="260" r="4" fill="black"/>
+            <text x="220" y="170" font-size="13" fill="#666666">6 &#937; &#8741; 2 &#937;</text>
+        </svg>
+        <div class="figure-caption">Figure 11.4: Circuit for the Kirchhoff's laws example</div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Let's find the equivalent resistance:</p>
+            <ul>
+                <li>The 6 &#937; and 2 &#937; resistors are in parallel:
+                    <div class="equation">
+                        \(\frac{1}{R_{6,2}} = \frac{1}{6} + \frac{1}{2} = \frac{1}{6} + \frac{3}{6} = \frac{4}{6} = \frac{2}{3} \;\Rightarrow\; R_{6,2} = 1.5\,\Omega\)
+                    </div>
+                </li>
+                <li>This combination is in series with the 4 &#937; and 8 &#937; resistors:
+                    <div class="equation">
+                        \(R_{\text{eq}} = 4 + 1.5 + 8 = 13.5\,\Omega\)
+                    </div>
+                </li>
+                <li>Total current: \(I = \frac{V}{R_{\text{eq}}} = \frac{12}{13.5} \approx 0.889\) A</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>For the circuit shown below, use Kirchhoff's laws to find the current through each resistor.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="440" height="300" xmlns="http://www.w3.org/2000/svg">
+            <line x1="90" y1="60" x2="90" y2="120" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="120" x2="112" y2="120" stroke="black" stroke-width="2.5"/>
+            <line x1="81" y1="134" x2="99" y2="134" stroke="black" stroke-width="4.5"/>
+            <line x1="90" y1="134" x2="90" y2="150" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="150" x2="112" y2="150" stroke="black" stroke-width="2.5"/>
+            <line x1="90" y1="150" x2="90" y2="180" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="180" x2="90" y2="250" stroke="black" stroke-width="2"/>
+            <text x="50" y="112" font-size="14" fill="#cc0000">18 V</text>
+            <line x1="90" y1="60" x2="160" y2="60" stroke="black" stroke-width="2"/>
+            <rect x="160" y="48" width="56" height="24" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="188" y="42" font-size="14" text-anchor="middle">6 &#937;</text>
+            <line x1="216" y1="60" x2="300" y2="60" stroke="black" stroke-width="2"/>
+            <line x1="300" y1="60" x2="300" y2="100" stroke="black" stroke-width="2"/>
+            <rect x="288" y="100" width="24" height="56" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="328" y="132" font-size="14">4 &#937;</text>
+            <line x1="300" y1="156" x2="300" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="250" x2="300" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="300" y1="60" x2="400" y2="60" stroke="black" stroke-width="2"/>
+            <line x1="400" y1="60" x2="400" y2="100" stroke="black" stroke-width="2"/>
+            <rect x="388" y="100" width="24" height="56" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="420" y="132" font-size="14">3 &#937;</text>
+            <line x1="400" y1="156" x2="400" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="300" y1="250" x2="400" y2="250" stroke="black" stroke-width="2"/>
+            <circle cx="300" cy="60" r="4" fill="black"/>
+            <circle cx="300" cy="250" r="4" fill="black"/>
+            <text x="188" y="85" font-size="13" text-anchor="middle" fill="#009966">I&#8321;</text>
+            <text x="330" y="180" font-size="13" fill="#009966">I&#8322;</text>
+            <text x="422" y="180" font-size="13" fill="#009966">I&#8323;</text>
+        </svg>
+        <div class="figure-caption">Figure 11.5: Practice circuit for Kirchhoff's laws</div>
+    </div>
+
+    <div class="sim-box">
+        <h3>Interactive Physics Simulation</h3>
+        <div class="vector-diagram">
+            <svg width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="50" width="180" height="70" fill="#fff8e0" stroke="#333" stroke-width="1.5"/>
+                <circle cx="80" cy="85" r="16" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+                <circle cx="130" cy="85" r="16" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+                <circle cx="180" cy="85" r="16" fill="#d9e8ff" stroke="#0066cc" stroke-width="2"/>
+                <line x1="96" y1="85" x2="114" y2="85" stroke="black" stroke-width="2"/>
+                <line x1="146" y1="85" x2="164" y2="85" stroke="black" stroke-width="2"/>
+                <text x="130" y="140" font-size="12" text-anchor="middle">Build circuits interactively</text>
+            </svg>
+        </div>
+        <p>Explore circuits interactively at:<br>
+        <a href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html">https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html</a></p>
+        <p><em>(Note: For full functionality, please visit the simulation website directly)</em></p>
+    </div>
+
+    <h2>11.6 Magnetic Field and Magnetic Flux</h2>
+
+    <h3>11.6.1 Magnetic Field</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>magnetic field</strong> is a vector field that describes the magnetic influence on moving electric charges, electric currents, and magnetic materials. The SI unit is tesla (T).</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="480" height="320" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 186,155 C 140,60 340,60 294,155" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f116blue)"/>
+            <path d="M 186,165 C 140,260 340,260 294,165" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#f116blue)"/>
+            <path d="M 180,145 C 110,30 370,30 300,145" fill="none" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f116blue)"/>
+            <path d="M 180,175 C 110,290 370,290 300,175" fill="none" stroke="#0066cc" stroke-width="1.5" marker-end="url(#f116blue)"/>
+            <path d="M 176,138 C 80,10 400,10 304,138" fill="none" stroke="#0066cc" stroke-width="1.2" marker-end="url(#f116blue)"/>
+            <path d="M 176,182 C 80,310 400,310 304,182" fill="none" stroke="#0066cc" stroke-width="1.2" marker-end="url(#f116blue)"/>
+            <rect x="180" y="138" width="60" height="44" fill="#ff9999" stroke="black" stroke-width="2"/>
+            <rect x="240" y="138" width="60" height="44" fill="#99bbff" stroke="black" stroke-width="2"/>
+            <text x="210" y="167" font-size="18" text-anchor="middle" font-weight="bold">N</text>
+            <text x="270" y="167" font-size="18" text-anchor="middle" font-weight="bold">S</text>
+            <line x1="262" y1="160" x2="218" y2="160" stroke="#cc0000" stroke-width="2" marker-end="url(#f116red)"/>
+            <text x="240" y="120" font-size="13" text-anchor="middle" fill="#666666">(inside the magnet)</text>
+            <defs>
+                <marker id="f116blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f116red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.6: Magnetic field lines around a bar magnet</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Magnetic field lines:</p>
+            <ul>
+                <li>Emerge from the north pole and enter the south pole</li>
+                <li>Form closed loops (no magnetic monopoles)</li>
+                <li>Never cross each other</li>
+                <li>Are denser where the field is stronger</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>The magnetic force on a moving charge:</p>
+    <div class="equation">
+        \(\vec{F} = q(\vec{v} \times \vec{B})\)
+    </div>
+    <p>where \(q\) is the charge, \(\vec{v}\) is the velocity, and \(\vec{B}\) is the magnetic field.</p>
+
+    <p>The magnetic force on a current-carrying wire:</p>
+    <div class="equation">
+        \(\vec{F} = I(\vec{L} \times \vec{B})\)
+    </div>
+    <p>where \(I\) is the current and \(\vec{L}\) is the length vector of the wire.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A proton moves with speed \(2.0 \times 10^6\) m/s perpendicular to a magnetic field of 0.5 T. Calculate:</p>
+            <p>a) The magnetic force on the proton<br>
+            b) The radius of its circular path</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) \(F = qvB\sin\theta = (1.6 \times 10^{-19})(2.0 \times 10^6)(0.5)\sin 90^\circ = 1.6 \times 10^{-13}\,\text{N}\)</p>
+            <p>b) The magnetic force provides centripetal force:</p>
+            <div class="equation">
+                \(qvB = \frac{mv^2}{r} \;\Rightarrow\; r = \frac{mv}{qB} = \frac{(1.67 \times 10^{-27})(2.0 \times 10^6)}{(1.6 \times 10^{-19})(0.5)} = 0.04175\,\text{m}\)
+            </div>
+        </div>
+    </div>
+
+    <h3>11.6.2 Magnetic Flux</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Magnetic flux</strong> is a measure of the total magnetic field passing through a surface:</p>
+            <div class="equation">
+                \(\Phi_B = \vec{B} \cdot \vec{A} = BA\cos\theta\)
+            </div>
+            <p>where \(\theta\) is the angle between the magnetic field and the normal to the surface.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="460" height="340" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="90" x2="250" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#f117blue)"/>
+            <line x1="50" y1="150" x2="250" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#f117blue)"/>
+            <line x1="50" y1="210" x2="250" y2="210" stroke="#0066cc" stroke-width="2" marker-end="url(#f117blue)"/>
+            <text x="40" y="95" font-size="15" text-anchor="end" fill="#0066cc">B</text>
+            <polygon points="220,250 400,250 340,120 160,120" fill="#ffd9d9" fill-opacity="0.5" stroke="#cc0000" stroke-width="2.5"/>
+            <line x1="280" y1="185" x2="230" y2="115" stroke="#009966" stroke-width="2.5" marker-end="url(#f117green)"/>
+            <text x="218" y="108" font-size="15" fill="#009966">n⃗;</text>
+            <line x1="280" y1="185" x2="360" y2="185" stroke="#0066cc" stroke-width="2.5" marker-end="url(#f117blue)"/>
+            <text x="368" y="190" font-size="15" fill="#0066cc">B</text>
+            <path d="M 320,185 A 40,40 0 0 0 305,150" fill="none" stroke="#ff9900" stroke-width="2"/>
+            <text x="318" y="163" font-size="15" fill="#ff9900">&#952;</text>
+            <text x="230" y="305" font-size="16" text-anchor="middle" fill="#cc0000">&#934;&#8346; = BA cos&#952;</text>
+            <text x="230" y="328" font-size="13" text-anchor="middle" fill="#666666">&#952; = angle between B and the normal n⃗;</text>
+            <defs>
+                <marker id="f117blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f117green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.7: Magnetic flux through a tilted loop</div>
+    </div>
+
+    <p>The SI unit of magnetic flux is the weber (Wb), where 1 Wb = 1 T&#183;m&#178;.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A rectangular loop with area 0.2 m&#178; is placed in a uniform magnetic field of 0.5 T. Calculate the magnetic flux when:</p>
+            <p>a) The field is perpendicular to the plane of the loop<br>
+            b) The field makes a 30&#176; angle with the normal to the loop</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>a) \(\theta = 0^\circ\), \(\Phi_B = BA\cos\theta = (0.5)(0.2)\cos 0^\circ = 0.1\) Wb</p>
+            <p>b) \(\theta = 30^\circ\), \(\Phi_B = BA\cos\theta = (0.5)(0.2)\cos 30^\circ = 0.1 \times 0.866 = 0.0866\) Wb</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A straight wire of length \(0.50\,\text{m}\) carries a current of \(4.0\,\text{A}\) perpendicular to a uniform magnetic field of \(0.20\,\text{T}\). Find the magnitude of the magnetic force on the wire.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>For a wire perpendicular to the field:</p>
+            <div class="equation">
+                \(F = ILB = (4.0)(0.50)(0.20) = 0.40\,\text{N}\)
+            </div>
+            <p>The direction is given by the right-hand rule: point the fingers of the right hand along the current and curl them toward the field; the thumb points along the force. If the wire were parallel to the field, the force would be zero.</p>
+        </div>
+    </div>
+
+    <h2>11.7 Electromagnetic Induction</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Faraday's Law of Induction</strong> states that the induced electromotive force in any closed circuit is equal to the negative of the time rate of change of the magnetic flux through the circuit:</p>
+            <div class="equation">
+                \(\mathcal{E} = -\frac{d\Phi_B}{dt}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Lenz's Law</strong> states that the direction of the induced current is such that it opposes the change in magnetic flux that produced it.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="480" height="320" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="300" cy="130" rx="16" ry="52" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <ellipse cx="330" cy="130" rx="16" ry="52" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <ellipse cx="360" cy="130" rx="16" ry="52" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <ellipse cx="390" cy="130" rx="16" ry="52" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <ellipse cx="420" cy="130" rx="16" ry="52" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <path d="M 300,182 L 300,230 L 250,230 L 250,258" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <path d="M 420,182 L 420,230 L 310,230 L 310,258" fill="none" stroke="#b8860b" stroke-width="2.5"/>
+            <circle cx="280" cy="272" r="24" fill="#fff8e0" stroke="black" stroke-width="2"/>
+            <text x="280" y="278" font-size="17" text-anchor="middle">G</text>
+            <line x1="250" y1="258" x2="265" y2="262" stroke="#b8860b" stroke-width="2.5"/>
+            <line x1="310" y1="258" x2="295" y2="262" stroke="#b8860b" stroke-width="2.5"/>
+            <rect x="60" y="105" width="80" height="50" fill="#ff9999" stroke="black" stroke-width="2"/>
+            <rect x="140" y="105" width="80" height="50" fill="#99bbff" stroke="black" stroke-width="2"/>
+            <text x="100" y="137" font-size="18" text-anchor="middle" font-weight="bold">N</text>
+            <text x="180" y="137" font-size="18" text-anchor="middle" font-weight="bold">S</text>
+            <line x1="100" y1="195" x2="180" y2="195" stroke="#cc0000" stroke-width="2.5" marker-end="url(#f118red)"/>
+            <text x="140" y="215" font-size="14" text-anchor="middle" fill="#cc0000">v (moving into coil)</text>
+            <line x1="225" y1="120" x2="285" y2="120" stroke="#0066cc" stroke-width="2" marker-end="url(#f118blue)"/>
+            <line x1="225" y1="140" x2="285" y2="140" stroke="#0066cc" stroke-width="2" marker-end="url(#f118blue)"/>
+            <text x="255" y="105" font-size="14" text-anchor="middle" fill="#0066cc">B</text>
+            <text x="280" y="30" font-size="14" text-anchor="middle">Moving magnet changes flux through the coil</text>
+            <defs>
+                <marker id="f118red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f118blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.8: Electromagnetic induction in a coil</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A coil with 100 turns experiences a change in magnetic flux from 0.02 Wb to 0.08 Wb in 0.5 seconds. Calculate the induced emf.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\mathcal{E} = -N \frac{\Delta \Phi_B}{\Delta t} = -100 \frac{0.08 - 0.02}{0.5} = -100 \frac{0.06}{0.5} = -100 \times 0.12 = -12\,\text{V}\)
+            </div>
+            <p>The negative sign indicates the direction of the induced emf opposes the change in flux.</p>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>A circular loop of wire with radius 0.1 m and resistance 2 &#937; is placed in a magnetic field that increases from 0 to 0.5 T in 0.2 seconds. The field is perpendicular to the plane of the loop. Calculate:</p>
+            <p>a) The induced emf<br>
+            b) The induced current<br>
+            c) The direction of the current</p>
+        </div>
+    </div>
+    <h3>11.7.1 Transformers</h3>
+
+    <p>A <strong>transformer</strong> uses mutual induction to change an alternating voltage. Two coils share a common iron core: an alternating current in the primary coil produces a changing magnetic flux, which induces an emf in the secondary coil. For an ideal transformer:</p>
+    <div class="equation">
+        \(\frac{V_s}{V_p} = \frac{N_s}{N_p}, \qquad V_p I_p = V_s I_s\)
+    </div>
+    <p>where \(N_p\) and \(N_s\) are the numbers of turns. A <strong>step-up</strong> transformer has \(N_s > N_p\) and raises the voltage; a <strong>step-down</strong> transformer lowers it. Power is conserved in the ideal case, so a voltage increase is accompanied by a current decrease.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A transformer has \(400\) turns in its primary and \(100\) turns in its secondary. The primary is connected to \(240\,\text{V}\) AC and draws \(0.50\,\text{A}\). Find the secondary voltage and current.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(V_s = V_p\frac{N_s}{N_p} = 240\frac{100}{400} = 60\,\text{V}\)
+            </div>
+            <p>Assuming an ideal transformer, \(V_pI_p = V_sI_s\), so:</p>
+            <div class="equation">
+                \(I_s = \frac{V_pI_p}{V_s} = \frac{(240)(0.50)}{60} = 2.0\,\text{A}\)
+            </div>
+            <p>This is a step-down transformer: the voltage falls by a factor of four while the current rises by the same factor.</p>
+        </div>
+    </div>
+
+    <h2>11.8 Semiconductors and Diodes</h2>
+
+    <h3>11.8.1 Intrinsic Semiconductors</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Intrinsic semiconductors</strong> are pure semiconductor materials without significant dopants. Silicon and germanium are common examples.</p>
+        </div>
+    </div>
+
+    <p>At absolute zero temperature, intrinsic semiconductors behave as insulators. At higher temperatures, electron-hole pairs are created, allowing conduction.</p>
+
+    <h3>11.8.2 Extrinsic Semiconductors</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Extrinsic semiconductors</strong> are semiconductors doped with impurities to enhance their conductivity.</p>
+            <ul>
+                <li><strong>n-type semiconductors</strong>: Doped with donor atoms (e.g., phosphorus in silicon) that provide extra electrons</li>
+                <li><strong>p-type semiconductors</strong>: Doped with acceptor atoms (e.g., boron in silicon) that create holes</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>11.8.3 The pn-junction</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>pn-junction</strong> is formed when p-type and n-type semiconductors are joined together. This creates a diode, which allows current to flow easily in one direction but restricts it in the opposite direction.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="520" height="330" xmlns="http://www.w3.org/2000/svg">
+            <rect x="60" y="70" width="180" height="180" fill="#ffe0e0" stroke="#cc0000" stroke-width="2"/>
+            <rect x="280" y="70" width="180" height="180" fill="#e0e8ff" stroke="#0066cc" stroke-width="2"/>
+            <rect x="240" y="70" width="40" height="180" fill="#eeeeee" stroke="#666666" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <circle cx="90" cy="100" r="8" fill="white" stroke="#cc0000" stroke-width="1.5"/>
+            <text x="90" y="105" font-size="13" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="140" cy="140" r="8" fill="white" stroke="#cc0000" stroke-width="1.5"/>
+            <text x="140" y="145" font-size="13" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="190" cy="100" r="8" fill="white" stroke="#cc0000" stroke-width="1.5"/>
+            <text x="190" y="105" font-size="13" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="110" cy="200" r="8" fill="white" stroke="#cc0000" stroke-width="1.5"/>
+            <text x="110" y="205" font-size="13" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="175" cy="210" r="8" fill="white" stroke="#cc0000" stroke-width="1.5"/>
+            <text x="175" y="215" font-size="13" text-anchor="middle" fill="#cc0000">+</text>
+            <circle cx="330" cy="100" r="8" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+            <text x="330" y="106" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="385" cy="140" r="8" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+            <text x="385" y="146" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="430" cy="100" r="8" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+            <text x="430" y="106" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="350" cy="210" r="8" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+            <text x="350" y="216" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="415" cy="195" r="8" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+            <text x="415" y="201" font-size="15" text-anchor="middle" fill="#0066cc">&#8722;</text>
+            <circle cx="250" cy="100" r="7" fill="#333333"/>
+            <text x="250" y="105" font-size="13" text-anchor="middle" fill="white">&#8722;</text>
+            <circle cx="250" cy="160" r="7" fill="#333333"/>
+            <text x="250" y="165" font-size="13" text-anchor="middle" fill="white">&#8722;</text>
+            <circle cx="250" cy="220" r="7" fill="#333333"/>
+            <text x="250" y="225" font-size="13" text-anchor="middle" fill="white">&#8722;</text>
+            <circle cx="272" cy="100" r="7" fill="#888888"/>
+            <text x="272" y="105" font-size="13" text-anchor="middle" fill="white">+</text>
+            <circle cx="272" cy="160" r="7" fill="#888888"/>
+            <text x="272" y="165" font-size="13" text-anchor="middle" fill="white">+</text>
+            <circle cx="272" cy="220" r="7" fill="#888888"/>
+            <text x="272" y="225" font-size="13" text-anchor="middle" fill="white">+</text>
+            <text x="150" y="50" font-size="16" text-anchor="middle" fill="#cc0000" font-weight="bold">p-type</text>
+            <text x="370" y="50" font-size="16" text-anchor="middle" fill="#0066cc" font-weight="bold">n-type</text>
+            <text x="260" y="280" font-size="14" text-anchor="middle">depletion region</text>
+            <text x="150" y="280" font-size="13" text-anchor="middle" fill="#cc0000">holes (majority carriers)</text>
+            <text x="370" y="280" font-size="13" text-anchor="middle" fill="#0066cc">electrons (majority carriers)</text>
+            <text x="260" y="310" font-size="13" text-anchor="middle" fill="#666666">Charge separation creates a built-in potential barrier</text>
+        </svg>
+        <div class="figure-caption">Figure 11.9: Structure of a pn-junction</div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>The pn-junction exhibits:</p>
+            <ul>
+                <li><strong>Forward bias</strong>: Positive voltage applied to p-side, negative to n-side. Current flows easily.</li>
+                <li><strong>Reverse bias</strong>: Positive voltage applied to n-side, negative to p-side. Very little current flows.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>11.8.4 Active Circuit Elements</h3>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Active circuit elements</strong> can control electron flow and provide gain. Diodes and transistors are examples.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Circuit Example</div>
+        <div class="example-content">
+            <p>Analyze a simple diode circuit. Assume the diode has a forward voltage drop of 0.7 V.</p>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="380" height="300" xmlns="http://www.w3.org/2000/svg">
+            <line x1="90" y1="70" x2="90" y2="120" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="120" x2="112" y2="120" stroke="black" stroke-width="2.5"/>
+            <line x1="81" y1="134" x2="99" y2="134" stroke="black" stroke-width="4.5"/>
+            <line x1="90" y1="134" x2="90" y2="150" stroke="black" stroke-width="2"/>
+            <line x1="68" y1="150" x2="112" y2="150" stroke="black" stroke-width="2.5"/>
+            <line x1="90" y1="150" x2="90" y2="220" stroke="black" stroke-width="2"/>
+            <text x="52" y="115" font-size="14" fill="#cc0000">5 V</text>
+            <line x1="90" y1="70" x2="160" y2="70" stroke="black" stroke-width="2"/>
+            <rect x="160" y="58" width="64" height="24" fill="#ffd9d9" stroke="#cc0000" stroke-width="2"/>
+            <text x="192" y="52" font-size="14" text-anchor="middle">1 k&#937;</text>
+            <line x1="224" y1="70" x2="290" y2="70" stroke="black" stroke-width="2"/>
+            <line x1="290" y1="70" x2="290" y2="130" stroke="black" stroke-width="2"/>
+            <polygon points="275,130 305,130 290,160" fill="#333333"/>
+            <line x1="273" y1="160" x2="307" y2="160" stroke="#333333" stroke-width="3.5"/>
+            <line x1="290" y1="160" x2="290" y2="220" stroke="black" stroke-width="2"/>
+            <line x1="90" y1="220" x2="290" y2="220" stroke="black" stroke-width="2"/>
+            <line x1="310" y1="90" x2="310" y2="125" stroke="#009966" stroke-width="2.5" marker-end="url(#f1110green)"/>
+            <text x="318" y="110" font-size="13" fill="#009966">I</text>
+            <text x="190" y="255" font-size="14" text-anchor="middle">Diode is forward biased</text>
+            <text x="190" y="278" font-size="13" text-anchor="middle" fill="#666666">V&#8339; = 5 &#8722; 0.7 = 4.3 V across the resistor</text>
+            <defs>
+                <marker id="f1110green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.10: Simple forward-biased diode circuit</div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The diode is forward biased. The voltage across the resistor is:</p>
+            <div class="equation">
+                \(V_R = 5 - 0.7 = 4.3\,\text{V}\)
+            </div>
+            <p>The current through the circuit is:</p>
+            <div class="equation">
+                \(I = \frac{V_R}{R} = \frac{4.3}{1000} = 4.3\,\text{mA}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="practice-header">Practice Problem</div>
+        <div class="practice-content">
+            <p>Design a circuit using a diode and resistor that will limit the voltage across a load to 5.1 V when the input voltage can vary from 0 to 12 V. Specify the required components and their values.</p>
+        </div>
+    </div>
+
+    <h2>11.9 Capacitors and RC Circuits</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p>A <strong>capacitor</strong> is a device that stores electrical energy in an electric field. It consists of two conducting plates separated by an insulator.</p>
+        </div>
+    </div>
+
+    <p>The capacitance of a parallel-plate capacitor is:</p>
+    <div class="equation">
+        \(C = \frac{\epsilon_0 A}{d}\)
+    </div>
+    <p>where \(\epsilon_0\) is the permittivity of free space, \(A\) is the area of one plate, and \(d\) is the separation between plates.</p>
+
+    <div class="figure">
+        <svg width="460" height="320" xmlns="http://www.w3.org/2000/svg">
+            <rect x="130" y="100" width="200" height="14" fill="#cc0000"/>
+            <rect x="130" y="200" width="200" height="14" fill="#0066cc"/>
+            <g fill="#cc0000" font-size="16">
+                <text x="160" y="95">+</text>
+                <text x="210" y="95">+</text>
+                <text x="260" y="95">+</text>
+                <text x="310" y="95">+</text>
+            </g>
+            <g fill="#0066cc" font-size="18">
+                <text x="158" y="232">&#8722;</text>
+                <text x="208" y="232">&#8722;</text>
+                <text x="258" y="232">&#8722;</text>
+                <text x="308" y="232">&#8722;</text>
+            </g>
+            <line x1="165" y1="122" x2="165" y2="194" stroke="#009966" stroke-width="2" marker-end="url(#f1111green)"/>
+            <line x1="215" y1="122" x2="215" y2="194" stroke="#009966" stroke-width="2" marker-end="url(#f1111green)"/>
+            <line x1="265" y1="122" x2="265" y2="194" stroke="#009966" stroke-width="2" marker-end="url(#f1111green)"/>
+            <line x1="315" y1="122" x2="315" y2="194" stroke="#009966" stroke-width="2" marker-end="url(#f1111green)"/>
+            <text x="240" y="163" font-size="14" text-anchor="middle" fill="#009966">E</text>
+            <line x1="370" y1="107" x2="370" y2="207" stroke="black" stroke-width="1.5" marker-start="url(#f1111start)" marker-end="url(#f1111end)"/>
+            <text x="380" y="162" font-size="15">d</text>
+            <text x="110" y="112" font-size="14" text-anchor="end" fill="#cc0000">+Q</text>
+            <text x="110" y="212" font-size="14" text-anchor="end" fill="#0066cc">&#8722;Q</text>
+            <text x="230" y="80" font-size="14" text-anchor="middle">Plate area A</text>
+            <text x="230" y="270" font-size="16" text-anchor="middle">C = &#949;&#8320;A / d</text>
+            <text x="230" y="295" font-size="13" text-anchor="middle" fill="#666666">Energy is stored in the electric field between the plates</text>
+            <defs>
+                <marker id="f1111green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+                <marker id="f1111end" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+                <marker id="f1111start" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                    <polygon points="10 0, 0 3.5, 10 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.11: Parallel-plate capacitor</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A parallel-plate capacitor has plates of area 0.1 m&#178; separated by 1 mm. Calculate its capacitance.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(C = \frac{\epsilon_0 A}{d} = \frac{(8.85 \times 10^{-12})(0.1)}{0.001} = 8.85 \times 10^{-10}\,\text{F} = 885\,\text{pF}\)
+            </div>
+        </div>
+    </div>
+
+    <p>The charge stored by a capacitor is \(Q = CV\), and the energy stored in its electric field is:</p>
+    <div class="equation">
+        \(U = \frac{1}{2}CV^2 = \frac{1}{2}QV = \frac{Q^2}{2C}\)
+    </div>
+    <p>The energy is proportional to the square of the voltage, so doubling the voltage quadruples the stored energy.</p>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A \(100\,\mu\text{F}\) capacitor is connected to a \(12\,\text{V}\) battery. Find the charge and the energy stored.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(Q = CV = (100\times10^{-6})(12) = 1.2\times10^{-3}\,\text{C} = 1.2\,\text{mC}\)
+            </div>
+            <div class="equation">
+                \(U = \frac{1}{2}CV^2 = \frac{1}{2}(100\times10^{-6})(12)^2 = 7.2\times10^{-3}\,\text{J} = 7.2\,\text{mJ}\)
+            </div>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Key Concept</div>
+        <div class="concept-content">
+            <p>In RC circuits, the charging and discharging of capacitors follows exponential behavior:</p>
+            <div class="equation">
+                \(V_C(t) = V_0 (1 - e^{-t/RC}) \quad \text{(charging)}\)
+            </div>
+            <div class="equation">
+                \(V_C(t) = V_0 e^{-t/RC} \quad \text{(discharging)}\)
+            </div>
+            <p>where \(RC\) is the time constant.</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>A 220 \(\mu\text{F}\) capacitor is charged to 12 V through a 1.0 k\(\Omega\) resistor. Find the time constant and the voltage across the capacitor after one time constant.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>The time constant is</p>
+            <div class="equation">
+                \(\tau = RC = (1.0 \times 10^3)(220 \times 10^{-6}) = 2.2 \times 10^{-1}\,\text{s}\)
+            </div>
+            <p>For a discharging capacitor, after one time constant the voltage has fallen to \(e^{-1} \approx 36.8\%\) of its initial value:</p>
+            <div class="equation">
+                \(V_C = V_0 e^{-t/RC} = 12\,e^{-0.22/0.22} = 12e^{-1} \approx 4.42\,\text{V}\)
+            </div>
+            <p>So after one time constant the capacitor holds about 4.4 V.</p>
+        </div>
+    </div>
+
+    <h2>11.10 Electromagnetic Waves</h2>
+
+    <div class="definition">
+        <div class="definition-header">Definition</div>
+        <div class="definition-content">
+            <p><strong>Electromagnetic waves</strong> are waves that consist of oscillating electric and magnetic fields perpendicular to each other and to the direction of propagation.</p>
+        </div>
+    </div>
+
+    <div class="concept">
+        <div class="concept-header">Important</div>
+        <div class="concept-content">
+            <p>Properties of electromagnetic waves:</p>
+            <ul>
+                <li>They travel at the speed of light in vacuum: \(c = 3.00 \times 10^8\) m/s</li>
+                <li>They obey the wave equation: \(c = f\lambda\)</li>
+                <li>They transport energy and momentum</li>
+                <li>They can be polarized</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="figure">
+        <svg width="560" height="330" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="170" x2="530" y2="170" stroke="black" stroke-width="1.5"/>
+            <polygon points="530,170 518,164 518,176" fill="black"/>
+            <text x="540" y="175" font-size="14">x</text>
+            <path d="M 60,170 C 96,80 132,80 168,170 C 204,260 240,260 276,170 C 312,80 348,80 384,170 C 420,260 456,260 492,170"
+                fill="none" stroke="#cc0000" stroke-width="2.5"/>
+            <text x="105" y="75" font-size="15" fill="#cc0000">E</text>
+            <path d="M 60,170 C 96,125 132,125 168,170 C 204,215 240,215 276,170 C 312,125 348,125 384,170 C 420,215 456,215 492,170"
+                fill="none" stroke="#0066cc" stroke-width="2.5" stroke-dasharray="7,4"/>
+            <text x="105" y="118" font-size="15" fill="#0066cc">B</text>
+            <line x1="440" y1="240" x2="490" y2="240" stroke="#cc0000" stroke-width="2" marker-end="url(#f1112red)"/>
+            <text x="465" y="232" font-size="13" text-anchor="middle" fill="#cc0000">E</text>
+            <line x1="465" y1="240" x2="465" y2="290" stroke="#0066cc" stroke-width="2" marker-end="url(#f1112blue)"/>
+            <text x="473" y="275" font-size="13" fill="#0066cc">B</text>
+            <line x1="465" y1="240" x2="415" y2="275" stroke="#009966" stroke-width="2" marker-end="url(#f1112green)"/>
+            <text x="405" y="290" font-size="13" fill="#009966">c</text>
+            <text x="276" y="40" font-size="14" text-anchor="middle">E, B, and direction of propagation are mutually perpendicular</text>
+            <text x="276" y="320" font-size="14" text-anchor="middle" fill="#666666">The electric and magnetic fields oscillate in phase</text>
+            <defs>
+                <marker id="f1112red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#cc0000" />
+                </marker>
+                <marker id="f1112blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+                </marker>
+                <marker id="f1112green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#009966" />
+                </marker>
+            </defs>
+        </svg>
+        <div class="figure-caption">Figure 11.12: Structure of an electromagnetic wave</div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Example</div>
+        <div class="example-content">
+            <p>Calculate the wavelength of an electromagnetic wave with frequency 100 MHz.</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <div class="equation">
+                \(\lambda = \frac{c}{f} = \frac{3.00 \times 10^8}{100 \times 10^6} = 3\,\text{m}\)
+            </div>
+            <p>This is in the radio wave part of the spectrum.</p>
+        </div>
+    </div>
+
+    <h2>Problem-Solving Workshop</h2>
+    <p>Circuit problems are best solved by redrawing the circuit rather than by searching for a formula. Label the source voltage, every resistance and capacitance, and the assumed direction of each current. Then simplify sections that are clearly in series or parallel, replacing each group by its equivalent resistance. Series elements carry the same current, while parallel branches share the same voltage, so these two facts let you move steadily from a complicated network to a single equivalent resistance.</p>
+    <p>RC circuits add a time dimension. Separate the initial state, the transient interval, and the long-time steady state. The product \(\tau=RC\) has units of seconds and sets the pace of charging or discharging: after one time constant a discharging capacitor has fallen to about 37% of its initial voltage, and a charging capacitor has reached about 63% of its final value. Use the exponential expressions rather than linear interpolation, and check that your answer approaches the expected initial and final values.</p>
+
+    <div class="concept">
+        <div class="concept-header">Problem-Solving Checklist</div>
+        <div class="concept-content">
+            <ol>
+                <li>Redraw the circuit and label the source, resistors, capacitors, and assumed current directions.</li>
+                <li>Reduce series and parallel combinations step by step, checking that each replacement preserves current or voltage.</li>
+                <li>Apply Ohm's law and the power relations \(P=IV=I^2R=V^2/R\) to the simplified circuit.</li>
+                <li>Use Kirchhoff's current and voltage laws when the circuit cannot be reduced by series-parallel rules alone.</li>
+                <li>For capacitors, find the equivalent capacitance and the time constant \(\tau=RC\).</li>
+                <li>For RC transients, apply the exponential charging or discharging equation and check the initial and long-time limits.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="example-header">Worked Example</div>
+        <div class="example-content">
+            <p>A \(100\,\mu\text{F}\) capacitor is charged to \(12\,\text{V}\) and then discharged through a \(10\,\text{k}\Omega\) resistor. (a) Find the time constant and the initial discharge current. (b) Find the capacitor voltage after \(2.0\,\text{s}\). (c) How long does it take for the voltage to fall to \(3.0\,\text{V}\)?</p>
+        </div>
+    </div>
+
+    <div class="solution">
+        <div class="solution-header">Solution</div>
+        <div class="solution-content">
+            <p>Convert the capacitance and resistance to SI units:</p>
+            <div class="equation">
+                \(C = 100\,\mu\text{F} = 1.00 \times 10^{-4}\,\text{F}, \qquad R = 10\,\text{k}\Omega = 1.00 \times 10^{4}\,\Omega\)
+            </div>
+            <p>(a) The time constant is:</p>
+            <div class="equation">
+                \(\tau = RC = (1.00 \times 10^{4}\,\Omega)(1.00 \times 10^{-4}\,\text{F}) = 1.00\,\text{s}\)
+            </div>
+            <p>At the instant the discharge begins, the full capacitor voltage appears across the resistor, so Ohm's law gives:</p>
+            <div class="equation">
+                \(I_0 = \frac{V_0}{R} = \frac{12\,\text{V}}{1.00 \times 10^{4}\,\Omega} = 1.2 \times 10^{-3}\,\text{A} = 1.2\,\text{mA}\)
+            </div>
+            <p>(b) For discharging, \(V_C(t)=V_0 e^{-t/\tau}\). After \(2.0\,\text{s}\):</p>
+            <div class="equation">
+                \(V_C = 12\,e^{-2.0/1.00} = 12(0.1353) \approx 1.62\,\text{V}\)
+            </div>
+            <p>(c) Setting \(V_C=3.0\,\text{V}\):</p>
+            <div class="equation">
+                \(3.0 = 12\,e^{-t/1.00} \;\Rightarrow\; e^{-t/1.00}=0.25 \;\Rightarrow\; t = -\ln(0.25) \approx 1.39\,\text{s}\)
+            </div>
+            <p>The voltage reaches \(3.0\,\text{V}\) after about \(1.4\,\text{s}\).</p>
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="application-header">Why This Matters</div>
+        <div class="application-content">
+            <p>A camera flash stores energy in a capacitor and then releases it quickly through a lamp. The charging resistor controls how long the flash takes to recycle: a larger resistance or capacitance gives a longer time constant and a slower recharge. The same RC timing idea appears in windshield-wiper delays, audio filters, and the gentle pacing pulses of some medical devices.</p>
+        </div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Electric current is the rate of charge flow, and Ohm's law relates voltage, current, and resistance through \(V=IR\).</li>
+        <li>Electrical power can be written as \(P=IV=I^2R=V^2/R\), and energy is power multiplied by time.</li>
+        <li>Series resistors add directly and carry the same current; parallel resistors combine reciprocally and share the same voltage.</li>
+        <li>Kirchhoff's laws express charge conservation at junctions and energy conservation around closed loops.</li>
+        <li>A capacitor stores charge according to \(C=Q/V\), and its capacitance depends on plate area, separation, and dielectric material.</li>
+        <li>An RC circuit responds exponentially with time constant \(\tau=RC\), reaching about 63% of the final charge in one time constant.</li>
+        <li>Changing magnetic flux induces an emf, and oscillating electric and magnetic fields propagate as electromagnetic waves.</li>
+    </ul>
+
+    <h2>Chapter Summary</h2>
+
+    <div class="textbox">
+        <div class="textbox-header">Key Concepts from Chapter 11</div>
+        <div class="textbox-content">
+            <ul>
+                <li>Coulomb's law describes the electrostatic force: \(F = k|q_1 q_2|/r^2\)</li>
+                <li>Electric fields represent the force per unit charge: \(\vec{E} = \vec{F}/q_0\)</li>
+                <li>Electric potential represents potential energy per unit charge: \(V = kq/r\)</li>
+                <li>Ohm's law relates voltage, current, and resistance: \(V = IR\)</li>
+                <li>Electrical power: \(P = IV = I^2R = V^2/R\)</li>
+                <li>Resistors combine in series (\(R_{\text{eq}} = R_1 + R_2 + \cdots\)) or parallel (\(1/R_{\text{eq}} = 1/R_1 + 1/R_2 + \cdots\))</li>
+                <li>Kirchhoff's laws govern current at junctions and voltage around loops</li>
+                <li>Magnetic fields exert forces on moving charges: \(\vec{F} = q(\vec{v} \times \vec{B})\)</li>
+                <li>Magnetic flux measures magnetic field through a surface: \(\Phi_B = BA\cos\theta\)</li>
+                <li>Faraday's law describes electromagnetic induction: \(\mathcal{E} = -d\Phi_B/dt\)</li>
+                <li>Semiconductors have conductivity between conductors and insulators; doping creates n-type and p-type materials</li>
+                <li>Diodes (pn-junctions) allow current flow in one direction only</li>
+                <li>Capacitors store electrical energy: \(C = \epsilon_0 A/d\)</li>
+                <li>Electromagnetic waves consist of oscillating perpendicular E and B fields traveling at \(c = 3.00 \times 10^8\) m/s</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Conceptual Questions</h2>
+    <ol>
+        <li>Why does a charged balloon stick to a wall?</li>
+        <li>Explain why birds can sit on high-voltage power lines without being electrocuted.</li>
+        <li>What is the difference between electric potential and electric potential energy?</li>
+        <li>Why does the resistance of a semiconductor decrease with increasing temperature, while that of a metal increases?</li>
+        <li>Explain how a generator produces electricity.</li>
+        <li>Why do capacitors block DC current but allow AC current to pass?</li>
+        <li>What is the physical significance of the time constant in an RC circuit?</li>
+        <li>How does the electromagnetic spectrum relate to everyday technologies?</li>
+        <li>Explain why a diode allows current to flow in only one direction.</li>
+        <li>What is the role of doping in semiconductors?</li>
+        <li>Two charges produce zero electric potential at a point, yet the electric field there is not zero. How is this possible?</li>
+        <li>Why is the equivalent resistance of a parallel combination always less than the smallest individual resistance?</li>
+        <li>A capacitor stores energy but does not dissipate it as heat. Where is the energy stored?</li>
+        <li>Explain why a transformer cannot increase the power delivered to a load.</li>
+        <li>Why is the magnetic force on a charged particle always perpendicular to its velocity, and what consequence does this have for the particle's speed?</li>
+        <li>Why do power lines transmit electricity at very high voltage but relatively low current?</li>
+    </ol>
+
+    <h2>Problems</h2>
+    <ol>
+        <li>Two point charges, \(q_1 = +4.0\,\mu\text{C}\) and \(q_2 = -6.0\,\mu\text{C}\), are separated by 0.8 m. Calculate:
+            <ol type="a">
+                <li>The electrostatic force between them</li>
+                <li>The electric field midway between them</li>
+                <li>The electric potential midway between them</li>
+            </ol>
+        </li>
+        <li>A circuit contains three resistors: \(R_1 = 12\,\Omega\), \(R_2 = 18\,\Omega\), and \(R_3 = 24\,\Omega\) connected in parallel to a 24 V battery. Calculate:
+            <ol type="a">
+                <li>The equivalent resistance</li>
+                <li>The total current</li>
+                <li>The current through each resistor</li>
+                <li>The power dissipated in each resistor</li>
+            </ol>
+        </li>
+        <li>A proton moves with speed \(2.0 \times 10^6\) m/s perpendicular to a magnetic field of 0.5 T. Calculate:
+            <ol type="a">
+                <li>The magnetic force on the proton</li>
+                <li>The radius of its circular path</li>
+                <li>The period of revolution</li>
+            </ol>
+            (Proton mass = \(1.67 \times 10^{-27}\) kg, charge = \(1.60 \times 10^{-19}\) C)
+        </li>
+        <li>A transformer has 200 turns in its primary coil and 50 turns in its secondary coil. If the primary voltage is 120 V AC, what is the secondary voltage? If the primary current is 2 A, what is the secondary current (assuming ideal transformer)?</li>
+        <li>A silicon diode has a forward voltage drop of 0.7 V. If it's connected in series with a \(470\,\Omega\) resistor to a 9 V battery, calculate:
+            <ol type="a">
+                <li>The current in the circuit</li>
+                <li>The power dissipated in the resistor</li>
+                <li>The power dissipated in the diode</li>
+            </ol>
+        </li>
+        <li>A parallel-plate capacitor has plates of area 0.2 m&#178; separated by 0.5 mm. Calculate:
+            <ol type="a">
+                <li>The capacitance</li>
+                <li>The charge stored when connected to a 12 V battery</li>
+                <li>The energy stored</li>
+            </ol>
+        </li>
+        <li>An RC circuit has R = 2 k&#937; and C = 100 &#956;F. Calculate:
+            <ol type="a">
+                <li>The time constant</li>
+                <li>The time it takes for the capacitor to charge to 63.2% of its maximum voltage</li>
+                <li>The time it takes for the capacitor to charge to 95% of its maximum voltage</li>
+            </ol>
+        </li>
+        <li>Calculate the wavelength and frequency of electromagnetic waves for the following:
+            <ol type="a">
+                <li>Radio waves with \(\lambda = 300\) m</li>
+                <li>Microwaves with \(f = 2.45\) GHz</li>
+                <li>Visible light with \(\lambda = 550\) nm</li>
+                <li>X-rays with \(f = 3 \times 10^{18}\) Hz</li>
+            </ol>
+        </li>
+        <li>Design a voltage divider circuit that provides exactly 6 V from a 12 V source using two resistors. Specify the resistor values and calculate the current drawn from the source.</li>
+        <li>Analyze the following circuit and find the current through each resistor: a 24 V battery in series with a 6 &#937; resistor, with a parallel combination of an 8 &#937; resistor in series with the battery path and a 12 &#937; resistor in one branch; a second branch contains a 4 &#937; resistor in series with a 10 &#937; resistor.</li>
+        <li>Two point charges, \(q_1 = +5.0\,\mu\text{C}\) and \(q_2 = -3.0\,\mu\text{C}\), are \(0.40\,\text{m}\) apart. Find the electric potential at a point \(0.10\,\text{m}\) from \(q_1\) and \(0.30\,\text{m}\) from \(q_2\) along the line joining them.</li>
+        <li>A \(470\,\Omega\) resistor is connected across a \(9.0\,\text{V}\) battery. Find the current, the power dissipated, and the energy consumed in \(10\,\text{min}\).</li>
+        <li>A wire of length \(0.80\,\text{m}\) carries \(5.0\,\text{A}\) at \(30^\circ\) to a \(0.40\,\text{T}\) magnetic field. Find the magnetic force on the wire.</li>
+        <li>A step-up transformer has \(150\) primary turns and \(1200\) secondary turns. If the primary voltage is \(120\,\text{V}\) and the secondary current is \(0.50\,\text{A}\), find the secondary voltage and the primary current.</li>
+        <li>A \(220\,\mu\text{F}\) capacitor is charged to \(24\,\text{V}\). Find the stored charge and energy.</li>
+        <li>An RC circuit has \(R = 5.0\,\text{k}\Omega\) and \(C = 20\,\mu\text{F}\). Find the time constant and the time for the capacitor to reach \(90\%\) of its final charge.</li>
+    </ol>
+</body>
+</html>
